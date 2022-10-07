@@ -1,49 +1,49 @@
 #!/bin/bash
-
+# вызывает командный интерпретатор
 export LANG=en_US.UTF-8
 
-if [[ $1 != "" ]]
+if [[ $1 != "" ]]  # проверка на пустой ввод
 then
     echo $1
     this_dir=$1
 else 
     echo "."
-    this_dir=$(pwd)
+    this_dir=$(pwd)  # отобразить файлы текущей директории
 fi
 dir=0
 file=0
 
-func () 
+func ()  # Функция должна быть объявлена до того как она будет вызвана.
 {
     local root
-    root=$1
+    root=$1  # проверяемая директория
     local branch
-    branch=$2
+    branch=$2  # отвечает за отступ, продлевает черту вниз, пустая строка
     local subdirs
-    subdirs=($root/*)
+    subdirs=($root/*)  # Создание массива со всеми поддиректориями текущей директории
     local subdirs_cnt
-    subdirs_cnt=${#subdirs[@]}
+    subdirs_cnt=${#subdirs[@]}  # Количество поддиректорий и количество файлов в директории
 
-    for i in ${!subdirs[@]}
+    for i in ${!subdirs[@]}  # Получение индексов массива, сколько строк
     do
         local parent
-        parent=$'\u2502\u00A0\u00A0\u0020'
+        parent=$'\u2502\u00A0\u00A0\u0020' # │
         local child
-        child=$'\u251c\u2500\u2500\u0020'
+        child=$'\u251c\u2500\u2500\u0020' # ├──
         local name
-        name=${subdirs[i]##*/}
+        name=${subdirs[i]##*/}  # Поиск подстроки ведется сначала строки, для вывода последней части
 
-        if [[ $i -eq $(( $subdirs_cnt - 1 )) ]]
+        if [[ $i -eq $(( $subdirs_cnt - 1 )) ]]  # это последний элемент?
         then
-            parent=$'\u0020\u0020\u0020\u0020'
-            child=$'\u2514\u2500\u2500\u0020'
+            parent=$'\u0020\u0020\u0020\u0020' # пробел
+            child=$'\u2514\u2500\u2500\u0020'  # └──
         fi
-        echo "$branch$child$name"
+        echo "$branch$child$name"  # отступ, ├── или └── и имя
 
-        if [[ -d $root/$name ]]
+        if [[ -d $root/$name ]]  # текущее имя - директория?
         then 
             dir=$(( $dir + 1 ))
-            func $root/$name "$branch$parent"
+            func $root/$name "$branch$parent"  # печать родителя и выполнение функции для этой директории
         else
             file=$(( $file + 1 ))
         fi
