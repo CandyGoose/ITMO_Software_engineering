@@ -1,16 +1,6 @@
-# 1  вариант
-# def fact(n):
-#     if n==1:
-#         return 1
-#     else:
-#         return n*fact(n-1)
-#
-# print(fact(5))
-# 2 вариант
-from itertools import *
-cnt=1
-for i in permutations('ТАШУИВНРАШК', 11):
-    if ''.join(i) == 'ТУШАВИНКРАШ':
-        print(cnt)
-        break
-    cnt+=1
+import itertools
+n = input('Введите числа через пробел: ')
+a = [int(value) for value in n.split(' ')]
+perm_set = itertools.permutations(a)
+for i in perm_set:
+    print(i)
