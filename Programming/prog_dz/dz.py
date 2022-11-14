@@ -127,18 +127,22 @@ def add_product(cart):
                     if (otvet == 'Да') or (otvet == 'да'):
                         price = input('Введите цену: ')
                         if price != '':
-                            category = input(
-                                'Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
-                            if category != '':
-                                prod_for_write = '\n' + new_product[i] + ' ' + str(price) + ' ' + category
-                                for k in range(cnt):
-                                    cart.append(new_product[i])
-                                with open('products.txt', 'a', encoding='UTF-8') as new_prod_baza:
-                                    new_prod_baza.write(prod_for_write)
-                                print('\nПродукт успешно добавлен в базу и список!')
-                                print('Текущий список: ' + ', '.join(cart))
+                            for k in price:
+                                if k in alf:
+                                    print('Ошибка! Неправильный ввод.')
+                                    break
                             else:
-                                print('Ошибка! Неправильный ввод. Продукт не был добавлен в список и базу.')
+                                category = input('Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
+                                if category != '':
+                                    prod_for_write = '\n' + new_product[i] + ' ' + str(price) + ' ' + category
+                                    for k in range(cnt):
+                                        cart.append(new_product[i])
+                                    with open('products.txt', 'a', encoding='UTF-8') as new_prod_baza:
+                                        new_prod_baza.write(prod_for_write)
+                                    print('\nПродукт успешно добавлен в базу и список!')
+                                    print('Текущий список: ' + ', '.join(cart))
+                                else:
+                                    print('Ошибка! Неправильный ввод. Продукт не был добавлен в список и базу.')
                         else:
                             print('Ошибка! Неправильный ввод. Продукт не был добавлен в список и базу.')
                     else:
@@ -213,7 +217,7 @@ def view_cart():
 
 def add_baza():
     print('---------------------------------------------------\n')
-
+    baza = []
     with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
         for line in prod_baza:
             baza.append(line.split('\n'))
