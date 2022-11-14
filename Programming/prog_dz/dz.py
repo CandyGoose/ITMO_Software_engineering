@@ -273,6 +273,7 @@ def delete_baza():
     print('Текущая база: ' + cur_list)
 
     otvet = input('Какой продукт желаете удалить? ')
+    otvet = otvet.capitalize()
     if otvet != '':
         if otvet not in cur_list:
             print('Ошибка. Такой записи нет.')
