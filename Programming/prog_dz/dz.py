@@ -5,6 +5,7 @@ alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijk
 cart = []
 baza = []
 
+
 def balance():
     print('---------------------------------------------------\n')
     with open('bank.txt', 'r', encoding='UTF-8') as bank:
@@ -12,7 +13,6 @@ def balance():
     print('Текущий баланс:', bank, 'рублей.')
     print()
     main()
-
 
 
 def add_balance():
@@ -37,7 +37,6 @@ def add_balance():
         print('Ошибка при вводе.')
     print()
     main()
-
 
 
 def delete_balance():
@@ -67,18 +66,21 @@ def delete_balance():
     main()
 
 
-
 def add_product(cart):
     print('---------------------------------------------------\n')
+    baza = []
     baza_copy = []
     cnt = 0
 
     with open('bank.txt', 'r', encoding='UTF-8') as bank:
         bank = bank.read()
     with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
-        baza = prod_baza.read()
+        for line in prod_baza:
+            baza.append(line.split('\n'))
     new_product = list(
-        input('Введите название продукта(ов) через запятую, который(ые) Вы хотели бы добавить в список (если название составное, то напишите через нижнее подчеркивание): ').split(', '))
+        input(
+            'Введите название продукта(ов) через запятую, который(ые) Вы хотели бы добавить в список (если название составное, то напишите через нижнее подчеркивание): ').split(
+            ', '))
     if new_product == [] or new_product == ['']:
         print('Ошибка! Нет данных.')
     else:
@@ -86,7 +88,6 @@ def add_product(cart):
             new_product[i] = new_product[i].capitalize()
         for i in range(len(new_product)):
             otvet = input(f'\nВведите количество продукта \"{new_product[i]}\": ')
-
             if otvet != '':
                 for k in otvet:
                     if k in alf:
@@ -98,30 +99,36 @@ def add_product(cart):
             if cnt <= 0:
                 print('Ошибка! Продукт не был добавлен в список.')
             else:
-                if new_product[i] in baza:
-                    cost = 0
-                    with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
-                        for line in prod_baza:
-                            baza_copy.append(line.split('\n'))
-                    for j in range(len(baza_copy)):
-                        baza_prod = baza_copy[j][0].split(' ')
-                        if new_product[i] == baza_prod[0]:
-                            cost += int(baza_prod[1]) * cnt
+                for j in range(len(baza)):
+                    baza_new = baza[j][0].split(' ')
+                    if new_product[i] == baza_new[0]:
+                        cost = 0
+                        with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
+                            for line in prod_baza:
+                                baza_copy.append(line.split('\n'))
+                        for j in range(len(baza_copy)):
+                            baza_prod = baza_copy[j][0].split(' ')
+                            if new_product[i] == baza_prod[0]:
+                                cost += int(baza_prod[1]) * cnt
 
-                    if cost > int(bank):
-                        print(f'Ошибка! Недостаточно средств. Продукт \"{new_product[i]}\" не был добавлен в список.')
-                    else:
-                        for k in range(cnt):
-                            cart.append(new_product[i])
-                        print(f'\nПродукт \"{new_product[i]}\" успешно добавлен в список!')
-                        print('Текущий список: ' + ', '.join(cart))
+                        if cost > int(bank):
+                            print(
+                                f'Ошибка! Недостаточно средств. Продукт \"{new_product[i]}\" не был добавлен в список.')
+                            break
+                        else:
+                            for k in range(cnt):
+                                cart.append(new_product[i])
+                            print(f'\nПродукт \"{new_product[i]}\" успешно добавлен в список!')
+                            print('Текущий список: ' + ', '.join(cart))
+                            break
                 else:
                     print('\nПродукта нет в базе.')
                     otvet = input('Желаете добавить продукт в базу (введите Да или Нет)? ')
                     if (otvet == 'Да') or (otvet == 'да'):
                         price = input('Введите цену: ')
                         if price != '':
-                            category = input('Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
+                            category = input(
+                                'Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
                             if category != '':
                                 prod_for_write = '\n' + new_product[i] + ' ' + str(price) + ' ' + category
                                 for k in range(cnt):
@@ -141,7 +148,6 @@ def add_product(cart):
     return cart
 
 
-
 def delete_prod():
     print('---------------------------------------------------\n')
     ans = 0
@@ -156,7 +162,7 @@ def delete_prod():
         else:
             cnt = 0
             for j in range(len(cart)):
-                if otvet == cart[j-1]:
+                if otvet == cart[j - 1]:
                     cnt += 1
             if cnt == 1:
                 for i in range(len(cart)):
@@ -195,7 +201,6 @@ def delete_prod():
     main()
 
 
-
 def view_cart():
     print('---------------------------------------------------\n')
     if cart != []:
@@ -206,17 +211,20 @@ def view_cart():
     main()
 
 
-
 def add_baza():
     print('---------------------------------------------------\n')
 
     with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
-        baza = prod_baza.read()
-    new_product = input('Введите название продукта (если название составное, то напишите через нижнее подчеркивание): ')
+        for line in prod_baza:
+            baza.append(line.split('\n'))
+    new_product = input('Введите название продукта: ')
     new_product = new_product.capitalize()
     if new_product != '':
-        if new_product.casefold() in baza.casefold():
-            print('Продукт продукт уже находится в базе.')
+        for j in range(len(baza)):
+            baza_new = baza[j][0].split(' ')
+            if new_product.casefold() == baza_new[0].casefold():
+                print('Продукт продукт уже находится в базе.')
+                break
         else:
             otvet = input('Введите цену: ')
             if otvet != '':
@@ -226,7 +234,8 @@ def add_baza():
                         break
                 else:
                     price = int(otvet)
-                    category = input('Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
+                    category = input(
+                        'Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
                     category = category.capitalize()
                     if category != '':
                         prod_for_write = '\n' + new_product + ' ' + str(price) + ' ' + category
@@ -241,7 +250,6 @@ def add_baza():
         print('Ошибка! Нет данных.')
     print()
     main()
-
 
 
 def delete_baza():
@@ -266,19 +274,18 @@ def delete_baza():
             print('Ошибка. Такой записи нет.')
         else:
             for k in range(len(baza)):
-                if otvet in (baza[k-1][0]):
-                    baza.pop(k-1)
+                if otvet in (baza[k - 1][0]):
+                    baza.pop(k - 1)
             with open('products.txt', 'w', encoding='UTF-8') as baz:
                 for i in range(len(baza)):
                     baz.write(baza[i][0])
-                    if i != len(baza)-1:
+                    if i != len(baza) - 1:
                         baz.write('\n')
             print('Продукт успешно удален из базы!')
     else:
         print('Ошибка. Неправильный ввод.')
     print()
     main()
-
 
 
 def baza_prod():
@@ -297,7 +304,6 @@ def baza_prod():
     print('Продукты, которые уже есть в базе:', cur_list)
     print()
     main()
-
 
 
 def buy(cart):
@@ -400,7 +406,6 @@ def buy(cart):
     return cart
 
 
-
 def view_bought():
     print('---------------------------------------------------\n')
     with open('bought.txt', 'r', encoding='UTF-8') as bought:
@@ -408,7 +413,6 @@ def view_bought():
     print(bought)
     print()
     main()
-
 
 
 def view_bought_by():
@@ -423,7 +427,8 @@ def view_bought_by():
         for line in bought_baza:
             bought.append(line.split('\n'))
 
-    otvet = input('По какому параметру Вы хотите просмотреть покупки (введите цифру 1 (Дата), 2 (Категория) или 3 (Стоимость))? ')
+    otvet = input(
+        'По какому параметру Вы хотите просмотреть покупки (введите цифру 1 (Дата), 2 (Категория) или 3 (Стоимость))? ')
     print()
     if otvet == 'Дата' or otvet == 'дата' or int(otvet) == 1:
         for_sort = []
@@ -517,7 +522,7 @@ def view_bought_by():
                 else:
                     print('Ошибка! Неправильный ввод.')
         else:
-                print('Ошибка! Неправильный ввод.')
+            print('Ошибка! Неправильный ввод.')
 
     elif otvet == 'Категория' or otvet == 'категория' or int(otvet) == 2:
         for_sort = []
@@ -603,7 +608,7 @@ def view_bought_by():
                 for i in range(len(bought)):
                     if str(cost) in (bought_baza2[i][-2]):
                         line = ''
-                        for j in range(len(bought_baza2[i])-2):
+                        for j in range(len(bought_baza2[i]) - 2):
                             line += bought_baza2[i][j] + ', '
                         line += bought_baza2[i][-2] + ' рублей, ' + bought_baza2[i][-1]
                         print(line)
@@ -617,7 +622,6 @@ def view_bought_by():
     main()
 
 
-
 def delete_view():
     baza = []
     baza_bought = []
@@ -627,7 +631,7 @@ def delete_view():
         for line in bought:
             baza.append(line.split('\n'))
     for i in range(len(baza)):
-        print(f'{i+1})', ' '.join(baza[i]))
+        print(f'{i + 1})', ' '.join(baza[i]))
         baza_bought.append(baza)
 
     otvet2 = input('\nКакую запись желаете удалить (введите число)? ')
@@ -638,17 +642,17 @@ def delete_view():
                 break
         else:
             otvet = int(otvet2)
-    if otvet-1 > len(baza) or otvet-1 < 0:
+    if otvet - 1 > len(baza) or otvet - 1 < 0:
         print('Ошибка. Такой записи нет.')
     else:
-        baza_clone.append(baza[otvet-1][0].split(', '))
+        baza_clone.append(baza[otvet - 1][0].split(', '))
         sm = int(baza_clone[0][-2])
-        baza.pop(otvet-1)
+        baza.pop(otvet - 1)
 
         with open('bought.txt', 'w', encoding='UTF-8') as baz:
             for i in range(len(baza)):
                 baz.write(baza[i][0])
-                if i != len(baza)-1:
+                if i != len(baza) - 1:
                     baz.write('\n')
 
         with open('bank.txt', 'r', encoding='UTF-8') as bank:
@@ -661,7 +665,6 @@ def delete_view():
         print('Запись успешно удалена.')
     print()
     main()
-
 
 
 def ch_name():
@@ -687,7 +690,6 @@ def ch_name():
 def out():
     print('---------------------------------------------------\nДо свидания!')
     exit(0)
-
 
 
 def bal():
@@ -723,7 +725,6 @@ def bal():
     else:
         print('Ошибка! Неправильный ввод.')
         main()
-
 
 
 def prod():
@@ -764,7 +765,6 @@ def prod():
         main()
 
 
-
 def base():
     print('---------------------------------------------------\n'
           'Действия с базой продуктов:\n'
@@ -800,7 +800,6 @@ def base():
         main()
 
 
-
 def view():
     print('---------------------------------------------------\n'
           'Действия с историей покупок:\n'
@@ -834,7 +833,6 @@ def view():
     else:
         print('Ошибка! Неправильный ввод.')
         main()
-
 
 
 def dop_func():
@@ -877,7 +875,6 @@ def dop_func():
         main()
 
 
-
 def main():
     print('---------------------------------------------------\n'
           'Быстрый доступ:\n'
@@ -915,7 +912,6 @@ def main():
         main()
 
 
-
 def begin():
     with open('name.txt', 'r', encoding='UTF-8') as name:
         name = name.read()
@@ -925,6 +921,7 @@ def begin():
     else:
         print(f'\nС возвращением!')
         main()
+
 
 # ---------------------------------------------------
 
