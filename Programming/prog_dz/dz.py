@@ -134,6 +134,7 @@ def add_product(cart):
                             else:
                                 category = input('Введите категорию (если название составное, то напишите через нижнее подчеркивание): ')
                                 if category != '':
+                                    category = category.capitalize()
                                     prod_for_write = '\n' + new_product[i] + ' ' + str(price) + ' ' + category
                                     for k in range(cnt):
                                         cart.append(new_product[i])
