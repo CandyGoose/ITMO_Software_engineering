@@ -296,18 +296,22 @@ def delete_baza():
 
 def baza_prod():
     baza = []
+    prod_baza2 = []
     print('---------------------------------------------------\n')
-    cur_list = ''
 
     with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
         for line in prod_baza:
             baza.append(line.split('\n'))
-
-    for j in range(len(baza)):
-        baza_prod = baza[j][0].split(' ')
-        cur_list += ', ' + baza_prod[0]
-    cur_list = cur_list[2:]
-    print('Продукты, которые уже есть в базе:', cur_list)
+    for k in range(len(baza)):
+        prod_baza = baza[k][0].split(' ')
+        prod_baza2.append(prod_baza)
+    print('Продукты, которые уже есть в базе:\n')
+    for i in range(len(baza)):
+        line = ''
+        for j in range(len(prod_baza2[i]) - 2):
+            line += prod_baza2[i][j] + ', '
+        line += prod_baza2[i][-2] + ' рублей, категория - ' + prod_baza2[i][-1]
+        print(line)
     print()
     main()
 
@@ -331,6 +335,7 @@ def buy(cart):
                 if cart[i] == baza_prod[0]:
                     sm += int(baza_prod[1])
                     bought += ', ' + str(baza_prod[0])
+        print(f'Общая стоимость покупки в рублях: {sm}')
         if sm > int(bank):
             print(f'Ошибка! Недостаточно средств. Данные о покупке не записаны.')
         else:
@@ -414,9 +419,20 @@ def buy(cart):
 
 def view_bought():
     print('---------------------------------------------------\n')
-    with open('bought.txt', 'r', encoding='UTF-8') as bought:
-        bought = bought.read()
-    print(bought)
+    bought = []
+    baza_bought2 = []
+    with open('bought.txt', 'r', encoding='UTF-8') as bought_baza:
+        for line in bought_baza:
+            bought.append(line.split('\n'))
+    for k in range(len(bought)):
+        baza_bought = bought[k][0].split(', ')
+        baza_bought2.append(baza_bought)
+    for i in range(len(bought)):
+        line = ''
+        for j in range(len(baza_bought2[i]) - 2):
+            line += baza_bought2[i][j] + ', '
+        line += baza_bought2[i][-2] + ' рублей, ' + baza_bought2[i][-1]
+        print(line)
     print()
     main()
 
