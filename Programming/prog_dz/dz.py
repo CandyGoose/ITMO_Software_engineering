@@ -167,12 +167,12 @@ def delete_prod():
         else:
             cnt = 0
             for j in range(len(cart)):
-                if otvet == cart[j - 1]:
+                if otvet == cart[j-1]:
                     cnt += 1
             if cnt == 1:
                 for i in range(len(cart)):
-                    if otvet == cart[i - 1]:
-                        cart.pop(i - 1)
+                    if otvet == cart[i-1]:
+                        cart.pop(i-1)
                         print('Продукт успешно удален из списка!')
                         print('Текущий список: ' + ', '.join(cart))
             else:
@@ -190,8 +190,6 @@ def delete_prod():
                             if otvet == cart[n]:
                                 un_cart.append(cart[n])
                                 ans -= 1
-                            print(cart)
-                            print(n)
                             if ans == 0:
                                 break
                         for h in un_cart:
@@ -261,7 +259,6 @@ def delete_baza():
     baza = []
     print('---------------------------------------------------\n')
     cur_list = ''
-
     with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
         for line in prod_baza:
             baza.append(line.split('\n'))
@@ -270,7 +267,6 @@ def delete_baza():
         baza_prod = baza[j][0].split(' ')
         cur_list += ', ' + baza_prod[0]
     cur_list = cur_list[2:]
-
     print('Текущая база: ' + cur_list)
 
     otvet = input('Какой продукт желаете удалить? ')
@@ -280,8 +276,8 @@ def delete_baza():
             baza_prod = baza[i][0].split(' ')
             if otvet == baza_prod[0]:
                 for k in range(len(baza)):
-                    if otvet in (baza[k - 1][0]):
-                        baza.pop(k - 1)
+                    if otvet in (baza[k-1][0]):
+                        baza.pop(k-1)
                 with open('products.txt', 'w', encoding='UTF-8') as baz:
                     for i in range(len(baza)):
                         baz.write(baza[i][0])
@@ -648,6 +644,7 @@ def view_bought_by():
 
 
 def delete_view():
+    print('---------------------------------------------------\n')
     baza = []
     baza_bought = []
     baza_clone = []
@@ -656,7 +653,7 @@ def delete_view():
         for line in bought:
             baza.append(line.split('\n'))
     for i in range(len(baza)):
-        print(f'{i + 1})', ' '.join(baza[i]))
+        print(f'{i+1})', ' '.join(baza[i]))
         baza_bought.append(baza)
 
     otvet2 = input('\nКакую запись желаете удалить (введите число)? ')
@@ -667,17 +664,17 @@ def delete_view():
                 break
         else:
             otvet = int(otvet2)
-    if otvet - 1 > len(baza) or otvet - 1 < 0:
+    if otvet > len(baza) or otvet < 1:
         print('Ошибка. Такой записи нет.')
     else:
-        baza_clone.append(baza[otvet - 1][0].split(', '))
+        baza_clone.append(baza[otvet-1][0].split(', '))
         sm = int(baza_clone[0][-2])
-        baza.pop(otvet - 1)
+        baza.pop(otvet-1)
 
         with open('bought.txt', 'w', encoding='UTF-8') as baz:
             for i in range(len(baza)):
                 baz.write(baza[i][0])
-                if i != len(baza) - 1:
+                if i != len(baza)-1:
                     baz.write('\n')
 
         with open('bank.txt', 'r', encoding='UTF-8') as bank:
@@ -916,7 +913,6 @@ def main():
                 print('Ошибка! Неправильный ввод.')
                 main()
                 break
-
         if int(ans) == 1:
             add_product(cart)
         elif int(ans) == 2:
