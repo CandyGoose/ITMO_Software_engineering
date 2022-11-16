@@ -150,7 +150,6 @@ def add_product(cart):
                         print('Продукт не был добавлен в список.')
     print()
     main()
-    return cart
 
 
 def delete_prod():
@@ -413,7 +412,6 @@ def buy(cart):
         print('Ошибка! Список пуст.')
     print()
     main()
-    return cart
 
 
 def view_bought():
