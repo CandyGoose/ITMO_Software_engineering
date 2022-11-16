@@ -6,14 +6,18 @@ alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijk
 baza = []
 
 def add_baza():
-
+    baza = []
     with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
-        baza = prod_baza.read()
+        for line in prod_baza:
+            baza.append(line.split('\n'))
     new_product = input('Введите название продукта: ')
     new_product = new_product.capitalize()
     if new_product != '':
-        if new_product.casefold() in baza.casefold():
-            print('Продукт продукт уже находится в базе.')
+        for j in range(len(baza)):
+            baza_new = baza[j][0].split(' ')
+            if new_product.casefold() == baza_new[0].casefold():
+                print('Продукт продукт уже находится в базе.')
+                break
         else:
             otvet = input('Введите цену: ')
             if otvet != '':

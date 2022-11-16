@@ -1,20 +1,19 @@
 # coding: utf8
 import datetime
+alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijklmnopqrstuvwxyАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮABCDEFGHIJKLMNOPQRSTUVWXY ,.:/\|-+=_'
 
 cart = ['Яблоки', 'Яблоки']
-baza = []
 
 
 def buy(cart):
-
-    alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijklmnopqrstuvwxyАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮABCDEFGHIJKLMNOPQRSTUVWXY ,.:/\|-+=_'
+    print('---------------------------------------------------\n')
 
     with open('bank.txt', 'r', encoding='UTF-8') as bank:
         bank = bank.read()
-
+    baza = []
     sm = 0
     bought = ''
-    today = ''
+
     if cart != []:
         with open('products.txt', 'r', encoding='UTF-8') as prod_baza:
             for line in prod_baza:
@@ -25,10 +24,11 @@ def buy(cart):
                 if cart[i] == baza_prod[0]:
                     sm += int(baza_prod[1])
                     bought += ', ' + str(baza_prod[0])
+        print(f'Общая стоимость покупки в рублях: {sm}')
         if sm > int(bank):
             print(f'Ошибка! Недостаточно средств. Данные о покупке не записаны.')
         else:
-            otvet = input('Желаете ввести дату вручную (введите Да или Нет)? ')
+            otvet = input('Желаете ввести дату вручную (введите Да или Нет (запишет сегодняшнее число))? ')
             if otvet == 'Да' or otvet == 'да':
                 otvet = input('Какой год? ')
                 if otvet != '':
@@ -102,6 +102,7 @@ def buy(cart):
     else:
         print('Ошибка! Список пуст.')
     print()
+
     return cart
 
 
