@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  22 NOV 2022 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  22 NOV 2022 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1071,11 +1071,11 @@ File: 1.png Graphic file (type png)
 <use 1.png>
 Package pdftex.def Info: 1.png  used on input line 93.
 (pdftex.def)             Requested size: 631.10797pt x 366.11807pt.
-<2.png, id=161, 601.4972pt x 339.51843pt>
+<2.png, id=161, 639.13782pt x 338.76563pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
 Package pdftex.def Info: 2.png  used on input line 99.
-(pdftex.def)             Requested size: 631.10797pt x 356.26656pt.
+(pdftex.def)             Requested size: 631.10797pt x 334.51057pt.
  [15
 
  <./1.png>] [16 <./2.png>] [17
@@ -1114,9 +1114,9 @@ Here is how much of TeX's memory you used:
 1440.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
 arm1000.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
 0\labx1440.pk>
-Output written on PR7.pdf (18 pages, 983731 bytes).
+Output written on PR7.pdf (18 pages, 985170 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
+ 366 PDF objects out of 1000 (max. 8388607)
  35 named destinations out of 1000 (max. 500000)
  127 words of extra memory for PDF output out of 10000 (max. 10000000)
 
