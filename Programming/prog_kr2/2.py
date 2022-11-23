@@ -1,15 +1,15 @@
-spisok = list(map(int, input('Введите числа через пробел: ').split()))
-un_spisok = []
+temp = [20, 21, 20, 'None', 21, 24, 'None', 24, 25, 22]
 
-def num():
+def sred():
+    un_temp = []
+    for i in range(len(temp)):
+        if temp[i] == 'None':
+            un_temp.append(temp[i])  # Список None
+    for h in un_temp:
+        temp.remove(h)  # Удаление None
+    sr = sum(temp) / len(temp)
+    res = ('%.2f' % sr)
+    return res
 
-    for i in range(len(spisok)):
-        if spisok[i] < 0:
-            un_spisok.append(spisok[i])
-    for h in un_spisok:
-        spisok.remove(h)
-    spisok.sort()
-    un_spisok.sort(reverse=True)
-    return (un_spisok, spisok)
-
-print(num())
+print('Список температур:', temp)
+print('Среднее значение температуры:', sred())
