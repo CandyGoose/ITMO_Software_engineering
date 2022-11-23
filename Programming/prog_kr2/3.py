@@ -1,16 +1,11 @@
-num = int(input('Введите число: '))
-step = int(input('Введите степень: '))
+t1 = float(input('Введите первое время в часах: '))
+v1 = float(input('Введите первую скорость: '))
+t2 = float(input('Введите второе время в часах: '))
+v2 = float(input('Введите вторую скорость: '))
 
-def stepen():
-    res1 = num**step
-    return res1
+def length():
+    s = t1 * v1 + t2 * v2  # S = v * t
+    s = ('%.2f' % s)
+    return s
 
-def rekurs(num, step):
-    if step == 0:
-        res2 = 1
-        return res2
-    res2 = num * rekurs(num, step - 1)
-    return res2
-
-print(f'Число, полученное с помощью возведения в степень: {stepen()}\n'
-      f'Число, полученное с помощью рекурсии: {rekurs(num, step)}')
+print('Расстояние в км, которое проехал автомобиль:', length())
