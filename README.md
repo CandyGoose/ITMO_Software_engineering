@@ -48,19 +48,19 @@
 
 ## Инфокоммуникационные технологии
 
-[1 - ГОСТ в Ворде](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR1)
+[1 - ГОСТ в Ворде](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR1)
 
-[2 - ГОСТ в Латехе](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR2)
+[2 - ГОСТ в Латехе](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR2)
 
-[3 - Идея мобильного приложения](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR3)
+[3 - Идея мобильного приложения](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR3)
 
-[4 - Презентация мобильного приложения](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR4)
+[4 - Презентация мобильного приложения](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR4)
 
-[5 - UML](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR5)
+[5 - UML](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR5)
 
-[6 - IDEF0](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR6)
+[6 - IDEF0](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR6)
 
-[7 - DFD, IDEF3, BPMN](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/IKT/PR7)
+[7 - DFD, IDEF3, BPMN](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR7)
 
 ## Информатика
 
