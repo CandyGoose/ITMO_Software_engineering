@@ -1,0 +1,12 @@
+\thispagestyle {fancyplain}
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{ВВЕДЕНИЕ}{3}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}ОСНОВНАЯ ИДЕЯ МОБИЛЬНОГО ПРИЛОЖЕНИЯ}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Описание основных функций приложения}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Основные пользователи приложения}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Прототип интерфейса будущего приложения}{7}{section.1.3}%
+\contentsline {chapter}{\numberline {2}ОЦЕНКА РЫНКА}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Обзор аналогов, представленных на рынке}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Обоснование необходимости разработки приложения}{9}{section.2.2}%
+\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{10}{section.2.2}%
+\contentsline {chapter}{\hfil {}СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ\hfil {}}{11}{chapter*.2}%
