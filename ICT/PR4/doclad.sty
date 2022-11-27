@@ -1,0 +1,44 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{doclad}%[2014/06/01 кафедра математического и компьютерного моделирования]
+
+\ProcessOptions
+
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[russian]{babel}
+
+\def\refer{\color{-red!50}}
+\def\remark{\color{-green!10}}
+\def\defin{\color{magenta}}
+\def\comment{\color{violet}}
+
+\mode<presentation> {
+  \setbeamertemplate{navigation symbols}{}
+  \usetheme{CambridgeUS}
+  \usecolortheme{orchid}
+  \setbeamercovered{transparent}
+  \setbeamercolor{title}{fg=red!90!black,bg=red!10!white}
+}
+
+\RequirePackage{animate}
+
+\hypersetup{colorlinks=true}
+
+\RequirePackage{indentfirst} %делать отступ в начале параграфа
+\sloppy % Избавляемся от переполнений
+\clubpenalty=10000 % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца
+\righthyphenmin=2 % Минимальное число символов при переносе - 2.
+
+\RequirePackage{cmap} % Улучшенный поиск русских слов в полученном pdf-файле
+
+\RequirePackage{fancyvrb}
+
+\RequirePackage{amsmath,amssymb,amsfonts,latexsym,mathtext,mathtools}
+
+\RequirePackage{graphicx}\graphicspath{{fig/}}
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\RequirePackage{xtab}
