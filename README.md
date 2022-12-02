@@ -16,6 +16,8 @@
 
 [3 - Подсчет количества шагов на примере транспонирования матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_3/3_1.py)
 
+[4 - Проверка скобок](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_4/1.py)
+
 ### Лабораторные
 
 [1 - Матрицы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_1)
