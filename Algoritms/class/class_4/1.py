@@ -3,9 +3,9 @@ def pr(str):
     cnt = 0
     for i in str:
         cnt += 1
-        if i == "(":
+        if i == '(':
             count += 1
-        elif i == ")":
+        elif i == ')':
             count -= 1
         if count < 0:
             text = f'Ошибка в символе под номером: {cnt}'
