@@ -1,26 +1,21 @@
 def pr(str):
-    count = 0
-    cnt = 0
-    for i in str:
-        cnt += 1
-        if i == '(':
-            count += 1
-        elif i == ')':
-            count -= 1
-        if count < 0:
-            text = f'Ошибка в символе под номером: {cnt}'
-            return text
 
-    if count == 0:
-        text = 'Нет ошибки в вводе.'
-    elif count < cnt:
-        text = f'Ошибка в символе под номером: {count}'
-    elif count == cnt:
-        cnt -= count-1
-        text = f'Ошибка в символе под номером: {cnt}'
+    spisok = []
+
+    for i in range(len(str)):
+        if str[i] == '(':
+            spisok.append(i + 1)
+        else:
+            if spisok == []:
+                spisok.append(i + 1)
+                break
+            else:
+                spisok.pop()
+
+    if spisok == []:
+        print('Ошибки в вводе нет.')
     else:
-        cnt -= count+1
-        text = f'Ошибка в символе под номером: {cnt}'
-    return text
+        print(f'Ошибка в символе под номером: {spisok[0]}')
+
 str = input('Введите скобки: ')
-print(pr(str))
+pr(str)
