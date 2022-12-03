@@ -82,6 +82,8 @@
 
 [5 - Docker](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Informatic/labs/5_lab/web_server)
 
+[6 - Latex](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Informatic/labs/6_lab)
+
 ## Программирование
 
 [1 - Простейшие программы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_1)
