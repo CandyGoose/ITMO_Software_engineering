@@ -1,0 +1,27 @@
+% XeLaTeX document
+\documentclass[12pt,a4paper]{article}
+
+% Редактируем: конфигурация, личные настройки: имя, название предмета и пр. для титульной страницы и метаданных документа здесь
+\include{config}
+
+% Не редактируем: используемые пакеты
+\include{settings/packages}
+
+% Не редактируем: параметры используемых пакетов и не только
+\include{settings/preferences}
+
+% водяной знак для обозначения статуса документа
+%\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+\begin{document}
+% Не редактируем: Титульная страница (формируется автоматически из заданной конфигурации)
+\include{templates/titlepage}
+
+% Не редактируем: Страница содержания (формируется автоматически из section, subsection и пр., указанных в content.tex)
+\include{templates/tocpage}
+
+% Редактируем: всё остальное: вступление, др. этапы, заключение, приложение
+\include{content}
+
+% Не редактируем: Страница библиографии (формируется автоматически из книжек, указанных в refs.bib и пометок \cite{имя_источника} в тексте)
+\include{templates/bibpage}
+\end{document}
