@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  6 DEC 2022 03:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  6 DEC 2022 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,16 +1032,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 99.
+(hyperref)                removing `\\' on input line 97.
 
 [9] [10]
 <pic.jpg, id=248, 667.293pt x 1357.4715pt>
 File: pic.jpg Graphic file (type jpg)
 <use pic.jpg>
-Package pdftex.def Info: pic.jpg  used on input line 136.
+Package pdftex.def Info: pic.jpg  used on input line 134.
 (pdftex.def)             Requested size: 251.52443pt x 511.68115pt.
  [11] [12 <./pic.jpg>]
-Underfull \hbox (badness 1038) in paragraph at lines 152--153
+Underfull \hbox (badness 1038) in paragraph at lines 150--151
 []\T2A/cmr/m/n/14.4 В при-ло-же-нии долж-на быть ре-а-ли-зо-ва-на функ-ция по-м
 о-щи онлайн-
  []
@@ -1058,7 +1058,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 152--153
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 7.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 213.
+(hyperref)                removing `\\' on input line 211.
 
 [17
 
@@ -1075,11 +1075,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfil' on input line 258.
+(hyperref)                removing `\hfil' on input line 256.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfil' on input line 258.
+(hyperref)                removing `\hfil' on input line 256.
 
 [21
 
@@ -1099,7 +1099,7 @@ Here is how much of TeX's memory you used:
 0.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm
 1000.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
 abx1440.pk>
-Output written on PR8.pdf (21 pages, 524265 bytes).
+Output written on PR8.pdf (21 pages, 524135 bytes).
 PDF statistics:
  501 PDF objects out of 1000 (max. 8388607)
  57 named destinations out of 1000 (max. 500000)
