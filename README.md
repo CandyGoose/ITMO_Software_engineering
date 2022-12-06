@@ -64,6 +64,8 @@
 
 [7 - DFD, IDEF3, BPMN](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR7)
 
+[8 - Техническое задание](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR8)
+
 ## Информатика
 
 ### Аннотации
