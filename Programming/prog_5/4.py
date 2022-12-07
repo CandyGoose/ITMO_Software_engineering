@@ -1,4 +1,4 @@
-alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijklmnopqrstuvwxyАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮABCDEFGHIJKLMNOPQRSTUVWXY .,:/\|-+=_'
+alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijklmnoprstuvwxyАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮABCDEFGHIJKLMNOPRSTUVWXY .,:/\|-+=_'
 
 def crypt(text, key):
     cr_text = ''
@@ -10,6 +10,7 @@ def decrypt(cr_text, key):
     return crypt(cr_text, key)
 
 def txt():
+    print('---------------------------------------------------')
     text = input('Введите текст: ')
     key = input('Введите ключ шифрования: ')
     for k in key:
@@ -17,8 +18,10 @@ def txt():
             print('Ошибка! Неправильный ввод.')
             break
     else:
+        print('---------------------------------------------------')
         print('Зашифрованный текст:', crypt(text, int(key)))
         print('Расшифрованный текст:', decrypt(crypt(text, key), int(key)))
+        main()
 
 def main():
 

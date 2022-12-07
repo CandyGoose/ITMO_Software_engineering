@@ -15,7 +15,7 @@ def krug():
             true(k)
         else:
             S = float(a) * float(a) * math.pi  # Нахождение площади круга
-            print("Площадь круга равна " + str(S))
+            print('Площадь круга равна ' + str(S))
             main()
     else:
         print('Ошибка! Неправильный ввод.')
@@ -32,7 +32,7 @@ def pryam():
             true(k)
         else:
             S = float(a) * float(b)  # Нахождение площади прямоугольника
-            print("Площадь прямоугольника равна " + str(S))
+            print('Площадь прямоугольника равна ' + str(S))
             main()
     else:
         print('Ошибка! Неправильный ввод.')
@@ -55,27 +55,26 @@ def tre():
                 p = (float(a) + float(b) + float(c)) / 2
                 S = p * (p - float(a)) * (p - float(b)) * (p - float(c))
                 math.sqrt(S)
-                print("Площадь треугольника равна " + str(S))
+                print('Площадь треугольника равна ' + str(S))
                 main()
             elif (float(c) + float(b) >= float(a)) and (float(a) >= float(c)) and (float(a) >= float(b)):
                 p = (float(a) + float(b) + float(c)) / 2
                 S = p * (p - float(a)) * (p - float(b)) * (p - float(c))
                 math.sqrt(S)
-                print("Площадь треугольника равна " + str(S))
+                print('Площадь треугольника равна ' + str(S))
                 main()
             elif (float(a) + float(c) >= float(b)) and (float(b) >= float(a)) and (float(b) >= float(c)):
                 p = (float(a) + float(b) + float(c)) / 2
                 S = p * (p - float(a)) * (p - float(b)) * (p - float(c))
                 math.sqrt(S)
-                print("Площадь треугольника равна " + str(S))
+                print('Площадь треугольника равна ' + str(S))
                 main()
             else:
-                print("Ошибка в значениях.")
+                print('Ошибка в значениях.')
                 main()
     else:
         print('Ошибка! Неправильный ввод.')
         main()
-
 
 def main():
     print('---------------------------------------------------\n'
