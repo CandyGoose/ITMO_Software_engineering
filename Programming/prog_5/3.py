@@ -13,7 +13,7 @@ def dlina(psw, cnt):
     return cnt
 
 def upper(psw, cnt):
-    if psw.lower() != psw:
+    if psw.lower() != psw:  # Проверка на верхний регистр
         cnt += 1
     return cnt
 
@@ -40,9 +40,13 @@ def pr():
     print('---------------------------------------------------')
     psw = input('Введите пароль: ')
     cnt = 0
-    sm = (non(psw, cnt) + dlina(psw, cnt) + upper(psw, cnt) + lower(psw, cnt) + nm(psw, cnt) + special(psw, cnt))
-    print('Сложность пароля:', sm)
-    main()
+    if ' ' in psw:
+        print('Ошибка в вводе.')
+        main()
+    else:
+        sm = (non(psw, cnt) + dlina(psw, cnt) + upper(psw, cnt) + lower(psw, cnt) + nm(psw, cnt) + special(psw, cnt))
+        print('Сложность пароля:', sm)
+        main()
 
 def main():
 
@@ -51,7 +55,7 @@ def main():
           '1 - Посчитать сложность пароля\n'
           'Q - Выход из программы\n')
 
-    ans = input('Введите номер действия: ')
+    ans = input('Введите действие: ')
     if ans != '':
         for k in ans:
             if k in alf:

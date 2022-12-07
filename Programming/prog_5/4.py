@@ -3,7 +3,7 @@ alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijk
 def crypt(text, key):
     cr_text = ''
     for i in text:
-         cr_text = cr_text + chr(ord(i) ^ int(key))  # ord преобразовывает символ в номер Unicode, а chr наоборот
+         cr_text = cr_text + chr(ord(i) ^ int(key))  # ord преобразовывает символ в номер, а chr наоборот
     return cr_text
 
 def decrypt(cr_text, key):
@@ -12,7 +12,7 @@ def decrypt(cr_text, key):
 def txt():
     print('---------------------------------------------------')
     text = input('Введите текст: ')
-    key = input('Введите ключ шифрования: ')
+    key = input('Введите ключ шифрования (число): ')
     for k in key:
         if k in alf:
             print('Ошибка! Неправильный ввод.')
@@ -30,7 +30,7 @@ def main():
           '1 - Зашифровать/расшифровать текст\n'
           'Q - Выход из программы\n')
 
-    ans = input('Введите номер действия: ')
+    ans = input('Введите действие: ')
     if ans != '':
         for k in ans:
             if k in alf:
