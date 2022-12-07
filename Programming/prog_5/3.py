@@ -42,6 +42,7 @@ def pr():
     cnt = 0
     sm = (non(psw, cnt) + dlina(psw, cnt) + upper(psw, cnt) + lower(psw, cnt) + nm(psw, cnt) + special(psw, cnt))
     print('Сложность пароля:', sm)
+    main()
 
 def main():
 
