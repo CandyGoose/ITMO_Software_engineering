@@ -164,4 +164,14 @@
 
 - [Считалка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr2/4.py)
 
+[Процедурное программирование](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_5)
+
+- [Корни квадратного уравнения](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/1.py)
+
+- [Площади фигур](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/2.py)
+
+- [Сложность пароля](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/3.py)
+
+- [Шифровальщик](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/4.py)
+
 [Домашнее задание](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_dz)
