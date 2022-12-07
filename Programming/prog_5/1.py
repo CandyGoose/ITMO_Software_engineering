@@ -1,19 +1,66 @@
-f1 = 1
-f2 = 1
-num = [1, 1]
+import math
 
-def fib(n, num, f1, f2):
+alf = 'абвгдежзийклмнопрстуфхцчшщъыьэюabcdefghijklmnoprstuvwxyАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮABCDEFGHIJKLMNOPRSTUVWXY ,:/\|+=_'
 
-    i = 0
-    while i < n - 2:
-        f_s = f1 + f2
-        f1 = f2
-        f2 = f_s
-        i = i + 1
-        num.append(f2)  # Добавляем числа в список
+def true(k):
+    if k in alf:
+        print('Ошибка! Неправильный ввод.')
+        main()
 
-    print('Значение этого элемента:', f2)
-    print('Все числа:', num)
+def iks():
+    print('---------------------------------------------------\n')
+    a = input('Введите значение a: ')
+    b = input('Введите значение b: ')
+    c = input('Введите значение c: ')
+    if a != '' and b != '' and c != '':
+        for k in a:
+            true(k)
+        for k in b:
+            true(k)
+        for k in c:
+            true(k)
+        else:
+            discr = float(b) ** 2 - 4 * float(a) * float(c)
+            if discr < 0:
+                print('Корней нет.')
+                main()
+            elif discr == 0:
+                x = -float(b) / (2 * float(a))
+                print('x1,2 = ' + str(x))
+                main()
+            else:
+                x1 = (-float(b) + math.sqrt(discr)) / (2 * float(a))
+                x2 = (-float(b) - math.sqrt(discr)) / (2 * float(a))
+                print('x1 = ' + str(x1))
+                print('x2 = ' + str(x2))
+                main()
 
-n = int(input('Введите номер элемента: '))
-fib(n, num, f1, f2)
+def main():
+
+    print('---------------------------------------------------\n'
+          'Действие:\n'
+          '1 - Посчитать корни\n'
+          'Q - Выход из программы\n')
+
+    ans = input('Введите номер действия: ')
+    if ans != '':
+        for k in ans:
+            if k in alf:
+                print('Ошибка! Неправильный ввод.')
+                main()
+                break
+
+        if ans == 'q' or ans == 'Q':
+            print('---------------------------------------------------')
+            print('Был произведен выход из программы.')
+            exit(0)
+        elif int(ans) == 1:
+            iks()
+        else:
+            print('Ошибка! Неправильный ввод.')
+            main()
+    else:
+        print('Ошибка! Неправильный ввод.')
+        main()
+
+main()
