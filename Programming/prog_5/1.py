@@ -29,7 +29,7 @@ def iks():
                 print('x1,2 = ' + str(x))
                 main()
             else:
-                x1 = (-float(b) + math.sqrt(discr)) / (2 * float(a))
+                x1 = (-float(b) + math.sqrt(discr)) / (2 * float(a))  # Считаем корни
                 x2 = (-float(b) - math.sqrt(discr)) / (2 * float(a))
                 print('x1 = ' + str(x1))
                 print('x2 = ' + str(x2))
@@ -42,7 +42,7 @@ def main():
           '1 - Посчитать корни\n'
           'Q - Выход из программы\n')
 
-    ans = input('Введите номер действия: ')
+    ans = input('Введите действие: ')
     if ans != '':
         for k in ans:
             if k in alf:
