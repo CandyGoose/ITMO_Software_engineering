@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  6 DEC 2022 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  7 DEC 2022 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1085,7 +1085,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ] (PR8.aux)
 Package rerunfilecheck Info: File `PR8.out' has not changed.
-(rerunfilecheck)             Checksum: B7053480C7A3CD75EDA8910EC9299785;10607.
+(rerunfilecheck)             Checksum: C9C0B479BFBA946C20F348CF547ADF9D;10607.
  ) 
 Here is how much of TeX's memory you used:
  17403 strings out of 475385
@@ -1099,7 +1099,7 @@ Here is how much of TeX's memory you used:
 0.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm
 1000.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
 abx1440.pk>
-Output written on PR8.pdf (21 pages, 524135 bytes).
+Output written on PR8.pdf (21 pages, 524130 bytes).
 PDF statistics:
  501 PDF objects out of 1000 (max. 8388607)
  57 named destinations out of 1000 (max. 500000)
