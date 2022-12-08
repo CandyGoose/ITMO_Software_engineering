@@ -1,38 +1,33 @@
-graph = {
-    'Московская' : ['Горьковская','Чкаловская', "Канавинская"],
-    'Канавинская' : ['Бурнаковская'],
-    'Чкаловская' : ['Ленинская'],
-    'Ленинская' : ['Заречная'],
-    'Заречная' : ['Кировская'],
-    'Парк Культуры' : ['a'],
-    'a' : [],
-    'Горьковская' : ['b'],
-    'b' : [],
-    'Кировская' : ['Парк Культуры'],
-    'Бурнаковская' : ['Буревестник'],
-    'Буревестник' : ['c'],
-    'c' : []
-}
+from collections import deque
 
-visited = set()
-doroga = []
-def dfs(visited, graph, node):
-    if node not in visited:
-        visited.add(node)
-        for neighbour in graph[node]:
-            dfs(visited, graph, neighbour)
-            if len(neighbour) != 0:
-                doroga.append(node)
-def vyvod():
-    doroga.reverse()
-    aa = '-'.join(doroga)
-    aaa = aa.split("Московская")
-    del aaa[0]
-    for i in range(len(aaa)):
-        if aaa[i] != aaa[-1]:
-            print('Московская'+aaa[i][:-1])
-        else:
-            print('Московская'+ aaa[i])
+def person_is_seller(name):
+    return name[0] == 'В'
 
-dfs(visited, graph, 'Московская')
-vyvod()
+def search(name):
+    search_queue = deque()
+    search_queue += graph[name]
+    searched = []
+    while search_queue:
+
+        person = search_queue.popleft()
+        if not person in searched:
+            if person_is_seller(person):
+                print(person + " продает Волгу.")
+                return True
+            else:
+                searched.append(person)
+                search_queue += graph[person]
+    else:
+        print('Среди друзей никто не продает Волгу.')
+        return False
+
+graph = {}
+graph ["Я"] = [ "Игорь", "Катя", "Наташа"]
+graph["Игорь"] = ["Максим", "Илья"]
+graph["Катя"] = ["Илья"]
+graph["Наташа"] = ["Глеб", "Сергей"]
+graph["Максим"] = []
+graph["Илья"] = []
+graph["Глеб"] = []
+graph["Сергей"] = []
+(search("Я"))
