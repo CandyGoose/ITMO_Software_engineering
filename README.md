@@ -48,6 +48,14 @@
 
 - [Пирамидальная сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_4/2.2.py)
 
+[5 - Поиск в глубину и ширину](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_5)
+
+- [Поиск в глубину](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_5/2.1.py)
+
+- [Поиск в ширину](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_5/2.2.py)
+
+- [Лабиринт](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_5/3.py)
+
 ## Инфокоммуникационные технологии
 
 [1 - ГОСТ в Ворде](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR1)
