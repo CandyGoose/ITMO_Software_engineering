@@ -8,7 +8,6 @@ docker run  -ti --rm \
             -v "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
             --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
             -e XAUTHORITY \
-            -v "/home:/root" \
             -v "/dev:/dev" \
             --net=host \
             --privileged \
