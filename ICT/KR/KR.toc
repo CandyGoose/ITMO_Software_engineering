@@ -1,0 +1,49 @@
+\thispagestyle {fancyplain}
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{ВВЕДЕНИЕ}{6}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}Анализ предметной области}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Описание предметной области и необходимых функций \\ будущего мобильного приложения, подлежащих реализации}{7}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Описание основных функций приложения}{7}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Основные пользователи приложения}{8}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Обзор аналогов, представленных на рынке}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Обоснование необходимости разработки}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Разработка диаграмм прецедентов и активности для \\ типовых сценариев работы приложения}{11}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Диаграммы прецедентов}{11}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Диаграммы активности для ключевых прецедентов}{13}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Разработка диаграмм IDEF0, DFD, IDEF3 для будущего приложения}{17}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Функциональные модели в стандарте IDEF0}{17}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Диаграммы в стандарте DFD}{23}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Модель в стандарте IDEF3}{28}{subsection.1.5.3}%
+\contentsline {chapter}{\numberline {2}Разработка технического задания на создание мобильного \\ приложения}{33}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Общие сведения}{34}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Наименование системы}{34}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Плановые сроки начала и окончания работы по \\ созданию системы}{34}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Назначение и цели создания системы}{35}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Назначение системы}{35}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Цели создания системы}{35}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Характеристика объектов автоматизации}{36}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Требования к приложению}{37}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Требования к системе в целом}{37}{subsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.1}Требования к режимам функционирования}{37}{subsubsection.2.4.1.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.2}Требования к численности и квалификации \\ персонала}{37}{subsubsection.2.4.1.2}%
+\contentsline {subsubsection}{\numberline {2.4.1.3}Требования к надежности}{38}{subsubsection.2.4.1.3}%
+\contentsline {subsubsection}{\numberline {2.4.1.4}Требования к эргономике и технической эстетике}{38}{subsubsection.2.4.1.4}%
+\contentsline {subsubsection}{\numberline {2.4.1.5}Требования к защите информации от \\ несанкционированного доступа}{39}{subsubsection.2.4.1.5}%
+\contentsline {subsection}{\numberline {2.4.2}Требования к функциям, выполняемым системой}{39}{subsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.2.1}Авторизация пользователя}{39}{subsubsection.2.4.2.1}%
+\contentsline {subsubsection}{\numberline {2.4.2.2}Просмотр каталога}{40}{subsubsection.2.4.2.2}%
+\contentsline {subsubsection}{\numberline {2.4.2.3}Просмотр и написание комментариев}{42}{subsubsection.2.4.2.3}%
+\contentsline {subsubsection}{\numberline {2.4.2.4}Помощь онлайн-консультанта}{42}{subsubsection.2.4.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.2.5}Настройки профиля}{42}{subsubsection.2.4.2.5}%
+\contentsline {subsection}{\numberline {2.4.3}Требования к видам обеспечения}{43}{subsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.3.1}Требования к информационному обеспечению}{43}{subsubsection.2.4.3.1}%
+\contentsline {subsubsection}{\numberline {2.4.3.2}Требования к программному обеспечению}{43}{subsubsection.2.4.3.2}%
+\contentsline {subsubsection}{\numberline {2.4.3.3}Требования к техническому обеспечению}{43}{subsubsection.2.4.3.3}%
+\contentsline {subsubsection}{\numberline {2.4.3.4}Требования к организационному обеспечению}{44}{subsubsection.2.4.3.4}%
+\contentsline {section}{\numberline {2.5}Состав и содержание работ по созданию приложения}{45}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Порядок контроля и приемки приложения}{46}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Требования к составу и содержанию работ по подготовке \\ объекта автоматизации к вводу системы в действие}{47}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Требования к документированию}{48}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Источники разработки}{49}{section.2.9}%
+\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{50}{section.2.9}%
+\contentsline {chapter}{\hfil {}СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ\hfil {}}{51}{chapter*.23}%
