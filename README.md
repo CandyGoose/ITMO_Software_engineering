@@ -74,6 +74,8 @@
 
 [8 - Техническое задание](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/PR8)
 
+[Курсовая работа](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/ICT/KR)
+
 ## Информатика
 
 ### Аннотации
