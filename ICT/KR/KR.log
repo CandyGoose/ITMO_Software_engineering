@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  10 DEC 2022 23:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  12 DEC 2022 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1252,7 +1252,7 @@ Here is how much of TeX's memory you used:
 1000.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
 arm1440.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
 0\labx1440.pk>
-Output written on KR.pdf (51 pages, 2176923 bytes).
+Output written on KR.pdf (51 pages, 2176925 bytes).
 PDF statistics:
  855 PDF objects out of 1000 (max. 8388607)
  129 named destinations out of 1000 (max. 500000)
