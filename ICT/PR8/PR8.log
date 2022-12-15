@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  7 DEC 2022 16:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.17)  15 DEC 2022 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1058,7 +1058,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 150--151
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 7.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 211.
+(hyperref)                removing `\\' on input line 225.
 
 [17
 
@@ -1075,11 +1075,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfil' on input line 256.
+(hyperref)                removing `\hfil' on input line 270.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfil' on input line 256.
+(hyperref)                removing `\hfil' on input line 270.
 
 [21
 
@@ -1088,10 +1088,10 @@ Package rerunfilecheck Info: File `PR8.out' has not changed.
 (rerunfilecheck)             Checksum: C9C0B479BFBA946C20F348CF547ADF9D;10607.
  ) 
 Here is how much of TeX's memory you used:
- 17403 strings out of 475385
- 283112 string characters out of 2777378
+ 17404 strings out of 475385
+ 283128 string characters out of 2777378
  637121 words of memory out of 3000000
- 38448 multiletter control sequences out of 15000+600000
+ 38449 multiletter control sequences out of 15000+600000
  474597 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,17n,91p,966b,652s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1099,7 +1099,7 @@ Here is how much of TeX's memory you used:
 0.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm
 1000.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
 abx1440.pk>
-Output written on PR8.pdf (21 pages, 524130 bytes).
+Output written on PR8.pdf (21 pages, 524712 bytes).
 PDF statistics:
  501 PDF objects out of 1000 (max. 8388607)
  57 named destinations out of 1000 (max. 500000)
