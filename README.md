@@ -98,7 +98,7 @@
 
 ## Программирование
 
-[1 - Простейшие программы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_1)
+1 - Простейшие программы
 
 - [Hello](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_1/hello.py)
 
@@ -110,7 +110,7 @@
 
 - [Секунды в нормальный вид времени](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_1/sec.py)
 
-[2 - Типы данных, ветвления, циклы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_2)
+2 - Типы данных, ветвления, циклы
 
 - [Имя и возраст](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_2/name%20and%20age.py)
 
@@ -124,7 +124,7 @@
 
 - [Время суток](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_2/morning.py)
 
-[3 - Работа с числами](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_3)
+3 - Работа с числами
 
 - [Четное/нечетное](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_3/1.py)
 
@@ -136,7 +136,7 @@
 
 - [Угадай число от 1 до 100](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_3/5.py)
 
-[Контрольная 1 - Реализация алгоритмических конструкций](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_kr)
+Контрольная 1 - Реализация алгоритмических конструкций
 
 - [Акронимы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr/1.py)
 
@@ -146,7 +146,7 @@
 
 - [Умножение чисел до 10 и после на разные числа](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr/4.py)
 
-[4 - Обработка строк и массивов](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_4)
+4 - Обработка строк и массивов
 
 - [Сокращение имени и отчества](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/1.py)
 
@@ -164,7 +164,7 @@
 
 - [Построение по росту](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/8.py)
 
-[Контрольная 2 - Функции](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_kr2)
+Контрольная 2 - Функции
 
 - [Возведение числа в степень 2 способами (обычный и рекурсия)](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr2/1.py)
 
@@ -174,7 +174,7 @@
 
 - [Считалка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr2/4.py)
 
-[Процедурное программирование](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_5)
+5 - Процедурное программирование
 
 - [Корни квадратного уравнения](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/1.py)
 
@@ -184,4 +184,6 @@
 
 - [Шифровальщик](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/4.py)
 
-[Домашнее задание](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_dz)
+Домашнее задание
+
+- [Реализация программной модели инфокоммуникационной системы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_dz)
