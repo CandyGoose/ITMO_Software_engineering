@@ -4,7 +4,7 @@
 
 ### В классе
 
-[1 - if, while, for](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/class/class_1)
+1 - if, while, for
 
 - [FizzBuzz](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_1/FizzBuzz_t_1.py)
 
@@ -12,15 +12,21 @@
 
 - [Фибоначчи](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_1/fib_t_0.py)
 
-[2 - Бинарный поиск](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_2/binary_t_1.py)
+2 - Деревья и графы
 
-[3 - Подсчет количества шагов на примере транспонирования матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_3/3_1.py)
+- [Бинарный поиск](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_2/binary_t_1.py)
 
-[4 - Проверка скобок](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_4/1.py)
+3 - Оценка сложности алгоритмов
+
+- [Подсчет количества шагов на примере транспонирования матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_3/3_1.py)
+
+4 - LIFO, FIFO
+
+- [Проверка скобок](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_4/1.py)
 
 ### Лабораторные
 
-[1 - Матрицы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_1)
+1 - Матрицы
 
 - [Транспонирование, умножение и ранг матриц вручную](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_1/matrix_t_2.py)
 
@@ -30,13 +36,15 @@
 
 - [Timeit для обратной матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_1/time_t_4.py)
 
-[2 - Акинатор для котиков](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_2)
+2 - Деревья
 
-[3 - Сложность алгоритмов](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_3)
+- [Акинатор для котиков](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_2)
+
+3 - Сложность алгоритмов, начало сортировок
 
 - [Пузырьковая сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_3/puzir.py)
 
-[4 - Сортировки](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_4)
+4 - Сортировки
 
 - [Быстрая сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_4/soort.py)
 
@@ -48,7 +56,7 @@
 
 - [Пирамидальная сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_4/2.2.py)
 
-[5 - Поиск в глубину и ширину](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_5)
+5 - Поиск в глубину и ширину
 
 - [Поиск в глубину](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_5/2.1.py)
 
