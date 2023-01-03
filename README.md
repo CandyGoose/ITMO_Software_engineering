@@ -158,7 +158,7 @@
 
 - [Логин в базе](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/5.py)
 
-- [Количество эелементов в списке, среднее значение, сумма, минимальное/максимальное значение и произведение между ними](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/6.py)
+- [Количество элементов в списке, среднее значение, сумма, минимальное/максимальное значение и произведение между ними](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/6.py)
 
 - [Сдвиг в массиве](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/7.2.py)
 
