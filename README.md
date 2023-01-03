@@ -4,7 +4,7 @@
 
 ### В классе
 
-[1 - if, while, for](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/class/class_1)
+1 - if, while, for
 
 - [FizzBuzz](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_1/FizzBuzz_t_1.py)
 
@@ -12,15 +12,21 @@
 
 - [Фибоначчи](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_1/fib_t_0.py)
 
-[2 - Бинарный поиск](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_2/binary_t_1.py)
+2 - Деревья и графы
 
-[3 - Подсчет количества шагов на примере транспонирования матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_3/3_1.py)
+- [Бинарный поиск](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_2/binary_t_1.py)
 
-[4 - Проверка скобок](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_4/1.py)
+3 - Оценка сложности алгоритмов
+
+- [Подсчет количества шагов на примере транспонирования матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_3/3_1.py)
+
+4 - LIFO, FIFO
+
+- [Проверка скобок](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/class/class_4/1.py)
 
 ### Лабораторные
 
-[1 - Матрицы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_1)
+1 - Матрицы
 
 - [Транспонирование, умножение и ранг матриц вручную](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_1/matrix_t_2.py)
 
@@ -30,13 +36,15 @@
 
 - [Timeit для обратной матрицы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_1/time_t_4.py)
 
-[2 - Акинатор для котиков](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_2)
+2 - Деревья
 
-[3 - Сложность алгоритмов](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_3)
+- [Акинатор для котиков](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_2)
+
+3 - Сложность алгоритмов, начало сортировок
 
 - [Пузырьковая сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_3/puzir.py)
 
-[4 - Сортировки](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_4)
+4 - Сортировки
 
 - [Быстрая сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_4/soort.py)
 
@@ -48,7 +56,7 @@
 
 - [Пирамидальная сортировка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_4/2.2.py)
 
-[5 - Поиск в глубину и ширину](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Algoritms/labs/lab_5)
+5 - Поиск в глубину и ширину
 
 - [Поиск в глубину](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Algoritms/labs/lab_5/2.1.py)
 
@@ -98,7 +106,7 @@
 
 ## Программирование
 
-[1 - Простейшие программы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_1)
+1 - Простейшие программы
 
 - [Hello](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_1/hello.py)
 
@@ -110,7 +118,7 @@
 
 - [Секунды в нормальный вид времени](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_1/sec.py)
 
-[2 - Типы данных, ветвления, циклы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_2)
+2 - Типы данных, ветвления, циклы
 
 - [Имя и возраст](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_2/name%20and%20age.py)
 
@@ -124,7 +132,7 @@
 
 - [Время суток](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_2/morning.py)
 
-[3 - Работа с числами](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_3)
+3 - Работа с числами
 
 - [Четное/нечетное](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_3/1.py)
 
@@ -136,7 +144,7 @@
 
 - [Угадай число от 1 до 100](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_3/5.py)
 
-[Контрольная 1 - Реализация алгоритмических конструкций](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_kr)
+Контрольная 1 - Реализация алгоритмических конструкций
 
 - [Акронимы](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr/1.py)
 
@@ -146,7 +154,7 @@
 
 - [Умножение чисел до 10 и после на разные числа](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr/4.py)
 
-[4 - Обработка строк и массивов](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_4)
+4 - Обработка строк и массивов
 
 - [Сокращение имени и отчества](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/1.py)
 
@@ -164,7 +172,7 @@
 
 - [Построение по росту](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_4/8.py)
 
-[Контрольная 2 - Функции](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_kr2)
+Контрольная 2 - Функции
 
 - [Возведение числа в степень 2 способами (обычный и рекурсия)](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr2/1.py)
 
@@ -174,7 +182,7 @@
 
 - [Считалка](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_kr2/4.py)
 
-[Процедурное программирование](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_5)
+5 - Процедурное программирование
 
 - [Корни квадратного уравнения](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/1.py)
 
@@ -184,4 +192,6 @@
 
 - [Шифровальщик](https://github.com/VeraKasianenko/itmo_1_sem/blob/main/Programming/prog_5/4.py)
 
-[Домашнее задание](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_dz)
+Домашнее задание
+
+- [Реализация программной модели инфокоммуникационной системы](https://github.com/VeraKasianenko/itmo_1_sem/tree/main/Programming/prog_dz)
