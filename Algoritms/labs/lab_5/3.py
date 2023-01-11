@@ -1,4 +1,3 @@
-from PIL import Image, ImageDraw
 images = []
 
 a = [
@@ -79,4 +78,3 @@ the_path.reverse()
 print_m(m)
 print()
 print(the_path)
-
