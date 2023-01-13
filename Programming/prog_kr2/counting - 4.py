@@ -1,7 +1,7 @@
 name = list(input('Введите имена через пробел: ').split())
 k = int(input('Введите какой по счету человек выбывает из круга: '))
 
-def voda():
+def voda(name, k):
     list = [i for i in range(1, len(name) + 1)]
     num = 0
     while list:
@@ -14,4 +14,4 @@ def voda():
             print('Имя последнего человека:', name[num])
         del list[num]  # Удаляем из списка водящего
         del name[num]
-voda()
+voda(name, k)

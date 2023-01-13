@@ -1,7 +1,7 @@
 num = int(input('Введите число: '))
 step = int(input('Введите степень: '))
 
-def stepen():
+def stepen(num, step):
     res1 = num**step
     return res1
 
@@ -16,5 +16,5 @@ def rekurs(num, step):
         res2 = 'Ошибка ввода'
         return res2
 
-print(f'Число, полученное с помощью возведения в степень: {stepen()}\n'
+print(f'Число, полученное с помощью возведения в степень: {stepen(num, step)}\n'
       f'Число, полученное с помощью рекурсии: {rekurs(num, step)}')
