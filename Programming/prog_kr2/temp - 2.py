@@ -1,6 +1,6 @@
 temp = [20, 21, 20, 'None', 21, 24, 'None', 24, 25, 22]
 
-def sred():
+def sred(temp):
     un_temp = []
     for i in range(len(temp)):
         if temp[i] == 'None':
@@ -12,4 +12,4 @@ def sred():
     return res
 
 print('Список температур:', temp)
-print('Среднее значение температуры:', sred())
+print('Среднее значение температуры:', sred(temp))
