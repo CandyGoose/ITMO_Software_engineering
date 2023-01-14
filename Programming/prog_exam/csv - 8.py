@@ -4,15 +4,12 @@
 '''
 
 import datetime
-import logging
 
 # Список названий файлов
 files = ['file_1.csv', 'file_2.csv']
 
 # Текущая дата
 d = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-
-logfile = 'logfile_' + d + '.log'
 
 # Название нового файла
 copy_file = d + '_' + 'copy_file.csv'
