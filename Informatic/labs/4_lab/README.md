@@ -37,6 +37,10 @@
 Загрузить файл схемы, реализованной в *Cisco Packet Tracer* в этот репозиторий. 
 Добавить в файл README.md скриншот схемы виртуальной сети.
 
+<h1 align="center">Скриншот</p>
+
+![PrtSc](https://user-images.githubusercontent.com/112972833/212992796-68aea0b1-2cb6-4f59-9999-92002e1fa1ef.png)
+
 ## Дополнительные источники
 
 * [Установка Cisco Packet Tracer](https://linuxhint.com/install_packet_tracer_ubuntu_1804/)
