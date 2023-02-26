@@ -1,0 +1,182 @@
+\NeedsTeXFormat{LaTeX2e}
+% \ProvidesPackage{gost}[2014/06/01 кафедра математического и компьютерного моделирования]
+
+\ProcessOptions
+
+\hoffset 0pt
+\voffset 0pt
+
+\RequirePackage[
+  a4paper, includehead, includefoot, mag=1000,
+  headsep=0mm, headheight=0mm,
+  left=25mm, right=15mm, top=20mm, bottom=20mm
+]{geometry}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[russian]{babel}
+
+% \RequirePackage{cmap} % Улучшенный поиск русских слов в полученном pdf-файле
+\RequirePackage[unicode, pdftex]{hyperref}
+\RequirePackage{pdfpages}
+\RequirePackage[nottoc]{tocbibind}
+
+\RequirePackage[onehalfspacing]{setspace} %"умное" расстояние между строк - установить 1.5 интервала от нормального
+\RequirePackage{cite}  %"умные" библиографические ссылки (сортировка и сжатие)
+\RequirePackage{indentfirst} %делать отступ в начале параграфа
+\RequirePackage{enumerate}  %создание и автоматическая нумерация списков
+\RequirePackage{longtable} % Длинные таблицы
+\RequirePackage{multirow,makecell,array} % Улучшенное форматирование таблиц
+\RequirePackage{graphicx} \graphicspath{{fig/}}
+\RequirePackage{float}
+\RequirePackage{pdflscape} % Для включения альбомных страниц
+
+
+\renewcommand{\rmdefault}{ftm} % Включаем Times New Roman
+\renewcommand{\sfdefault}{far} % Включаем Arial
+%%% Выравнивание и переносы %%%
+\sloppy % Избавляемся от переполнений
+\clubpenalty=10000 % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца
+\righthyphenmin=2 % Минимальное число символов при переносе - 2.
+
+\RequirePackage{fancyvrb}
+
+\RequirePackage{amssymb,amsmath,amsfonts,latexsym,mathtext} %расширенные наборы  математических символов
+
+\RequirePackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{Теорема}
+\newtheorem{proposition}[theorem]{Предложение}
+\newtheorem{corollary}[theorem]{Следствие}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{definition}[theorem]{Определение}
+\newtheorem{example}[theorem]{Пример}
+\newtheorem{remark}[theorem]{Замечание}
+
+\RequirePackage[tableposition=top]{caption}
+\DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+\DeclareCaptionLabelSeparator{gost}{~---~}
+% \captionsetup{labelsep=gost,justification=justified,singlelinecheck=off}
+\captionsetup[figure]{labelformat=gostfigure, labelsep=gost}
+\captionsetup[table]{labelformat=gosttable, labelsep=gost,justification=justified,singlelinecheck=off}
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\rfoot{\fancyplain{}{\thepage}}
+
+\fancypagestyle{plain}{ 
+    \fancyhf{}
+    \rfoot{\thepage}}
+    
+% \makeatletter 
+% \renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi \thispagestyle{fancyplain}%
+% \global\@topnum\z@ \@afterindentfalse \secdef\@chapter\@schapter} 
+% \makeatother
+
+\addtocontents{toc}{\protect\thispagestyle{fancyplain}}
+
+\setcounter{page}{1}
+
+\RequirePackage{titlesec}
+\titleformat{\chapter}[block] 
+	{\normalsize\bfseries}
+	{\thechapter}
+	{1em}{}
+	
+\titleformat{\section}[block] 
+	{\normalsize\bfseries}
+	{\thesection}
+	{1em}{}
+	
+\titleformat{\subsection}[block] 
+	{\normalsize\bfseries}
+	{\thesubsection}
+	{1em}{}
+
+\titleformat{\paragraph}[block] 
+	{\normalsize\bfseries}
+	{\thesection}
+	{1em}{}
+
+	
+\titlespacing{\chapter}{\parindent}{-30pt}{8pt}
+\titlespacing{\section}{\parindent}{*4}{*4}
+\titlespacing{\subsection}{\parindent}{*4}{*4}
+\titlespacing{\paragraph}{\parindent}{*4}{*4}
+
+\addto\captionsrussian{%
+  \renewcommand\contentsname{CОДЕРЖАНИЕ}
+  \renewcommand\appendixname{ПРИЛОЖЕНИЕ}
+  \renewcommand\bibname{\hfil{}СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ\hfil{}}
+}
+
+\RequirePackage{enumitem}
+\makeatletter
+    \AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+\setlist{nolistsep}
+\renewcommand{\labelitemi}{-}
+%\renewcommand{\labelenumi}{\asbuk{enumi})}
+%\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\RequirePackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hspace{0.38\textwidth} \bfseries\MakeUppercase}
+\renewcommand{\cftbeforetoctitleskip}{-1em}
+\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}}
+\renewcommand{\cftchapfont}{\normalsize\bfseries}
+\renewcommand{\cftsecfont}{\hspace{31pt}}
+\renewcommand{\cftsubsecfont}{\hspace{11pt}}
+\renewcommand{\cftbeforechapskip}{1em}
+\renewcommand{\cftparskip}{-1mm}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\setcounter{tocdepth}{2} % задать глубину оглавления — до subsection включительно
+
+\newcommand{\likechapterheading}[1]{
+    \clearpage
+    \begin{center}
+    \textbf{\MakeUppercase{#1}}
+    \end{center}}
+
+\newcommand{\abbreviations}{\likechapterheading{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}\addcontentsline{toc}{chapter}{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}}
+\newcommand{\definitions}{\likechapterheading{ОПРЕДЕЛЕНИЯ}\addcontentsline{toc}{chapter}{ОПРЕДЕЛЕНИЯ}}
+\newcommand{\abbrevdef}{\likechapterheading{ОПРЕДЕЛЕНИЯ, ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}\addcontentsline{toc}{chapter}{ОПРЕДЕЛЕНИЯ, ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}}
+\newcommand{\intro}{\likechapterheading{ВВЕДЕНИЕ}\addcontentsline{toc}{chapter}{ВВЕДЕНИЕ}}
+\newcommand{\conclusions}{\likechapterheading{ЗАКЛЮЧЕНИЕ}\addcontentsline{toc}{chapter}{ЗАКЛЮЧЕНИЕ}}
+
+\makeatletter
+  \renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+
+\renewcommand{\rmdefault}{cmr} % Шрифт с засечками
+
+\renewcommand{\sfdefault}{cmss} % Шрифт без засечек
+
+\renewcommand{\ttdefault}{cmtt} % Моноширинный шрифт
+
+\makeatletter
+\newcommand\appendix@chapter[1]{%
+  \renewcommand{\@makeschapterhead}[1]{\@makechapterhead{#1}}%
+  \renewcommand{\thechapter}{\Asbuk{chapter}}%
+  \refstepcounter{chapter}%
+  \orig@chapter*{\appendixname~\thechapter~#1}%
+  \addcontentsline{toc}{chapter}{\appendixname~\thechapter~~#1}%
+}
+\let\orig@chapter\chapter
+\g@addto@macro\appendix{\let\chapter\appendix@chapter}
+\makeatother
+
+\newcommand{\Appendix}{
+\appendix
+\singlespacing
+\renewcommand\thechapter{\Asbuk{chapter}}
+\titleformat{\chapter}[display]
+	{\filcenter}
+	{\centering\MakeUppercase{\appendixname} \thechapter}
+	{8pt}
+	{\bfseries}{}
+}
