@@ -1,0 +1,49 @@
+% настройка кодировки, шрифтов и русского языка
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+% рабочие ссылки в документе
+\usepackage{hyperref}
+
+% графика
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% поворот страницы
+\usepackage{pdflscape}
+
+% качественные листинги кода
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{lstfiracode}
+
+% отключение копирования номеров строк из листинга, работает не во всех просмотрщиках (в Adobe Reader работает)
+\usepackage{accsupp}
+\newcommand\emptyaccsupp[1]{\BeginAccSupp{ActualText={}}#1\EndAccSupp{}}
+\let\theHFancyVerbLine\theFancyVerbLine
+\def\theFancyVerbLine{\rmfamily\tiny\emptyaccsupp{\arabic{FancyVerbLine}}}
+
+% библиография
+\bibliographystyle{templates/gost-numeric.bbx}
+\usepackage{csquotes}
+\usepackage[parentracker=true,backend=biber,hyperref=true,bibencoding=utf8,style=numeric-comp,language=auto,autolang=other,citestyle=gost-numeric,defernumbers=true,bibstyle=gost-numeric,sorting=ntvy]{biblatex}
+
+% установка полей
+\usepackage{geometry}
+
+% нумерация картинок по секциям
+\usepackage{chngcntr}
+
+% дополнительные команды для таблиц
+\usepackage{booktabs}
+
+% для заголовков
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage[dotinlabels]{titletoc}
+
+% разное для математики
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools}
+
+% водяной знак на документе, см. main.tex
+\usepackage[printwatermark]{xwatermark}
