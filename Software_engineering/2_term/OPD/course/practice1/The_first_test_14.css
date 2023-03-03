@@ -1,0 +1,38 @@
+/* Классы для оформления */
+.cite {
+    padding: 5px 10px;
+    background: #f5f5f5;
+    border-left: 2px solid #ccc;
+    font-style: italic;
+}
+
+/* Служебные стили */
+body {
+    width: 260px;
+    margin: 0;
+    padding: 0 20px;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: black;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: normal;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin: 1em 0;
+    color: #666;
+}

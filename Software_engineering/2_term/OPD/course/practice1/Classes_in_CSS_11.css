@@ -1,0 +1,27 @@
+body {
+    font-family: Tahoma, serif;
+}
+
+h1 {
+    color: #999999;
+}
+
+strong {
+    color: green;
+}
+
+em {
+    color: red;
+}
+
+.learned-ok {
+    color: green;
+}
+
+.learning-in-progress {
+    color: orange;
+}
+
+.not-learned {
+    color: red;
+}
