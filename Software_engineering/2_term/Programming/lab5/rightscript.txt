@@ -3,8 +3,9 @@ Script_Org
 12
 3
 12
+name
 3
-
+TRUST
 newstr
 
 show
