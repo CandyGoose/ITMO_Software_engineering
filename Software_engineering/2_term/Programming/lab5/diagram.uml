@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>managers</OriginalElement>
+  <nodes>
+    <node x="3105.1812443642925" y="175.8512173128944">managers.Validator</node>
+    <node x="986.6812443642925" y="-48.44995491433724">managers.CommandManager</node>
+    <node x="1148.3769161406672" y="628.2750225428314">commands.SaveCommand</node>
+    <node x="1796.6812443642925" y="-48.44995491433724">managers.CollectionManager</node>
+    <node x="3278.1812443642925" y="807.8719567177637">commands.SortCommand</node>
+    <node x="1755.961226330027" y="1270.0495942290352">commands.RemoveFirstCommand</node>
+    <node x="819.7484220018034" y="1243.1334535617673">commands.ExitCommand</node>
+    <node x="880.0" y="763.0">commands.UpdateCommand</node>
+    <node x="3146.0" y="1270.0495942290352">commands.AddCommand</node>
+    <node x="1968.6257889990984" y="1135.4688908926962">commands.ShuffleCommand</node>
+    <node x="1085.038773669973" y="1270.0495942290352">commands.ShowCommand</node>
+    <node x="3365.1812443642925" y="175.8512173128944">App</node>
+    <node x="2021.5" y="692.0">commands.AbstractCommand</node>
+    <node x="590.9612263300271" y="994.0946798917944">commands.HistoryCommand</node>
+    <node x="3099.6812443642925" y="-48.44995491433747">data.OrganizationType</node>
+    <node x="2390.0" y="1135.4688908926962">commands.PrintFieldDescendingAnnualTurnoverCommand</node>
+    <node x="2570.8187556357075" y="763.0">commands.PrintDescendingCommand</node>
+    <node x="2466.6812443642925" y="-48.44995491433747">managers.Console</node>
+    <node x="2957.0" y="763.0">commands.InfoCommand</node>
+    <node x="1402.0" y="1270.0495942290352">commands.RemoveByIdCommand</node>
+    <node x="1443.6812443642925" y="-48.44995491433724">managers.OrganizationAsker</node>
+    <node x="2919.5" y="1135.4688908926962">commands.PrintUniqueEmployeesCountCommand</node>
+    <node x="3370.6812443642925" y="-48.44995491433747">data.Address</node>
+    <node x="2870.6812443642925" y="-48.44995491433747">data.Coordinates</node>
+    <node x="3268.1812443642925" y="507.27502254283127">exceptions.MustBeNotEmptyException</node>
+    <node x="2117.6812443642925" y="-48.44995491433747">managers.FileManager</node>
+    <node x="2047.5" y="539.0">commands.ICommand</node>
+    <node x="583.6812443642925" y="-53.44995491433724">data.Organization</node>
+    <node x="2982.1812443642925" y="507.27502254283127">exceptions.NotInDeclaredLimitsException</node>
+    <node x="1602.2064923354374" y="1135.4688908926962">commands.HelpCommand</node>
+    <node x="2941.1812443642925" y="373.15238954012625">exceptions.WrongAmountOfElementsException</node>
+    <node x="2747.1009918845807" y="1270.0495942290352">commands.ClearCommand</node>
+    <node x="2203.2515779981964" y="1270.0495942290352">commands.ExecuteScriptCommand</node>
+    <node x="3012.1812443642925" y="619.9675383228132">exceptions.ScriptRecursionException</node>
+    <node x="3268.1812443642925" y="619.9675383228132">exceptions.HistoryIsEmptyException</node>
+    <node x="3268.1812443642925" y="373.15238954012625">exceptions.IncorrectInputInScriptException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="commands.PrintFieldDescendingAnnualTurnoverCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="2596.5" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.SortCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="3398.1812443642925" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.ExitCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="908.7484220018034" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.RemoveFirstCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="1897.461226330027" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.ClearCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="2869.6009918845807" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.ShowCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="1208.538773669973" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.HistoryCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="679.9612263300271" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.HelpCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="1691.2064923354374" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.InfoCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="1.1368683772161603E-13" y="-40.5" />
+      <point x="3076.5" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.ShuffleCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="2096.1257889990984" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.SaveCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="1305.8769161406672" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.UpdateCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="1060.5" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.AbstractCommand" target="commands.ICommand" relationship="REALIZATION">
+      <point x="0.0" y="-111.5" />
+      <point x="0.0" y="51.5" />
+    </edge>
+    <edge source="commands.RemoveByIdCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="1544.0" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.AddCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="3318.0" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.PrintDescendingCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="2722.8187556357075" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.ExecuteScriptCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="2304.7515779981964" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+    <edge source="commands.PrintUniqueEmployeesCountCommand" target="commands.AbstractCommand" relationship="GENERALIZATION">
+      <point x="0.0" y="-40.5" />
+      <point x="3103.5" y="940.0" />
+      <point x="2136.5" y="940.0" />
+      <point x="0.0" y="111.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.22291457286432162" showDependencies="false" x="2157.5" y="1064.6307484220017" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,40 @@
+package commands;
+
+import exceptions.WrongAmountOfElementsException;
+import managers.CollectionManager;
+import managers.Console;
+
+import java.util.ArrayList;
+
+/**
+ * Выводит уникальные значения поля employeesCount организаций в системе в порядке убывания
+ */
+public class PrintUniqueEmployeesCountCommand extends AbstractCommand {
+    private final CollectionManager collectionManager;
+
+    public PrintUniqueEmployeesCountCommand(CollectionManager collectionManager) {
+        super("print_unique_employees_count", "вывести уникальные значения поля employeesCount всех элементов в коллекции");
+        this.collectionManager = collectionManager;
+    }
+
+    /**
+     * Выводит все типы организаций в системе в порядке убывания
+     * 
+     * @param argument аргумент, переданный команде
+     * @return boolean type
+     */
+    @Override
+    public boolean execute(String argument) {
+        try {
+            if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
+            ArrayList<Long> employeesCount = new ArrayList<Long>(collectionManager.getSetEmployeesCount()) {
+            };
+            if (employeesCount.isEmpty()) Console.printLn("Нет значений.");
+            else Console.printLn("Уникальные значения поля employeesCount: " + employeesCount.toString().replaceAll("^\\[|\\]$", ""));
+            return true;
+        } catch (WrongAmountOfElementsException e){
+            Console.printError("Использование '" + argument + "' в " + getName());
+        }
+        return false;
+    }
+}

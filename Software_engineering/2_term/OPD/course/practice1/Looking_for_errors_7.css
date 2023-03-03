@@ -1,0 +1,18 @@
+body {
+    font-family: Georgia, serif;
+}
+
+.photocard {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 0 #E7471E;
+}
+
+.nice-cite {
+    margin: 1.5em 0;
+    padding: 0.5em 25px;
+    line-height: 1.5;
+    background: #f5f5f5;
+    border-left: 5px solid #E7471E;
+}

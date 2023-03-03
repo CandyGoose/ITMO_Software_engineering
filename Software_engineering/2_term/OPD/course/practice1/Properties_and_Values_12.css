@@ -1,0 +1,22 @@
+body {
+    font-family: Tahoma, serif;
+}
+
+h1 {
+    color: #999999;
+}
+
+.learned-ok {
+    color: green;
+    /* text-decoration: line-through; */
+}
+
+.learning-in-progress {
+    color: orange;
+    /* padding-left: 15px; */
+}
+
+.not-learned {
+    color: red;
+    /* background-color: #FFF0F0; */
+}

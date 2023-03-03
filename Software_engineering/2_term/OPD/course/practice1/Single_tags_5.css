@@ -1,0 +1,12 @@
+body {
+    font-family: Georgia, serif;
+}
+
+/* Пример оформления цитаты */
+blockquote {
+    margin: 1.5em 0;
+    padding: 0.5em 15px;
+    line-height: 1.5;
+    background: #f9f9f9;
+    border-left: 2px solid #ccc;
+}
