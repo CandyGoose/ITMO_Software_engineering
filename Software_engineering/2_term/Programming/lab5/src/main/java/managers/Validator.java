@@ -28,42 +28,25 @@ public class Validator {
         for(Iterator<Organization> iterator = organization.iterator(); iterator.hasNext(); ){
             Organization org = iterator.next();
             if(org.getId() == null || org.getId() <= 0) {
-                iterator.remove();
-                Console.printError("Ошибка в значении ID, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
             if(org.getName() == null || org.getName().equals("")) {
-                iterator.remove();
-                Console.printError("Ошибка в имени организации, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
             if(org.getCoordinates() == null) {
-                iterator.remove();
-                Console.printError("Ошибка в координатах, остановка приложения.");
-                System.exit(0);}
-            else {if(org.getCoordinates().getX() > 741) {
-                iterator.remove();
-                Console.printError("Ошибка в координатах, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
+            else {
+                if(org.getCoordinates().getX() > 741) {
+                iterator.remove();}
                 if(org.getCoordinates().getY() == null) {
-                    iterator.remove();
-                    Console.printError("Ошибка в координатах, остановка приложения.");
-                    System.exit(0);}
+                    iterator.remove();}
             }
             if(org.getCreationDate() == null) {
-                iterator.remove();
-                Console.printError("Ошибка в дате, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
             if(org.getAnnualTurnover() == null || org.getAnnualTurnover() <= 0) {
-                iterator.remove();
-                Console.printError("Ошибка в значении годового оборота, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
             if(org.getEmployeesCount() <= 0) {
-                iterator.remove();
-                Console.printError("Ошибка в количестве сотрудников, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
             if(org.getType() == null) {
-                iterator.remove();
-                Console.printError("Ошибка в типе организации, остановка приложения.");
-                System.exit(0);}
+                iterator.remove();}
         }
         return organization;
     }
