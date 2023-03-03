@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("Добро пожаловать!\n\nЧтение данных...");
+        System.out.println("Добро пожаловать!\nЧтение данных...");
 
         try (Scanner userScanner = new Scanner(System.in)) {
 
