@@ -65,7 +65,7 @@ public class FileManager {
                 collectionFileWriter.write(buffer, 0, buffer.length);
                 collectionFileWriter.flush();
 
-                Console.printLn("Коллекция была успешно сохранена в файл.");
+                Console.printLn("Файл сохранен.");
             } catch (IOException exception) {
                 Console.printError("Файл не может быть открыт или является директорией.");
             }
@@ -101,8 +101,7 @@ public class FileManager {
                 Collections.sort(organizationLinkedList);
                 return organizationLinkedList;
             } catch (StreamException exception){
-                Console.printError("EOF error.\nПрограмма остановлена.");
-                System.exit(0);
+                Console.printError("EOF error.\nФайл обработан.\n");
             } catch (FileNotFoundException exception) {
                 Console.printError("Файл не найден или доступ запрещен.\nПрограмма остановлена.");
                 System.exit(0);
@@ -111,25 +110,24 @@ public class FileManager {
                 System.exit(0);
             } catch (NullPointerException exception) {
                 Console.printError("Неверный формат коллекции в файле.\nПрограмма остановлена.");
-                System.exit(0);
             } catch (IllegalStateException exception) {
                 Console.printError("Непредвиденная ошибка.\nПрограмма остановлена.");
                 System.exit(0);
-            }catch (Exception e) {
-                Console.printError("Неверный формат данных в файле.\nПрограмма остановлена.");
-                System.exit(0);
+            } catch (Exception e) {
+                Console.printError("Неверный формат данных в файле.\nФайл очищен.\n");
             }
-        } else Console.printError("Файл поврежден или ошибка в названии.\nПрограмма остановлена.");
+        } else { Console.printError("Файл поврежден или ошибка в названии.\nПрограмма остановлена.");
+        System.exit(0);}
         return new LinkedList<>();
     }
 
     /**
-     * Задает объект с переменной среды
+     * Задает объект с переменной окружения
      */
     public static String path;
 
     /**
-     * Эта функция обрабатывает переменную среды
+     * Эта функция обрабатывает переменную окружения
      *
      * @return имя файла
      */

@@ -81,7 +81,7 @@ public class OrganizationAsker {
         String name;
         while (true) {
             Console.print("Введите имя организации: ");
-            try {
+            try{
                 name = userScanner.nextLine().trim();
                 if(scriptMode) Console.printLn(name);
                 if (name.equals("")) throw new MustBeNotEmptyException();
