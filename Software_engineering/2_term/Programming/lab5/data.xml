@@ -1,44 +1,114 @@
 <list>
   <organization>
     <id>1</id>
-    <name>Test</name>
+    <name>test</name>
     <coordinates>
       <x>123.0</x>
       <y>123.0</y>
     </coordinates>
-    <creationDate>2023-03-01T04:12:59.2924728+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>4322.0</annualTurnover>
-    <fullName>New</fullName>
+    <creationDate>2023-03-03T22:51:25.0461794+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>123.0</annualTurnover>
+    <fullName>123</fullName>
     <employeesCount>123</employeesCount>
-    <type>TRUST</type>
+    <type>OPEN_JOINT_STOCK_COMPANY</type>
+    <postalAddress>
+      <street>sd</street>
+    </postalAddress>
   </organization>
   <organization>
     <id>2</id>
-    <name>smth</name>
+    <name>Script_Org</name>
     <coordinates>
-      <x>123.0</x>
-      <y>123.0</y>
+      <x>12.0</x>
+      <y>3.0</y>
     </coordinates>
-    <creationDate>2023-03-02T12:09:08.751093+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>453.0</annualTurnover>
-    <fullName>123sdfds</fullName>
-    <employeesCount>12</employeesCount>
-    <type>PUBLIC</type>
+    <creationDate>2023-03-03T22:53:11.3340688+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
     <postalAddress>
-      <street>asd</street>
+      <street>newstr</street>
     </postalAddress>
   </organization>
   <organization>
     <id>3</id>
-    <name>wqeqwe</name>
+    <name>Script_Org</name>
     <coordinates>
-      <x>12.3</x>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-03-03T22:53:22.1203787+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>4</id>
+    <name>Script_Org</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-03-03T22:53:23.2958553+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>5</id>
+    <name>Script_Org</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-03-03T22:53:23.9478257+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>6</id>
+    <name>Script_Org</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-03-03T22:53:24.5258589+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>7</id>
+    <name>org</name>
+    <coordinates>
+      <x>123.0</x>
       <y>123.0</y>
     </coordinates>
-    <creationDate>2023-03-02T12:18:27.8339451+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>213.0</annualTurnover>
-    <fullName>123</fullName>
+    <creationDate>2023-03-03T23:07:21.7978995+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>123.0</annualTurnover>
+    <fullName>name</fullName>
     <employeesCount>12</employeesCount>
-    <type>COMMERCIAL</type>
+    <type>PUBLIC</type>
+    <postalAddress>
+      <street>qwerty</street>
+    </postalAddress>
   </organization>
 </list>

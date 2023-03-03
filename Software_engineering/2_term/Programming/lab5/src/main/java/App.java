@@ -46,12 +46,10 @@ public class App {
             if (fileManager.readCollection().size() != 0) {
                 Console.printLn("Используемый файл: " + filename);
                 collectionManager.setCollection(fileManager.readCollection());
-                Console.printLn("Коллекция была успешно считана из файла.");
             } else if (filename.length() != 0L) {
-                Console.printLn("Используемый файл: " + filename + "\nКоллекция на данный момент пуста.");}
+                Console.printLn("Используемый файл для сохранения: " + filename + "\nКоллекция на данный момент пуста.");}
             Console console = new Console(commandManager, userScanner, organizationAsker);
             console.interactiveMode();
-
         } catch (NoSuchElementException e) {
             Console.printError("Входной поток закрыт, остановка приложения.");
             System.exit(0);
