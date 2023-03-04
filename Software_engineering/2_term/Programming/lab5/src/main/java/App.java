@@ -16,9 +16,9 @@ public class App {
 
         System.out.println("Добро пожаловать!\nЧтение данных...");
 
-        try (Scanner userScanner = new Scanner(System.in)) {
-
+        try {
             String filename = FileManager.getName();
+            Scanner userScanner = new Scanner(System.in);
             CollectionManager collectionManager = new CollectionManager();
             OrganizationAsker organizationAsker = new OrganizationAsker(collectionManager, userScanner);
             FileManager fileManager = new FileManager(filename);

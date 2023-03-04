@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Console {
 
-    public static final String PS = ">> ";
+    public static final String PS = "$ ";
 
     private final CommandManager commandManager;
     private final Scanner userScanner;
