@@ -1,0 +1,45 @@
+INSERT INTO danger (description) VALUES
+    ('Можно сорваться со скалы'),
+    ('Можно столкнуться с астероидом'),
+    ('Можно сгореть в лаве');
+
+INSERT INTO location (name) VALUES
+    ('Горы'),
+    ('Космос'),
+    ('Вулкан');
+
+INSERT INTO miracle (name, danger, location) VALUES
+    ('Гора Афон', 1, 1),
+    ('Астероид Апофис',  2, 2),
+    ('Пещера смерти', 3, 3);
+
+INSERT INTO destiny (life_duration, description) VALUES
+    (45, 'Сорваться со скалы'),
+    (55, 'Упасть в лаву'),
+    (65, 'Врезаться в астероид'),
+    (85, 'Умереть в старости');
+
+INSERT INTO complaint (description) VALUES
+    ('Мне слишком жарко'),
+    ('Я боюсь высоты'),
+    ('Я скучаю по своим товарищам'),
+    ('Хочу увидеть хоть одно чудо!');
+
+INSERT INTO comrade (name, age, alive, miracle_count, destiny, complaint) VALUES
+    ('Чарли', 25, TRUE, 1, 4, null),
+    ('Томас', 35, TRUE, 1, 2, 3),
+    ('Вильям', 45, FALSE, 0, 1, 2),
+    ('Джеймс', 60, TRUE, 2, 4, null),
+    ('Дэниел', 25, TRUE, 0, 3, 4),
+    ('Оливер', 25, TRUE, 1, 2, 1),
+    ('Джек', 80, TRUE, 3, 4, 3);
+
+INSERT INTO miracle_seen (comrade, miracle) VALUES
+    (1, 2),
+    (2, 1),
+    (4, 2),
+    (4, 3),
+    (6, 1),
+    (7, 1),
+    (7, 2),
+    (7, 3);
