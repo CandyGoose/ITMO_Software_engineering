@@ -195,3 +195,22 @@
 Домашнее задание
 
 - [Реализация программной модели инфокоммуникационной системы](https://github.com/Goose/ITMO_ICT_1_term/tree/main/Programming/prog_dz)
+
+---
+
+## Математический анализ
+[Материалы](https://github.com/Goose/ITMO/tree/main/1_term_ICT/Mathematical_analysis)
+
+## Линейная алгебра
+[Материалы](https://github.com/Goose/ITMO/tree/main/1_term_ICT/Linear_algebra)
+
+## Дискретная математика
+[Лекции и практики](https://github.com/Goose/ITMO/tree/main/1_term_ICT/Discrete_math)
+
+---
+
+## Английский
+[Тексты для Moodle](https://github.com/Goose/ITMO/tree/main/1_term_ICT/English)
+
+## История
+[Работы](https://github.com/Goose/ITMO/tree/main/1_term_ICT/History)
