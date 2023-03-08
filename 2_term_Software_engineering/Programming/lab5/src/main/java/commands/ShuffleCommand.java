@@ -8,18 +8,25 @@ import managers.Console;
  */
 
 public class ShuffleCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса ShuffleCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public ShuffleCommand(CollectionManager collectionManager) {
         super("shuffle", "перемешать элементы коллекции в случайном порядке");
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Перемешивает коллекцию
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Перемешивает коллекции
+     *
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

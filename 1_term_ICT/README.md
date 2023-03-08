@@ -38,7 +38,7 @@
 
 2 - Деревья
 
-- [Акинатор для котиков](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/Algoritms/labs/lab_2)
+- [Акинатор для котиков](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Algoritms/labs/lab_2)
 
 3 - Сложность алгоритмов, начало сортировок
 
@@ -66,29 +66,29 @@
 
 ## Инфокоммуникационные технологии
 
-[1 - ГОСТ в Ворде](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR1)
+[1 - ГОСТ в Ворде](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR1)
 
-[2 - ГОСТ в Латехе](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR2)
+[2 - ГОСТ в Латехе](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR2)
 
-[3 - Идея мобильного приложения](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR3)
+[3 - Идея мобильного приложения](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR3)
 
-[4 - Презентация мобильного приложения](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR4)
+[4 - Презентация мобильного приложения](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR4)
 
-[5 - UML](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR5)
+[5 - UML](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR5)
 
-[6 - IDEF0](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR6)
+[6 - IDEF0](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR6)
 
-[7 - DFD, IDEF3, BPMN](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR7)
+[7 - DFD, IDEF3, BPMN](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR7)
 
-[8 - Техническое задание](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/PR8)
+[8 - Техническое задание](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/PR8)
 
-[Курсовая работа](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/ICT/KR)
+[Курсовая работа](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/ICT/KR)
 
 ## Информатика
 
 ### Аннотации
 
-[Все аннотации](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/Informatic/annotations)
+[Все аннотации](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Informatic/annotations)
 
 ### Лабораторные
 
@@ -98,11 +98,11 @@
 
 [3 - Дерево файлов](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Informatic/labs/3_lab/3_lab.bash)
 
-[4 - Cisco Packet Tracer](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/Informatic/labs/4_lab)
+[4 - Cisco Packet Tracer](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Informatic/labs/4_lab)
 
-[5 - Docker](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/Informatic/labs/5_lab/web_server)
+[5 - Docker](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Informatic/labs/5_lab/web_server)
 
-[6 - Latex](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/Informatic/labs/6_lab)
+[6 - Latex](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Informatic/labs/6_lab)
 
 ## Программирование
 
@@ -194,7 +194,7 @@
 
 Домашнее задание
 
-- [Реализация программной модели инфокоммуникационной системы](https://github.com/VeraKasianenko/ITMO_ICT_1_term/tree/main/Programming/prog_dz)
+- [Реализация программной модели инфокоммуникационной системы](https://github.com/VeraKasianenko/ITMO/blob/main/1_term_ICT/Programming/prog_dz)
 
 ---
 

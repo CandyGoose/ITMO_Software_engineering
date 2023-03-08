@@ -8,15 +8,19 @@ import managers.Console;
  */
 public class HistoryCommand extends AbstractCommand{
 
+    /**
+     * Конструктор класса.
+     * Создает новый объект команды с указанием имени и описания.
+     */
     public HistoryCommand() {
         super("history", "показать список последних команд");
     }
 
     /**
-     * Выводит информацию об использовании команды
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Реализация метода execute интерфейса ICommand.
+     * @param argument аргумент, который необходимо проверить на пустоту.
+     * @return значение типа boolean. Если аргумент не пустой, возвращает false.
+     * @throws WrongAmountOfElementsException если аргумент не пустой.
      */
     @Override
     public boolean execute(String argument) {

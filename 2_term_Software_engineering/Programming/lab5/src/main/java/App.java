@@ -4,9 +4,13 @@ import managers.*;
 import java.util.Scanner;
 import java.util.NoSuchElementException;
 
-
 /**
- * Главный класс, запускающий приложение
+ * Главный класс, запускающий приложение.
+ * Класс, который содержит метод main, отвечающий за запуск приложения. Создаётся объект класса FileManager для
+ * работы с файлами, объект класса CollectionManager для работы с коллекцией, объект класса OrganizationAsker для
+ * работы с вводом данных, объект класса CommandManager для обработки команд, объект класса Console для работы с
+ * консолью.
+ *
  * @author Касьяненко Вера (P3120)
  * @version 2.0
  */
@@ -27,19 +31,20 @@ public class App {
                     new ClearCommand(collectionManager),
                     new ExecuteScriptCommand(),
                     new ExitCommand(),
+                    new HelpCommand(),
                     new HistoryCommand(),
                     new InfoCommand(collectionManager),
-                    new PrintFieldDescendingAnnualTurnoverCommand(collectionManager),
                     new PrintDescendingCommand(collectionManager),
+                    new PrintFieldDescendingAnnualTurnoverCommand(collectionManager),
                     new PrintUniqueEmployeesCountCommand(collectionManager),
-                    new RemoveFirstCommand(collectionManager),
                     new RemoveByIdCommand(collectionManager),
-                    new SortCommand(collectionManager),
+                    new RemoveFirstCommand(collectionManager),
                     new SaveCommand(fileManager, collectionManager),
                     new ShowCommand(collectionManager),
                     new ShuffleCommand(collectionManager),
-                    new UpdateCommand(collectionManager, organizationAsker),
-                    new HelpCommand()
+                    new SortCommand(collectionManager),
+                    new UpdateCommand(collectionManager, organizationAsker)
+
             );
 
             fileManager.setFilename(filename);

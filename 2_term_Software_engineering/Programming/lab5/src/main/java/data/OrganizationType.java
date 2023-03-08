@@ -12,9 +12,9 @@ public enum OrganizationType {
 
 
     /**
-     * Эта функция возвращает разделенный запятыми список имен всех значений
-     *
-     * @return types
+     * Возвращает список имен констант перечисления OrganizationType в виде строки.
+     * Каждое имя константы разделено запятой и пробелом.
+     * @return Список имен констант перечисления OrganizationType в виде строки.
      */
     public static String nameList() {
         StringBuilder nameList = new StringBuilder();

@@ -9,9 +9,20 @@ import managers.FileManager;
  * Записывает коллекции в файл
  */
 public class SaveCommand extends AbstractCommand {
+    /**
+     Менеджер файлов.
+     */
     private final FileManager fileManager;
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор SaveCommand создает новый объект команды "save".
+     * @param fileManager объект для работы с файлами.
+     * @param collectionManager объект для работы с коллекцией.
+     */
     public SaveCommand(FileManager fileManager, CollectionManager collectionManager) {
         super("save", "сохранить коллекцию в файл");
         this.fileManager = fileManager;
@@ -20,9 +31,9 @@ public class SaveCommand extends AbstractCommand {
 
     /**
      * Записывает коллекции в файл
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     *
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

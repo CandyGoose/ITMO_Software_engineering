@@ -11,18 +11,25 @@ import java.util.Collections;
  * Выводит все значения годового оборота организаций в системе в порядке убывания
  */
 public class PrintFieldDescendingAnnualTurnoverCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса PrintFieldDescendingAnnualTurnoverCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public PrintFieldDescendingAnnualTurnoverCommand(CollectionManager collectionManager) {
         super("print_field_descending_annual_turnover", "вывести значения поля annualTurnover всех элементов в порядке убывания");
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Выводит все типы организаций в системе в порядке убывания
+     * Выводит все поля annualTurnover организаций в системе в порядке убывания
      *
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

@@ -18,26 +18,27 @@ import java.util.Scanner;
  * Класс, запрашивающий у пользователя ввод
  */
 public class OrganizationAsker {
+    /**
+     Менеджер коллекции.
+     */
     CollectionManager collectionManager;
+
+    /**
+     Сканер для чтения пользовательского ввода.
+     */
     Scanner userScanner;
+
+    /**
+     * Это приватное логическое поле scriptMode, которое указывает, работает ли приложение в режиме скрипта или нет.
+     * Если значение этого поля установлено в true, то это означает, что приложение выполняет команды, содержащиеся в
+     * скрипте, иначе оно ожидает пользовательского ввода в консоли.
+     */
     private boolean scriptMode;
 
     /**
-     * Эта функция возвращает объект сканера, использующийся для считывания пользовательского ввода
-     *
-     * @return объект сканера, созданный в этом методе
-     */
-    public Scanner getUserScanner() { return userScanner; }
-
-    /**
-     * Эта функция задает объект сканера, использующийся для считывания пользовательского ввода
-     *
-     * @param userScanner объект сканера, использующийся для считывания пользовательского ввода
-     */
-    public void setUserScanner(Scanner userScanner) { this.userScanner = userScanner; }
-
-    /**
-     * Эта функция задает считывание пользовательского ввода
+     * Конструктор класса OrganizationAsker
+     * @param collectionManager менеджер коллекции, с которой ведется работа
+     * @param userScanner сканер, использующийся для считывания пользовательского ввода
      */
     public OrganizationAsker(CollectionManager collectionManager, Scanner userScanner) {
         this.userScanner = userScanner;
@@ -46,24 +47,35 @@ public class OrganizationAsker {
     }
 
     /**
-     * Функция, отвечающая за переход в режим чтения со скрипта
+     * Функция, возвращающая объект сканера, использующийся для считывания пользовательского ввода
+     * @return объект сканера, созданный в этом методе
+     */
+    public Scanner getUserScanner() { return userScanner; }
+
+    /**
+     * Функция, задающая объект сканера, использующийся для считывания пользовательского ввода
+     * @param userScanner объект сканера, использующийся для считывания пользовательского ввода
+     */
+    public void setUserScanner(Scanner userScanner) { this.userScanner = userScanner; }
+
+
+    /**
+     * Функция, задающая режим чтения со скрипта
      */
     public void setScriptMode(){
         scriptMode = true;
     }
 
     /**
-     * Функция, отвечающая за переход в режим чтения с командной строки
+     * Функция, задающая режим чтения с командной строки
      */
     public void setUserMode(){
         scriptMode = false;
     }
 
 
-
     /**
-     * Функция, генерирующая новый id
-     *
+     * Функция, генерирующая новый id для организации
      * @return id
      */
     public Long setId() {
@@ -73,9 +85,8 @@ public class OrganizationAsker {
 
     /**
      * Функция, спрашивающая у пользователя имя организации
-     *
-     * @return name
-     * @throws IncorrectInputInScriptException
+     * @return name - имя организации, введенное пользователем
+     * @throws IncorrectInputInScriptException если при чтении скрипта возникла ошибка
      */
     public String askName() throws IncorrectInputInScriptException {
         String name;
@@ -106,10 +117,9 @@ public class OrganizationAsker {
 
 
     /**
-     * Функция, спрашивающая у пользователя координату X
-     *
-     * @return X
-     * @throws IncorrectInputInScriptException
+     * Метод для ввода значения координаты X
+     * @return значение координаты X
+     * @throws IncorrectInputInScriptException если была ошибка ввода значения в скрипте
      */
     private float askX() throws IncorrectInputInScriptException {
         float x;
@@ -144,10 +154,9 @@ public class OrganizationAsker {
     }
 
     /**
-     * Функция, спрашивающая у пользователя координату Y
-     *
-     * @return Y
-     * @throws IncorrectInputInScriptException
+     * Метод для ввода значения координаты Y
+     * @return значение координаты Y
+     * @throws IncorrectInputInScriptException если была ошибка ввода значения в скрипте
      */
     private Float askY() throws IncorrectInputInScriptException {
         float y;
@@ -182,10 +191,9 @@ public class OrganizationAsker {
     }
 
     /**
-     * AskCoordinates()
-     *
-     * @return Объект с координатами
-     * @throws IncorrectInputInScriptException
+     * Метод для ввода координат
+     * @return объект класса Coordinates с заданными координатами
+     * @throws IncorrectInputInScriptException если была ошибка ввода значения в скрипте
      */
     public Coordinates askCoordinates() throws IncorrectInputInScriptException {
         float x;
@@ -197,9 +205,8 @@ public class OrganizationAsker {
 
 
     /**
-     * Функция, устанавливающая дату и время
-     *
-     * @return ZonedDateTime
+     * Запрашивает дату создания организации.
+     * @return текущее время и дату в заданном часовом поясе
      */
     public ZonedDateTime askCreationDate() {
         while (true) {
@@ -213,10 +220,9 @@ public class OrganizationAsker {
 
 
     /**
-     * Функция, спрашивающая у пользователя годовой оборот
-     *
-     * @return turnOver
-     * @throws IncorrectInputInScriptException
+     * Запрашивает годовой оборот организации.
+     * @return годовой оборот в виде Float
+     * @throws IncorrectInputInScriptException если скрипт содержит неверные данные ввода
      */
     public Float askAnnualTurnover() throws IncorrectInputInScriptException {
         Float turnOver;
@@ -257,10 +263,9 @@ public class OrganizationAsker {
 
 
     /**
-     * Функция, спрашивающая у пользователя имя организации
-     *
-     * @return fullName
-     * @throws IncorrectInputInScriptException
+     * Запрашивает полное название организации.
+     * @return полное название организации в виде строки
+     * @throws IncorrectInputInScriptException если скрипт содержит неверные данные ввода
      */
     public String askFullName() throws IncorrectInputInScriptException {
         String fullName;
@@ -290,10 +295,9 @@ public class OrganizationAsker {
     }
 
     /**
-     * Функция, спрашивающая у пользователя количество сотрудников
-     *
-     * @return employeesCount
-     * @throws IncorrectInputInScriptException
+     * Метод запрашивает у пользователя количество сотрудников организации.
+     * @return количество сотрудников.
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
      */
     public long askEmployeesCount() throws IncorrectInputInScriptException {
         long employeesCount;
@@ -327,10 +331,9 @@ public class OrganizationAsker {
 
 
     /**
-     * Функция, спрашивающая у пользователя тип организации
-     *
-     * @return OrganizationType
-     * @throws IncorrectInputInScriptException
+     * Метод запрашивает у пользователя тип организации.
+     * @return тип организации.
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
      */
     public OrganizationType askOrganizationType() throws IncorrectInputInScriptException {
         OrganizationType organizationType;
@@ -365,10 +368,9 @@ public class OrganizationAsker {
 
 
     /**
-     * Функция, спрашивающая у пользователя улицу
-     *
-     * @return street
-     * @throws IncorrectInputInScriptException
+     * Запрашивает у пользователя название улицы и возвращает его в виде строки.
+     * @return Название улицы, введенное пользователем
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
      */
     private String askStreet() throws IncorrectInputInScriptException {
         String street;
@@ -395,10 +397,9 @@ public class OrganizationAsker {
 
 
     /**
-     * Объект с адресом
-     *
-     * @return Address
-     * @throws IncorrectInputInScriptException
+     * Запрашивает у пользователя название улицы и создает новый объект Address с этим значением.
+     * @return Новый объект Address с названием улицы, введенным пользователем, или null, если название пусто
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
      */
     public Address askAddress() throws IncorrectInputInScriptException {
         String street = askStreet();

@@ -10,18 +10,25 @@ import java.util.ArrayList;
  * Выводит уникальные значения поля employeesCount организаций в системе в порядке убывания
  */
 public class PrintUniqueEmployeesCountCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса PrintUniqueEmployeesCountCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public PrintUniqueEmployeesCountCommand(CollectionManager collectionManager) {
         super("print_unique_employees_count", "вывести уникальные значения поля employeesCount всех элементов в коллекции");
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Выводит все типы организаций в системе в порядке убывания
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Выводит все уникальные поля employeesCount организаций в системе
+     *
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

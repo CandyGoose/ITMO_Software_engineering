@@ -11,19 +11,40 @@ import java.util.Scanner;
 
 
 /**
- * Класс для вывода в консоль
+ * Класс для работы с консолью.
  */
 public class Console {
 
+    /**
+     * Приглашение к вводу команды.
+     */
     public static final String PS = "$ ";
 
+    /**
+     Менеджер команд.
+     */
     private final CommandManager commandManager;
+
+    /**
+     Сканер для чтения пользовательского ввода.
+     */
     private final Scanner userScanner;
+
+    /**
+     Объект, задающий вопросы пользователю для ввода информации об организации.
+     */
     private final OrganizationAsker organizationAsker;
+
+    /**
+     Список строк, содержащих команды, которые были запущены из текущего скрипта.
+     */
     private final List<String> scriptStack = new ArrayList<>();
 
     /**
-     * Эта функция задает объекты для работы с консолью
+     * Конструктор для создания объекта для работы с консолью.
+     * @param commandManager объект для выполнения команд.
+     * @param userScanner сканер для ввода данных пользователя.
+     * @param organizationAsker объект для получения ввода данных организации.
      */
     public Console(CommandManager commandManager, Scanner userScanner, OrganizationAsker organizationAsker) {
         this.commandManager = commandManager;
@@ -32,10 +53,9 @@ public class Console {
     }
 
     /**
-     * Функция, использующаяся для выполнения скрипта
-     *
-     * @param argument имя файла
-     * @return целое число, представляющее статус команды.
+     * Функция для выполнения скрипта.
+     * @param argument имя файла скрипта.
+     * @return статус выполнения команды.
      */
     public int scriptMode(String argument) {
         String[] userCommand;
@@ -82,7 +102,7 @@ public class Console {
     }
 
     /**
-     * Эта функция является интерактивным режимом программы. Он будет продолжать запрашивать у пользователя ввод
+     * Класс, реализующий интерактивный режим работы с консолью. Он будет продолжать запрашивать у пользователя ввод
      * до тех пор, пока пользователь не введет "exit"
      */
     public void interactiveMode() {
@@ -105,9 +125,8 @@ public class Console {
 
 
     /**
-     * Выводит данный объект в стандартный поток
-     *
-     * @param toOut объект для печати
+     * Функция для вывода объекта в стандартный поток
+     * @param toOut объект для вывода в консоль
      */
     public static void print(Object toOut){
         System.out.print(toOut);
@@ -115,9 +134,8 @@ public class Console {
 
 
     /**
-     * Выводит данный объект на консоль
-     *
-     * @param toOut Объект для печати на консоль
+     * Функция для вывода объекта в консоль с переносом строки
+     * @param toOut объект для вывода в консоль
      */
     public static void printLn(Object toOut) {
         System.out.println(toOut);
@@ -125,9 +143,8 @@ public class Console {
 
 
     /**
-     * Выводит сообщение об ошибке на консоль
-     *
-     * @param toOut объект для печати
+     * Функция для вывода ошибки в консоль
+     * @param toOut объект для вывода в консоль
      */
     public static void printError(Object toOut) {
         System.out.println("Ошибка: " + toOut);
@@ -135,10 +152,10 @@ public class Console {
 
 
     /**
-     * Функция принимает строковый массив в качестве аргумента и проверяет его на совпадения, после чего возвращается статус
-     *
-     * @param userCommand команда введенная пользователем
-     * @return integer value: 0, 1, or 2.
+     * Запускает команду, введенную пользователем
+     * @param userCommand массив строк, содержащий имя команды и ее аргументы
+     * @return 0, если команда была успешно выполнена, 1, если выполнение команды не удалось, и 2, если была
+     * выполнена команда выхода
      */
     private int launchCommand(String[] userCommand) {
         switch (userCommand[0]) {

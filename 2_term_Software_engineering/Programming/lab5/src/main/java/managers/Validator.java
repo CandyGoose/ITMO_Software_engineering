@@ -7,22 +7,26 @@ import java.util.List;
 
 
 /**
- * Класс, производящий проверку данных
+ * Класс Validator предназначен для валидации списка организаций.
  */
 public class Validator {
+
+    /**
+     * Список организаций, которые необходимо проверить.
+     */
     List<Organization> organization;
 
     /**
-     * Эта функция задает объект organization
+     * Конструктор класса.
+     * @param organization Список организаций, которые необходимо проверить.
      */
     public Validator(List<Organization> organization) {
         this.organization = organization;
     }
 
     /**
-     * Эта функция возвращает проверенный объект organization
-     *
-     * @return organization
+     * Метод валидации списка организаций.
+     * @return Список организаций, которые прошли валидацию.
      */
     public List<Organization> validate(){
         for(Iterator<Organization> iterator = organization.iterator(); iterator.hasNext(); ){

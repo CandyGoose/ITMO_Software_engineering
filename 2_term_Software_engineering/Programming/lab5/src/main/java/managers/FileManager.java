@@ -12,21 +12,33 @@ import java.util.*;
 
 
 /**
- * Класс FileManager для управления файлами
+ * Класс FileManager, который отвечает за запись коллекции в файл и чтение из файла.
  */
 public class FileManager {
+
+    /**
+     * Имя файла
+     */
     private String filename;
+
+    /**
+     * Объект XStream для преобразования коллекции в XML и обратно
+     */
     private final XStream xstream;
 
     /**
-     * Эта функция задает объект с именем файла
+     * Устанавливает имя файла.
+     * @param filename имя файла
      */
     public void setFilename(String filename) {
         this.filename = filename;
     }
 
     /**
-     * Задает псевдонимы для классов
+     * Создает новый экземпляр класса FileManager с указанным именем файла и настройками XStream.
+     * Задает псевдонимы для классов, устанавливает настройки без ссылок и безопасности и
+     * разрешает использование типа List и String.
+     * @param filename имя файла
      */
     public FileManager(String filename) {
         this.filename = filename;
@@ -50,7 +62,7 @@ public class FileManager {
 
 
     /**
-     * Функция, записывающая коллекцию в файл
+     * Записывает коллекцию в файл в формате XML.
      *
      * @param collection коллекция для записи в файл
      */
@@ -74,9 +86,9 @@ public class FileManager {
 
 
     /**
-     * Считывает коллекцию из файла и возвращает ее в виде LinkedList
+     * Метод для чтения коллекции организаций из файла.
      *
-     * @return LinkedList<>()
+     * @return возвращает коллекцию организаций, прочитанную из файла.
      */
     public LinkedList<Organization> readCollection() {
         if (!filename.equals("")) {
@@ -122,14 +134,13 @@ public class FileManager {
     }
 
     /**
-     * Задает объект с переменной окружения
+     * Переменная, в которой хранится путь к папке с файлами.
      */
     public static String path;
 
     /**
-     * Эта функция обрабатывает переменную окружения
-     *
-     * @return имя файла
+     * Метод для получения имени папки из переменной окружения.
+     * @return имя папки
      */
 
     public static String getName(){
@@ -149,9 +160,8 @@ public class FileManager {
     }
 
     /**
-     * Эта функция возвращает строку, описывающую класс
-     *
-     * @return "FileManager (класс для работы с файлами)"
+     * Возвращает строку с описанием класса FileManager
+     * @return описание класса
      */
     @Override
     public String toString() {

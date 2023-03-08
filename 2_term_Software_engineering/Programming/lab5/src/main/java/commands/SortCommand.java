@@ -8,18 +8,25 @@ import managers.Console;
  * Класс SortCommand сортирует элементы коллекции
  */
 public class SortCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса SortCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public SortCommand(CollectionManager collectionManager) {
         super("sort", "отсортировать коллекцию в естественном порядке");
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Перемешивает коллекцию
+     * Сортирует коллекцию
      *
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

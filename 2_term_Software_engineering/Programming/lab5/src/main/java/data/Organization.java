@@ -2,21 +2,83 @@ package data;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 /**
- * Класс Organization представляет организацию
+ * Класс, описывающий организацию. Объекты этого класса являются элементами коллекции
  */
 public class Organization implements Comparable<Organization> {
+
+    /**
+     * Уникальный идентификатор организации.
+     * Поле не может быть null.
+     * Значение поля должно быть больше 0.
+     * Значение этого поля должно быть уникальным.
+     * Значение этого поля должно генерироваться автоматически.
+     */
     private Long id;
+
+    /**
+     * Наименование организации.
+     * Поле не может быть null.
+     * Строка не может быть пустой.
+     */
     private String name;
+
+    /**
+     * Координаты организации.
+     * Поле не может быть null.
+     */
     private Coordinates coordinates;
+
+    /**
+     * Дата создания организации.
+     * Поле не может быть null.
+     * Значение этого поля должно генерироваться автоматически.
+     */
     private ZonedDateTime creationDate;
+
+    /**
+     * Годовой оборот организации.
+     * Поле не может быть null.
+     * Значение поля должно быть больше 0.
+     */
     private Float annualTurnover;
+
+    /**
+     * Полное наименование организации.
+     * Поле не может быть null.
+     */
     private String fullName;
+
+    /**
+     * Количество сотрудников организации.
+     * Значение поля должно быть больше 0.
+     */
     private long employeesCount;
+
+    /**
+     * Тип организации.
+     * Поле не может быть null.
+     */
     private OrganizationType type;
+
+    /**
+     * Адрес организации.
+     * Поле может быть null.
+     */
     private Address postalAddress;
 
+    /**
+     * Конструктор, задающий параметры для создания организации
+     * @param id - уникальный номер
+     * @param name - имя
+     * @param coordinates - координаты
+     * @param creationDate - дата создания
+     * @param annualTurnover - годовой оборот
+     * @param fullName - полное имя
+     * @param employeesCount - количество сотрудников
+     * @param type - тип
+     * @param postalAddress - почтовый адрес
+     */
     public Organization(Long id, String name, Coordinates coordinates, ZonedDateTime creationDate, Float annualTurnover, String fullName, long employeesCount, OrganizationType type, Address postalAddress) {
         this.id = id;
         this.name = name;
@@ -30,7 +92,6 @@ public class Organization implements Comparable<Organization> {
     }
 
 
-
     /**
      * Возвращает id
      *
@@ -42,9 +103,9 @@ public class Organization implements Comparable<Organization> {
 
 
     /**
-     * Устанавливает id объекта
+     * Устанавливает значение id объекта
      *
-     * @param id id организации
+     * @param id - id организации
      */
     public void setId(Long id) {
         this.id = id;
@@ -62,7 +123,7 @@ public class Organization implements Comparable<Organization> {
 
 
     /**
-     * Возвращает координату
+     * Возвращает координаты
      *
      * @return coordinates
      */
@@ -132,8 +193,8 @@ public class Organization implements Comparable<Organization> {
     /**
      * Этот метод используется для сравнения двух объектов
      *
-     * @param o Объект для сравнения
-     * @return id
+     * @param o - объект для сравнения
+     * @return id - id организации
      */
     @Override
     public int compareTo(Organization o) {
@@ -141,11 +202,10 @@ public class Organization implements Comparable<Organization> {
     }
 
 
-
     /**
-     * Печатает информацию об организации
+     * Печатает информацию об организации пользователю в понятном формате
      *
-     * @return Метод toString() возвращает строковое представление объекта Organization.
+     * @return toString() возвращает строковое представление объекта Organization
      */
     @Override
     public String toString() {

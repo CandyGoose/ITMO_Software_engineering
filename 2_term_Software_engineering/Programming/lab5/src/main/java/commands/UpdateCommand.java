@@ -12,9 +12,22 @@ import managers.OrganizationAsker;
  * Класс используется для обновления значения элемента коллекции, id которого равен заданному
  */
 public class UpdateCommand extends AbstractCommand {
+
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
+
+    /**
+     Объект, задающий вопросы пользователю для ввода информации об организации.
+     */
     private final OrganizationAsker organizationAsker;
 
+    /**
+     * Конструктор UpdateCommand создает новый объект команды "update".
+     * @param collectionManager объект для работы с коллекцией.
+     * @param organizationAsker объект для запроса новых значений элемента коллекции.
+     */
     public UpdateCommand(CollectionManager collectionManager, OrganizationAsker organizationAsker) {
         super("update id {element}", "обновить значение элемента коллекции, id которого равен заданному");
         this.collectionManager = collectionManager;
@@ -25,9 +38,9 @@ public class UpdateCommand extends AbstractCommand {
      * Функция принимает аргумент, который является id организации
      * Если он не существует, функция выдает исключение
      * Если организация существует, функция запрашивает пользователя ввести новые значения
-     * 
-     * @param argument аргумент, введенный пользователем
-     * @return boolean type
+     *
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

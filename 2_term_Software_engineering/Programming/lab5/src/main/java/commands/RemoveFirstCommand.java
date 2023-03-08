@@ -5,21 +5,29 @@ import managers.CollectionManager;
 import managers.Console;
 
 /**
- * Удаление организации из коллекции
+ * Удаление первой организации из коллекции
  */
 public class RemoveFirstCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса RemoveFirstCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public RemoveFirstCommand(CollectionManager collectionManager) {
         super("remove_first", "удалить первый элемент из коллекции");
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Удаление первой организации из коллекции
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Метод, который выполняет команду.
+     * Удаляет первый элемент из коллекции
+     *
+     * @param argument аргумент команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {
