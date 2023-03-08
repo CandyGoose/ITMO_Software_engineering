@@ -1,17 +1,23 @@
 package data;
 
-
-
 /**
- * Адрес это улица и почтовый индекс
+ * Адрес содержит улицу
  */
 public class Address {
+
+    /**
+     * Улица
+     * Поле может быть null
+     */
     private final String street;
 
+    /**
+     * Конструктор, задающий параметры адреса
+     * @param street - улица
+     */
     public Address(String street){
         this.street = street;
     }
-
 
     /**
      * Возвращает название улицы

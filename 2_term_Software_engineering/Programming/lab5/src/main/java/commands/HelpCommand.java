@@ -4,19 +4,22 @@ import exceptions.WrongAmountOfElementsException;
 import managers.Console;
 
 /**
- * Класс `Help Command` отображает справку по доступным командам
+ * Класс "HelpCommand" отображает справку по доступным командам
  */
 public class HelpCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     * Создает новый объект команды с указанием имени и описания.
+     */
     public HelpCommand() {
         super("help", "вывести справку по доступным командам");
     }
 
     /**
-     * Выводит информацию об использовании команды
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Выполняет команду "help", выводящую список доступных команд и их описания.
+     * @param argument аргумент команды (в данном случае не используется)
+     * @return всегда возвращает false
      */
     @Override
     public boolean execute(String argument) {

@@ -4,18 +4,23 @@ import exceptions.WrongAmountOfElementsException;
 import managers.Console;
 
 /**
- * Класс `Exit Command` завершает работу программы
+ * Завершает работу программы
  */
 public class ExitCommand extends AbstractCommand {
+
+    /**
+     * Конструктор класса.
+     * Создает новый объект команды с указанием имени и описания.
+     */
     public ExitCommand() {
         super("exit", "завершить программу (без сохранения в файл)");
     }
 
     /**
-     * Выводит сообщение на консоль и завершает работу программы
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Метод execute представляет реализацию команды exit, которая завершает работу программы.
+     *
+     * @param argument строка аргументов команды.
+     * @return Метод возвращает true, если выполнение команды прошло успешно, иначе - false.
      */
     @Override
     public boolean execute(String argument) {

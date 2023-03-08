@@ -6,21 +6,28 @@ import managers.CollectionManager;
 import managers.Console;
 
 /**
- * Удаление организации из коллекции
+ * Удаление организации из коллекции по ID
  */
 public class RemoveByIdCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса RemoveByIdCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public RemoveByIdCommand(CollectionManager collectionManager) {
         super("remove_by_id id", "удалить элемент из коллекции по его id");
         this.collectionManager = collectionManager;
     }
 
     /**
-     * Удаление организации из коллекции
-     *
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Метод, который выполняет команду.
+     * Удаляет элемент из коллекции по его id.
+     * @param argument аргумент команды (id элемента)
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {

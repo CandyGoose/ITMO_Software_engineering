@@ -5,15 +5,27 @@ package data;
  * Этот класс представляет точку в двумерном пространстве
  */
 public class Coordinates {
+    /**
+     * Координата x
+     * Максимальное значение поля: 741
+     */
     private final float x;
+
+    /**
+     * Координата y
+     * Поле не может быть null
+     */
     private final Float y;
 
+    /**
+     * Конструктор, задающий параметры координат
+     * @param x - координата x
+     * @param y - координата y
+     */
     public Coordinates(float x, Float y) {
         this.x = x;
         this.y = y;
     }
-
-
 
     /**
      * Возвращает координату точки X
@@ -23,7 +35,6 @@ public class Coordinates {
     public float getX() {
         return x;
     }
-
 
 
     /**

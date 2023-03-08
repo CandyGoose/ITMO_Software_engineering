@@ -13,21 +13,26 @@ import java.util.Collections;
  * Класс PrintDescendingCommand выводит список организаций в обратном порядке
  */
 public class PrintDescendingCommand extends AbstractCommand {
+    /**
+     Менеджер коллекции.
+     */
     private final CollectionManager collectionManager;
 
-
+    /**
+     * Конструктор класса PrintDescendingCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public PrintDescendingCommand(CollectionManager collectionManager) {
         super("print_descending", "вывести элементы коллекции в порядке убывания");
         this.collectionManager = collectionManager;
     }
 
 
-    
     /**
-     * Выводит список организаций в обратном порядке
-     * 
-     * @param argument аргумент, переданный команде
-     * @return boolean type
+     * Метод execute выполняет команду "print_descending", которая выводит все элементы коллекции в порядке убывания.
+     *
+     * @param argument строка аргументов команды
+     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
      */
     @Override
     public boolean execute(String argument) {
@@ -36,7 +41,7 @@ public class PrintDescendingCommand extends AbstractCommand {
         ArrayList<Organization> copyOfCollection = new ArrayList<>(collectionManager.getCollection());
         copyOfCollection.sort(Collections.reverseOrder());
         for(Organization organization : copyOfCollection){
-            Console.printLn(organization.toString() + "=====");
+            Console.printLn(organization.toString() + "\n=====");
         }
         return true;
         } catch (WrongAmountOfElementsException e){
