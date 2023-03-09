@@ -56,7 +56,7 @@ public class App {
             Console console = new Console(commandManager, userScanner, organizationAsker);
             console.interactiveMode();
         } catch (NoSuchElementException e) {
-            Console.printError("Входной поток закрыт, остановка приложения.");
+            Console.printError("Работа программы прекращена.");
             System.exit(0);
         }
     }
