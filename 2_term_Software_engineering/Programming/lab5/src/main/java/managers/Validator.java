@@ -2,6 +2,7 @@ package managers;
 
 import data.Organization;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,9 +30,12 @@ public class Validator {
      * @return Список организаций, которые прошли валидацию.
      */
     public List<Organization> validate(){
+        HashSet<Long> idSet = new HashSet<>();
         for(Iterator<Organization> iterator = organization.iterator(); iterator.hasNext(); ){
             Organization org = iterator.next();
             if(org.getId() == null || org.getId() <= 0) {
+                iterator.remove();}
+            else if(!idSet.add(org.getId())) {
                 iterator.remove();}
             if(org.getName() == null || org.getName().equals("")) {
                 iterator.remove();}
