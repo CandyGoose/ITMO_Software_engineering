@@ -104,7 +104,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (IllegalStateException e) {
@@ -136,7 +136,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (NumberFormatException e) {
@@ -173,7 +173,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (NumberFormatException e) {
@@ -240,7 +240,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if(scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (NumberFormatException e) {
@@ -283,7 +283,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (IllegalStateException e) {
@@ -313,7 +313,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (NotInDeclaredLimitsException exception) {
@@ -350,7 +350,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (IllegalArgumentException exception) {
@@ -384,7 +384,7 @@ public class OrganizationAsker {
                 Console.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
                 if(!userScanner.hasNext()) {
-                    Console.printError("Входной поток закрыт, остановка приложения.");
+                    Console.printError("Работа программы прекращена.");
                     System.exit(0);
                 }
             } catch (IllegalStateException exception) {

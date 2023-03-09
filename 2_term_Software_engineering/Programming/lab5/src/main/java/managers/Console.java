@@ -117,7 +117,7 @@ public class Console {
                 commandStatus = launchCommand(userCommand);
             } while (commandStatus != 2);
         } catch (NoSuchElementException exception) {
-            Console.printError("Входной поток закрыт, остановка приложения.");
+            Console.printError("Работа программы прекращена.");
         } catch (IllegalStateException exception) {
             Console.printError("Непредвиденная ошибка.");
         }
