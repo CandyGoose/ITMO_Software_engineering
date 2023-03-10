@@ -26,7 +26,7 @@ public class HelpCommand extends AbstractCommand {
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
         } catch (WrongAmountOfElementsException exception) {
-            Console.printLn("Использование '" + getName() + "'");
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

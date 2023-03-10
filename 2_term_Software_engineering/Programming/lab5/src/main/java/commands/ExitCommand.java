@@ -30,7 +30,7 @@ public class ExitCommand extends AbstractCommand {
             System.exit(0);
             return true;
         } catch (WrongAmountOfElementsException exception) {
-            Console.printLn("Использование '" + getName() + "'");
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

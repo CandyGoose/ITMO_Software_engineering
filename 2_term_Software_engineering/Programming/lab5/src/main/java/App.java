@@ -12,7 +12,6 @@ import java.util.NoSuchElementException;
  * консолью.
  *
  * @author Касьяненко Вера (P3120)
- * @version 2.0
  */
 
 public class App {
@@ -44,7 +43,6 @@ public class App {
                     new ShuffleCommand(collectionManager),
                     new SortCommand(collectionManager),
                     new UpdateCommand(collectionManager, organizationAsker)
-
             );
 
             fileManager.setFilename(filename);

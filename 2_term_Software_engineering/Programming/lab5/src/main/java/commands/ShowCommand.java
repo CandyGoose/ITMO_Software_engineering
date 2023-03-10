@@ -41,7 +41,7 @@ public class ShowCommand extends AbstractCommand {
             }
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Нет аргументов в " + getName());
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

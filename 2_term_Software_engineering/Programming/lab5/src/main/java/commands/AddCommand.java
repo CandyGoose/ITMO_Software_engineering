@@ -57,7 +57,7 @@ public class AddCommand extends AbstractCommand{
             Console.printLn("Организация была создана успешно");
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Использование '" + argument + "' в " + getName());
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         } catch (IncorrectInputInScriptException ignored) {
         }
         return false;

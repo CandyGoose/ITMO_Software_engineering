@@ -35,7 +35,7 @@ public class InfoCommand extends AbstractCommand {
             Console.printLn(collectionManager.infoAboutCollection());
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Использование '" + argument + "' в " + getName());
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

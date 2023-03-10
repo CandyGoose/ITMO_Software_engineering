@@ -40,11 +40,11 @@ public class RemoveByIdCommand extends AbstractCommand {
             return true;
 
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Нет аргументов в " + getName());
+            Console.printError("Нет аргументов для исполнения команды '" + getName() + "'");
         } catch (NumberFormatException e) {
             Console.printError("Поле должно быть Long");
         } catch (MustBeNotEmptyException e) {
-            Console.printError("Нет организации с таким идентификатором");
+            Console.printError("Использование аргумента'" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

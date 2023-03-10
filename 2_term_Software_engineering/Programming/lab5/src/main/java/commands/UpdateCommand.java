@@ -63,7 +63,7 @@ public class UpdateCommand extends AbstractCommand {
             Console.printLn("Организация была успешно обновлена");
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Нет аргументов в " + getName());
+            Console.printError("Нет аргументов для исполнения команды '" + getName() + "'");
         } catch (NumberFormatException e) {
             Console.printError("Значение поля должно быть Long");
         } catch (MustBeNotEmptyException e) {

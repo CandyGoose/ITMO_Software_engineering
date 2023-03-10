@@ -30,7 +30,7 @@ public class ExecuteScriptCommand extends AbstractCommand {
             Console.printLn("Выполнение скрипта '" + argument + "'...");
             return true;
         } catch (WrongAmountOfElementsException exception) {
-            Console.printLn("Использование '" + getName() + "'");
+            Console.printError("Нет аргументов для исполнения команды '" + getName() + "'");
         }
         return false;
     }
