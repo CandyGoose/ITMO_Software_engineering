@@ -60,21 +60,21 @@ public class Console {
     public int scriptMode(String argument) {
         String[] userCommand;
         int commandStatus;
-        scriptStack.add(argument);
-        try (Scanner scriptScanner = new Scanner(new File(argument))) {
+        scriptStack.add(argument); // добавление скрипта в стек скриптов, чтобы отслеживать рекурсию скриптов
+        try (Scanner scriptScanner = new Scanner(new File(argument))) { // открытие файла скрипта для чтения
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
-            Scanner tmpScanner = organizationAsker.getUserScanner();
+            Scanner tmpScanner = organizationAsker.getUserScanner(); // установка сканера ввода скрипта, чтобы все последующие команды в скрипте читались из этого сканера ввода
             organizationAsker.setUserScanner(scriptScanner);
             organizationAsker.setScriptMode();
             do {
-                userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
+                userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2); // чтение очередной строки скрипта и разбиение ее на команду и аргументы
                 userCommand[1] = userCommand[1].trim();
                 while (scriptScanner.hasNextLine() && userCommand[0].isEmpty()) {
                     userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                     userCommand[1] = userCommand[1].trim();
                 }
                 Console.printLn(Console.PS + String.join(" ", userCommand));
-                if (userCommand[0].equals("execute_script")) {
+                if (userCommand[0].equals("execute_script")) { // проверка на наличие рекурсии в скрипте, если текущая команда
                     for (String script : scriptStack) {
                         if (userCommand[1].equals(script)) throw new ScriptRecursionException();
                     }
@@ -96,7 +96,7 @@ public class Console {
             Console.printError("Непредвиденная ошибка.");
             System.exit(0);
         } finally {
-            scriptStack.remove(scriptStack.size()-1);
+            scriptStack.remove(scriptStack.size()-1); // удаление текущего скрипта из стека скриптов, чтобы позволить выполнение других скриптов
         }
         return 1;
     }

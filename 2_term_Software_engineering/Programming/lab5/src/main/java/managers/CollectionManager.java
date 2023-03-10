@@ -82,10 +82,10 @@ public class CollectionManager {
     public void replaceById(Long id,Organization newValue){
         newValue.setId(id);
         organizationCollection
-                .stream()
-                .filter(organization -> Objects.equals(organization.getId(), id))
-                .findFirst()
-                .ifPresent(organization -> organizationCollection.set(organizationCollection.indexOf(organization), newValue));
+                .stream() // создает поток из коллекции organizationCollection
+                .filter(organization -> Objects.equals(organization.getId(), id)) // фильтрует поток, оставляя только те объекты Organization, у которых значение поля ID равно переданному методу значению id
+                .findFirst() // возвращает первый объект из отфильтрованного потока, результатом выполнения этого метода будет либо один объект типа Optional<Organization>, либо пустой Optional
+                .ifPresent(organization -> organizationCollection.set(organizationCollection.indexOf(organization), newValue)); // если найден объект с заданным ID (Optional не пустой), то происходит замена этого объекта на переданный объект newValue
     }
 
 
@@ -114,22 +114,22 @@ public class CollectionManager {
         Collections.sort(organizationCollection);
     }
 
+
     /**
      * Метод удаляет первый элемент из коллекции организаций.
      */
-    public void removeFirstInCollection(){
-        organizationCollection.poll();
-    }
+    public void removeFirstInCollection(){ organizationCollection.poll(); } // удаляет первый элемент (head) из коллекции organizationCollection
+
 
     /**
      * Метод удаляет организацию из коллекции по заданному идентификатору.
      * @param id идентификатор организации для удаления
      */
     public void removeByIdFromCollection(Long id){
-        organizationCollection.stream()
-                .filter(organization -> Objects.equals(organization.getId(), id))
-                .findFirst()
-                .ifPresent(this::removeFromCollection);
+        organizationCollection.stream() // получение последовательного потока элементов из коллекции organizationCollection
+                .filter(organization -> Objects.equals(organization.getId(), id)) // выбираем только те объекты Organization, у которых id совпадает с переданным значением id
+                .findFirst() // возвращает первый элемент из потока, удовлетворяющий условию, представленному в фильтре, если такого элемента нет, метод возвращает пустое значение.
+                .ifPresent(this::removeFromCollection); // проверяет, присутствует ли значение в Optional (возвращаемое значение метода findFirst()) и, если это так, то указывает на ссылку на метод removeFromCollection() текущего объекта для удаления
     }
 
 
@@ -154,9 +154,9 @@ public class CollectionManager {
      * @return множество значений количества сотрудников
      */
     public Set<Long> getSetEmployeesCount(){
-        return organizationCollection.stream()
-                .map(Organization::getEmployeesCount)
-                .collect(Collectors.toSet());
+        return organizationCollection.stream() // создание потока данных
+                .map(Organization::getEmployeesCount) // применяется к каждому элементу потока данных, получая значение поля employeesCount для каждого объекта типа Organization в коллекции, результатом выполнения метода map() является новый поток данных, содержащий значения поля employeesCount
+                .collect(Collectors.toSet()); // собирает все уникальные значения в Set, который затем возвращается из метода getSetEmployeesCount()
     }
 
     /**
@@ -164,9 +164,9 @@ public class CollectionManager {
      * @return список значений годового оборота
      */
     public List<Float> getListAnnualTurnover(){
-        return organizationCollection.stream()
-                .map(Organization::getAnnualTurnover)
-                .collect(Collectors.toList());
+        return organizationCollection.stream() // создание потока данных
+                .map(Organization::getAnnualTurnover) // применяется к каждому элементу потока данных, получая значение поля annualTurnover для каждого объекта типа Organization в коллекции, результатом выполнения метода map() является новый поток данных, содержащий значения поля AnnualTurnover
+                .collect(Collectors.toList()); // собирает все значения в List
     }
 
     /**
@@ -174,10 +174,10 @@ public class CollectionManager {
      * @return новый идентификатор организации
      */
     public Long generateNewIdForCollection(){
-        Long id = organizationCollection.stream()
-                .mapToLong(Organization::getId)
-                .filter(organization -> organization >= 0)
-                .max().orElse(0);
+        Long id = organizationCollection.stream() // создает поток объектов класса Organization,
+                .mapToLong(Organization::getId) // преобразует каждый объект Organization в его id и создает поток из этих значений
+                .filter(organization -> organization >= 0) // фильтрует id, чтобы получить только положительные значения (ID организации не может быть отрицательным)
+                .max().orElse(0); // находит максимальное значение id из потока и возвращает его, или 0, если поток был пустым (в случае, если коллекция была пустой)
         return id + 1;
     }
 
@@ -187,8 +187,8 @@ public class CollectionManager {
      */
     public String infoAboutCollection(){
         return "Тип: " + organizationCollection.getClass() + "\n" +
-                "Дата инициализации: " + getCreationDate().format(DateTimeFormatter.ofPattern("dd.MM.y H:mm:ss")) + "\n" +
-                "Количество элементов в коллекции: " + organizationCollection.size();
+               "Дата инициализации: " + getCreationDate().format(DateTimeFormatter.ofPattern("dd.MM.y H:mm:ss")) + "\n" +
+               "Количество элементов в коллекции: " + organizationCollection.size();
     }
 
 }

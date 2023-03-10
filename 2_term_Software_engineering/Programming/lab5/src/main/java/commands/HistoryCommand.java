@@ -20,7 +20,6 @@ public class HistoryCommand extends AbstractCommand{
      * Реализация метода execute интерфейса ICommand.
      * @param argument аргумент, который необходимо проверить на пустоту.
      * @return значение типа boolean. Если аргумент не пустой, возвращает false.
-     * @throws WrongAmountOfElementsException если аргумент не пустой.
      */
     @Override
     public boolean execute(String argument) {
