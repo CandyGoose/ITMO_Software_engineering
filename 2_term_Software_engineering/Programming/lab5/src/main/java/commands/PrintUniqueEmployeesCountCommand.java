@@ -40,7 +40,7 @@ public class PrintUniqueEmployeesCountCommand extends AbstractCommand {
             else Console.printLn("Уникальные значения поля employeesCount: " + employeesCount.toString().replaceAll("^\\[|\\]$", ""));
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Использование '" + argument + "' в " + getName());
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

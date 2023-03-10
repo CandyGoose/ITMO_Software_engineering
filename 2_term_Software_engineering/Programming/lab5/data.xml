@@ -111,4 +111,33 @@
       <street>qwerty</street>
     </postalAddress>
   </organization>
+  <organization>
+    <id>8</id>
+    <name>org</name>
+    <coordinates>
+      <x>34.0</x>
+      <y>12.0</y>
+    </coordinates>
+    <creationDate>2023-03-10T13:05:02.6276837+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>2312.2</annualTurnover>
+    <fullName>21</fullName>
+    <employeesCount>12</employeesCount>
+    <type>OPEN_JOINT_STOCK_COMPANY</type>
+  </organization>
+  <organization>
+    <id>9</id>
+    <name>new</name>
+    <coordinates>
+      <x>231.0</x>
+      <y>321.0</y>
+    </coordinates>
+    <creationDate>2023-03-10T13:06:05.9625924+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>2313.3</annualTurnover>
+    <fullName>bu</fullName>
+    <employeesCount>123</employeesCount>
+    <type>OPEN_JOINT_STOCK_COMPANY</type>
+    <postalAddress>
+      <street>sad</street>
+    </postalAddress>
+  </organization>
 </list>

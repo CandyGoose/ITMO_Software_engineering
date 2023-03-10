@@ -42,7 +42,7 @@ public class SaveCommand extends AbstractCommand {
             fileManager.writeCollection(collectionManager.getCollection());
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Нет в аргументов в " + getName());
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }

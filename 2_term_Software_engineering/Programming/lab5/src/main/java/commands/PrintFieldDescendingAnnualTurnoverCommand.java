@@ -42,7 +42,7 @@ public class PrintFieldDescendingAnnualTurnoverCommand extends AbstractCommand {
             else Console.printLn("Все значения поля annualTurnover в порядке убывания: " + annualTurnover.toString().replaceAll("^\\[|\\]$", ""));
             return true;
         } catch (WrongAmountOfElementsException e){
-            Console.printError("Использование '" + argument + "' в " + getName());
+            Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }
         return false;
     }
