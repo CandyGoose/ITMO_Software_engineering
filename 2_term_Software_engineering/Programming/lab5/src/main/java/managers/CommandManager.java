@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class CommandManager {
     private final int COMMAND_HISTORY_SIZE = 10;
-
     private final String[] commandHistory = new String[COMMAND_HISTORY_SIZE];
     private final List<ICommand> commands;
     private final ICommand addCommand;
@@ -78,7 +77,8 @@ public class CommandManager {
 
 
     /**
-     * Добавляет команду в историю использованных команд.
+     * Добавляет команду в историю использованных команд, обновляет историю последних команд,
+     * добавляя в нее новую команду в начале массива и удаляя самую старую команду, которая располагалась в конце массива.
      * @param commandToStore команда для сохранения в истории
      */
     public void addToHistory(String commandToStore) {
@@ -274,7 +274,6 @@ public class CommandManager {
         if (!historyCommand.execute(argument)) {
             try {
                 if (commandHistory.length == 0) throw new HistoryIsEmptyException();
-
                 Console.printLn("Последние использованные команды:");
                 for (String s : commandHistory) {
                     if (s != null) Console.printLn(" " + s);

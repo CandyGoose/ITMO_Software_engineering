@@ -198,7 +198,7 @@ public class Organization implements Comparable<Organization> {
      */
     @Override
     public int compareTo(Organization o) {
-        return (int) (this.getId() - o.getId());
+        return Long.compare(this.getId(), o.getId());
     }
 
 
@@ -209,7 +209,7 @@ public class Organization implements Comparable<Organization> {
      */
     @Override
     public String toString() {
-        String result = String.format("ID: %d\nИмя: %s\nКоординаты: {x: %f, y: %f}\nВремя создания: %s\nГодовой оборот: %f\nПолное название: %s\nКоличество сотрудников: %d\nТип организации: %s\n",
+        String result = String.format("ID: %d\nИмя: %s\nКоординаты: {x: %.2f, y: %.2f}\nВремя создания: %s\nГодовой оборот: %.2f\nПолное название: %s\nКоличество сотрудников: %d\nТип организации: %s\n",
                 getId(), getName(), getCoordinates().getX(), getCoordinates().getY(), getCreationDate().format(DateTimeFormatter.ofPattern("dd.MM.y H:mm:ss")), getAnnualTurnover(), getFullName(), getEmployeesCount(), getType());
         if(getPostalAddress() == null) result += "Адрес: null";
         else result += String.format("Адрес: %s", getPostalAddress().getStreet());

@@ -23,7 +23,7 @@ public class ShuffleCommand extends AbstractCommand {
     }
 
     /**
-     * Перемешивает коллекции
+     * Перемешивает коллекцию.
      *
      * @param argument строка аргументов команды
      * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.

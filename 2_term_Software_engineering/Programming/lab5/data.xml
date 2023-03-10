@@ -140,4 +140,17 @@
       <street>sad</street>
     </postalAddress>
   </organization>
+  <organization>
+    <id>10</id>
+    <name>qwe</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>312.0</y>
+    </coordinates>
+    <creationDate>2023-03-10T14:04:31.0408355+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>321.0</annualTurnover>
+    <fullName>31</fullName>
+    <employeesCount>123</employeesCount>
+    <type>OPEN_JOINT_STOCK_COMPANY</type>
+  </organization>
 </list>
