@@ -28,7 +28,7 @@ public class PrintFieldDescendingAnnualTurnoverCommand extends AbstractCommand {
     /**
      * Выводит все поля annualTurnover организаций в системе в порядке убывания.
      * Сортирует список объектов annualTurnover в обратном порядке с помощью вызова метода sort() класса Collections,
-     * который принимает в качестве параметра объект, реализующий интерфейс Comparator<Float>.
+     * который принимает в качестве параметра объект, реализующий интерфейс Comparator.
      * Используется статический метод reverseOrder() класса Collections, который возвращает компаратор, сравнивающий
      * элементы в обратном порядке.
      *
