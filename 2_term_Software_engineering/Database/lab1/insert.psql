@@ -10,14 +10,14 @@ INSERT INTO location (name) VALUES
 
 INSERT INTO miracle (name, danger, location) VALUES
     ('Гора Афон', 1, 1),
-    ('Астероид Апофис',  2, 2),
+    ('Астероид Апофис', 2, 2),
     ('Пещера смерти', 3, 3);
 
-INSERT INTO destiny (life_duration, description) VALUES
-    (45, 'Сорваться со скалы'),
-    (55, 'Упасть в лаву'),
-    (65, 'Врезаться в астероид'),
-    (85, 'Умереть в старости');
+INSERT INTO destiny (description) VALUES
+    ('Сорваться со скалы'),
+    ('Упасть в лаву'),
+    ('Врезаться в астероид'),
+    ('Умереть в старости');
 
 INSERT INTO complaint (description) VALUES
     ('Мне слишком жарко'),
@@ -25,14 +25,14 @@ INSERT INTO complaint (description) VALUES
     ('Я скучаю по своим товарищам'),
     ('Хочу увидеть хоть одно чудо!');
 
-INSERT INTO comrade (name, age, alive, miracle_count, destiny, complaint) VALUES
-    ('Чарли', 25, TRUE, 1, 4, null),
-    ('Томас', 35, TRUE, 1, 2, 3),
-    ('Вильям', 45, FALSE, 0, 1, 2),
-    ('Джеймс', 60, TRUE, 2, 4, null),
-    ('Дэниел', 25, TRUE, 0, 3, 4),
-    ('Оливер', 25, TRUE, 1, 2, 1),
-    ('Джек', 80, TRUE, 3, 4, 3);
+INSERT INTO comrade (name, birth_date, death_date, destiny, complaint) VALUES
+    ('Чарли', '1998-01-01', null, 4, null),
+    ('Томас', '1988-01-01', null, 2, 3),
+    ('Вильям', '1978-01-01', '2020-01-01', 1, 2),
+    ('Джеймс', '1963-01-01', null, 4, null),
+    ('Дэниел', '1998-01-01', null, 3, 4),
+    ('Оливер', '1998-01-01', null, 2, 1),
+    ('Джек', '1943-01-01', null, 4, 3);
 
 INSERT INTO miracle_seen (comrade, miracle) VALUES
     (1, 2),
