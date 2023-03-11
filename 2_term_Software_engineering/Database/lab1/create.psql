@@ -17,7 +17,6 @@ CREATE TABLE miracle (
 
 CREATE TABLE destiny (
     id BIGSERIAL PRIMARY KEY,
-    life_duration INT NOT NULL,
     description TEXT NOT NULL UNIQUE
 );
 
@@ -29,9 +28,8 @@ CREATE TABLE complaint (
 CREATE TABLE comrade (
     id BIGSERIAL PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
-    age INT NOT NULL,
-    alive BOOLEAN NOT NULL,
-    miracle_count INT,
+    birth_date DATE NOT NULL,
+    death_date DATE,
     destiny BIGINT REFERENCES destiny(id) NOT NULL,
     complaint BIGINT REFERENCES complaint(id) ON DELETE SET NULL
 );
