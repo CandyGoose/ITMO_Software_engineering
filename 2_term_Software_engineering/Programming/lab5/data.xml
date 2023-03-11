@@ -153,4 +153,20 @@
     <employeesCount>123</employeesCount>
     <type>OPEN_JOINT_STOCK_COMPANY</type>
   </organization>
+  <organization>
+    <id>11</id>
+    <name>Script_Org</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-03-11T23:39:53.2008726+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
 </list>

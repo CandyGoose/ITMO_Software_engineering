@@ -145,7 +145,7 @@ public class FileManager {
 
     public static String getName(){
         try {
-            path = System.getenv("lab5");
+            path = System.getenv("lab5"); // lab5 - полный путь до файла, включая его название
             String[] checkPaths = path.split(";");
             if (checkPaths.length > 1) {
                 System.out.print("В этой переменной содержится более одного пути к файлам.\nПрограмма остановлена.");
