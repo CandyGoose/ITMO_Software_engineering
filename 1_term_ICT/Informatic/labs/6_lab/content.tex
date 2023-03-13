@@ -1,137 +1,289 @@
-\section*{Введение}
+\section{Текст лабораторной}
+\begin{enumerate} 
+\item Перевести число  ``А'' , заданное в системе счисления ``В'', в систему счисления ``С''. Числа ``A'', ``В'' и ``С'' взять из представленных ниже таблиц.
+\item Всего нужно решить 13 примеров. Для примеров с 5-го по 7-й выполнить операцию перевода по сокращенному правилу (для систем с основанием 2 в системы с основанием $2^\wedge k$). В примере 11 группа символов ${\widehat{1}}$ означает -1 в симметричной системе счисления.
+\end{enumerate}
+\section{Выполнение заданий}
+\paragraph{Задание 1}
 
-В данной работе будет проведено полное исследование заданной функции, взятой из типового расчета по математике \cite{tip}: 
-\begin{equation}
-    \centering
-    \label{eq:eq1}
-    y = \frac{x^2-3}{x-2}.
-\end{equation}
 
- Исследование функции будет проводиться по следующей схеме:
-\begin{itemize}
-    \item нахождение области значения функции;
-    \item проверка на периодичность;
-    \item исследование функции с помощью первой производной;
-    \item исследование функции с помощью второй производной;
-    \item проверка на наличие вертикальных, горизонтальных и наклонных асимптот графика функции;
-    \item нахождение точек пересечения графика с координатными осями.
-\end{itemize}
+$85407_{10} \rightarrow X_{11}$
 
-\addcontentsline{toc}{section}{Введение}
 
-\newpage
-\section{Исследование функции}
+\paragraph{Основные этапы вычисления:}
+\hfill \break
 
-\subsection{Область определения функции}
-
-Областью определения функции $\eqref{eq:eq1}$ является вся числовая ось, кроме точки $x = 2$.
-
-\subsection{Проверка на периодичность}
-
-Функция не является периодической. Проверим четность (нечетность):
-
-\[f(-x) = \frac{(-x)^2-3}{-x-2} ;\ f(-x) = \frac{x^2-3}{-x-2} ;\ f(-x) \neq \frac{x^2-3}{x-2} ;\ f(-x) \neq -f(x).\]
-
-Значит, функция не является ни чётной, ни нечётной. График функции не
-имеет симметрии ни относительно оси ординат, ни относительно центра
-системы координат.
-
-\subsection{Исследование функции с помощью первой производной}
-
-Найдём первую производную функции $\eqref{eq:eq1}$:
-
-\[y' = \left(\frac{x^2-3}{x-2}\right)' = \frac{(x^2-3)'(x-2)-(x^2-3)(x-2)'}{(x-2)^2}  = \frac{x^2-4x+3}{(x-2)^2} = \frac{(x-1)(x-3)}{(x-2)^2}.\]
-
-Тогда $y' = 0$ при $x_1 = 1, x_2 = 3$.
-
-Проверим знаки производной и определим промежутки монотонности функции (рисунок \ref{pic:prom}). Таким образом, функция $\eqref{eq:eq1}$ возрастает при $x \in (-\infty;1) \cup (3; +\infty)$ и убывает при $x \in (1;2) \cup (2;3)$. Далее, так как при переходе через стационарную точку $x = 1$ производная меняет знак с плюса на минус, то $x=1$ точка максимума $(y_{max} = y(1) = 2)$. Аналогично, при переходе через стационарную точку
-$x = 3$ производная меняет знак с минуса на плюс, поэтому $x = 3$ точка минимума $(y_{min} = y(3) = 6)$
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=1]{prom}
-		\caption{Промежутки монотонности функции $\eqref{eq:eq1}$}
-		\label{pic:prom}
-	\end{center}
-\end{figure}
-
-\subsection{Исследование функции с помощью второй производной}
-
-Найдём вторую производную функции $\eqref{eq:eq1}$:
-
-\[y'' = \left(\frac{x^2-3}{x-2}\right)'' = \left(\frac{x^2-4x+3}{(x-2)^2}\right)' = \frac{(2x-4)(x-2)^2 - (x^2-4x+3)2(x-2)}{(x-2)^4} = \frac{2}{(x-2)^3}.\]
-
-Проверим знаки второй производной функции и определим промежутки выпуклости (вогнутости) функции (рисунок \ref{pic:vogn}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=1.1]{vogn}
-		\caption{Промежутки выпуклости (вогнутости) функции $\eqref{eq:eq1}$}
-		\label{pic:vogn}
-	\end{center}
-\end{figure}
-
-Таким образом, функция $\eqref{eq:eq1}$ выпукла вверх при $x \in (-\infty; 2)$ и выпукла вниз (вогнута) при $x \in (2; +\infty)$. Так как точка $x = 2$ не принадлежит области определения функции, она не является и точкой перегиба функции.
-
-\subsection{Проверка на наличие асимптот}
-
-Так как функция $\eqref{eq:eq1}$ не является непрерывной в точке $x = 2$, проверим в этой точке наличие вертикальной асимптоты:
-
-Найдём $\lim\limits_{x\to 2-0} \frac{x^2-3}{x-2} = \frac{1}{-0} = -\infty, \lim\limits_{x\to 2+0} \frac{x^2-3}{x-2} = \frac{1}{+0} = +\infty$, откуда следует, что прямая $x = 2$ является вертикальной асимптотой.
-
-Проверим наличие горизонтальной асимптоты $y = b$: $b = \lim\limits_{x\to \pm \infty} \frac{x^2-3}{x-2} =  \pm \infty \neq const$, откуда следует, что горизонтальной асимптоты нет.
-
-Проверим наличие наклонной асимптоты $y = kx + b$: $k = \lim\limits_{x\to \pm \infty} \frac{f(x)}{x} = \lim\limits_{x\to \pm \infty} \frac{x^2-3}{x(x-2)} = 1,$ $b = \lim\limits_{x\to \pm \infty} f(x) - kx = \lim\limits_{x\to \pm \infty} \left(\frac{x^2-3}{(x-2)}-x\right) = \lim\limits_{x\to \pm \infty} \left(\frac{x^2-3-x(x-2)}{(x-2)}\right) = \lim\limits_{x\to \pm \infty}\left(\frac{2x-3}{x-2}\right) = 2.$
-
-Значит, прямая $y = x + 2$ наклонная асимптота.
-
-\subsection{Нахождение пересечений с осями координат}
-
-Находим точки пересечения функции с координатными осями (таблица \ref{tabular:tab1}): 
-
-\begin{table}[H]
-	\caption{Пересечения функции с координатными осями}
-	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			x & 0 & $\sqrt{3}$ & $-\sqrt{3}$ \\ \hline
-			y & 1.5 & 0 & 0 \\ \hline
-		\end{tabular}
-		\label{tabular:tab1}
-	\end{center}
+\FloatBarrier
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+\multicolumn{1}{l|}{85407} & 11                        &                          &                         &     \\ 
+\cline{2-2}
+\multicolumn{1}{l|}{85404} & \multicolumn{1}{l|}{7764} & 11                       &                         &     \\ 
+\cline{1-1}\cline{3-3}
+3                          & \multicolumn{1}{l|}{7755} & \multicolumn{1}{l|}{705} & 11                      &     \\ 
+\cline{2-2}\cline{4-4}
+                           & 9                         & \multicolumn{1}{l|}{704} & \multicolumn{1}{l|}{64} & 11  \\ 
+\cline{3-3}\cline{5-5}
+                           &                           & 1                        & \multicolumn{1}{l|}{55} & 5   \\ 
+\cline{4-4}
+                           &                           &                          & 9                       &     \\
+                           &                           &                          &                         &    
+\end{tabular}
 \end{table}
+\FloatBarrier
+$85407_{10} \rightarrow 59193_{11}$
+\paragraph{Ответ:}
+$59193_{11}$
+\paragraph{Задание 2}
+$1A550_{11} \rightarrow X_{10}$
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+\hfill \break
+$1A550_{11}=1\cdot 11^4 + 10\cdot 11^3 +5\cdot 11^2 + 5\cdot11+0=14641+13310+605+55=28611_{10}$
 
-Дополнительные точки: $y(4) = 6,5$; $y(-4) \approx -2,17.$
+\paragraph{Ответ:}
+$28611_{10}$
+
+\paragraph{Задание 3}
+$43455_{7} \rightarrow X_{13}$
+
+\paragraph{Основные этапы вычисления:}
+
+\begin{enumerate}
+\item Переведём $43455_{7} \rightarrow X_{10}$
+
+$43455_{7} = 4\cdot7^4 + 3\cdot 7^3 + 4\cdot 7^2 + 5\cdot7+5=9604+1029+196+35+5=10869_{10}$
+
+\item Переведём $10869_{10} \rightarrow X_{13}$
+
+\FloatBarrier
+\begin{table}
+\centering
+\begin{tabular}{lllll}
+\multicolumn{1}{l|}{10869} & 13                       &                         &    &   \\ 
+\cline{2-2}
+\multicolumn{1}{l|}{10868} & \multicolumn{1}{l|}{836} & 13                      &    &   \\ 
+\cline{1-1}\cline{3-3}
+1                          & \multicolumn{1}{l|}{832} & \multicolumn{1}{l|}{64} & 13 &   \\ 
+\cline{2-2}\cline{4-4}
+                           & 4                        & \multicolumn{1}{l|}{52} & 4  &   \\ 
+\cline{3-3}
+                           &                          & С                       &    &   \\
+                           &                          &                         &    &   \\
+                           &                          &                         &    &  
+\end{tabular}
+\end{table}
+\FloatBarrier
+$43455_{7} \rightarrow 4C41_{13}$
+\end{enumerate}
+
+\paragraph{Ответ:}
+$4C41_{13}$
+
+\paragraph{Задание 4}
+$36,19_{10} \rightarrow X_{2}$
+\paragraph{Основные этапы вычисления:}
+\begin{enumerate}
+\item Переведём $36_{10} \rightarrow X_{2}$
+
+\FloatBarrier
+\begin{table}[bh]
+\centering
+\begin{tabular}{llllll}
+\multicolumn{1}{l|}{36} & 2                       &                        &                        &                        &    \\ 
+\cline{2-2}
+\multicolumn{1}{l|}{36} & \multicolumn{1}{l|}{18} & 2                      &                        &                        &    \\ 
+\cline{1-1}\cline{3-3}
+0                       & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{9} & 2                      &                        &    \\ 
+\cline{2-2}\cline{4-4}
+                        & 0                       & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{4} & 2                      &    \\ 
+\cline{3-3}\cline{5-5}
+                        &                         & 1                      & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{2} & 2  \\ 
+\cline{4-4}\cline{6-6}
+                        &                         &                        & 0                      & \multicolumn{1}{l|}{2} & 1  \\ 
+\cline{5-5}
+                        &                         &                        &                        & 0                      &   
+\end{tabular}
+\end{table}
+\FloatBarrier
+$36_{10} \rightarrow 100100_{2}$
+\item Переведём $0,19_{10} \rightarrow X_{2}$
+\FloatBarrier
+\begin{table}[bh]
+\centering
+\begin{tabular}{|l|l|llll}
+0 & ,19 &  &  &  &   \\
+  & 2   &  &  &  &   \\ 
+\cline{1-2}
+0 & ,38 &  &  &  &   \\
+  & 2   &  &  &  &   \\ 
+\cline{1-2}
+0 & ,76 &  &  &  &   \\
+  & 2   &  &  &  &   \\ 
+\cline{1-2}
+1 & ,52 &  &  &  &   \\
+  & 2   &  &  &  &   \\ 
+\cline{1-2}
+1 & ,04 &  &  &  &   \\
+  & 2   &  &  &  &   \\ 
+\cline{1-2}
+0 & ,08 &  &  &  &   \\
+  & 2   &  &  &  &  
+\end{tabular}
+\end{table}
+\FloatBarrier
+$0,19_{10} \rightarrow 0,0011_{2}$
+\item Тогда $36,19_{10} \rightarrow 100100,0011_{2}$
+\end{enumerate}
+\paragraph{Ответ:}
+$100100,0011_{2}$
+
+\paragraph{Задание 5}
+$83,E1_{16} \rightarrow X_{2}$
+\paragraph{Основные этапы вычисления:}
+\hfill \break
 
 
-\section{Построение графика}
-\subsection{Построение графика функции по заданию}
+Зная, что:
 
-График функции представлен на рисунке \ref{pic:gr}:
+$8_{16} <=> 1000_{2}$;
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=1]{gr}
-		\caption{График функции $\eqref{eq:eq1}$}
-		\label{pic:gr} 
-	\end{center}
-\end{figure}
+$3_{16} <=> 0011_{2}$;
 
-\subsection{Проверка графика функции}
+$E_{16} <=> 1110_{2}$;
 
-Проверим построенный график при помощи сайта \cite{desmos}. Введем функцию $\eqref{eq:eq1}$ и получим график, представленный на рисунке \ref{pic:des}:
+$1_{16} <=> 0001_{2}$;
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.8]{des}
-		\caption{График функции $\eqref{eq:eq1}$, построенный сайтом}
-		\label{pic:des} 
-	\end{center}
-\end{figure}
+Выполним перевод:
 
-Графики совпадают, следовательно, график функции $\eqref{eq:eq1}$ был построен верно.
+$83,E1_{16} = 1000~0011,~1110~0001_{2}$
 
-\newpage
-\section*{Заключение}
-В данном типовом расчете была исследована функция $\eqref{eq:eq1}$, а также построен ее график.
-\addcontentsline{toc}{section}{Заключение}
+\paragraph{Ответ:}
+$10000011,111_{2}$
+
+\paragraph{Задание 6}
+$22,32_{8} \rightarrow X_{2}$
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+
+
+Зная, что:
+
+$2_{8} <=> 010_{2}$;
+
+$3_{8} <=> 011_{2}$;
+
+Выполним перевод:
+
+$22,32_{8} = 10~010,~011~01_{2}$
+
+\paragraph{Ответ:}
+$10010,01101_{2}$
+
+\paragraph{Задание 7}
+$0,011101_{2} \rightarrow X_{16}$
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+
+
+Зная, что:
+
+$7_{16} <=> 0111_{2}$;
+
+$4_{8} <=> 0100_{2}$;
+
+Выполним перевод:
+
+$0,0111~0100_{2} = 0,74_{16}$
+
+\paragraph{Ответ:}
+$0,74_{16}$
+
+\paragraph{Задание 8}
+$0,011101_{2} \rightarrow X_{10}$
+
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+$0,011101_{2} = 0 + 0\cdot2{-1} + 1\cdot2^{-2} + 1\cdot2^{-3} + 1\cdot2^{-4} + 0\cdot2^{-5}+1\cdot2^{-6} = 0,25+0.125+0,0625+0,015625 = 0,453125 \approx 0,45313_{10}$
+
+\paragraph{Ответ:}
+$0,45313_{10}$
+
+\paragraph{Задание 9}
+$B7,F4_{16} \rightarrow X_{10}$
+
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+$B7,F4_{16} = 11\cdot16+7+15\cdot16^{-1}+4\cdot16^{-2} = 176+7+\frac{15}{16}+\frac{4}{256} =\frac{11773}{64} \approx 183,95313_{10}$
+\paragraph{Ответ:}
+$183,95313_{10}$
+
+\paragraph{Задание 10}
+$67_{10} \rightarrow X_\text{Фиб}$
+
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+
+$67_{10} = 55 + 8 + 3 + 1 = 100010101_\text{Фиб}$
+
+\paragraph{Ответ:}
+$100010101_\text{Фиб}$
+
+\paragraph{Задание 11}
+$692_{-10} \rightarrow X_{10}$
+
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+
+$692_{-10} = 6\cdot(-10)^{2}+9\cdot(-10)+2 = 600 - 90 + 2 = 512_{10}$
+
+\paragraph{Ответ:}
+$512_{10}$
+
+\paragraph{Задание 12}
+$32\overline{3}44_\text{9C} \rightarrow X_{10}$
+
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+
+$32\overline{3}44_\text{9C} = 3\cdot9^{4}+2\cdot9^{3}+(-3)\cdot9^{2}+4\cdot9+4=20938_{10}$
+
+\paragraph{Ответ:}
+$20938_{10}$
+
+\paragraph{Задание 13}
+$3088_{10} \rightarrow X_\text{Ф}$
+
+\paragraph{Основные этапы вычисления:}
+\hfill \break
+\begin{enumerate}
+\item 3088 div 2 = 1544
+\item 1544 div 3 = 514
+\item 514 div 4 = 128
+\item 128 div 5 = 25
+\item 25 div 6 = 4
+\item 4 div 7 = 0
+\end{enumerate}
+$X_\text{Ф} = d_1d_2d_3d_4d_5d_\text{6(Ф)}$
+\begin{enumerate}
+\item $d_{1}$ = 3088 mod 2 = 0
+\item $d_{2}$ = 1544 mod 3 = 2
+\item $d_{3}$ = 514 mod 4 = 2
+\item $d_{4}$ = 128 mod 5 = 3
+\item $d_{5}$ = 25 mod 6 = 1
+\item $d_{6}$ = 4 mod 7 = 4
+\end{enumerate}
+$3088_{10} \rightarrow 413220_\text{Ф}$
+
+\paragraph{Ответ:}
+$413220_\text{Ф}$
+\section{Вывод}
+В этой лабораторной работе я научился:
+\begin{itemize}
+\item Переводить из СС-10 в любую другую СС;
+\item Переводить из любой СС в СС-10;
+\item Переводить по сокращённому правилу для(для систем с основанием 2 в системы с основанием 2 $\widehat{}$ k);
+\item Переводить из СС-10 в факториальную СС;
+\item Переводить из нега-позиционных СС, Симметричных СС, CC Цекендорфа в СС-10;
+\end{itemize}

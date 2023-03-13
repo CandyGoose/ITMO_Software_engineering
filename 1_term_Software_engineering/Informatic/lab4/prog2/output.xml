@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<main>
+	<Среда>
+		<period>
+			<time>15:20-16:50</time>
+			<week>2, 4, 6, 8, 10, 12, 14, 16</week>
+		</period>
+		<place>
+			<room>2435/3 (бывш. 431б) ауд.</room>
+			<building>Кронверкский пр., д.49, лит.А</building>
+		</place>
+		<class-info>
+			<lesson>Основы профессиональной деятельности</lesson>
+			<teacher>Билый Андрей Михайлович</teacher>
+		</class-info>
+		<lesson-format>Очно - дистанционный</lesson-format>
+		<period>
+			<time>17:00-18:30</time>
+			<week>2, 4, 6, 8, 10, 12, 14, 16</week>
+		</period>
+		<place>
+			<room>2435/3 (бывш. 431б) ауд.</room>
+			<building>Кронверкский пр., д.49, лит.А</building>
+		</place>
+		<class-info>
+			<lesson>Основы профессиональной деятельности</lesson>
+			<teacher>Билый Андрей Михайлович</teacher>
+		</class-info>
+		<lesson-format>Очно - дистанционный</lesson-format>
+	</Среда>
+</main>
