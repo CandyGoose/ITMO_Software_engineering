@@ -190,5 +190,4 @@ public class CollectionManager {
                "Дата инициализации: " + getCreationDate().format(DateTimeFormatter.ofPattern("dd.MM.y H:mm:ss")) + "\n" +
                "Количество элементов в коллекции: " + organizationCollection.size();
     }
-
 }

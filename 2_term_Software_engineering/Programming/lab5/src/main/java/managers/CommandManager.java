@@ -85,8 +85,8 @@ public class CommandManager {
 
         for (ICommand command : commands) {
             if (command.getName().split(" ")[0].equals(commandToStore)) {
-                for (int i = COMMAND_HISTORY_SIZE-1; i>0; i--) {
-                    commandHistory[i] = commandHistory[i-1];
+                for (int i = COMMAND_HISTORY_SIZE - 1; i > 0; i--) {
+                    commandHistory[i] = commandHistory[i - 1];
                 }
                 commandHistory[0] = commandToStore;
             }

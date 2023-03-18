@@ -51,6 +51,8 @@ public class Validator {
                 iterator.remove();}
             if(org.getAnnualTurnover() == null || org.getAnnualTurnover() <= 0) {
                 iterator.remove();}
+            if(org.getFullName() == null || org.getFullName().equals("")) {
+                iterator.remove();}
             if(org.getEmployeesCount() <= 0) {
                 iterator.remove();}
             if(org.getType() == null) {
