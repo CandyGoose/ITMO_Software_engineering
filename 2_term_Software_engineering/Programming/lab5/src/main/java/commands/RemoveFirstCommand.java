@@ -39,7 +39,7 @@ public class RemoveFirstCommand extends AbstractCommand {
         } catch (NumberFormatException e) {
             Console.printError("Поле должно быть Long");
         } catch (ArrayIndexOutOfBoundsException exception){
-            Console.printError("Идентификатор должен быть привязан к коллекции");
+            Console.printError("Недопустимый индекс");
         } catch (WrongAmountOfElementsException e){
             Console.printError("Использование аргумента '" + argument + "' в команде '" + getName() + "'");
         }

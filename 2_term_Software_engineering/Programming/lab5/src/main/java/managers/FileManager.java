@@ -122,6 +122,7 @@ public class FileManager {
                 System.exit(0);
             } catch (NullPointerException exception) {
                 Console.printError("Неверный формат коллекции в файле.\nПрограмма остановлена.");
+                System.exit(0);
             } catch (IllegalStateException exception) {
                 Console.printError("Непредвиденная ошибка.\nПрограмма остановлена.");
                 System.exit(0);
@@ -148,7 +149,7 @@ public class FileManager {
             path = System.getenv("lab5"); // lab5 - полный путь до файла, включая его название
             String[] checkPaths = path.split(";");
             if (checkPaths.length > 1) {
-                System.out.print("В этой переменной содержится более одного пути к файлам.\nПрограмма остановлена.");
+                Console.printLn("В этой переменной содержится более одного пути к файлам.\nПрограмма остановлена.");
                 System.exit(0);
             }
         } catch (NullPointerException e) {
