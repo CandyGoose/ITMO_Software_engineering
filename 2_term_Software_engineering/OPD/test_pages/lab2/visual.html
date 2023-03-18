@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка скорости мышления</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        #answer-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Проверка скорости мышления</h1>
+    <p>Нажмите кнопку "Старт", чтобы начать</p>
+    <button id="start-button">Старт</button>
+    <p id="question"></p>
+    <div id="answer-buttons">
+        <button id="even-button" disabled>Четное</button>
+        <button id="odd-button" disabled>Нечетное</button>
+    </div>
+    <p id="result"></p>
+    <p>Осталось примеров: <span id="tries">5</span></p>
+    <script>
+        const startButton = document.getElementById("start-button");
+        const evenButton = document.getElementById("even-button");
+        const oddButton = document.getElementById("odd-button");
+        const question = document.getElementById("question");
+        const result = document.getElementById("result");
+        const tries = document.getElementById("tries");
+        let startTime;
+        let remainingTries = 5;
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function askQuestion() {
+            const firstNum = getRandomInt(1, 100);
+            const secondNum = getRandomInt(1, 100);
+            const operation = "+";
+            question.textContent = `${firstNum} ${operation} ${secondNum}`;
+            startTime = new Date().getTime();
+        }
+
+        function checkAnswer(isEven) {
+            const answer = eval(question.textContent);
+            const isCorrect = isEven ? answer % 2 === 0 : answer % 2 !== 0;
+            const endTime = new Date().getTime();
+            const responseTime = endTime - startTime;
+            if (isCorrect) {
+                result.textContent = `Верно! Время ответа: ${responseTime} мс.`;
+                remainingTries--;
+                tries.textContent = remainingTries;
+                if (remainingTries === 0) {
+                    evenButton.disabled = true;
+                    oddButton.disabled = true;
+                    result.textContent += " Игра окончена.";
+                } else {
+                    askQuestion();
+                }
+            } else {
+                result.textContent = `Неверно! Время ответа: ${responseTime} мс.`;
+                remainingTries--;
+                tries.textContent = remainingTries;
+                if (remainingTries === 0) {
+                    evenButton.disabled = true;
+                    oddButton.disabled = true;
+                    result.textContent += " Игра окончена.";
+                } else {
+                    askQuestion();
+                }
+            }
+        }
+
+        startButton.addEventListener("click", () => {
+            askQuestion();
+            startButton.disabled = true;
+            evenButton.disabled = false;
+            oddButton.disabled = false;
+            result.textContent = "";
+        });
+
+        evenButton.addEventListener("click", () => {
+            checkAnswer(true);
+        });
+
+        oddButton.addEventListener("click", () => {
+            checkAnswer(false);
+        });
+    </script>
+</body>
+</html>
