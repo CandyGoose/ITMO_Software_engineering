@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Проверка реакции на звук</title>
+	<style>
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		#message {
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 30px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Проверка реакции на звук</h1>
+	<p id="instruction">Нажмите на клавишу пробел, когда услышите звук</p>
+	<button id="start" onclick="startTest()">Начать тест</button>
+	<p id="message"></p>
+	<audio id="sound">
+		<source src="./sound.mp3" type="audio/mpeg">
+	</audio>
+
+	<script>
+		var audio = document.getElementById('sound');
+		var instruction = document.getElementById('instruction');
+		var startButton = document.getElementById('start');
+		var message = document.getElementById('message');
+		var startTime;
+		var reactTime;
+
+		function playSound() {
+		  audio.play();
+		  startTime = new Date().getTime();
+		  instruction.style.display = 'none';
+		  startButton.style.display = 'none';
+		  message.style.display = 'none';
+		}
+
+		function react(event) {
+		  if (event.keyCode === 32) { // 32 - код клавиши пробел
+		    reactTime = new Date().getTime() - startTime;
+		    message.innerText = 'Ваша реакция составила ' + reactTime + ' мс';
+		    message.style.display = 'block';
+		    startButton.innerText = 'Пройти тест еще раз';
+		    startButton.style.display = 'block';
+		  }
+		}
+
+		function startTest() {
+		  instruction.style.display = 'block';
+		  startButton.style.display = 'none';
+		  message.style.display = 'none';
+		  setTimeout(playSound, Math.floor(Math.random() * 5000) + 1000); // звук воспроизводится через случайный интервал от 1 до 6 секунд
+		  document.addEventListener('keydown', react);
+		}
+	</script>
+    <style>
+        body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #333;
+	background-color: #f8f8f8;
+}
+
+p {
+	margin: 20px 0;
+	line-height: 1.5;
+}
+
+#instruction {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 30px;
+}
+
+button {
+	display: block;
+	margin: 0 auto;
+	padding: 12px 24px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #0062cc;
+}
+
+#message {
+	color: green;
+}
+
+</style>
+</body>
+</html>
