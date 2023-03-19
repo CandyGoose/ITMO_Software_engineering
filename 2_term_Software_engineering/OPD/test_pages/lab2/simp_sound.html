@@ -1,107 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Проверка реакции на звук</title>
-	<style>
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-		}
-
-		#message {
-			font-size: 24px;
-			font-weight: bold;
-			text-align: center;
-			margin-top: 30px;
-			display: none;
-		}
-	</style>
-</head>
-<body>
-	<h1>Проверка реакции на звук</h1>
-	<p id="instruction">Нажмите на клавишу пробел, когда услышите звук</p>
-	<button id="start" onclick="startTest()">Начать тест</button>
-	<p id="message"></p>
-	<audio id="sound">
-		<source src="./sound.mp3" type="audio/mpeg">
-	</audio>
-
-	<script>
-		var audio = document.getElementById('sound');
-		var instruction = document.getElementById('instruction');
-		var startButton = document.getElementById('start');
-		var message = document.getElementById('message');
-		var startTime;
-		var reactTime;
-
-		function playSound() {
-		  audio.play();
-		  startTime = new Date().getTime();
-		  instruction.style.display = 'none';
-		  startButton.style.display = 'none';
-		  message.style.display = 'none';
-		}
-
-		function react(event) {
-		  if (event.keyCode === 32) { // 32 - код клавиши пробел
-		    reactTime = new Date().getTime() - startTime;
-		    message.innerText = 'Ваша реакция составила ' + reactTime + ' мс';
-		    message.style.display = 'block';
-		    startButton.innerText = 'Пройти тест еще раз';
-		    startButton.style.display = 'block';
-		  }
-		}
-
-		function startTest() {
-		  instruction.style.display = 'block';
-		  startButton.style.display = 'none';
-		  message.style.display = 'none';
-		  setTimeout(playSound, Math.floor(Math.random() * 5000) + 1000); // звук воспроизводится через случайный интервал от 1 до 6 секунд
-		  document.addEventListener('keydown', react);
-		}
-	</script>
+    <meta charset="UTF-8">
+    <title>Тест на реакцию</title>
     <style>
         body {
-	font-family: Arial, sans-serif;
-	font-size: 16px;
-	color: #333;
-	background-color: #f8f8f8;
-}
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        #answer-buttons {
+            display: none;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест на реакцию</h1>
+    <p>Когда услышите звуковой сигнал, нажмите на W</p>
+	<p>Чтобы начать, нажмите на кнопку "Старт"</p>
+	
+    <button id="start-button">Старт</button>
+    <p id="question"></p>
+    <div id="answer-buttons">
+        <button id="reaction-button" >Нажмите на W</button>
+    </div>
+    <p id="result"></p>
+    <p id="time-taken" class="hidden"></p>
+    <p>Осталось проверок: <span id="tries">5</span></p>
+    <script>
+        const startButton = document.getElementById("start-button");
+        const reactionButton = document.getElementById("reaction-button");
+        const question = document.getElementById("question");
+        const result = document.getElementById("result");
+        const timeTaken = document.getElementById("time-taken");
+        const tries = document.getElementById("tries");
+        let startTime;
+        let remainingTries = 5;
 
-p {
-	margin: 20px 0;
-	line-height: 1.5;
-}
+        function playSound() {
+            const audio = new Audio(`./sound.mp3`);
+            audio.play();
+        }
 
-#instruction {
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 30px;
-}
+        function delaySound(func, delay) {
+            setTimeout(() => {
+                func();
+            }, delay);
+        }
 
-button {
-	display: block;
-	margin: 0 auto;
-	padding: 12px 24px;
-	font-size: 20px;
-	font-weight: bold;
-	color: #fff;
-	background-color: #007bff;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
+        function askQuestion() {
+            delaySound(() => {
+                playSound();
+                startTime = new Date().getTime();
+            }, Math.random() * 5000);
+        }
 
-button:hover {
-	background-color: #0062cc;
-}
+        function checkAnswer() {
+			if (!startTime) {
+				timeTaken.textContent = `Ваше время реакции: NaN мс.`;
+				timeTaken.classList.remove("hidden");
+				remainingTries--;
+				tries.textContent = remainingTries;
+			} else {
+				const currentTime = new Date().getTime();
+				const responseTime = currentTime - startTime - 100;
+				timeTaken.textContent = `Ваше время реакции: ${responseTime} мс.`;
+				timeTaken.classList.remove("hidden");
+				remainingTries--;
+				tries.textContent = remainingTries;
+				if (remainingTries === 0) {
+					reactionButton.classList.add("hidden");
+					result.textContent += " Игра окончена.";
+					startButton.disabled = false;
+				} else {
+					startTime = null;
+					reactionButton.classList.add("hidden");
+					delaySound(() => {
+						askQuestion();
+						reactionButton.classList.remove("hidden");
+						timeTaken.classList.add("hidden");
+						result.textContent = "";
+					}, 1000);
+				}
+			}
+		}
 
-#message {
-	color: green;
-}
+        startButton.addEventListener("click", () => {
+            startButton.disabled = true;
+            remainingTries = 5;
+            tries.textContent = remainingTries;
+            askQuestion();
+            reactionButton.classList.remove("hidden");
+            result.textContent = "";
+            timeTaken.classList.add("hidden");
+        });
 
-</style>
+        reactionButton.addEventListener("keydown", (event) => {
+            if (event.code === "KeyW") {
+                checkAnswer();
+            }
+        });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.code === "KeyW" && !startButton.disabled) {
+            startButton.click();
+        }
+        else if (event.code === "KeyW" && !reactionButton.disabled) {
+            checkAnswer();
+        }
+    });
+</script>
 </body>
 </html>

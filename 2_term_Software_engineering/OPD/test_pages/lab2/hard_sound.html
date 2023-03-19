@@ -58,7 +58,7 @@
         }
 
         function speakOperation(plus) {
-            const audio = new Audio(`+.mp2`)
+            const audio = new Audio(`./numbers/+.mp2`)
             audio.play();
         }
 
@@ -82,7 +82,7 @@
 			}, 1900);
 			delaySpeak(() => {
 			startTime = new Date().getTime();
-            }, 3300);  
+            }, 3100);  
 		}
 
         function checkAnswer(isEven) {
@@ -90,7 +90,7 @@
             const answer = firstNum + secondNum;
             const isCorrect = isEven ? answer % 2 === 0 : answer % 2 !== 0;
             const endTime = new Date().getTime();
-			const responseTime = endTime - startTime;
+			const responseTime = endTime - startTime - 50;
 			if (isCorrect) {
                 result.textContent = `Верно! Время ответа: ${responseTime} мс.`;
                 remainingTries--;
@@ -98,6 +98,7 @@
                 if (remainingTries === 0) {
                     evenButton.disabled = true;
                     oddButton.disabled = true;
+                    startButton.disabled = false;
                     result.textContent += " Игра окончена.";
                 } else {
 					startTime = new Date().getTime();
@@ -110,6 +111,7 @@
                 if (remainingTries === 0) {
                     evenButton.disabled = true;
                     oddButton.disabled = true;
+                    startButton.disabled = false;
                     result.textContent += " Игра окончена.";
                 } else {
 					startTime = new Date().getTime();
@@ -119,19 +121,23 @@
         }
 
         startButton.addEventListener("click", () => {
+            remainingTries = 5;
             askQuestion();
             startButton.disabled = true;
             evenButton.disabled = false;
             oddButton.disabled = false;
             result.textContent = "";
+            tries.textContent = remainingTries;
         });
 
-        evenButton.addEventListener("click", () => {
-            checkAnswer(true);
-        });
-
-        oddButton.addEventListener("click", () => {
-            checkAnswer(false);
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "KeyW") {
+                startButton.click();
+            } else if (event.code === "KeyA" && !evenButton.disabled) {
+                checkAnswer(true);
+            } else if (event.code === "KeyD" && !oddButton.disabled) {
+                checkAnswer(false);
+            }
         });
     </script>
 </body>
