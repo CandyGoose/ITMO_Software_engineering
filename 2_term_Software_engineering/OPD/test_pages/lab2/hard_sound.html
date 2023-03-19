@@ -43,10 +43,8 @@
         const tries = document.getElementById("tries");
         let startTime;
         let remainingTries = 5;
-        const audioFiles = {};
-        for (let i = 0; i < 100; i++) {
-            audioFiles[i] = new Audio(`${i}.mp3`);
-        }
+        let firstNum;
+        let secondNum;
 
         function getRandomInt(min, max) {
             min = Math.ceil(min);
@@ -54,22 +52,46 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        function askQuestion() {
-            const firstNum = getRandomInt(1, 100);
-            const secondNum = getRandomInt(1, 100);
-            const operation = "+";
-            audioFiles[firstNum].play();
-            audioFiles[operation].play();
-            audioFiles[secondNum].play();
-            startTime = new Date().getTime();
+        function speakNumber(number) {
+            const audio = new Audio(`./numbers/${number}.mp2`);
+            audio.play();
         }
 
+        function speakOperation(plus) {
+            const audio = new Audio(`+.mp2`)
+            audio.play();
+        }
+
+        function delaySpeak(func, delay) {
+            setTimeout(() => {
+                func();
+            }, delay);
+        }
+
+		function askQuestion() {
+    		firstNum = getRandomInt(1, 100);
+    		secondNum = getRandomInt(1, 100);
+    		const operation = "+";
+    		speakNumber(firstNum);
+    		startTime = new Date().getTime();
+			delaySpeak(() => {
+				speakOperation(operation);
+			}, 1200);
+			delaySpeak(() => {
+				speakNumber(secondNum);
+			}, 1900);
+			delaySpeak(() => {
+			startTime = new Date().getTime();
+            }, 3300);  
+		}
+
         function checkAnswer(isEven) {
-            const answer = eval(question.textContent);
+			const currentTime = new Date().getTime();
+            const answer = firstNum + secondNum;
             const isCorrect = isEven ? answer % 2 === 0 : answer % 2 !== 0;
             const endTime = new Date().getTime();
-            const responseTime = endTime - startTime;
-            if (isCorrect) {
+			const responseTime = endTime - startTime;
+			if (isCorrect) {
                 result.textContent = `Верно! Время ответа: ${responseTime} мс.`;
                 remainingTries--;
                 tries.textContent = remainingTries;
@@ -78,6 +100,7 @@
                     oddButton.disabled = true;
                     result.textContent += " Игра окончена.";
                 } else {
+					startTime = new Date().getTime();
                     askQuestion();
                 }
             } else {
@@ -89,6 +112,7 @@
                     oddButton.disabled = true;
                     result.textContent += " Игра окончена.";
                 } else {
+					startTime = new Date().getTime();
                     askQuestion();
                 }
             }

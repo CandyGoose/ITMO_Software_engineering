@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Распределение ПВК по важности</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			font-size: 2rem;
+			margin-top: 0;
+			margin-bottom: 1rem;
+			text-align: center;
+			color: #333;
+			text-shadow: 2px 2px #f2f2f2;
+		}
+		ol {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+		}
+		li {
+            padding: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 2px 2px #f2f2f2;
+            user-select: none;
+            cursor: grab;
+            transition: all 0.2s ease-in-out;
+            font-size: 1.2rem;
+            text-align: center;
+            min-width: 150px;
+            }
+
+            li:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+            box-shadow: 4px 4px #ccc;
+            }
+
+            li:active {
+            cursor: grabbing;
+            transform: scale(1.1);
+            box-shadow: 6px 6px #ccc;
+            }
+	</style>
+</head>
+<body>
+	<h1>Распределение ПВК по важности</h1>
+	<p>Перетащите каждое название ПВК на соответствующее место по важности:</p>
+	<ol>
+		<li draggable="true">Название 1</li>
+		<li draggable="true">Название 2</li>
+		<li draggable="true">Название 3</li>
+		<li draggable="true">Название 4</li>
+		<li draggable="true">Название 5</li>
+		<li draggable="true">Название 6</li>
+		<li draggable="true">Название 7</li>
+	</ol>
+	<script>
+		const items = document.querySelectorAll('li');
+
+		let draggedItem = null;
+
+		for (let i = 0; i < items.length; i++) {
+			const item = items[i];
+
+			item.addEventListener('dragstart', function() {
+				draggedItem = item;
+				setTimeout(function() {
+					item.style.display = 'none';
+				}, 0);
+			});
+
+			item.addEventListener('dragend', function() {
+				setTimeout(function() {
+					draggedItem.style.display = 'block';
+					draggedItem = null;
+				}, 0);
+			});
+
+			for (let j = 0; j < items.length; j++) {
+				const dropzone = items[j];
+
+				dropzone.addEventListener('dragover', function(e) {
+					e.preventDefault();
+				});
+
+				dropzone.addEventListener('dragenter', function(e) {
+					e.preventDefault();
+					this.style.backgroundColor = '#e0e0e0';
+				});
+
+				dropzone.addEventListener('dragleave', function() {
+					this.style.backgroundColor = '#ffffff';
+				});
+
+				dropzone.addEventListener('drop', function() {
+					if (this.nextSibling === draggedItem) {
+						this.parentNode.insertBefore(draggedItem, this.nextSibling.nextSibling);
+					} else {
+						this.parentNode.insertBefore(draggedItem, this.nextSibling);
+					}
+					this.style.backgroundColor = '#ffffff';
+				});
+			}
+		}
+	</script>
+</body>
+</html>
