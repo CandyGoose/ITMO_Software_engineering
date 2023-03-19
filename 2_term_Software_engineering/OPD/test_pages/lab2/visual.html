@@ -43,6 +43,10 @@
         const tries = document.getElementById("tries");
         let startTime;
         let remainingTries = 5;
+        const audioFiles = {};
+        for (let i = 0; i < 100; i++) {
+            audioFiles[i] = new Audio(`${i}.mp3`);
+        }
 
         function getRandomInt(min, max) {
             min = Math.ceil(min);
@@ -54,7 +58,9 @@
             const firstNum = getRandomInt(1, 100);
             const secondNum = getRandomInt(1, 100);
             const operation = "+";
-            question.textContent = `${firstNum} ${operation} ${secondNum}`;
+            audioFiles[firstNum].play();
+            audioFiles[operation].play();
+            audioFiles[secondNum].play();
             startTime = new Date().getTime();
         }
 
