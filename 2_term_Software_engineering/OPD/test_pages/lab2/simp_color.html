@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест на реакцию</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        #answer-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        #color-box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест на реакцию</h1>
+    <p>Когда увидите световой сигнал, нажмите на W</p>
+    <p>Чтобы начать, нажмите на кнопку "Старт"</p>
+	
+    <button id="start-button">Старт</button>
+    <div id="color-box"></div>
+    <p id="result"></p>
+    <p id="time-taken" class="hidden"></p>
+    <p>Осталось проверок: <span id="tries">5</span></p>
+    <script>
+        const startButton = document.getElementById("start-button");
+        const colorBox = document.getElementById("color-box");
+        const question = document.getElementById("question");
+        const result = document.getElementById("result");
+        const timeTaken = document.getElementById("time-taken");
+        const tries = document.getElementById("tries");
+        let startTime;
+        let remainingTries = 5;
+
+        function getRandomColor() {
+            const colors = "yellow";
+            return colors
+        }
+
+        function showColor(color) {
+            colorBox.style.backgroundColor = color;
+            startTime = new Date().getTime();
+        }
+
+        function delayColor(func, delay) {
+            setTimeout(() => {
+                func();
+            }, delay);
+        }
+
+        function askQuestion() {
+            delayColor(() => {
+                showColor(getRandomColor());
+                startTime = new Date().getTime();
+            }, Math.random() * 5000);
+        }
+
+        function checkAnswer() {
+            const color = colorBox.style.backgroundColor;
+            if (!startTime) {
+                timeTaken.textContent = `Ваше время реакции: NaN мс.`;
+                timeTaken.classList.remove("hidden");
+                remainingTries--;
+                tries.textContent = remainingTries
+                showColor("white")
+            } else {       
+                if (remainingTries > 1) {
+                    remainingTries--;
+                    const currentTime = new Date().getTime();
+                    const responseTime = currentTime - startTime;
+                    timeTaken.textContent = `Ваше время реакции: ${responseTime} мс.`;
+                    timeTaken.classList.remove("hidden");
+
+                    tries.textContent = remainingTries
+                    showColor("white")
+                    delayColor(() => {
+                        askQuestion();
+                        timeTaken.classList.add("hidden");
+                        result.textContent = "";
+                    }, 1000);
+                } else {
+                if (remainingTries === 1) {
+                    tries.textContent = 0
+                    startButton.disabled = false;
+                    wButton.disabled = true;
+                    result.textContent += " Игра окончена.";                  
+                }
+            }
+        }
+    }
+
+        startButton.addEventListener("click", () => {
+            remainingTries = 5;
+            showColor("white")
+            askQuestion();
+            startButton.disabled = true;
+            result.textContent = "";
+
+            tries.textContent = remainingTries;
+            
+            timeTaken.classList.add("hidden");
+            wButton.disabled = false;
+            
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "KeyS") {
+                startButton.click();
+            }
+            else if (event.code === "KeyW") {
+                checkAnswer();
+            }
+        });
+    </script>
+</body>
+</html>

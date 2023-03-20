@@ -11,9 +11,6 @@
         h1 {
             margin-top: 50px;
         }
-        #answer-buttons {
-            display: none;
-        }
         button {
             font-size: 20px;
             padding: 10px 20px;
@@ -24,19 +21,16 @@
 <body>
     <h1>Тест на реакцию</h1>
     <p>Когда услышите звуковой сигнал, нажмите на W</p>
-	<p>Чтобы начать, нажмите на кнопку "Старт"</p>
+    <p>Чтобы начать, нажмите на кнопку "Старт"</p>
 	
     <button id="start-button">Старт</button>
     <p id="question"></p>
-    <div id="answer-buttons">
-        <button id="reaction-button" >Нажмите на W</button>
-    </div>
+    <div id="answer-buttons"></div>
     <p id="result"></p>
     <p id="time-taken" class="hidden"></p>
     <p>Осталось проверок: <span id="tries">5</span></p>
     <script>
         const startButton = document.getElementById("start-button");
-        const reactionButton = document.getElementById("reaction-button");
         const question = document.getElementById("question");
         const result = document.getElementById("result");
         const timeTaken = document.getElementById("time-taken");
@@ -63,59 +57,55 @@
         }
 
         function checkAnswer() {
-			if (!startTime) {
-				timeTaken.textContent = `Ваше время реакции: NaN мс.`;
-				timeTaken.classList.remove("hidden");
-				remainingTries--;
-				tries.textContent = remainingTries;
-			} else {
-				const currentTime = new Date().getTime();
-				const responseTime = currentTime - startTime - 100;
-				timeTaken.textContent = `Ваше время реакции: ${responseTime} мс.`;
-				timeTaken.classList.remove("hidden");
-				remainingTries--;
-				tries.textContent = remainingTries;
-				if (remainingTries === 0) {
-					reactionButton.classList.add("hidden");
-					result.textContent += " Игра окончена.";
-					startButton.disabled = false;
-				} else {
-					startTime = null;
-					reactionButton.classList.add("hidden");
-					delaySound(() => {
-						askQuestion();
-						reactionButton.classList.remove("hidden");
-						timeTaken.classList.add("hidden");
-						result.textContent = "";
-					}, 1000);
-				}
-			}
-		}
+            if (!startTime) {
+                timeTaken.textContent = `Ваше время реакции: NaN мс.`;
+                timeTaken.classList.remove("hidden");
+                remainingTries--;
+                tries.textContent = remainingTries
+            } else {
+                if (remainingTries > 1) {
+                    remainingTries--;
+                    const currentTime = new Date().getTime();
+                    const responseTime = currentTime - startTime;
+                    timeTaken.textContent = `Ваше время реакции: ${responseTime} мс.`;
+                    timeTaken.classList.remove("hidden");
+
+                    tries.textContent = remainingTries
+                    startTime = null;
+                    delaySound(() => {
+                        askQuestion();
+                        timeTaken.classList.add("hidden");
+                        result.textContent = "";
+                    }, 1000);
+                }
+                else {
+                    if (remainingTries === 1) {
+                        tries.textContent = 0
+                        startButton.disabled = false;
+                        wButton.disabled = true;
+                        result.textContent += " Игра окончена.";                  
+                }
+            }
+        }
+    }
 
         startButton.addEventListener("click", () => {
             startButton.disabled = true;
             remainingTries = 5;
             tries.textContent = remainingTries;
             askQuestion();
-            reactionButton.classList.remove("hidden");
             result.textContent = "";
             timeTaken.classList.add("hidden");
         });
 
-        reactionButton.addEventListener("keydown", (event) => {
-            if (event.code === "KeyW") {
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "KeyS") {
+                startButton.click();
+            }
+            else if (event.code === "KeyW") {
                 checkAnswer();
             }
         });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.code === "KeyW" && !startButton.disabled) {
-            startButton.click();
-        }
-        else if (event.code === "KeyW" && !reactionButton.disabled) {
-            checkAnswer();
-        }
-    });
-</script>
+    </script>
 </body>
 </html>
