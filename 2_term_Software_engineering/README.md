@@ -3,11 +3,15 @@
 ### Лабораторные
 [5 - Консольное приложение](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Programming/lab5)
 
+[6 - Сервер](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Programming/lab6)
+
 ## Базы данных
 ### Лабораторные
 [1 - Инфологическая и даталогическая модели, их реализация в PostgreSQL](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Database/lab1)
 
 ## ОПД (основы профессиональной деятельности)
+[Лабораторные](https://github.com/VeraKasianenko/OPD_web)
+
 [Курс на OpenEdu](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/OPD/course)
 
 ---
@@ -18,9 +22,19 @@
 ## БЖД
 [Лабораторные](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Life_safety)
 
+## Коммуникации и командообразование
+[Лекции и материалы](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Communication_and_team_building)
+
 ---
 
 ## Инженерный дизайн - CAD (факультатив)
 [Лекции](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD\lectures)
 
-[1 - Создание простых моделей с зависимостями](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD\practice1)
+[1 - Плоские модели с зависимостями](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD\practice1)
+
+[2 - Простые 3D модели](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice2)
+
+[3 - Модели с полостями](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice3)
+
+## Эмоциональный интеллект (факультатив)
+[Лекции и материалы](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/EQ)
