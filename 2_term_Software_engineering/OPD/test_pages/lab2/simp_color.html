@@ -11,26 +11,36 @@
         h1 {
             margin-top: 50px;
         }
+        #answer-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
         button {
             font-size: 20px;
             padding: 10px 20px;
             margin: 0 10px;
         }
+        #color-box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
     </style>
 </head>
 <body>
     <h1>Тест на реакцию</h1>
-    <p>Когда услышите звуковой сигнал, нажмите на W</p>
+    <p>Когда увидите световой сигнал, нажмите на W</p>
     <p>Чтобы начать, нажмите на кнопку "Старт"</p>
 	
     <button id="start-button">Старт</button>
-    <p id="question"></p>
-    <div id="answer-buttons"></div>
+    <div id="color-box"></div>
     <p id="result"></p>
     <p id="time-taken" class="hidden"></p>
     <p>Осталось проверок: <span id="tries">5</span></p>
     <script>
         const startButton = document.getElementById("start-button");
+        const colorBox = document.getElementById("color-box");
         const question = document.getElementById("question");
         const result = document.getElementById("result");
         const timeTaken = document.getElementById("time-taken");
@@ -38,31 +48,38 @@
         let startTime;
         let remainingTries = 5;
 
-        function playSound() {
-            const audio = new Audio(`./sound.mp3`);
-            audio.play();
+        function getRandomColor() {
+            const colors = "yellow";
+            return colors
         }
 
-        function delaySound(func, delay) {
+        function showColor(color) {
+            colorBox.style.backgroundColor = color;
+            startTime = new Date().getTime();
+        }
+
+        function delayColor(func, delay) {
             setTimeout(() => {
                 func();
             }, delay);
         }
 
         function askQuestion() {
-            delaySound(() => {
-                playSound();
+            delayColor(() => {
+                showColor(getRandomColor());
                 startTime = new Date().getTime();
             }, Math.random() * 5000);
         }
 
         function checkAnswer() {
+            const color = colorBox.style.backgroundColor;
             if (!startTime) {
                 timeTaken.textContent = `Ваше время реакции: NaN мс.`;
                 timeTaken.classList.remove("hidden");
                 remainingTries--;
                 tries.textContent = remainingTries
-            } else {
+                showColor("white")
+            } else {       
                 if (remainingTries > 1) {
                     remainingTries--;
                     const currentTime = new Date().getTime();
@@ -71,31 +88,35 @@
                     timeTaken.classList.remove("hidden");
 
                     tries.textContent = remainingTries
-                    startTime = null;
-                    delaySound(() => {
+                    showColor("white")
+                    delayColor(() => {
                         askQuestion();
                         timeTaken.classList.add("hidden");
                         result.textContent = "";
                     }, 1000);
-                }
-                else {
-                    if (remainingTries === 1) {
-                        tries.textContent = 0
-                        startButton.disabled = false;
-                        wButton.disabled = true;
-                        result.textContent += " Игра окончена.";                  
+                } else {
+                if (remainingTries === 1) {
+                    tries.textContent = 0
+                    startButton.disabled = false;
+                    wButton.disabled = true;
+                    result.textContent += " Игра окончена.";                  
                 }
             }
         }
     }
 
         startButton.addEventListener("click", () => {
-            startButton.disabled = true;
             remainingTries = 5;
-            tries.textContent = remainingTries;
+            showColor("white")
             askQuestion();
+            startButton.disabled = true;
             result.textContent = "";
+
+            tries.textContent = remainingTries;
+            
             timeTaken.classList.add("hidden");
+            wButton.disabled = false;
+            
         });
 
         document.addEventListener("keydown", (event) => {
