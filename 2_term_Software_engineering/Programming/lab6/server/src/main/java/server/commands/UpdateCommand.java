@@ -9,6 +9,7 @@ import server.utility.CollectionManager;
 import server.utility.ResponseOutputer;
 
 import java.time.ZonedDateTime;
+import java.util.Comparator;
 
 /**
  * Класс используется для обновления значения элемента коллекции, id которого равен заданному
@@ -19,11 +20,21 @@ public class UpdateCommand extends AbstractCommand {
      */
     private final CollectionManager collectionManager;
 
+    /**
+     * Конструктор класса UpdateCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public UpdateCommand(CollectionManager collectionManager) {
         super("update" ,"<id> {element}", "обновить значение элемента коллекции, id которого равен заданному");
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Команда для обновления значения элемента коллекции по id.
+     * @param stringArgument строковый аргумент (id элемента коллекции).
+     * @param objectArgument объектный аргумент (элемент коллекции).
+     * @return true, если выполнение команды успешно завершено, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try{
@@ -58,6 +69,7 @@ public class UpdateCommand extends AbstractCommand {
                     organizationType,
                     address
             ));
+            collectionManager.getCollection().sort(Comparator.comparing(Organization::getName, String.CASE_INSENSITIVE_ORDER));
             ResponseOutputer.appendLn("Организация была успешно обновлена");
             return true;
         } catch (WrongAmountOfElementsException exception) {

@@ -27,22 +27,6 @@ public class OrganizationAsker {
      */
     private boolean scriptMode;
 
-    /**
-     * Функция, возвращающая объект сканера, использующийся для считывания пользовательского ввода
-     * @return объект сканера, созданный в этом методе
-     */
-    public Scanner getUserScanner() {
-        return userScanner;
-    }
-
-    /**
-     * Функция, задающая объект сканера, использующийся для считывания пользовательского ввода
-     * @param userScanner объект сканера, использующийся для считывания пользовательского ввода
-     */
-    public void setUserScanner(Scanner userScanner) {
-        this.userScanner = userScanner;
-    }
-
     public OrganizationAsker(Scanner userScanner) {
         this.userScanner = userScanner;
         scriptMode = false;
@@ -53,12 +37,6 @@ public class OrganizationAsker {
      */
     public void setScriptMode(){
         scriptMode = true;
-    }
-    /**
-     * Функция, задающая режим чтения с командной строки
-     */
-    public void setUserMode(){
-        scriptMode = false;
     }
 
     /**

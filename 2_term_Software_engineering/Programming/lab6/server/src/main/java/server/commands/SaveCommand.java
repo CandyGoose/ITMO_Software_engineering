@@ -12,12 +12,21 @@ public class SaveCommand extends AbstractCommand {
      Менеджер коллекции.
      */
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса SaveCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public SaveCommand(CollectionManager collectionManager) {
         super("save","", "сохранить коллекцию в файл");
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Команда сохранения коллекции.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try {

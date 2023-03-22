@@ -15,12 +15,20 @@ public class PrintFieldDescendingAnnualTurnoverCommand extends AbstractCommand {
      Менеджер коллекции.
      */
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса PrintFieldDescendingAnnualTurnoverCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public PrintFieldDescendingAnnualTurnoverCommand(CollectionManager collectionManager) {
         super("print_field_descending_annual_turnover","", "вывести значения поля annualTurnover всех элементов в порядке убывания");
         this.collectionManager = collectionManager;
     }
-
+    /**
+     * Команда вывода всех полей годового оборота в обратном порядке.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try {

@@ -14,13 +14,21 @@ public class ClearCommand extends AbstractCommand{
      */
     private final CollectionManager collectionManager;
 
-
+    /**
+     * Конструктор класса ClearCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public ClearCommand(CollectionManager collectionManager) {
         super("clear","", "очистить коллекцию");
         this.collectionManager = collectionManager;
     }
 
-
+    /**
+     * Команда очистки коллекции.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try {

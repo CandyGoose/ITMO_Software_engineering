@@ -102,10 +102,22 @@ public class CommandManager {
         }
     }
 
+    /**
+     * Выход из приложения.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean exit(String stringArgument, Object objectArgument) {
         return exitCommand.execute(stringArgument, objectArgument);
     }
 
+    /**
+     * Вывод справки по доступным командам.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean help(String stringArgument, Object objectArgument) {
         if (helpCommand.execute(stringArgument, objectArgument)) {
             for (ICommand command : commands) {
@@ -115,48 +127,92 @@ public class CommandManager {
         } else return false;
     }
 
-
+    /**
+     * Вывод информации о коллекции.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean info(String stringArgument, Object objectArgument) {
         return infoCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Вывод всех элементов коллекции.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean show(String stringArgument, Object objectArgument) {
         return showCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Добавление нового элемента в коллекцию.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean add(String stringArgument, Object objectArgument) {
         return addCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Обновление значения элемента коллекции по его id.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean update(String stringArgument, Object objectArgument) {
         return updateCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Удаление элемента коллекции по его id.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean removeById(String stringArgument, Object objectArgument) {
         return removeByIdCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Выход из приложения.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean clear(String stringArgument, Object objectArgument) {
         return clearCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Очистка коллекции.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean save(String stringArgument, Object objectArgument) {
         return saveCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Выполняет скрипт.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean executeScript(String stringArgument, Object objectArgument) {
         return executeScriptCommand.execute(stringArgument, objectArgument);
     }
 
-
-
+    /**
+     * Выводит историю введенных команд.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean history(String stringArgument, Object objectArgument) {
         if (historyCommand.execute(stringArgument, objectArgument)) {
             try {
@@ -174,33 +230,68 @@ public class CommandManager {
         return false;
     }
 
-
+    /**
+     * Выводит элементы коллекции в порядке убывания.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean printDescending(String stringArgument, Object objectArgument) {
         return printDescendingCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Выводит значения поля annualTurnover всех элементов в порядке убывания.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean printFieldDescendingAnnualTurnover(String stringArgument, Object objectArgument) {
         return printFieldDescendingAnnualTurnoverCommand.execute(stringArgument, objectArgument);
     }
-
+    /**
+     * Выводит количество уникальных значений поля employeesCount всех элементов коллекции.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean printUniqueEmployeesCount(String stringArgument, Object objectArgument) {
         return printUniqueEmployeesCountCommand.execute(stringArgument, objectArgument);
     }
 
-
+    /**
+     * Удаляет первый элемент из коллекции.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean removeFirst(String stringArgument, Object objectArgument) {
         return removeFirstCommand.execute(stringArgument, objectArgument);
     }
-
+    /**
+     * Перемешивает элементы коллекции в случайном порядке.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean shuffle(String stringArgument, Object objectArgument) {
         return shuffleCommand.execute(stringArgument, objectArgument);
     }
-
+    /**
+     * Сортирует элементы коллекции.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean sort(String stringArgument, Object objectArgument) {
         return sortCommand.execute(stringArgument, objectArgument);
     }
-
+    /**
+     * Завершает работу сервера.
+     * @param stringArgument строковый аргумент команды
+     * @param objectArgument объектный аргумент команды
+     * @return результат выполнения команды
+     */
     public boolean serverExit(String stringArgument, Object objectArgument) {
         save(stringArgument, objectArgument);
         return serverExitCommand.execute(stringArgument, objectArgument);

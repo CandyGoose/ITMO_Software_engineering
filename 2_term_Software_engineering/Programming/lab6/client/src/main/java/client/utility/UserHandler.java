@@ -143,9 +143,6 @@ public class UserHandler {
                 case "remove_first":
                     if (!commandArgument.isEmpty()) throw new CommandUsageException();
                     break;
-                case "save":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
                 case "server_exit":
                     if (!commandArgument.isEmpty()) throw new CommandUsageException();
                     break;

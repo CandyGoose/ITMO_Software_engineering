@@ -4,10 +4,27 @@ package server.commands;
  * Класс AbstractCommand - это абстрактный класс, который реализует интерфейс ICommand
  */
 public abstract class AbstractCommand implements ICommand {
+    /**
+     * Название команды.
+     */
     private final String name;
+
+    /**
+     * Пример использования команды.
+     */
     private final String usage;
+
+    /**
+     * Описание команды.
+     */
     private final String description;
 
+    /**
+     * Конструктор класса, который устанавливает значения полей name, usage и description.
+     * @param name название команды.
+     * @param usage пример использования команды.
+     * @param description описание команды.
+     */
     public AbstractCommand(String name, String usage, String description) {
         this.name = name;
         this.usage = usage;
@@ -38,23 +55,12 @@ public abstract class AbstractCommand implements ICommand {
         return description;
     }
 
+    /**
+     * Метод, возвращающий строковое представление команды.
+     * @return строковое представление команды.
+     */
     @Override
     public String toString() {
         return name + " " + usage + " (" + description + ")";
-    }
-
-    @Override
-    public int hashCode() {
-        return name.hashCode() + usage.hashCode() + description.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (getClass() != obj.getClass()) return false;
-        AbstractCommand other = (AbstractCommand) obj;
-        return name.equals(other.getName()) && usage.equals(other.getUsage()) &&
-                description.equals(other.getDescription());
     }
 }

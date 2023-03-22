@@ -14,19 +14,45 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
-
+/**
+ *  Класс Server - класс, представляющий сервер.
+ */
 public class Server {
+
+    /**
+     * Порт, на котором работает сервер.
+     */
     private final int port;
+
+    /**
+     * Таймаут соединения в миллисекундах.
+     */
     private final int soTimeout;
+
+    /**
+     * Сокет сервера.
+     */
     private ServerSocket serverSocket;
+
+    /**
+     * Обработчик запросов.
+     */
     private final RequestHandler requestHandler;
 
+    /**
+     * Конструктор класса Server.
+     * @param port порт, на котором будет работать сервер.
+     * @param soTimeout таймаут соединения в миллисекундах.
+     * @param requestHandler обработчик запросов.
+     */
     public Server(int port, int soTimeout, RequestHandler requestHandler) {
         this.port = port;
         this.soTimeout = soTimeout;
         this.requestHandler = requestHandler;
     }
-
+    /**
+     * Метод, запускающий сервер.
+     */
     public void run() {
         try{
             openServerSocket();
@@ -48,6 +74,9 @@ public class Server {
         }
     }
 
+    /**
+     * Метод, останавливающий сервер.
+     */
     private void stop() {
         try{
             App.logger.info("Завершение работы сервера...");
@@ -63,6 +92,10 @@ public class Server {
         }
     }
 
+    /**
+     * Метод, открывающий серверный сокет.
+     * @throws OpeningServerSocketException если произошла ошибка при попытке открытия серверного сокета
+     */
     private void openServerSocket() throws OpeningServerSocketException {
         try{
             App.logger.info("Запуск сервера...");
@@ -80,6 +113,12 @@ public class Server {
         }
     }
 
+    /**
+     * Метод для установки соединения с клиентом.
+     * @return экземпляр Socket, устанавливающий соединение с клиентом
+     * @throws ConnectionErrorException если произошла ошибка при подключении к клиенту
+     * @throws SocketTimeoutException если превышено время ожидания подключения
+     */
     private Socket connectToClient() throws ConnectionErrorException, SocketTimeoutException {
         try{
             Outputer.printLn("Порт прослушивания '" + port + "'...");
@@ -99,6 +138,11 @@ public class Server {
         }
     }
 
+    /**
+     * Метод для обработки запросов клиента и отправки ответов.
+     * @param clientSocket экземпляр Socket, устанавливающий соединение с клиентом
+     * @return true, если клиент был успешно обработан и отключен от сервера, false в случае ошибки обработки запросов
+     */
     private boolean processClientRequest(Socket clientSocket) {
         Request userRequest = null;
         Response responseToUser;
@@ -115,7 +159,7 @@ public class Server {
         } catch (ClassNotFoundException exception){
             Outputer.printError("Произошла ошибка при чтении полученных данных.");
             App.logger.severe("Произошла ошибка при чтении полученных данных.");
-        }catch (InvalidClassException | NotSerializableException exception) {
+        } catch (InvalidClassException | NotSerializableException exception) {
             Outputer.printError("Произошла ошибка при отправке данных клиенту.");
             App.logger.severe("Произошла ошибка при отправке данных клиенту.");
         } catch (IOException exception) {

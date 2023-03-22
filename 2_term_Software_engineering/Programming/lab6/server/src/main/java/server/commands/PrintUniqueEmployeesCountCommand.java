@@ -14,12 +14,20 @@ public class PrintUniqueEmployeesCountCommand extends AbstractCommand {
      Менеджер коллекции.
      */
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса PrintUniqueEmployeesCountCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public PrintUniqueEmployeesCountCommand(CollectionManager collectionManager) {
         super("print_unique_employees_count","", "вывести уникальные значения поля employeesCount всех элементов в коллекции");
         this.collectionManager = collectionManager;
     }
-
+    /**
+     * Команда вывода уникальных полей количества сотрудников.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try {
