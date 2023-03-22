@@ -13,13 +13,21 @@ public class RemoveFirstCommand extends AbstractCommand {
      Менеджер коллекции.
      */
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса RemoveFirstCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public RemoveFirstCommand(CollectionManager collectionManager) {
         super("remove_first", "<id>", "удалить первый элемент из коллекции");
         this.collectionManager = collectionManager;
     }
 
-
+    /**
+     * Команда удаления первого элемента коллекции.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try {

@@ -49,8 +49,12 @@
         }
 
         function showColor(color) {
+            colorBox.style.opacity = 0; 
             colorBox.style.backgroundColor = color;
-            startTime = new Date().getTime();
+            setTimeout(() => {
+                colorBox.style.opacity = 1; 
+                startTime = new Date().getTime();
+            }, 200);
         }
 
         function checkAnswer(event) {
@@ -59,28 +63,26 @@
             const endTime = new Date().getTime();
             const responseTime = endTime - startTime;
             if (isCorrect) {
-                if (remainingTries > 0) {
+                if (remainingTries > 1) {
                     remainingTries--;
                     result.textContent = `Верно! Время реакции: ${responseTime} мс.`;
                     tries.textContent = remainingTries;
                     showColor(getRandomColor());
-
                     startTime = new Date().getTime();
                 } else {
-                    if (remainingTries === 0) {
+                    if (remainingTries === 1) {
+                        tries.textContent = 0;
+                        result.textContent = `Верно! Время реакции: ${responseTime} мс.`;
+                        showColor("white")
                         startButton.disabled = false;
                         aButton.disabled = true;
                         dButton.disabled = true;
                         wButton.disabled = true;
                         result.textContent += " Игра окончена.";
-                        
-                    } else {
-                        showColor(getRandomColor());
-                        startTime = new Date().getTime();
-                    }
+                    } 
                 }
             } else {
-                if (remainingTries > 0) {
+                if (remainingTries > 1) {
                     result.textContent = `Неверно! Время реакции: ${responseTime} мс.`;
                     remainingTries--;
                     tries.textContent = remainingTries;
@@ -88,16 +90,15 @@
 
                     startTime = new Date().getTime();
                 } else {
-                    if (remainingTries === 0) {
+                    if (remainingTries === 1) {
+                        tries.textContent = 0;
+                        result.textContent = `Неверно! Время реакции: ${responseTime} мс.`;
+                        showColor("white")
                         startButton.disabled = false;
                         aButton.disabled = true;
                         dButton.disabled = true;
                         wButton.disabled = true;
                         result.textContent += " Игра окончена.";
-                        
-                    } else {
-                        showColor(getRandomColor());
-                        startTime = new Date().getTime();
                     }
             }
             }

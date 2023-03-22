@@ -19,12 +19,20 @@ public class AddCommand extends AbstractCommand{
      */
     private final CollectionManager collectionManager;
 
-
+    /**
+     * Конструктор класса AddCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public AddCommand(CollectionManager collectionManager) {
         super("add" ,"{element}", "добавить новый элемент в коллекцию");
         this.collectionManager = collectionManager;
     }
-
+    /**
+     * Команда добавления нового элемента в коллекцию.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try{

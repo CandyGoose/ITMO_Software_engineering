@@ -14,13 +14,21 @@ import java.util.Collections;
  */
 public class PrintDescendingCommand extends AbstractCommand {
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса PrintDescendingCommand.
+     * @param collectionManager менеджер коллекции.
+     */
 
     public PrintDescendingCommand(CollectionManager collectionManager) {
         super("print_ascending","", "вывести элементы коллекции в порядке убывания");
         this.collectionManager = collectionManager;
     }
-
+    /**
+     * Команда вывода коллекции в порядке убывания элементов.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try {

@@ -3,38 +3,39 @@ package server.utility;
 import common.data.Organization;
 
 import java.time.ZonedDateTime;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * Класс-менеджер коллекции организаций.
- * Содержит методы для работы с коллекцией, такие как добавление, удаление, поиск по id, замена по id, сортировка,
- * перемешивание, очистка и т.д.
- * Также возвращает информацию о коллекции.
+ * Содержит методы для работы с коллекцией.
+ * Возвращает информацию о коллекции.
  */
 public class CollectionManager {
+
     /**
-     * Коллекция организаций
+     * Коллекция организаций.
      */
     private LinkedList<Organization> organizationCollection;
+
     /**
-     * Дата инициализации коллекции
+     * Дата инициализации коллекции.
      */
     private ZonedDateTime lastInitTime;
+
     /**
-     * Дата сохранения коллекции
+     * Дата сохранения коллекции.
      */
     private ZonedDateTime lastSaveTime;
+
     /**
-     * Менеджер файлов
+     * Менеджер файлов.
      */
     private final CollectionFileManager collectionFileManager;
 
     /**
-     * Создает пустую коллекцию организаций
+     * Конструктор класса CollectionManager.
+     * @param collectionFileManager объект класса CollectionFileManager, управляющий файлами коллекции.
      */
     public CollectionManager(CollectionFileManager collectionFileManager) {
         this.lastInitTime = null;
@@ -44,32 +45,32 @@ public class CollectionManager {
     }
 
     /**
-     * Возвращает дату инициализации коллекции
-     * @return дата инициализации коллекции
+     * Возвращает дату инициализации коллекции.
+     * @return дата инициализации коллекции.
      */
     public ZonedDateTime getLastInitTime() {
         return lastInitTime;
     }
 
     /**
-     * Возвращает дату сохранения коллекции
-     * @return дата сохранения коллекции
+     * Возвращает дату сохранения коллекции.
+     * @return дата сохранения коллекции.
      */
     public ZonedDateTime getLastSaveTime() {
         return lastSaveTime;
     }
 
     /**
-     * Возвращает коллекцию организаций
-     * @return коллекция организаций
+     * Возвращает коллекцию организаций.
+     * @return коллекция организаций.
      */
     public LinkedList<Organization> getCollection() {
         return organizationCollection;
     }
 
     /**
-     * Показывает содержимое коллекции
-     * @return Содержимое коллекции или соответствующая строка, если коллекция пуста
+     * Показывает содержимое коллекции.
+     * @return Содержимое коллекции или соответствующая строка, если коллекция пуста.
      */
     public String showCollection() {
         if (organizationCollection.isEmpty()) return "Коллекция пуста";
@@ -77,29 +78,30 @@ public class CollectionManager {
                 .map(organization -> organization.toString() + "\n").collect(Collectors.joining());
     }
 
-
-
+    /**
+     * Возвращает тип коллекции.
+     * @return тип коллекции.
+     */
     public String collectionType() {
         return organizationCollection.getClass().getName();
     }
 
-
-
+    /**
+     * Возвращает количество элементов в коллекции.
+     * @return количество элементов в коллекции.
+     */
     public int collectionSize() {
         return organizationCollection.size();
     }
 
-
-
     /**
-     * Возвращает организацию по заданному id
-     * @param id id организации
-     * @return организация с заданным id или null, если она не найдена
+     * Возвращает организацию по заданному id.
+     * @param id id организации.
+     * @return организация с заданным id или null, если она не найдена.
      */
     public Organization getById(Long id) {
         return organizationCollection.stream().filter(marine -> marine.getId().equals(id)).findFirst().orElse(null);
     }
-
 
     /**
      * Добавляет организацию в коллекцию
@@ -109,7 +111,6 @@ public class CollectionManager {
         organizationCollection.add(organization);
     }
 
-
     /**
      * Удаляет организацию из коллекции
      * @param organization организация для удаления
@@ -118,9 +119,8 @@ public class CollectionManager {
         organizationCollection.remove(organization);
     }
 
-
     /**
-     * Метод удаляет организацию из коллекции по заданному идентификатору.
+     * Удаляет организацию из коллекции по заданному идентификатору.
      * @param id идентификатор организации для удаления
      */
     public void removeByIdFromCollection(Long id){
@@ -130,17 +130,15 @@ public class CollectionManager {
                 .ifPresent(this::removeFromCollection);
     }
 
-
     /**
-     * Метод очищает коллекцию организаций.
+     * Очищает коллекцию организаций.
      */
     public void clearCollection(){
         organizationCollection.clear();
     }
 
-
     /**
-     * Метод перемешивает элементы коллекции организаций в случайном порядке.
+     * Перемешивает элементы коллекции организаций в случайном порядке.
      */
     public void shuffleCollection(){
         Collections.shuffle(organizationCollection);

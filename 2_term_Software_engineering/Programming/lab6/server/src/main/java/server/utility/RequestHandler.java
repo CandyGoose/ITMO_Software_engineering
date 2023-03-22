@@ -8,12 +8,24 @@ import common.interaction.ResponseResult;
  * Обработчик запросов.
  */
 public class RequestHandler {
+    /**
+     * Объект CommandManager, управляющий выполнением команд
+     */
     private final CommandManager commandManager;
 
+    /**
+     * Конструктор класса RequestHandler.
+     * @param commandManager менеджер команд.
+     */
     public RequestHandler(CommandManager commandManager) {
         this.commandManager = commandManager;
     }
 
+    /**
+     * Обрабатывает запрос и возвращает ответ.
+     * @param request запрос от клиента.
+     * @return ответ сервера на запрос.
+     */
     public Response handle(Request request){
         commandManager.addToHistory(request.getCommandName());
         ResponseResult responseResult = executeCommand(
@@ -23,9 +35,14 @@ public class RequestHandler {
         return new Response(responseResult, ResponseOutputer.getAndClear());
     }
 
-    private ResponseResult executeCommand(String command, String commandStringArgument,
-                                        Object commandObjectArgument) {
-
+    /**
+     * Выполняет команду с заданными аргументами.
+     * @param command имя команды.
+     * @param commandStringArgument строковый аргумент команды.
+     * @param commandObjectArgument объектный аргумент команды.
+     * @return результат выполнения команды.
+     */
+    private ResponseResult executeCommand(String command, String commandStringArgument, Object commandObjectArgument) {
         switch (command) {
             case "":
                 break;
@@ -56,6 +73,9 @@ public class RequestHandler {
             case "save":
                 if (!commandManager.save(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 break;
+            case "exit":
+                if (!commandManager.exit(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
+                return ResponseResult.CLIENT_EXIT;
             case "execute_script":
                 if (!commandManager.executeScript(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 break;

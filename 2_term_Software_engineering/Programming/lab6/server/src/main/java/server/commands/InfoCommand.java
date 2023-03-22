@@ -15,12 +15,20 @@ public class InfoCommand extends AbstractCommand {
      Менеджер коллекции.
      */
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса InfoCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public InfoCommand(CollectionManager collectionManager) {
         super("info","", "вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
         this.collectionManager = collectionManager;
     }
-
+    /**
+     * Команда вывода информации о коллекции.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try{

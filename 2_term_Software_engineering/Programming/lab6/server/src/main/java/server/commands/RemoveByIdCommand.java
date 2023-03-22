@@ -14,13 +14,21 @@ public class RemoveByIdCommand extends AbstractCommand {
      Менеджер коллекции.
      */
     private final CollectionManager collectionManager;
-
+    /**
+     * Конструктор класса RemoveByIdCommand.
+     * @param collectionManager менеджер коллекции.
+     */
     public RemoveByIdCommand(CollectionManager collectionManager) {
         super("remove_by_id", "<id>", "удалить элемент из коллекции по его id");
         this.collectionManager = collectionManager;
     }
 
-
+    /**
+     * Команда удаления элемента коллекции по id.
+     * @param stringArgument аргумент команды.
+     * @param objectArgument аргумент команды.
+     * @return true, если команда выполнена успешно, false в противном случае.
+     */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
         try{

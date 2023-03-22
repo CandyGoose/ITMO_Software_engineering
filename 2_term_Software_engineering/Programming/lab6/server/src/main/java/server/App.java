@@ -7,18 +7,33 @@ import server.utility.CommandManager;
 import server.utility.RequestHandler;
 import java.util.logging.Logger;
 
+/**
+ * Класс App - основной класс приложения.
+ * Запускает сервер, загружает коллекцию из файла, инициализирует команды и менеджеры.
+ */
 public class App {
 
+    /**
+     * Порт, на котором будет работать сервер.
+     */
     public static final int PORT = 8080;
+
+    /**
+     * Таймаут соединения в миллисекундах.
+     */
     public static final int CONNECTION_TIMEOUT = 60 * 1000;
-    public static final Logger logger = Logger.getLogger(
-            Server.class.getName());
 
+    /**
+     * Логгер для класса Server.
+     */
+    public static final Logger logger = Logger.getLogger(Server.class.getName());
 
+    /**
+     * Основной метод приложения. Загружает коллекцию из файла, инициализирует команды и менеджеры, запускает сервер.
+     * @param args массив аргументов командной строки.
+     */
     public static void main(String[] args) {
-        String filename = "data.xml";
-        if(args.length == 1) filename = args[0];
-//        String filename = CollectionFileManager.getName();
+        String filename = CollectionFileManager.getName();
         CollectionFileManager collectionFileManager = new CollectionFileManager(filename);
         CollectionManager collectionManager = new CollectionManager(collectionFileManager);
         CommandManager commandManager = new CommandManager(

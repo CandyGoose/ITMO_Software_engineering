@@ -25,13 +25,6 @@ public class CollectionFileManager {
      */
     private final XStream xstream;
 
-    /**
-     * Устанавливает имя файла.
-     * @param filename имя файла
-     */
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
     public CollectionFileManager(String filename) {
         this.filename = filename;
         xstream = new XStream();
@@ -52,7 +45,6 @@ public class CollectionFileManager {
         xstream.ignoreUnknownElements();
     }
 
-
     /**
      * Записывает коллекцию в файл в формате XML.
      *
@@ -63,19 +55,16 @@ public class CollectionFileManager {
             try {
                 FileOutputStream file = new FileOutputStream(CollectionFileManager.path);
                 BufferedOutputStream collectionFileWriter = new BufferedOutputStream(file);
-
                 String xml = xstream.toXML(new ArrayList<>(collection));
                 byte[] buffer = xml.getBytes();
                 collectionFileWriter.write(buffer, 0, buffer.length);
                 collectionFileWriter.flush();
-
                 Outputer.printLn("Файл сохранен.");
             } catch (IOException exception) {
                 Outputer.printError("Файл не может быть открыт или является директорией.");
             }
         } else Outputer.printError("Файл поврежден или ошибка в названии.");
     }
-
 
     /**
      * Метод для чтения коллекции организаций из файла.
@@ -101,8 +90,8 @@ public class CollectionFileManager {
                 List<Organization> list = (List<Organization>) xstream.fromXML(xml.toString());
                 LinkedList<Organization> organizationLinkedList = new LinkedList<>();
                 organizationLinkedList.addAll(list);
-                Collections.sort(organizationLinkedList);
-                return organizationLinkedList;
+                organizationLinkedList.sort(Comparator.comparing(Organization::getName, String.CASE_INSENSITIVE_ORDER));
+            return organizationLinkedList;
             } catch (StreamException exception){
                 Outputer.printError("EOF error.\nФайл обработан.\n");
             }
@@ -138,7 +127,7 @@ public class CollectionFileManager {
             path = System.getenv("lab5"); // lab5 - полный путь до файла, включая его название
             String[] checkPaths = path.split(";");
             if (checkPaths.length > 1) {
-                Outputer.printLn("В этой переменной содержится более одного пути к файлам.\nПрограмма остановлена.");
+                Outputer.printError("В этой переменной содержится более одного пути к файлам.\nПрограмма остановлена.");
                 System.exit(0);
             }
         } catch (NullPointerException e) {
