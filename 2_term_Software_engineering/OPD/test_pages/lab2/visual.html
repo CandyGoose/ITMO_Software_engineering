@@ -26,7 +26,7 @@
 <body>
     <h1>Проверка скорости мышления</h1>
     <p>Нажмите кнопку "Старт", чтобы начать</p>
-    <button id="start-button">Старт</button>
+    <button id="start">Старт</button>
     <p id="question"></p>
     <div id="answer-buttons">
         <button id="even-button" disabled>Четное</button>
@@ -35,13 +35,15 @@
     <p id="result"></p>
     <p>Осталось примеров: <span id="tries">5</span></p>
     <script>
-        const startButton = document.getElementById("start-button");
+        const startButton = document.getElementById("start");
         const evenButton = document.getElementById("even-button");
         const oddButton = document.getElementById("odd-button");
         const question = document.getElementById("question");
         const result = document.getElementById("result");
         const tries = document.getElementById("tries");
         let startTime;
+        let buttonPressed = false;
+        let timer;
         let remainingTries = 5;
         
     function getRandomInt(min, max) {
@@ -56,59 +58,81 @@
         const operation = "+";
         question.textContent = `${firstNum} ${operation} ${secondNum}`;
         startTime = new Date().getTime();
+        timer = setTimeout(() => {
+            if (remainingTries > 1) {
+                remainingTries--;
+                result.textContent = `Время ответа: NaN мс.`;
+                tries.textContent = remainingTries
+                startTime = new Date().getTime();
+                askQuestion();
+            } else {
+                tries.textContent = "0. Игра окончена."
+                startButton.disabled = false;
+                wButton.disabled = true;
+                dButton.disabled = true;
+                aButton.disabled = true;
+            }
+        }, 5000); 
     }
 
     function checkAnswer(isEven) {
         const answer = eval(question.textContent);
         const isCorrect = isEven ? answer % 2 === 0 : answer % 2 !== 0;
         const endTime = new Date().getTime();
-        const responseTime = endTime - startTime - 50;
-        if (isCorrect) {
-            result.textContent = `Верно! Время ответа: ${responseTime} мс.`;
-            remainingTries--;
-            tries.textContent = remainingTries;
-            if (remainingTries === 0) {
-                evenButton.disabled = true;
-                oddButton.disabled = true;
-                startButton.disabled = false;
-                result.textContent += " Игра окончена.";
+        const responseTime = endTime - startTime;
+            if (isCorrect) {
+                result.textContent = `Верно! Время ответа: ${responseTime} мс.`;
+                remainingTries--;
+                if (remainingTries === 0) {
+                    buttonPressed = false;
+                    evenButton.disabled = true;
+                    oddButton.disabled = true;
+                    startButton.disabled = false;
+                    tries.textContent = "0. Игра окончена."
+                } else {
+                    tries.textContent = remainingTries;
+                    startTime = new Date().getTime();
+                    askQuestion();
+                }
             } else {
-                askQuestion();
+                result.textContent = `Неверно! Время ответа: ${responseTime} мс.`;
+                remainingTries--;
+                tries.textContent = remainingTries;
+                if (remainingTries === 0) {
+                    buttonPressed = false;
+                    evenButton.disabled = true;
+                    oddButton.disabled = true;
+                    startButton.disabled = false;
+                    tries.textContent = "0. Игра окончена."
+                } else {
+                    tries.textContent = remainingTries;
+                    startTime = new Date().getTime();
+                    askQuestion();
+                }
             }
-        } else {
-            result.textContent = `Неверно! Время ответа: ${responseTime} мс.`;
-            remainingTries--;
-            tries.textContent = remainingTries;
-            if (remainingTries === 0) {
-                evenButton.disabled = true;
-                oddButton.disabled = true;
-                startButton.disabled = false;
-                result.textContent += " Игра окончена.";
-            } else {
-                askQuestion();
-            }
-        }
-    }
+        }       
 
     startButton.addEventListener("click", () => {
-        remainingTries = 5;
-        askQuestion();
-        startButton.disabled = true;
-        evenButton.disabled = false;
-        oddButton.disabled = false;
-        result.textContent = "";
-        tries.textContent = remainingTries;
-    });
+            remainingTries = 5;
+            startButton.disabled = true;
+            evenButton.disabled = false;
+            oddButton.disabled = false;
+            result.textContent = "";
+            tries.textContent = remainingTries;
+            startTime = new Date().getTime();
+            askQuestion();
+        });
 
     document.addEventListener("keydown", (event) => {
-        if (event.code === "KeyS") {
-            startButton.click();
-        } else if (event.code === "KeyA" && !evenButton.disabled) {
-            checkAnswer(true);
-        } else if (event.code === "KeyD" && !oddButton.disabled) {
-            checkAnswer(false);
-        }
-    });
+            if (event.code === "KeyS") {
+                startButton.click();
+                buttonPressed = true;
+            } else if (event.code === "KeyA" && buttonPressed) {
+                checkAnswer(true);
+            } else if (event.code === "KeyD" && buttonPressed) {
+                checkAnswer(false);
+            }
+        });
     </script>
 </body>
 </html>

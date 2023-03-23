@@ -18,16 +18,39 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * Обработчик ввода пользователем команд. Обрабатывает ввод из консоли и скриптов.
+ */
 public class UserHandler {
 
+    /**
+     * Сканнер для чтения пользовательского ввода из консоли.
+     */
     private Scanner userScanner;
+
+    /**
+     * Стек файлов скриптов для проверки рекурсии.
+     */
     private final Stack<File> scriptStack = new Stack<>();
+
+    /**
+     * Стек сканеров для чтения из файлов скриптов.
+     */
     private final Stack<Scanner> scannerStack = new Stack<>();
 
+    /**
+     * Конструктор обработчика пользовательского ввода.
+     * @param userScanner сканнер для чтения пользовательского ввода из консоли.
+     */
     public UserHandler(Scanner userScanner) {
         this.userScanner = userScanner;
     }
 
+    /**
+     * Обработка пользовательского ввода и генерация запроса к серверу.
+     * @param serverResponseResult результат предыдущего запроса сервера.
+     * @return запрос к серверу.
+     */
     public Request handle(ResponseResult serverResponseResult) {
         String userInput;
         String[] userCommand;
@@ -108,6 +131,12 @@ public class UserHandler {
         return new Request(userCommand[0], userCommand[1]);
     }
 
+    /**
+     * Обрабатывает команду и ее аргументы
+     * @param command команда
+     * @param commandArgument аргумент команды
+     * @return результат обработки команды
+     */
     private ProcessingResult processCommand(String command, String commandArgument) {
         try{
             switch (command){
@@ -176,6 +205,11 @@ public class UserHandler {
         return ProcessingResult.OK;
     }
 
+    /**
+     * Генерирует объект Организация на основе введенных пользователем данных в режиме добавления.
+     * @throws IncorrectInputInScriptException если происходит ошибка ввода в скрипте
+     * @return объект Организация
+     */
     private OrganizationRaw generateOrganizationAdd() throws IncorrectInputInScriptException {
         OrganizationAsker organizationAsker = new OrganizationAsker(userScanner);
         if (fileMode()) organizationAsker.setScriptMode();
@@ -190,6 +224,11 @@ public class UserHandler {
         );
     }
 
+    /**
+     * Генерирует объект Организация на основе введенных пользователем данных в режиме изменения.
+     * @throws IncorrectInputInScriptException если происходит ошибка ввода в скрипте
+     * @return объект Организация
+     */
     private OrganizationRaw generateOrganizationUpdate() throws IncorrectInputInScriptException {
         OrganizationAsker organizationAsker = new OrganizationAsker(userScanner);
         if (fileMode()) organizationAsker.setScriptMode();
@@ -203,7 +242,7 @@ public class UserHandler {
                 organizationAsker.askFullName() : null;
         long employeesCount = organizationAsker.askQuestion("Вы хотите изменить количество сотрудников в организации?") ?
                 organizationAsker.askEmployeesCount() : -1;
-        OrganizationType organizationType = organizationAsker.askQuestion("ХВы хотите изменить тип организации?") ?
+        OrganizationType organizationType = organizationAsker.askQuestion("Вы хотите изменить тип организации?") ?
                 organizationAsker.askOrganizationType() : null;
         Address address = organizationAsker.askQuestion("Вы хотите изменить адрес организации?") ?
                 organizationAsker.askAddress() : null;
@@ -218,6 +257,10 @@ public class UserHandler {
         );
     }
 
+    /**
+     * Проверяет, является ли режим работы программы файловым.
+     * @return true, если режим работы программы файловый, иначе false
+     */
     private boolean fileMode() {
         return !scannerStack.isEmpty();
     }
