@@ -1,6 +1,5 @@
 package common.data;
 
-
 import java.io.Serializable;
 
 /**

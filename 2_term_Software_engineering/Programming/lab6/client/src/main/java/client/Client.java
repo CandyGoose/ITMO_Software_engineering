@@ -11,17 +11,63 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.nio.channels.SocketChannel;
 
+/**
+ * Класс, представляющий клиентское приложение, обеспечивающее взаимодействие с сервером.
+ */
 public class Client {
+    /**
+     * Адрес сервера
+     */
     private final String host;
+
+    /**
+     * Порт сервера
+     */
     private final int port;
+
+    /**
+     * Время ожидания до повторного подключения
+     */
     private final int reconnectionTimeout;
+
+    /**
+     * Количество попыток подключения
+     */
     private int reconnectionAttempts;
+
+    /**
+     * Максимальное количество попыток подключения
+     */
     private final int maxReconnectionAttempts;
+
+    /**
+     * Обработчик пользовательского ввода
+     */
     private final UserHandler userHandler;
+
+    /**
+     * Канал сокета
+     */
     private SocketChannel socketChannel;
+
+    /**
+     * Поток записи объектов в сокет
+     */
     private ObjectOutputStream serverWriter;
+
+    /**
+     * Поток чтения объектов из сокета
+     */
     private ObjectInputStream serverReader;
 
+    /**
+     * Конструктор класса Client.
+     * @param host адрес сервера
+     * @param port порт сервера
+     * @param reconnectionTimeout время ожидания до повторного подключения
+     * @param maxReconnectionAttempts максимальное количество попыток подключения
+     * @param userHandler обработчик пользовательского ввода
+     */
     public Client(String host, int port, int reconnectionTimeout, int maxReconnectionAttempts, UserHandler userHandler) {
         this.host = host;
         this.port = port;
@@ -30,7 +76,11 @@ public class Client {
         this.userHandler = userHandler;
     }
 
-
+    /**
+     * Метод запускает клиент, который пытается подключиться к серверу и обрабатывает запросы к серверу.
+     * Если при подключении возникает ошибка, то выполняется переподключение с заданным таймаутом и
+     * максимальным количеством попыток подключения.
+     */
     public void run() {
         try {
             boolean processingStatus = true;
@@ -65,7 +115,11 @@ public class Client {
         }
     }
 
-
+    /**
+     * Метод устанавливает соединение с сервером.
+     * @throws ConnectionErrorException если при подключении возникает ошибка
+     * @throws NotInDeclaredLimitsException если адрес сервера введен некорректно
+     */
     private void connectToServer() throws ConnectionErrorException, NotInDeclaredLimitsException {
         try {
             if (reconnectionAttempts >= 1) Outputer.printLn("Повторное подключение к серверу...");
@@ -84,6 +138,10 @@ public class Client {
         }
     }
 
+    /**
+     * Метод отправляет запрос на сервер и обрабатывает ответы до тех пор, пока не будет отправлена команда "exit".
+     * @return false
+     */
     private boolean processRequestToServer() {
         Request requestToServer = null;
         Response serverResponse = null;

@@ -1,55 +1,42 @@
 package client;
 
 import client.utility.UserHandler;
-import common.exceptions.NotInDeclaredLimitsException;
-import common.exceptions.WrongAmountOfElementsException;
-import common.utility.Outputer;
+import client.utility.ConnectionInitializer;
 
 import java.util.Scanner;
 
-
+/**
+ * Класс для запуска клиентской части приложения.
+ *
+ * @author Касьяненко Вера (P3120)
+ */
 public class App {
+    /**
+     * PS1 - символ первичного приглашения для ввода команд в консоли
+     */
     public static final String PS1 = "$ ";
+
+    /**
+     * PS2 - символ вторичного приглашения для ввода команд в консоли
+     */
     public static final String PS2 = "> ";
 
-    private static final int RECONNECTION_TIMEOUT = 5 * 1000;
-    private static final int MAX_RECONNECTION_ATTEMPTS = 5;
-
-    private static String host;
-    private static int port;
-
-
-    private static boolean initializeConnectionAddress(String[] hostAndPortArgs) {
-        try {
-            /* if (hostAndPortArgs.length != 2) throw new WrongAmountOfElementsException();
-            host = hostAndPortArgs[0];
-            port = Integer.parseInt(hostAndPortArgs[1]);*/
-
-            if (hostAndPortArgs.length != 0) throw new WrongAmountOfElementsException();
-            host = "localhost";
-            port = 8080;
-            if (port < 0) throw new NotInDeclaredLimitsException();
-            return true;
-        } catch (WrongAmountOfElementsException exception) {
-            String jarName = new java.io.File(App.class.getProtectionDomain()
-                    .getCodeSource()
-                    .getLocation()
-                    .getPath())
-                    .getName();
-            Outputer.printLn("Применение: 'java -jar " + jarName + " <host> <port>'");
-        } catch (NumberFormatException exception) {
-            Outputer.printError("Порт должен быть представлен целым числом.");
-        } catch (NotInDeclaredLimitsException exception) {
-            Outputer.printError("Номер порта не может быть отрицательным.");
-        }
-        return false;
-    }
-
+    /**
+     * Главный метод для запуска приложения. Инициализирует адрес подключения к серверу
+     * создает экземпляр объекта клиента и запускает его.
+     * @param args аргументы командной строки (адрес сервера и номер порта)
+     */
     public static void main(String[] args) {
-        if (!initializeConnectionAddress(args)) return;
+        ConnectionInitializer connectionInitializer = new ConnectionInitializer(args);
+        if (connectionInitializer.getHost() == null || connectionInitializer.getPort() == 0) return;
+
         Scanner userScanner = new Scanner(System.in);
         UserHandler userHandler = new UserHandler(userScanner);
-        Client client = new Client(host, port, RECONNECTION_TIMEOUT, MAX_RECONNECTION_ATTEMPTS, userHandler);
+        Client client = new Client(connectionInitializer.getHost(),
+                connectionInitializer.getPort(),
+                ConnectionInitializer.getReconnectionTimeout(),
+                connectionInitializer.getMaxReconnectionAttempts(),
+                userHandler);
         client.run();
         userScanner.close();
     }

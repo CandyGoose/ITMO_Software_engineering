@@ -1,4 +1,5 @@
 package common.data;
+
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;

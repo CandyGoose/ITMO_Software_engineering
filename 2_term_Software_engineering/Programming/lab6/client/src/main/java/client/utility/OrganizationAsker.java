@@ -16,10 +16,12 @@ import java.util.Scanner;
  * Класс, запрашивающий у пользователя ввод
  */
 public class OrganizationAsker {
+
     /**
      Сканер для чтения пользовательского ввода.
      */
     Scanner userScanner;
+
     /**
      * Это приватное логическое поле scriptMode, которое указывает, работает ли приложение в режиме скрипта или нет.
      * Если значение этого поля установлено в true, то это означает, что приложение выполняет команды, содержащиеся в
@@ -27,6 +29,10 @@ public class OrganizationAsker {
      */
     private boolean scriptMode;
 
+    /**
+     * Конструктор класса OrganizationAsker.
+     * @param userScanner Объект класса Scanner для чтения ввода пользователя.
+     */
     public OrganizationAsker(Scanner userScanner) {
         this.userScanner = userScanner;
         scriptMode = false;
@@ -357,7 +363,7 @@ public class OrganizationAsker {
      *
      * @param question вопрос
      * @return ответ (true/false).
-     * @throws IncorrectInputInScriptException If script is running and something goes wrong.
+     * @throws IncorrectInputInScriptException если возникла ошибка при работе со скриптом.
      */
     public boolean askQuestion(String question) throws IncorrectInputInScriptException{
         String finalQuestion = question + " (+/-):";
@@ -371,13 +377,17 @@ public class OrganizationAsker {
                 if (!answer.equals("+") && !answer.equals("-")) throw new NotInDeclaredLimitsException();
                 break;
             } catch (NoSuchElementException exception) {
-                Outputer.printError("The response was not recognized!");
+                Outputer.printError("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
+                if(!userScanner.hasNext()) {
+                    Outputer.printError("Работа программы прекращена.");
+                    System.exit(0);
+                }
             } catch (NotInDeclaredLimitsException exception) {
-                Outputer.printError("The answer must be represented by the signs '+' or '-'!");
+                Outputer.printError("Ответ должен быть '+' или '-'.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
             } catch (IllegalStateException exception) {
-                Outputer.printError("Unexpected error!");
+                Outputer.printError("Непредвиденная ошибка.");
                 System.exit(0);
             }
         }
