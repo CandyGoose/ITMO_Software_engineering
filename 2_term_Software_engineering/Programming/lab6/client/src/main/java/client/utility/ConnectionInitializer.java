@@ -6,79 +6,79 @@ import common.exceptions.WrongAmountOfElementsException;
 import common.utility.Outputer;
 
 /**
- * Класс для инициализации подключения к серверу.
+ * ????? ??? ????????????? ??????????? ? ???????.
  */
 public class ConnectionInitializer {
 
     /**
-     * Время ожидания перед повторным подключением в миллисекундах
+     * Р’СЂРµРјСЏ РѕР¶РёРґР°РЅРёСЏ РїРµСЂРµРґ РїРѕРІС‚РѕСЂРЅС‹Рј РїРѕРґРєР»СЋС‡РµРЅРёРµРј РІ РјРёР»Р»РёСЃРµРєСѓРЅРґР°С…
      */
     private static final int RECONNECTION_TIMEOUT = 5 * 1000;
 
     /**
-     * Максимальное количество попыток подключения к серверу
+     * РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРїС‹С‚РѕРє РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє СЃРµСЂРІРµСЂСѓ
      */
     private static final int MAX_RECONNECTION_ATTEMPTS = 5;
 
     /**
-     * Адрес сервера
+     * РђРґСЂРµСЃ СЃРµСЂРІРµСЂР°
      */
     private String host;
 
     /**
-     * Порт сервера
+     * РџРѕСЂС‚ СЃРµСЂРІРµСЂР°
      */
     private int port;
 
     /**
-     * Конструктор класса, который инициализирует адрес подключения к серверу.
-     * @param hostAndPortArgs массив строк с адресом хоста и номером порта.
+     * РњРµС‚РѕРґ РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ Р°РґСЂРµСЃ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє СЃРµСЂРІРµСЂСѓ, РёСЃРїРѕР»СЊР·СѓСЏ Р°СЂРіСѓРјРµРЅС‚С‹ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё.
+     * @param hostAndPortArgs РјР°СЃСЃРёРІ СЃС‚СЂРѕРє СЃ Р°РґСЂРµСЃРѕРј СЃРµСЂРІРµСЂР° Рё РЅРѕРјРµСЂРѕРј РїРѕСЂС‚Р°.
      */
     public ConnectionInitializer(String[] hostAndPortArgs) {
         initializeConnectionAddress(hostAndPortArgs);
     }
 
     /**
-     * Метод для получения значения переменной host.
-     * @return значение переменной host.
+     * РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏ host.
+     * @return СЃС‚СЂРѕРєРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ host.
      */
     public String getHost() {
         return host;
     }
 
     /**
-     * Метод для получения значения переменной port.
-     * @return значение переменной port.
+     * РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»СЏ port.
+     * @return С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ port.
      */
     public int getPort() {
         return port;
     }
 
     /**
-     * Метод для получения значения переменной MAX_RECONNECTION_ATTEMPTS.
-     * @return значение переменной MAX_RECONNECTION_ATTEMPTS.
+     * РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєРѕРЅСЃС‚Р°РЅС‚С‹ MAX_RECONNECTION_ATTEMPTS.
+     * @return С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РєРѕРЅСЃС‚Р°РЅС‚С‹ MAX_RECONNECTION_ATTEMPTS.
      */
     public int getMaxReconnectionAttempts() {
         return MAX_RECONNECTION_ATTEMPTS;
     }
 
     /**
-     * Метод для получения значения переменной RECONNECTION_TIMEOUT.
-     * @return значение переменной RECONNECTION_TIMEOUT.
+     * РЎС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ РєРѕРЅСЃС‚Р°РЅС‚С‹ RECONNECTION_TIMEOUT.
+     * @return С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РєРѕРЅСЃС‚Р°РЅС‚С‹ RECONNECTION_TIMEOUT.
      */
     public static int getReconnectionTimeout() {
         return RECONNECTION_TIMEOUT;
     }
 
     /**
-     * Метод, который инициализирует адрес подключения к серверу.
-     * @param hostAndPortArgs массив строк с адресом хоста и номером порта.
+     * РџСЂРёРІР°С‚РЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№ host Рё port.
+     * @param hostAndPortArgs РјР°СЃСЃРёРІ СЃС‚СЂРѕРє, СЃРѕРґРµСЂР¶Р°С‰РёР№ Р·РЅР°С‡РµРЅРёСЏ С…РѕСЃС‚Р° Рё РїРѕСЂС‚Р°.
      */
     private void initializeConnectionAddress(String[] hostAndPortArgs) {
         try {
             /* if (hostAndPortArgs.length != 2) throw new WrongAmountOfElementsException();
             host = hostAndPortArgs[0];
-            port = Integer.parseInt(hostAndPortArgs[1]);*/
+            port = Integer.parseInt(hostAndPortArgs[1]); */
 
             if (hostAndPortArgs.length != 0) throw new WrongAmountOfElementsException();
             host = "localhost";
@@ -91,11 +91,11 @@ public class ConnectionInitializer {
                     .getLocation()
                     .getPath())
                     .getName();
-            Outputer.printLn("Применение: 'java -jar " + jarName + " <host> <port>'");
+            Outputer.printLn("Р¤РѕСЂРјР°С‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ: 'java -jar " + jarName + " <host> <port>'");
         } catch (NumberFormatException exception) {
-            Outputer.printError("Порт должен быть представлен целым числом.");
+            Outputer.printError("РџРѕСЂС‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ С†РµР»С‹Рј С‡РёСЃР»РѕРј.");
         } catch (NotInDeclaredLimitsException exception) {
-            Outputer.printError("Номер порта не может быть отрицательным.");
+            Outputer.printError("РџРѕСЂС‚ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј.");
         }
     }
 }

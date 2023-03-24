@@ -31,7 +31,7 @@ public class ShuffleCommand extends AbstractCommand {
         try{
             if (!stringArgument.isEmpty() || objectArgument != null) throw new WrongAmountOfElementsException();
             collectionManager.shuffleCollection();
-            ResponseOutputer.appendLn("Коллекция была перемешана");
+            ResponseOutputer.appendLn("Коллекция была перемешана.");
             return true;
 
         } catch (WrongAmountOfElementsException exception) {

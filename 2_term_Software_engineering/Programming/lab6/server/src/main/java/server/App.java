@@ -1,10 +1,7 @@
 package server;
 
 import server.commands.*;
-import server.utility.CollectionFileManager;
-import server.utility.CollectionManager;
-import server.utility.CommandManager;
-import server.utility.RequestHandler;
+import server.utility.*;
 
 import java.util.Locale;
 import java.util.logging.Logger;
@@ -43,7 +40,7 @@ public class App {
                 new AddCommand(collectionManager),
                 new ClearCommand(collectionManager),
                 new ExecuteScriptCommand(),
-                new ExitCommand(),
+                new ExitCommand(collectionManager),
                 new HelpCommand(),
                 new HistoryCommand(),
                 new InfoCommand(collectionManager),
@@ -52,12 +49,11 @@ public class App {
                 new PrintUniqueEmployeesCountCommand(collectionManager),
                 new RemoveByIdCommand(collectionManager),
                 new RemoveFirstCommand(collectionManager),
-                new SaveCommand(collectionManager),
                 new ShowCommand(collectionManager),
                 new ShuffleCommand(collectionManager),
                 new SortCommand(collectionManager),
                 new UpdateCommand(collectionManager),
-                new ServerExitCommand()
+                new ServerExitCommand(collectionManager)
         );
         RequestHandler requestHandler = new RequestHandler(commandManager);
         Server server = new Server(PORT, CONNECTION_TIMEOUT, requestHandler);

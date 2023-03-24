@@ -26,7 +26,6 @@ public class CommandManager {
     private final ICommand removeFirstCommand;
     private final ICommand removeByIdCommand;
     private final ICommand sortCommand;
-    private final ICommand saveCommand;
     private final ICommand showCommand;
     private final ICommand shuffleCommand;
     private final ICommand updateCommand;
@@ -47,14 +46,13 @@ public class CommandManager {
      * @param printUniqueEmployeesCountCommand команда вывода уникальных значений поля employeesCount элементов коллекции
      * @param removeByIdCommand команда удаления элемента коллекции по заданному id
      * @param removeFirstCommand команда удаления первого элемента коллекции
-     * @param saveCommand команда сохранения коллекции в файл
      * @param showCommand команда вывода всех элементов коллекции
      * @param shuffleCommand команда перемешивания элементов коллекции
      * @param sortCommand команда сортировки элементов коллекции
      * @param updateCommand команда обновления значений элемента коллекции по заданному id
      * @param serverExitCommand команда завершения работы сервера
      */
-    public CommandManager(ICommand addCommand, ICommand clearCommand, ICommand executeScriptCommand, ICommand exitCommand, ICommand helpCommand,ICommand historyCommand, ICommand infoCommand, ICommand printDescendingCommand, ICommand printFieldDescendingAnnualTurnoverCommand, ICommand printUniqueEmployeesCountCommand, ICommand removeByIdCommand, ICommand removeFirstCommand, ICommand saveCommand, ICommand showCommand, ICommand shuffleCommand, ICommand sortCommand,  ICommand updateCommand, ICommand serverExitCommand) {
+    public CommandManager(ICommand addCommand, ICommand clearCommand, ICommand executeScriptCommand, ICommand exitCommand, ICommand helpCommand,ICommand historyCommand, ICommand infoCommand, ICommand printDescendingCommand, ICommand printFieldDescendingAnnualTurnoverCommand, ICommand printUniqueEmployeesCountCommand, ICommand removeByIdCommand, ICommand removeFirstCommand, ICommand showCommand, ICommand shuffleCommand, ICommand sortCommand,  ICommand updateCommand, ICommand serverExitCommand) {
         this.addCommand = addCommand;
         this.clearCommand = clearCommand;
         this.executeScriptCommand = executeScriptCommand;
@@ -67,14 +65,13 @@ public class CommandManager {
         this.printUniqueEmployeesCountCommand = printUniqueEmployeesCountCommand;
         this.removeByIdCommand = removeByIdCommand;
         this.removeFirstCommand = removeFirstCommand;
-        this.saveCommand = saveCommand;
         this.showCommand = showCommand;
         this.shuffleCommand = shuffleCommand;
         this.sortCommand = sortCommand;
         this.updateCommand = updateCommand;
         this.serverExitCommand = serverExitCommand;
 
-        commands = new ArrayList<>(Arrays.asList(helpCommand, infoCommand, historyCommand, showCommand, addCommand, updateCommand, removeByIdCommand, clearCommand, saveCommand, executeScriptCommand, exitCommand, removeFirstCommand, shuffleCommand, sortCommand, printDescendingCommand, printUniqueEmployeesCountCommand, printFieldDescendingAnnualTurnoverCommand, serverExitCommand));
+        commands = new ArrayList<>(Arrays.asList(helpCommand, infoCommand, historyCommand, showCommand, addCommand, updateCommand, removeByIdCommand, clearCommand, executeScriptCommand, exitCommand, removeFirstCommand, shuffleCommand, sortCommand, printDescendingCommand, printUniqueEmployeesCountCommand, printFieldDescendingAnnualTurnoverCommand, serverExitCommand));
     }
 
     /**
@@ -121,7 +118,8 @@ public class CommandManager {
     public boolean help(String stringArgument, Object objectArgument) {
         if (helpCommand.execute(stringArgument, objectArgument)) {
             for (ICommand command : commands) {
-                ResponseOutputer.appendTable(command.getName() + " " + command.getUsage(), command.getDescription());
+                if (command.getUsage().isEmpty()) ResponseOutputer.appendLn(command.getName() + ": " + command.getDescription());
+                else ResponseOutputer.appendLn(command.getName() + " " + command.getUsage() + ": " + command.getDescription());
             }
             return true;
         } else return false;
@@ -178,23 +176,13 @@ public class CommandManager {
     }
 
     /**
-     * Выход из приложения.
+     * Очистка коллекции.
      * @param stringArgument строковый аргумент команды
      * @param objectArgument объектный аргумент команды
      * @return результат выполнения команды
      */
     public boolean clear(String stringArgument, Object objectArgument) {
         return clearCommand.execute(stringArgument, objectArgument);
-    }
-
-    /**
-     * Очистка коллекции.
-     * @param stringArgument строковый аргумент команды
-     * @param objectArgument объектный аргумент команды
-     * @return результат выполнения команды
-     */
-    public boolean save(String stringArgument, Object objectArgument) {
-        return saveCommand.execute(stringArgument, objectArgument);
     }
 
     /**
@@ -293,7 +281,6 @@ public class CommandManager {
      * @return результат выполнения команды
      */
     public boolean serverExit(String stringArgument, Object objectArgument) {
-        save(stringArgument, objectArgument);
         return serverExitCommand.execute(stringArgument, objectArgument);
     }
 }
