@@ -5,6 +5,8 @@ import server.utility.CollectionFileManager;
 import server.utility.CollectionManager;
 import server.utility.CommandManager;
 import server.utility.RequestHandler;
+
+import java.util.Locale;
 import java.util.logging.Logger;
 
 /**
@@ -33,6 +35,7 @@ public class App {
      * @param args массив аргументов командной строки.
      */
     public static void main(String[] args) {
+        Locale.setDefault(new Locale("en", "EN"));
         String filename = CollectionFileManager.getName();
         CollectionFileManager collectionFileManager = new CollectionFileManager(filename);
         CollectionManager collectionManager = new CollectionManager(collectionFileManager);
