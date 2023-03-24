@@ -8,6 +8,7 @@ import common.interaction.ResponseResult;
  * Обработчик запросов.
  */
 public class RequestHandler {
+
     /**
      * Объект CommandManager, управляющий выполнением команд
      */
@@ -15,6 +16,7 @@ public class RequestHandler {
 
     /**
      * Конструктор класса RequestHandler.
+     *
      * @param commandManager менеджер команд.
      */
     public RequestHandler(CommandManager commandManager) {
@@ -70,9 +72,6 @@ public class RequestHandler {
             case "clear":
                 if (!commandManager.clear(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 break;
-            case "save":
-                if (!commandManager.save(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
-                break;
             case "exit":
                 if (!commandManager.exit(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 return ResponseResult.CLIENT_EXIT;
@@ -98,8 +97,7 @@ public class RequestHandler {
                 if (!commandManager.printUniqueEmployeesCount(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 break;
             case "server_exit":
-                if (!commandManager.serverExit(commandStringArgument, commandObjectArgument))
-                    return ResponseResult.ERROR;
+                if (!commandManager.serverExit(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 return ResponseResult.SERVER_EXIT;
             default:
                 ResponseOutputer.appendLn("Команда '" + command + "' не найдена. Напишите 'help' для просмотра всех доступных команд.");

@@ -79,7 +79,7 @@ public class Server {
      */
     private void stop() {
         try{
-            App.logger.info("Завершение работы сервера...");
+            App.logger.info("Завершение работы сервера.");
             if(serverSocket == null) throw new ClosingSocketException();
             serverSocket.close();
             Outputer.printLn("Работа сервера успешно завершена.");

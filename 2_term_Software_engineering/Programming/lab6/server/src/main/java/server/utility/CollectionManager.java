@@ -24,11 +24,6 @@ public class CollectionManager {
     private ZonedDateTime lastInitTime;
 
     /**
-     * Дата сохранения коллекции.
-     */
-    private ZonedDateTime lastSaveTime;
-
-    /**
      * Менеджер файлов.
      */
     private final CollectionFileManager collectionFileManager;
@@ -39,7 +34,6 @@ public class CollectionManager {
      */
     public CollectionManager(CollectionFileManager collectionFileManager) {
         this.lastInitTime = null;
-        this.lastSaveTime = null;
         this.collectionFileManager = collectionFileManager;
         loadCollection();
     }
@@ -50,14 +44,6 @@ public class CollectionManager {
      */
     public ZonedDateTime getLastInitTime() {
         return lastInitTime;
-    }
-
-    /**
-     * Возвращает дату сохранения коллекции.
-     * @return дата сохранения коллекции.
-     */
-    public ZonedDateTime getLastSaveTime() {
-        return lastSaveTime;
     }
 
     /**
@@ -124,10 +110,10 @@ public class CollectionManager {
      * @param id идентификатор организации для удаления
      */
     public void removeByIdFromCollection(Long id){
-        organizationCollection.stream()
-                .filter(organization -> organization.getId().equals(id))
-                .findFirst()
-                .ifPresent(this::removeFromCollection);
+        organizationCollection.stream() // получение последовательного потока элементов из коллекции organizationCollection
+                .filter(organization -> organization.getId().equals(id)) // выбираем только те объекты Organization, у которых id совпадает с переданным значением id
+                .findFirst() // возвращает первый элемент из потока, удовлетворяющий условию, представленному в фильтре, если такого элемента нет, метод возвращает пустое значение.
+                .ifPresent(this::removeFromCollection); // проверяет, присутствует ли значение в Optional (возвращаемое значение метода findFirst()) и, если это так, то указывает на ссылку на метод removeFromCollection() текущего объекта для удаления
     }
 
     /**
@@ -175,23 +161,22 @@ public class CollectionManager {
      */
     public long generateNextId(){
         if(organizationCollection.isEmpty()) return 1;
-        else return organizationCollection.stream()
-                .mapToLong(Organization::getId)
-                .filter(organization -> organization >= 0)
-                .max().orElse(0) + 1;
+        else return organizationCollection.stream() // создает поток объектов класса Organization,
+                .mapToLong(Organization::getId) // преобразует каждый объект Organization в его id и создает поток из этих значений
+                .filter(organization -> organization >= 0) // фильтрует id, чтобы получить только положительные значения (ID организации не может быть отрицательным)
+                .max().orElse(0) + 1; // находит максимальное значение id из потока и возвращает его, или 0, если поток был пустым (в случае, если коллекция была пустой)
     }
 
     /**
      * Метод удаляет первый элемент из коллекции организаций.
      */
-    public void removeFirstInCollection(){ organizationCollection.poll(); }
+    public void removeFirstInCollection(){ organizationCollection.poll(); } // удаляет первый элемент (head) из коллекции organizationCollection
 
     /**
      * Сохраняет в файл.
      */
     public void saveCollection() {
         collectionFileManager.writeCollection(organizationCollection);
-        lastSaveTime = ZonedDateTime.now();
     }
 
     /**

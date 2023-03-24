@@ -31,7 +31,7 @@ public class SortCommand extends AbstractCommand {
         try{
             if (!stringArgument.isEmpty() || objectArgument != null) throw new WrongAmountOfElementsException();
             collectionManager.sortCollection();
-            ResponseOutputer.appendLn("Коллекция была отсортирована");
+            ResponseOutputer.appendLn("Коллекция была отсортирована.");
             return true;
 
         } catch (WrongAmountOfElementsException exception) {

@@ -142,46 +142,7 @@ public class UserHandler {
             switch (command){
                 case "":
                     return ProcessingResult.ERROR;
-                case "add":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "clear":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "exit":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "help":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "history":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "info":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "print_descending":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "print_field_descending_annual_turnover":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "print_unique_employees_count":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "remove_first":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "server_exit":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "show":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "sort":
-                    if (!commandArgument.isEmpty()) throw new CommandUsageException();
-                    break;
-                case "shuffle":
+                case "add", "print_field_descending_annual_turnover", "clear", "exit", "help", "history", "info", "print_descending", "print_unique_employees_count", "remove_first", "server_exit", "show", "sort", "shuffle":
                     if (!commandArgument.isEmpty()) throw new CommandUsageException();
                     break;
                 case "execute_script":
