@@ -10,28 +10,23 @@ import java.time.ZonedDateTime;
 
 
 /**
- * Класс отвечает за добавление организации в коллекцию
+ * The class is responsible for adding an organization to the collection
  */
 public class AddCommand extends AbstractCommand{
 
-    /**
-     Менеджер коллекции.
-     */
     private final CollectionManager collectionManager;
 
-    /**
-     * Конструктор класса AddCommand.
-     * @param collectionManager менеджер коллекции.
-     */
     public AddCommand(CollectionManager collectionManager) {
-        super("add" ,"{element}", "добавить новый элемент в коллекцию");
+        super("add" ,"{element}", "add a new element to the collection");
         this.collectionManager = collectionManager;
     }
+
+
+
     /**
-     * Команда добавления нового элемента в коллекцию.
-     * @param stringArgument аргумент команды.
-     * @param objectArgument аргумент команды.
-     * @return true, если команда выполнена успешно, false в противном случае.
+     * The function adds an organization to the collection
+     *
+     * @return the response of right execution.
      */
     @Override
     public boolean execute(String stringArgument, Object objectArgument) {
@@ -49,13 +44,12 @@ public class AddCommand extends AbstractCommand{
                     organizationRaw.getType(),
                     organizationRaw.getPostalAddress()
             ));
-
-            ResponseOutputer.appendLn("Организация была создана успешно");
+            ResponseOutputer.appendLn("Organization was added successfully!");
             return true;
-        } catch (WrongAmountOfElementsException e) {
-            ResponseOutputer.appendLn("Применение: '" + getName() + " " + getUsage() + "'");
+        } catch (WrongAmountOfElementsException e){
+            ResponseOutputer.appendLn("Usage: '" + getName() + " " + getUsage() + "'");
         } catch (ClassCastException exception) {
-            ResponseOutputer.appendError("Объект, переданный клиентом, неверен");
+            ResponseOutputer.appendError("The object passed by the client is incorrect!");
         }
         return false;
     }
