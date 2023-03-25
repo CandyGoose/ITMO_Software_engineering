@@ -74,7 +74,7 @@ public class RequestHandler {
                 break;
             case "exit":
                 if (!commandManager.exit(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
-                return ResponseResult.CLIENT_EXIT;
+                return ResponseResult.ERROR;
             case "execute_script":
                 if (!commandManager.executeScript(commandStringArgument, commandObjectArgument)) return ResponseResult.ERROR;
                 break;
