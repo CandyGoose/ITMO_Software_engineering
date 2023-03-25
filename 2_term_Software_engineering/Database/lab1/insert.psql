@@ -8,10 +8,11 @@ INSERT INTO location (name) VALUES
     ('Космос'),
     ('Вулкан');
 
-INSERT INTO miracle (name, danger, location) VALUES
-    ('Гора Афон', 1, 1),
-    ('Астероид Апофис', 2, 2),
-    ('Пещера смерти', 3, 3);
+INSERT INTO miracle (name, seeing_date, danger, location) VALUES
+    ('Гора Афон', '2000-01-01', 1, 1),
+    ('Астероид Апофис', '2002-02-04', 2, 2),
+    ('Пещера смерти', '2005-06-13', 3, 3);
+    ('Гора Афон', '2010-01-01', 1, 1)
 
 INSERT INTO destiny (description) VALUES
     ('Сорваться со скалы'),
@@ -38,7 +39,7 @@ INSERT INTO miracle_seen (comrade, miracle) VALUES
     (1, 2),
     (2, 1),
     (4, 2),
-    (4, 3),
+    (4, 1),
     (6, 1),
     (7, 1),
     (7, 2),
