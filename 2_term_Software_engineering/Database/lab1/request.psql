@@ -1,5 +1,0 @@
-SELECT COUNT(*) FROM lab1.comrade WHERE birth_date < CURRENT_DATE - INTERVAL '50 years';
-
-SELECT COUNT(*) FROM lab1.comrade WHERE birth_date > CURRENT_DATE - INTERVAL '18 years';
-
-SELECT COUNT(*) FROM lab1.miracle_seen;

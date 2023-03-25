@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rotate Pointer</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+  <style>
+body {
+  background-color: #222;
+  overflow-y: hidden;
+}
+
+#container {
+  margin: 10vh;
+  text-align: center;
+  color: #fefefe;
+}
+
+#circle {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  margin: -13.6em auto;
+  border: 2px solid #fefefe;
+  z-index: 1;
+  transition: all 15s linear; 
+}
+#circle:hover{
+   cursor:pointer;
+   cursor:hand;
+}
+.hidden {
+  transition: none !important;
+  visibility: hidden;
+}
+#retry{
+  text-align: center;
+  margin: 2em auto;
+  line-height: 1em;
+  font-size: 2.5em;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fefefe;
+  text-transform: uppercase;
+  background-color: #222;
+  transition: all 0.5s ease;
+}
+#retry2{
+    transition: all 0.25s ease;
+}
+#retry2 > p{
+  text-align: center;
+  margin: 3.5em auto;
+  line-height: 1em;
+  font-size: 2.5em;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fefefe;
+  text-transform: uppercase;
+  background-color: #222;
+  transition: all 0.25s ease;
+}
+#retry2 > h1{
+   text-align: center;
+  margin: -5.75em auto;
+  line-height: 1em;
+  font-size: 1.5em;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fefefe;
+  text-transform: uppercase;
+  background-color: #222;
+}
+#retry2:hover > p{
+  color: #2ecc71;
+  cursor: pointer;
+  cursor: hand;
+}
+#retry:hover{
+    color: #2ecc71;
+  cursor: pointer;
+  cursor: hand;
+}
+#circle2 {
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 2px solid #fefefe;
+}
+
+#pointer {
+  height: 1.5em;
+  width: 12px;
+  background-color: #2ecc71;
+  margin: -0.75em auto;
+  border-radius: 4px;
+  z-index: 999;
+  position: relative;
+}
+
+p {
+  margin-top: -3.3em;
+  line-height: 1em;
+  font-size: 3em;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fefefe;
+}
+p > h4{
+  font-size: 0.5em;
+  margin-top: -0.5em;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fefefe;
+}
+
+.point {
+  position: relative;
+  z-index: 10;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: #2ecc71;
+  margin: -1em auto;
+  border: 4px solid #222;
+  box-shadow: 0 0 0 1pt #2ecc71;
+  animation: pulse 1s ease-in-out infinite;
+}
+@keyframes pulse{
+  0% {   box-shadow: 0 0 0 1pt #2ecc71; }
+  50% {  box-shadow: 0 0 0 2.5pt #2ecc71;}
+}
+</style>
+</head>
+<body>
+    <body>
+        <div id="container">
+          <div id="circle2">
+            <div class="point"></div>
+          </div>
+          <p></p>
+          <div id="circle">
+            <div id="pointer"></div>
+          </div>
+        </div>
+        <div id="retry" class="hidden">play again</div>
+        <div id="retry2" class="hidden">
+          <h1>you win.</h1>
+          <p>play again</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>  
+    // Get current rotation angle
+(function($) {
+  $.fn.rotationDegrees = function() {
+    var matrix = this.css("-webkit-transform") ||
+      this.css("-moz-transform") ||
+      this.css("-ms-transform") ||
+      this.css("-o-transform") ||
+      this.css("transform");
+    if (typeof matrix === 'string' && matrix !== 'none') {
+      var values = matrix.split('(')[1].split(')')[0].split(',');
+      var a = values[0];
+      var b = values[1];
+      var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+    } else {
+      var angle = 0;
+    }
+    return angle;
+  };
+}(jQuery));
+jQuery.fn.rotate = function(degrees) {
+  $(this).css({
+    '-webkit-transform': 'rotate(' + degrees + 'deg)',
+    '-moz-transform': 'rotate(' + degrees + 'deg)',
+    '-ms-transform': 'rotate(' + degrees + 'deg)',
+    'transform': 'rotate(' + degrees + 'deg)'
+  });
+  return $(this);
+};
+
+// Initialize random points on the circle, update # of digits
+function init($param) {
+    $("#circle2").rotate(0);
+    $("#container > p").html($param);
+    if($param!=1)
+    $("#container > p").append("<br><h4>digits left</h4>");
+    else
+    $("#container > p").append("<br><h4>digit left</h4>");
+}
+
+
+$(document).ready(function() {
+      // %2 == 0 is clockwise, else counter-clockwise
+      var counter = 0;
+      // # of digits, reach 0 => win
+      var digits = 5;
+      // display
+      init(digits);
+      // store the randomly generated angle of the point
+      var angle = $("#circle2").rotationDegrees();
+      // Initial circle spin on page load
+      $("#circle").rotate(2880);
+      $('#circle').click(function() {
+        // Current rotation stored in a variable
+        var unghi = $(this).rotationDegrees();
+        // If current rotation matches the random point rotation by a margin of +- 2digits, the player "hit" it and continues
+        if (unghi > angle - 25 && unghi < angle + 25) {
+          // digits--;
+          // If game over, hide the game, display end of game options
+        //   if (!digits) {
+        //     $("#circle").addClass("hidden");
+        //     $("#circle2").addClass("hidden");
+        //     $("#container > p").addClass("hidden");
+        //     $("#retry2").removeClass("hidden");
+        //   }
+          // Else, add another point and remember its new angle of rotation
+          init(digits);
+          angle = $("#circle2").rotationDegrees();
+        }
+        // Else, the player "missed" and is brought to end of game options
+        else {
+          $("#circle").addClass("hidden");
+          $("#circle2").addClass("hidden");
+          $("#container > p").addClass("hidden");
+          $("#retry").removeClass("hidden");
+        }
+        // No of clicks ++
+        counter++;
+        // spin based on click parity
+        if (counter % 2) {
+          $(this).rotate(2160);
+        } else $(this).rotate(2160);
+      });
+      $('#retry').click(function() {
+          $("#circle").removeClass("hidden");
+          $("#circle2").removeClass("hidden");
+          $("#container > p").removeClass("hidden");
+          $("#retry").addClass("hidden");
+          digits=5;
+          init(digits);
+          angle = $("#circle2").rotationDegrees();
+          $("#circle").rotate(2440);
+          counter=0;
+      });
+   $('#retry2').click(function() {
+       $("#retry2").addClass("hidden");   $("#circle").removeClass("hidden");
+          $("#circle2").removeClass("hidden");
+          $("#container > p").removeClass("hidden");
+          digits=5;
+          init(digits);
+          angle = $("#circle2").rotationDegrees();
+          $("#circle").rotate(2440);
+          counter=0;
+      });
+});
+</script>
+</body>
+</html>

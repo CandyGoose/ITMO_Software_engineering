@@ -1,0 +1,1 @@
+SELECT name, birth_date FROM comrade;
