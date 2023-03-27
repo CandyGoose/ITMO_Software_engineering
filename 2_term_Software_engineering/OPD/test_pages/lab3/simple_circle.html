@@ -1,122 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Rotate Pointer</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
-  <style>
-    body {
-      background-color: #222;
-      overflow-y: hidden;
-    }
-    
-    #container {
-      margin: 10vh;
-      text-align: center;
-      color: #fefefe;
-    }
-    
-    #circle {
-      position: relative;
-      width: 15em;
-      height: 15em;
-      border-radius: 50%;
-      margin: -13.6em auto;
-      border: 2px solid #fefefe;
-      z-index: 1;
-      transition: all 15s linear; 
-    }
-    
-    #circle:hover{
-      cursor:pointer;
-      cursor:hand;
-    }
-    
-    .hidden {
-      transition: none !important;
-      visibility: hidden;
-    }
-    
-    #retry{
-      text-align: center;
-      margin: 2em auto;
-      line-height: 1em;
-      font-size: 2.5em;
-      font-family: "Lato", sans-serif;
-      font-weight: 100;
-      color: #fefefe;
-      text-transform: uppercase;
-      background-color: #222;
-      transition: all 0.5s ease;
-    }
-    
-    #retry2{
-      transition: all 0.25s ease;
-    }
-    
-    #retry2 > p{
-      text-align: center;
-      margin: 3.5em auto;
-      line-height: 1em;
-      font-size: 2.5em;
-      font-family: "Lato", sans-serif;
-      font-weight: 100;
-      color: #fefefe;
-      text-transform: uppercase;
-      background-color: #222;
-      transition: all 0.25s ease;
-    }
-    
-    #retry2 > h1{
-      text-align: center;
-      margin: -5.75em auto;
-      line-height: 1em;
-      font-size: 1.5em;
-      font-family: "Lato", sans-serif;
-      font-weight: 100;
-      color: #fefefe;
-      text-transform: uppercase;
-      background-color: #222;
-    }
-    
-    #retry2:hover > p{
-      color: #2ecc71;
-      cursor: pointer;
-      cursor: hand;
-    }
-    
-    #retry:hover{
-      color: #2ecc71;
-      cursor: pointer;
-      cursor: hand;
-    }
-    
-    #circle2 {
-      width: 15em;
-      height: 15em;
-      border-radius: 50%;
-      margin: 0 auto;
-      border: 2px solid #fefefe;
-    }
-    
-    #pointer {
-      height: 1.5em;
-      width: 12px;
-      background-color: #2ecc71;
-      margin: -0.75em auto;
-      border-radius: 4px;
-      z-index: 999;
-      position: relative;
-    }
-    
-    p {
-      margin-top: -3.3em;
-      line-height: 1em;
-      font-size: 3em;
-      font-family: "Lato", sans-serif;
-      font-weight: 100;
-      color: #fefefe;
-    }
+<meta charset="UTF-8">
+<title>Rotate Pointer</title>
+<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<style>
+	body {
+	background-color: #222;
+	overflow-y: hidden;
+	}
+	
+	#container {
+	margin: 10vh;
+	text-align: center;
+	color: #fefefe;
+	}
+	
+	#circle {
+	position: relative;
+	width: 15em;
+	height: 15em;
+	border-radius: 50%;
+	margin: -13.6em auto;
+	border: 2px solid #fefefe;
+	z-index: 1;
+	transition: all 15s linear; 
+	}
+	
+	#circle:hover{
+	cursor:pointer;
+	cursor:hand;
+	}
+	
+	.hidden {
+	transition: none !important;
+	visibility: hidden;
+	}
+	
+	#retry{
+	text-align: center;
+	margin: 2em auto;
+	line-height: 1em;
+	font-size: 2.5em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	text-transform: uppercase;
+	background-color: #222;
+	transition: all 0.5s ease;
+	}
+	
+	#retry2{
+	transition: all 0.25s ease;
+	}
+	
+	#retry2 > p{
+	text-align: center;
+	margin: 3.5em auto;
+	line-height: 1em;
+	font-size: 2.5em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	text-transform: uppercase;
+	background-color: #222;
+	transition: all 0.25s ease;
+	}
+	
+	#retry2 > h1{
+	text-align: center;
+	margin: -5.75em auto;
+	line-height: 1em;
+	font-size: 1.5em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	text-transform: uppercase;
+	background-color: #222;
+	}
+	
+	#retry2:hover > p{
+	color: #2ecc71;
+	cursor: pointer;
+	cursor: hand;
+	}
+	
+	#retry:hover{
+	color: #2ecc71;
+	cursor: pointer;
+	cursor: hand;
+	}
+	
+	#circle2 {
+	width: 15em;
+	height: 15em;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 2px solid #fefefe;
+	}
+	
+	#pointer {
+	height: 1.5em;
+	width: 12px;
+	background-color: #2ecc71;
+	margin: -0.75em auto;
+	border-radius: 4px;
+	z-index: 999;
+	position: relative;
+	}
+	
+	p {
+	margin-top: -3.3em;
+	line-height: 1em;
+	font-size: 3em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	}
 
 	p > h4{
 	font-size: 0.5em;
@@ -166,7 +166,7 @@
 
 
 	var interval
-// Получить текущий угол поворота
+	// Получить текущий угол поворота
 	(function($) {
 	$.fn.rotationDegrees = function() {
 		var matrix = this.css("-webkit-transform") ||
@@ -201,103 +201,99 @@ $("#container > p").html("<br><h4>Time left: <span id='timer'>30</span> seconds<
 	var timer;
 
 function updateTimer() {
-  if (timeLeft === 0) {
-    endGame();
-  } else {
-    $("#timer").text(timeLeft);
-    timer = setTimeout(updateTimer, 1000);
-  }
+// Таймер для обновления каждую секунду
+var timer = setInterval(function() {
+	var timeLeft = parseInt($("#timer").text());
+	if (timeLeft > 0) {
+		$("#timer").text(timeLeft - 1);
+	} else {
+		clearInterval(timer);
+		clearInterval(interval); // очистить интервал вращения
+	endGame();
+	}
+}, 1000);
 }
 
-function startTimer() {
-  $("#circle").rotate(rotationSpeed); // установить начальную скорость вращения
-  timer = setTimeout(updateTimer, 1000);
+function startGame() {
+	updateTimer()
+	$("#circle").rotate(rotationSpeed); // установить начальную скорость вращения
 }
 
 function endGame() {
-clearInterval(timer);
-$("#circle").addClass("hidden");
-$("#circle2").addClass("hidden");
-$("#container > p").addClass("hidden");
-$("#retry").removeClass("hidden");
+	clearInterval(timer);
+	$("#circle").addClass("hidden");
+	$("#circle2").addClass("hidden");
+	$("#container > p").addClass("hidden");
+	$("#retry").removeClass("hidden");
 }
 
 function rotatePoint() {
-  var minSpeed = 2700; // минимальная скорость вращения
-  var maxSpeed = 4000; // максимальная скорость вращения
-  var minDelay = 200; // минимальная задержка между обновлениями скорости
-  var maxDelay = 2000; // максимальная задержка между обновлениями скорости
-  var rotation = 0;
-  var speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed;
-  var delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay; // сгенерировать случайную задержку между обновлениями скорости
-  interval = setInterval(function() {
-  rotation = speed;
-  $("#circle").rotate(rotation);
-  var timeLeft = $("#timer").text();
-  if (timeLeft == "0") {
-    clearInterval(interval);
-    endGame();
-  }
-  // обновить значение текущей скорости
-  $("#current-speed").text(speed);
-  // генерировать новую случайную скорость вращения между minSpeed и maxSpeed
-  speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed; // сгенерировать случайную скорость вращения между минимальной и максимальной
-  delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay; // сгенерировать новую случайную задержку между обновлениями скорости
+	var minSpeed = 2700; // минимальная скорость вращения
+	var maxSpeed = 4000; // максимальная скорость вращения
+	var minDelay = 200; // минимальная задержка между обновлениями скорости
+	var maxDelay = 2000; // максимальная задержка между обновлениями скорости
+	var rotation = 0;
+	var speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed;
+	var delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay; // сгенерировать случайную задержку между обновлениями скорости
+	interval = setInterval(function() {
+		rotation = speed;
+		$("#circle").rotate(rotation);
+		var timeLeft = $("#timer").text();
+		if (timeLeft == "0") {
+		clearInterval(interval);
+		endGame();
+		}
+		// обновить значение текущей скорости
+		$("#current-speed").text(speed);
+		// генерировать новую случайную скорость вращения между minSpeed и maxSpeed
+		speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed; // сгенерировать случайную скорость вращения между минимальной и максимальной
+		delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay; // сгенерировать новую случайную задержку между обновлениями скорости
 }, delay);
-
-  
-  // Таймер для обновления каждую секунду
-  var timer = setInterval(function() {
-    var timeLeft = parseInt($("#timer").text());
-    if (timeLeft > 0) {
-      $("#timer").text(timeLeft - 1);
-    } else {
-      clearInterval(timer);
-      clearInterval(interval); // очистить интервал вращения
-      endGame();
-    }
-  }, 1000);
 }
 
 
 
 $(document).ready(function() {
-    var angle = $("#circle2").rotationDegrees();
-    var timer;
+	var angle = $("#circle2").rotationDegrees();
+	$(document).keypress(function(event) {
+	if (event.key === 'w') {
+		clearInterval(interval);
+		rotatePoint();
+		var unghi = $("#circle").rotationDegrees();
+		if (unghi > angle - 25 && unghi < angle + 25) {
+			// Попадание
+			angle = $("#circle2").rotationDegrees();
+		} else {
+			// Завершение игры
+			endGame();
+		}
+	} else if (event.key === 's') {
+		rotatePoint();
+		startGame();
+	}
+});
 
-    rotatePoint();
+	$('#retry').keypress(function(event) {
+	if (event.key === 'w') {
+		$("#circle").removeClass("hidden");
+		$("#circle2").removeClass("hidden");
+		$("#container > p").removeClass("hidden");
+		$("#retry").addClass("hidden");
+		angle = $("#circle2").rotationDegrees();
+		rotatePoint();
+	}
+});
 
-    $('#circle').click(function() {
-        clearInterval(interval);
-
-        var unghi = $(this).rotationDegrees();
-
-        if (unghi > angle - 25 && unghi < angle + 25) {
-            // Попадание
-            angle = $("#circle2").rotationDegrees();
-        } else {
-            // Завершение игры
-            endGame();
-        }
-    });
-
-    $('#retry').click(function() {
-        $("#circle").removeClass("hidden");
-        $("#circle2").removeClass("hidden");
-        $("#container > p").removeClass("hidden");
-        $("#retry").addClass("hidden");
-        angle = $("#circle2").rotationDegrees();
-        rotatePoint();
-    });
-
-    $('#retry2').click(function() {
-        $("#retry2").addClass("hidden");
-        $("#circle").removeClass("hidden");
-        $("#circle2").removeClass("hidden");
-        $("#container > p").removeClass("hidden");
-        angle = $("#circle2").rotationDegrees();
-        rotatePoint();
-    });
+	$('#retry2').keypress(function(event) {
+	if (event.key === 'w') {
+		$("#retry2").addClass("hidden");
+		$("#circle").removeClass("hidden");
+		$("#circle2").removeClass("hidden");
+		$("#container > p").removeClass("hidden");
+		angle = $("#circle2").rotationDegrees();
+		rotatePoint();
+	}
+})
 });
 
 </script>
