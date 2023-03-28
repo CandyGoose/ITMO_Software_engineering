@@ -50,41 +50,6 @@
 	transition: all 0.5s ease;
 	}
 	
-	#retry2{
-	transition: all 0.25s ease;
-	}
-	
-	#retry2 > p{
-	text-align: center;
-	margin: 3.5em auto;
-	line-height: 1em;
-	font-size: 2.5em;
-	font-family: "Lato", sans-serif;
-	font-weight: 100;
-	color: #fefefe;
-	text-transform: uppercase;
-	background-color: #222;
-	transition: all 0.25s ease;
-	}
-	
-	#retry2 > h1{
-	text-align: center;
-	margin: -5.75em auto;
-	line-height: 1em;
-	font-size: 1.5em;
-	font-family: "Lato", sans-serif;
-	font-weight: 100;
-	color: #fefefe;
-	text-transform: uppercase;
-	background-color: #222;
-	}
-	
-	#retry2:hover > p{
-	color: #2ecc71;
-	cursor: pointer;
-	cursor: hand;
-	}
-	
 	#retry:hover{
 	color: #2ecc71;
 	cursor: pointer;
@@ -155,16 +120,15 @@
 		</div>
 	</div>
 	<div id="retry" class="hidden">play again</div>
-	<div id="retry2" class="hidden">
-		<h1>you win.</h1>
-		<p>play again</p>
-	</div>
 	<p>Current speed: <span id="current-speed"></span></p>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>  
 	
 
 
+
+
+	$("#container > p").html("<br><h4>Time left: <span id='timer'>NaN</span> seconds</h4>");
 	var interval
 	// Получить текущий угол поворота
 	(function($) {
@@ -196,9 +160,7 @@ jQuery.fn.rotate = function(degrees) {
 	return $(this);
 };
 
-$("#container > p").html("<br><h4>Time left: <span id='timer'>30</span> seconds</h4>");
-	var timeLeft = 30; // начальное время
-	var timer;
+
 
 function updateTimer() {
 // Таймер для обновления каждую секунду
@@ -215,6 +177,9 @@ var timer = setInterval(function() {
 }
 
 function startGame() {
+	$("#container > p").html("<br><h4>Time left: <span id='timer'>10</span> seconds</h4>");
+	var timeLeft = 10; // начальное время
+	var timer;
 	updateTimer()
 	$("#circle").rotate(rotationSpeed); // установить начальную скорость вращения
 }
@@ -251,8 +216,6 @@ function rotatePoint() {
 }, delay);
 }
 
-
-
 $(document).ready(function() {
 	var angle = $("#circle2").rotationDegrees();
 	$(document).keypress(function(event) {
@@ -274,7 +237,7 @@ $(document).ready(function() {
 });
 
 	$('#retry').keypress(function(event) {
-	if (event.key === 'w') {
+	if (event.key === 's') {
 		$("#circle").removeClass("hidden");
 		$("#circle2").removeClass("hidden");
 		$("#container > p").removeClass("hidden");
@@ -283,17 +246,6 @@ $(document).ready(function() {
 		rotatePoint();
 	}
 });
-
-	$('#retry2').keypress(function(event) {
-	if (event.key === 'w') {
-		$("#retry2").addClass("hidden");
-		$("#circle").removeClass("hidden");
-		$("#circle2").removeClass("hidden");
-		$("#container > p").removeClass("hidden");
-		angle = $("#circle2").rotationDegrees();
-		rotatePoint();
-	}
-})
 });
 
 </script>
