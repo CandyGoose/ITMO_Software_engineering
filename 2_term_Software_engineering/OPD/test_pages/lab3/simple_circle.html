@@ -119,16 +119,25 @@
 		<div id="pointer"></div>
 		</div>
 	</div>
-	<div id="retry" class="hidden">play again</div>
-	<p>Current speed: <span id="current-speed"></span></p>
+	<div id="retry" class="hidden">game over</div>
+	<p>Result: <span id="result"></span></p>
+	<p>
+		Time: <input type="number" id="minutes" min="0" max="59"> minutes
+		<input type="number" id="seconds" min="0" max="59"> seconds
+		<button id="start">Start</button>
+	</p>
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>  
 	
 
 
+	var startButton = document.getElementById("start");
+	var buttonPressed = false;
 
-
-	$("#container > p").html("<br><h4>Time left: <span id='timer'>NaN</span> seconds</h4>");
+	const minSpeed = 2500; // минимальная скорость вращения
+	const maxSpeed = 5000; // максимальная скорость вращения
+	$("#container > p").html("<br><h4>Time left: <span id='timer'></span></h4>");
 	var interval
 	// Получить текущий угол поворота
 	(function($) {
@@ -162,26 +171,35 @@ jQuery.fn.rotate = function(degrees) {
 
 
 
-function updateTimer() {
-// Таймер для обновления каждую секунду
-var timer = setInterval(function() {
-	var timeLeft = parseInt($("#timer").text());
-	if (timeLeft > 0) {
-		$("#timer").text(timeLeft - 1);
-	} else {
-		clearInterval(timer);
-		clearInterval(interval); // очистить интервал вращения
-	endGame();
-	}
-}, 1000);
+function updateTimer(timeLeft) {
+	// Таймер для обновления каждую секунду
+	var timer = setInterval(function() {
+		timeLeft--;
+		if (timeLeft >= 0) {
+			$("#timer").text(timeLeft);
+		} else {
+			clearInterval(timer);
+			endGame();
+		}
+	}, 1000);
 }
 
+
 function startGame() {
-	$("#container > p").html("<br><h4>Time left: <span id='timer'>10</span> seconds</h4>");
-	var timeLeft = 10; // начальное время
-	var timer;
-	updateTimer()
+	var minutes = parseInt($("#minutes").val());
+	var seconds = parseInt($("#seconds").val());
+	if (isNaN(minutes) || isNaN(seconds)) {
+		alert("Please enter valid time.");
+		return;
+	}
+	startButton.disabled = true;
+	inaccuracy = 0
+	rotatePoint()
+	var timeLeft = minutes * 60 + seconds;
+	$("#container > p").html("<br><h4>Time left: <span id='timer'>" + timeLeft + "</span> seconds</h4>");
+	updateTimer(timeLeft);
 	$("#circle").rotate(rotationSpeed); // установить начальную скорость вращения
+
 }
 
 function endGame() {
@@ -193,60 +211,53 @@ function endGame() {
 }
 
 function rotatePoint() {
-	var minSpeed = 2700; // минимальная скорость вращения
-	var maxSpeed = 4000; // максимальная скорость вращения
-	var minDelay = 200; // минимальная задержка между обновлениями скорости
-	var maxDelay = 2000; // максимальная задержка между обновлениями скорости
-	var rotation = 0;
-	var speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed;
-	var delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay; // сгенерировать случайную задержку между обновлениями скорости
-	interval = setInterval(function() {
-		rotation = speed;
-		$("#circle").rotate(rotation);
-		var timeLeft = $("#timer").text();
-		if (timeLeft == "0") {
-		clearInterval(interval);
-		endGame();
-		}
-		// обновить значение текущей скорости
-		$("#current-speed").text(speed);
-		// генерировать новую случайную скорость вращения между minSpeed и maxSpeed
-		speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed; // сгенерировать случайную скорость вращения между минимальной и максимальной
-		delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay; // сгенерировать новую случайную задержку между обновлениями скорости
-}, delay);
+	var speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed + inaccuracy;
+	$("#circle").rotate(speed);
+	inaccuracy += 360
+	// генерировать новую случайную скорость вращения между minSpeed и maxSpeed
 }
 
-$(document).ready(function() {
-	var angle = $("#circle2").rotationDegrees();
-	$(document).keypress(function(event) {
-	if (event.key === 'w') {
-		clearInterval(interval);
-		rotatePoint();
-		var unghi = $("#circle").rotationDegrees();
-		if (unghi > angle - 25 && unghi < angle + 25) {
-			// Попадание
-			angle = $("#circle2").rotationDegrees();
-		} else {
-			// Завершение игры
-			endGame();
-		}
-	} else if (event.key === 's') {
-		rotatePoint();
-		startGame();
-	}
-});
 
-	$('#retry').keypress(function(event) {
-	if (event.key === 's') {
-		$("#circle").removeClass("hidden");
-		$("#circle2").removeClass("hidden");
-		$("#container > p").removeClass("hidden");
-		$("#retry").addClass("hidden");
-		angle = $("#circle2").rotationDegrees();
-		rotatePoint();
-	}
-});
-});
+function checkAnswer(){
+	var angle = $("#circle2").rotationDegrees();
+			var unghi = $("#circle").rotationDegrees();
+			if (unghi < angle + 30 && unghi > 0) {
+				$("#result").text("+");
+				rotatePoint()
+				// Попадание -
+			} else {
+				if (unghi >= angle - 30 && unghi < 0) {
+					$("#result").text("-");
+					rotatePoint()
+					// Попадание +
+				} else {
+					inaccuracy -= unghi
+					// Мимо
+					$("#result").text("Miss");
+				}
+			}
+		}
+
+//--------------
+
+
+        startButton.addEventListener("click", () => {
+			startGame();
+        });
+
+        document.addEventListener("keydown", (event) => {
+        if (event.code === "KeyS") {
+            buttonPressed = true;
+            startButton.click();
+        }
+        else if (event.code === "KeyW" && buttonPressed) {
+            checkAnswer();
+        }
+        });
+
+
+
+
 
 </script>
 </body>

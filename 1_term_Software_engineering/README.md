@@ -18,3 +18,7 @@
 [5 - Таблицы](https://github.com/VeraKasianenko/ITMO/tree/main/1_term_Software_engineering/Informatic/lab5)
 
 [6 - Latex](https://github.com/VeraKasianenko/ITMO/tree/main/1_term_Software_engineering/Informatic/lab6)
+
+## ОПД
+### Лабораторные
+[2 - БЭВМ](https://github.com/VeraKasianenko/ITMO/tree/main/1_term_Software_engineering/OPD/lab2)
