@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Rotate Pointer</title>
+<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="hard_circle1.css">
+<link rel="stylesheet" type="text/css" href="hard_circle2.css">
+<link rel="stylesheet" type="text/css" href="hard_circle3.css">
+<style>
+    body {
+	background-color: #222;
+	overflow-y: hidden;
+	}
+	
+	.hidden {
+	transition: none !important;
+	visibility: hidden;
+	}
+	
+	#end{
+		text-align: center;
+		margin: 2em auto;
+		line-height: 1em;
+		font-size: 2.5em;
+		font-family: "Lato", sans-serif;
+		font-weight: 100;
+		color: #fefefe;
+		text-transform: uppercase;
+		background-color: #222;
+		transition: all 0.5s ease;
+	}
+	
+	#end:hover{
+		color: #2ecc71;
+		cursor: pointer;
+		cursor: hand;
+	}
+	
+	p {
+	margin-top: -3.3em;
+	line-height: 1em;
+	font-size: 3em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	}
+
+	p > h4{
+	font-size: 0.5em;
+	margin-top: -0.5em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	}
+
+	input[type="number"] {
+		width: 2em;
+		font-size: 0.5em;
+		padding: 0.2em;
+		margin-right: 0.1em;
+		border-radius: 4px;
+		border: none;
+		background-color: #fefefe;
+		color: #222;
+		box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
+	}
+	#time-input {
+		text-align: center;
+		line-height: 1em;
+		font-size: 3em;
+		font-family: "Lato", sans-serif;
+		font-weight: 100;
+		color: #fefefe;
+	}
+    #time {
+	position: absolute;
+	top: 13em;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 2.5em;
+	font-family: "Lato", sans-serif;
+	font-weight: 100;
+	color: #fefefe;
+	}
+	#start {
+		text-align: center;
+		margin: 0.5em auto;
+		line-height: 1em;
+		font-size: 1.5em;
+		font-family: "Lato", sans-serif;
+		font-weight: 100;
+		color: #fefefe;
+		text-transform: uppercase;
+		background-color: #222;
+		transition: all 0.5s ease;
+		border: none;
+	}
+	
+	#start:hover {
+		color: #2ecc71;
+		cursor: pointer;
+		cursor: hand;
+	}
+</style>
+</head>
+<body>
+	<div id="time-input">
+		Enter time: <input type="number" id="minutes" min="0" max="45"> minutes
+		<input type="number" id="seconds" min="0" max="59"> seconds
+	</div>
+	<div id="start">
+		<button id="start">Start</button>
+	</div>
+	<div id="container">
+		<div id="circle2">
+		    <div class="point"></div>
+		</div>
+		<p></p>
+		<div id="circle">
+		    <div id="pointer"></div>
+		</div>
+        <div id="user-result1">Result: <span id="result"></span></div>
+
+	</div>
+    <div id="container2">
+		<div id="circle4">
+		    <div class="point2"></div>
+		</div>
+		<p></p>
+		<div id="circle3">
+		    <div id="pointer2"></div>
+		</div>
+        <div id="user-result2">Result: <span id="result2"></span></div>
+	</div>
+    <div id="container3">
+		<div id="circle6">
+		    <div class="point3"></div>
+		</div>
+		<p></p>
+		<div id="circle5">
+		    <div id="pointer3"></div>
+		</div>
+        <div id="user-result3">Result: <span id="result3"></span></div>
+	</div>
+	<div id="end" class="hidden">game over</div>
+    <div id="time"><span id="timer"></span></div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $("#container > p").html("<br><h4> <span id='result'>NaN</span></h4>");
+        $("#container2 > p").html("<br><h4> <span id='result2'>NaN</span></h4>");
+        $("#container3 > p").html("<br><h4> <span id='result3'>NaN</span></h4>");
+        $("#time").html("<br><h4> <span id='timer'>00:00</span></h4>");
+    </script>
+    <script src="hard_circle.js"></script>
+</body>
+</html>

@@ -256,11 +256,12 @@ function updateTimer(timeLeft) {
 function startGame() {
 	var minutes = parseInt($("#minutes").val());
 	var seconds = parseInt($("#seconds").val());
-	if ((isNaN(minutes) || isNaN(seconds)) || (minutes < 2) || (minutes > 45) || (seconds < 0) || (seconds > 59)) {
-		alert("Введите время от 2 до 45 минут.");
+	if ((isNaN(minutes) || isNaN(seconds)) || (minutes < 0) || (minutes > 45) || (seconds < 0) || (seconds > 59)) {
+		alert("Введите время от 1 до 45 минут.");
 		buttonPressed = false;
 		return;
 	}
+	$("#start").addClass("hidden");
 	startButton.disabled = true;
 	buttonPressed = true;
 	inaccuracy = 0
@@ -278,7 +279,8 @@ function endGame() {
 	$("#circle").addClass("hidden");
 	$("#circle2").addClass("hidden");
 	$("#container > p").addClass("hidden");
-	$("#retry").removeClass("hidden");
+	$("#user-result").addClass("hidden");
+	$("#end").removeClass("hidden");
 }
 
 function checkTime() {
@@ -308,30 +310,37 @@ function checkAnswer(){
 	var angle = $("#circle2").rotationDegrees();
 	var unghi = $("#circle").rotationDegrees();
 	if (unghi < angle + 30 && unghi > 0) {
-		$("#result").text("+");
+		$("#result").text("+" + unghi);
 		inaccuracy -= unghi
 		rotatePoint()
 		// Попадание -
 	} else {
 		if (unghi > angle - 30 && unghi < 0) {
-			$("#result").text("-");
+			$("#result").text(unghi);
 			inaccuracy -= unghi
 			rotatePoint()
 			// Попадание +
 		} else {
 			if (unghi === 0) {
-				$("#result").text("HIT!");
+				$("#result").text(0);
 				rotatePoint()
 				// Попадание 100%
-			} else {
+			} else if (unghi < 0) {
 			inaccuracy -= unghi
 			// Мимо
 			$("#result").text("Miss");
 			rotatePoint()
+			} else {
+				inaccuracy += unghi
+				// Мимо
+				$("#result").text("Miss");
+				rotatePoint()
+			}
+			
 		}
 	}
-	}
 }
+
 
 startButton.addEventListener("click", () => {
 	startGame();
