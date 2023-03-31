@@ -9,3 +9,9 @@ FROM comrade
 JOIN miracle_seen ON comrade.id = miracle_seen.comrade
 GROUP BY comrade.id
 HAVING COUNT(miracle_seen.miracle) > 2;
+
+/*
+Задание 2:
+1) вывести людей с одинаковой судьбой
+2) вывести людей, которые видели больше 2 чудес
+*/

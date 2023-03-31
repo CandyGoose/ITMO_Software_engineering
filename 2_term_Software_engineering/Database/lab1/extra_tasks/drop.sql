@@ -11,3 +11,5 @@ drop table comrade;
 drop table destiny;
 
 drop table complaint;
+
+/* удалить все таблицы */
