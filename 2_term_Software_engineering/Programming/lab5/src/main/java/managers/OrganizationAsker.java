@@ -92,7 +92,7 @@ public class OrganizationAsker {
         String name;
         while (true) {
             Console.print("Введите имя организации: ");
-            try{
+            try {
                 name = userScanner.nextLine().trim();
                 if(scriptMode) Console.printLn(name);
                 if (name.equals("")) throw new MustBeNotEmptyException();
@@ -128,9 +128,9 @@ public class OrganizationAsker {
                 Console.print("Введите координату X: ");
                 String s = userScanner.nextLine().trim();
                 s = s.replace(",", ".");
-                if(scriptMode) Console.printLn(s);
+                if (scriptMode) Console.printLn(s);
                 x = Float.parseFloat(s);
-                if(x > 741) throw new NotInDeclaredLimitsException();
+                if (x > 741) throw new NotInDeclaredLimitsException();
                 break;
             } catch (NoSuchElementException e) {
                 Console.printError("Значение поля не может быть использовано.");
