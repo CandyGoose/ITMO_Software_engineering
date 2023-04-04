@@ -79,7 +79,7 @@ public class CollectionManager {
      * @param id id организации, которую нужно заменить
      * @param newValue новая организация
      */
-    public void replaceById(Long id,Organization newValue){
+    public void replaceById(Long id, Organization newValue){
         newValue.setId(id);
         organizationCollection
                 .stream() // создает поток из коллекции organizationCollection
