@@ -15,14 +15,19 @@ public class PrintUniqueEmployeesCountCommand extends AbstractCommand {
     private final CollectionManager collectionManager;
 
     /**
-     * Конструктор класса PrintUniqueEmployeesCountCommand.
-     * @param collectionManager менеджер коллекции.
+     * Создает новый объект команды.
+     * @param collectionManager менеджер коллекции
      */
     public PrintUniqueEmployeesCountCommand(CollectionManager collectionManager) {
         super("print_unique_employees_count", "вывести уникальные значения поля employeesCount всех элементов в коллекции", 0);
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполняет команду для вывода всех уникальных значений количества сотрудников организаций в системе.
+     * @param request объект запроса
+     * @return ответ на запрос с выводом всех уникальных значений количества сотрудников организаций в системе
+     */
     @Override
     public Response execute(Request request) {
         if (collectionManager.getCollection().isEmpty())

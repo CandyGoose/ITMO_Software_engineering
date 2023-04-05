@@ -13,14 +13,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-
 	<build>
 		<plugins>
+			<!-- Плагин для создания документации -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
-
+			<!-- Плагин для сборки jar с зависимостями -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -45,31 +45,34 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
-
 	<dependencies>
+		<!-- Зависимость от библиотеки XStream для сериализации/десериализации данных -->
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
 			<version>1.4.20</version>
 		</dependency>
+		<!-- Зависимость Validation API, используемая для валидации данных -->
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>2.0.1.Final</version>
 		</dependency>
+		<!-- Зависимость на Hibernate Validator, реализацию Validation API -->
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.0.21.Final</version>
 		</dependency>
+		<!-- Зависимость на GlassFish реализацию Expression Language, используемую Hibernate Validator -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.el</artifactId>
 			<version>3.0.1-b10</version>
 		</dependency>
+		<!-- Зависимость на lab-common, общую для сервера и клиента библиотеку -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>lab-common</artifactId>

@@ -140,10 +140,9 @@ public class FileManager {
     public static String path;
 
     /**
-     * Метод для получения имени папки из переменной окружения.
-     * @return имя папки
+     * Метод для получения имени файла из переменной окружения.
+     * @return имя файла
      */
-
     public static String getName(){
         try {
             path = System.getenv("lab5"); // lab5 - полный путь до файла, включая его название

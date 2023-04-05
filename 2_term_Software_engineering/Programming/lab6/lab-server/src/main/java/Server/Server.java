@@ -9,8 +9,20 @@ import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Главный класс, запускающий приложение сервера.
+ * Содержит метод main, отвечающий за запуск приложения.
+ *
+ * @author Касьяненко Вера (P3120)
+ */
 public final class Server {
+    /**
+     * Имя файла, в котором хранится коллекция.
+     */
     static String fileName;
+    /**
+     * Объект, который используется для прослушивания входящих клиентских подключений на сервере.
+     */
     private static ServerSocket serverSocket;
     public static void main(String[] args) {
         try {
@@ -26,6 +38,9 @@ public final class Server {
         }
     }
 
+    /**
+     * Метод inputPort запрашивает данные для создания соединения.
+     */
     private static void inputPort() {
         Scanner sc = ServerApp.scanner;
         TextWriter.printInfoMessage("Вы хотите использовать порт по умолчанию? [y/n]");

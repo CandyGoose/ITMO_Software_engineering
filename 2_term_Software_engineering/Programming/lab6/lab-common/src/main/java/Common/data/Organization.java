@@ -5,27 +5,81 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Класс, представляющий организацию.
+ */
 public class Organization implements Comparable<Organization>, Serializable{
+
+    /**
+     * Уникальный идентификатор организации.
+     * Поле не может быть null.
+     * Значение поля должно быть больше 0.
+     * Значение этого поля должно быть уникальным.
+     * Значение этого поля должно генерироваться автоматически.
+     */
     @NotNull
     @Positive(message = "ID должен быть больше нуля!")
-    private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private Long id;
+
+    /**
+     * Наименование организации.
+     * Поле не может быть null.
+     * Строка не может быть пустой.
+     */
     @NotNull(message = "Имя не может быть null")
     @NotBlank(message = "Имя должно содержать хотя бы 1 символ")
-    private String name; //Поле не может быть null, Строка не может быть пустой
+    private String name;
+
+    /**
+     * Координаты организации.
+     * Поле не может быть null.
+     */
     @NotNull(message = "Координаты не могут быть null")
-    private Coordinates coordinates; //Поле не может быть null
+    private Coordinates coordinates;
+
+    /**
+     * Дата создания организации.
+     * Поле не может быть null.
+     * Значение этого поля должно генерироваться автоматически.
+     */
     @NotNull(message = "Дата не может быть null")
     @PastOrPresent
-    private ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private ZonedDateTime creationDate;
+
+    /**
+     * Годовой оборот организации.
+     * Поле не может быть null.
+     * Значение поля должно быть больше 0.
+     */
     @NotNull(message = "Годовой оборот не может быть null")
     @Positive(message = "Годовой оборот должен быть больше нуля!")
     private Float annualTurnover;
+
+    /**
+     * Полное наименование организации.
+     * Поле не может быть null.
+     */
     @NotNull(message = "Полное имя не может быть null")
     private String fullName;
+
+    /**
+     * Количество сотрудников организации.
+     * Значение поля должно быть больше 0.
+     */
     @Positive(message = "Количество сотрудников должно быть больше нуля!")
     private long employeesCount;
+
+    /**
+     * Тип организации.
+     * Поле не может быть null.
+     */
     @NotNull(message = "Тип не может быть null")
-    private OrganizationType type; //Поле не может быть null
+    private OrganizationType type;
+
+    /**
+     * Адрес организации.
+     * Поле может быть null.
+     */
     private Address postalAddress;
 
     /**
@@ -52,22 +106,47 @@ public class Organization implements Comparable<Organization>, Serializable{
         this.postalAddress = postalAddress;
     }
 
+    /**
+     * Возвращает id
+     *
+     * @return id
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Устанавливает значение id объекта
+     *
+     * @param id - id организации
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * Возвращает имя
+     *
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Возвращает координаты
+     *
+     * @return coordinates
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
+    /**
+     * Получает дату создания объекта
+     *
+     * @return creationDate
+     */
     public ZonedDateTime getCreationDate() {
         return creationDate;
     }
@@ -99,11 +178,14 @@ public class Organization implements Comparable<Organization>, Serializable{
         return employeesCount;
     }
 
-
+    /**
+     * Возвращает тип организации
+     *
+     * @return type
+     */
     public OrganizationType getType() {
         return type;
     }
-
 
     /**
      * Возвращает адрес
@@ -114,11 +196,16 @@ public class Organization implements Comparable<Organization>, Serializable{
         return postalAddress;
     }
 
+    /**
+     * Этот метод используется для сравнения двух объектов
+     *
+     * @param o - объект для сравнения
+     * @return id - id организации
+     */
     @Override
     public int compareTo(Organization o) {
         return Long.compare(this.getId(), o.getId());
     }
-
 
     /**
      * Печатает информацию об организации пользователю в понятном формате

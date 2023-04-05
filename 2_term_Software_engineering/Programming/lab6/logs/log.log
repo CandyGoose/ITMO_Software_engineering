@@ -26,3 +26,101 @@ INFO: Коллекция сохранена.
 INFO: Коллекция сохранена.
 апр. 04, 2023 11:10:08 PM Server.ConsoleThread run
 INFO: Работа сервера завершена.
+апр. 04, 2023 11:16:16 PM Server.ConsoleThread run
+INFO: Консоль запущена.
+апр. 04, 2023 11:16:19 PM Server.ConsoleThread run
+INFO: Работа сервера завершена.
+апр. 05, 2023 12:12:32 AM Server.ConsoleThread run
+INFO: Консоль запущена.
+апр. 05, 2023 12:12:40 AM Server.ServerApp lambda$startServer$0
+INFO: Подключение клиента.
+апр. 05, 2023 12:12:42 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [show].
+апр. 05, 2023 12:12:42 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:12:49 AM Server.ServerApp startIteratorLoop
+WARNING: Клиент внезапно отключился.
+апр. 05, 2023 12:13:24 AM Server.ServerApp lambda$startServer$0
+INFO: Подключение клиента.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [add].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [show].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [info].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [help].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [update].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [remove_by_id].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [remove_first].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [shuffle].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [show].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [sort].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [show].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [print_descending].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [print_unique_employees_count].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [print_field_descending_annual_turnover].
+апр. 05, 2023 12:13:30 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 05, 2023 12:14:04 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [exit].
+апр. 05, 2023 12:14:04 AM Server.ServerApp startIteratorLoop
+INFO: Отключение клиента.
+апр. 05, 2023 12:14:08 AM Server.util.FileManager writeCollection
+INFO: Коллекция сохранена.
+апр. 05, 2023 12:14:09 AM Server.ConsoleThread run
+INFO: Работа сервера завершена.
+апр. 05, 2023 1:47:54 AM Server.ConsoleThread run
+INFO: Консоль запущена.
+апр. 05, 2023 1:47:59 AM Server.ServerApp lambda$startServer$0
+INFO: Подключение клиента.
+апр. 05, 2023 1:48:01 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [exit].
+апр. 05, 2023 1:48:01 AM Server.ServerApp startIteratorLoop
+INFO: Отключение клиента.
+апр. 05, 2023 1:48:01 AM Server.ServerApp startServer
+WARNING: Не удается принять клиентское соединение: Socket closed
+апр. 05, 2023 2:34:23 AM Server.ConsoleThread run
+INFO: Консоль запущена.
+апр. 05, 2023 2:34:28 AM Server.ServerApp lambda$startServer$0
+INFO: Подключение клиента.
+апр. 05, 2023 2:34:29 AM Server.ServerApp startIteratorLoop
+WARNING: Клиент внезапно отключился.
+апр. 05, 2023 2:35:24 AM Server.ConsoleThread run
+WARNING: Работа сервера завершена.

@@ -20,15 +20,48 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.*;
 
+/**
+ * Класс для установки соединения с сервером.
+ */
 public class ClientApp {
+
+    /**
+     * Сканнер для чтения команд из скрипта.
+     */
     private static Scanner scriptScanner;
+
+    /**
+     * Создатель запросов для отправки на сервер.
+     */
     private static final RequestCreator requestCreator = new RequestCreator();
+
+    /**
+     * Запускает бесконечный цикл селектора.
+     * @param selector объект типа Selector для мониторинга состояний канала
+     * @param channel объект типа SocketChannel - канал для передачи данных по сети
+     * @param sc объект типа Scanner для чтения ввода пользователя с консоли
+     * @param scriptMode флаг режима работы скрипта
+     * @throws IOException если произошла ошибка ввода/вывода при работе с каналами или сокетами
+     * @throws ClassNotFoundException если класс не найден при десериализации
+     * @throws InterruptedException если произошла ошибка в работе потоков
+     */
     static void startSelectorLoop(Selector selector, SocketChannel channel, Scanner sc, boolean scriptMode) throws IOException, ClassNotFoundException, InterruptedException {
         do {
             selector.select();
         } while (startIteratorLoop(selector, channel, sc, scriptMode));
     }
 
+    /**
+     * Запускает итерационный цикл обработки готовых ключей селектора.
+     * @param selector объект типа Selector для мониторинга состояний канала
+     * @param channel объект типа SocketChannel - канал для передачи данных по сети
+     * @param sc объект типа Scanner для чтения ввода пользователя с консоли
+     * @param scriptMode флаг режима работы скрипта
+     * @return true, если нужно продолжать работу цикла, false - если необходимо остановиться
+     * @throws IOException если произошла ошибка ввода/вывода при работе с каналами или сокетами
+     * @throws ClassNotFoundException если класс не найден при десериализации
+     * @throws InterruptedException если произошла ошибка в работе потоков
+     */
     private static boolean startIteratorLoop(Selector selector, SocketChannel channel, Scanner sc, boolean scriptMode) throws IOException, ClassNotFoundException, InterruptedException {
         Set<SelectionKey> readyKeys = selector.selectedKeys();
         Iterator<SelectionKey> iterator = readyKeys.iterator();
@@ -89,7 +122,7 @@ public class ClientApp {
                                 TextWriter.printInfoMessage("До свидания!");
                                 System.exit(0);
                             } catch (Exception e) {
-                                TextWriter.printErr("Сервер не доступен.\nКоманда не будет зарегистрирована на сервере.");
+                                TextWriter.printErr("Сервер не доступен. Команда не будет зарегистрирована на сервере.");
                                 TextWriter.printInfoMessage("До свидания!");
                                 System.exit(0);
                             }

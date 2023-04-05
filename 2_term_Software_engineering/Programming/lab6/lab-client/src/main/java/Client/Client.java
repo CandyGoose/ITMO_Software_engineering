@@ -10,13 +10,47 @@ import java.nio.channels.SocketChannel;
 import java.nio.channels.UnresolvedAddressException;
 import java.util.*;
 
+/**
+ * Главный класс, запускающий приложение клиента.
+ * Содержит метод main, отвечающий за запуск приложения.
+ *
+ * @author Касьяненко Вера (P3120)
+ */
 public final class Client {
+
+    /**
+     * Порт по умолчанию
+     */
     private static int PORT = 65435;
+
+    /**
+     * Хост, к которому пытается подключиться клиент.
+     */
     private static String HOST;
+
+    /**
+     * Максимально возможный номер порта.
+     */
     private static final int maxPort = 65535;
+
+    /**
+     * Сканнер для считывания ввода с консоли.
+     */
     private static final Scanner SCANNER = new Scanner(System.in);
+
+    /**
+     * Селектор, используемый для отслеживания событий в сокете.
+     */
     private static Selector selector;
+
+    /**
+     * Режим переподключения, установленный в режим ожидания.
+     */
     private static boolean reconnectionMode = false;
+
+    /**
+     * Количество неудачных попыток подключения к серверу.
+     */
     private static int attempts = 0;
     public static void main(String[] args) {
         try {
@@ -55,6 +89,9 @@ public final class Client {
         }
     }
 
+    /**
+     * Метод inputPort запрашивает у пользователя данные для создания соединения.
+     */
     private static void inputPort() {
         TextWriter.printInfoMessage("Введите имя хоста:");
         try {

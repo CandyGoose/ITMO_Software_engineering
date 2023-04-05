@@ -16,8 +16,8 @@ public class RemoveFirstCommand extends AbstractCommand {
     private final CollectionManager collectionManager;
 
     /**
-     * Конструктор класса RemoveFirstCommand.
-     * @param collectionManager менеджер коллекции.
+     * Создает новый объект команды.
+     * @param collectionManager менеджер коллекции
      */
     public RemoveFirstCommand(CollectionManager collectionManager) {
         super("remove_first", "удалить первый элемент из коллекции", 0);
@@ -25,10 +25,10 @@ public class RemoveFirstCommand extends AbstractCommand {
     }
 
     /**
-     * Метод, который выполняет команду.
-     * Удаляет первый элемент из коллекции
+     * Выполняет удаление первого элемента коллекции.
      *
-     * @return true, если выполнение команды прошло успешно, и false, если произошла ошибка.
+     * @param request объект запроса
+     * @return объект ответа
      */
     @Override
     public Response execute(Request request) {

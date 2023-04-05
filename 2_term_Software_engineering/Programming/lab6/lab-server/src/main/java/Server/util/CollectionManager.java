@@ -7,28 +7,85 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Класс-менеджер коллекции организаций.
+ * Содержит методы для работы с коллекцией, такие как добавление, удаление,
+ * поиск по id, замена по id, сортировка, перемешивание, очистка и т.д.
+ * Также возвращает информацию о коллекции.
+ */
 public class CollectionManager {
+
+    /**
+     * Создает пустую коллекцию организаций и задает ее дату инициализации
+     */
     public CollectionManager() {
         organizationCollection = new LinkedList<>();
         creationDate = ZonedDateTime.now();
     }
+
+    /**
+     * Коллекция организаций
+     */
     private LinkedList<Organization> organizationCollection;
 
+    /**
+     * Возвращает коллекцию организаций
+     * @return коллекция организаций
+     */
     public List<Organization> getCollection() {
         return organizationCollection;
     }
+
+    /**
+     * Дата инициализации коллекции
+     */
     private final ZonedDateTime creationDate;
 
+    /**
+     * Возвращает дату инициализации коллекции
+     * @return дата инициализации коллекции
+     */
+    public ZonedDateTime getCreationDate() {
+        return creationDate;
+    }
 
+    /**
+     * Устанавливает коллекцию организаций
+     * @param organizationCollection коллекция организаций
+     */
+    public void setOrganizationCollection(LinkedList<Organization> organizationCollection) {
+        this.organizationCollection = organizationCollection;
+    }
+
+    /**
+     * Метод генерирует новый идентификатор для добавления организации в коллекцию.
+     * @return новый идентификатор организации
+     */
+    public Long generateNextId() {
+        if (organizationCollection.isEmpty()) return 1L;
+        return organizationCollection.getLast().getId() + 1;
+    }
+
+    /**
+     * Возвращает первый объект из коллекции.
+     * Если коллекция пуста, возвращается null.
+     * @return первый объект из коллекции или null, если коллекция пуста.
+     */
     public Organization getFirst() {
         if (organizationCollection.isEmpty()) return null;
         return organizationCollection.getFirst();
     }
 
+    /**
+     * Метод удаляет первый элемент из коллекции организаций.
+     */
     public void removeFirst(){ organizationCollection.poll(); } // удаляет первый элемент (head) из коллекции organizationCollection
 
-
-
+    /**
+     * Возвращает организацию по заданному id
+     * @param id id организации
+     * @return организация с заданным id или null, если она не найдена
+     */
     public Organization getById(Long id) {
         try {
             return (Organization) organizationCollection.stream()
@@ -39,33 +96,39 @@ public class CollectionManager {
         }
     }
 
-
+    /**
+     * Метод удаляет организацию из коллекции по заданному идентификатору.
+     * @param id идентификатор организации для удаления
+     */
     public void removeById(Long id) {
         organizationCollection.removeIf(p -> p.getId().equals(id));
     }
 
-
+    /**
+     * Добавляет организацию в коллекцию
+     * @param organization организация для добавления
+     */
     public void addToCollection(Organization organization){
         organizationCollection.add(organization);
     }
 
-
+    /**
+     * Метод очищает коллекцию организаций.
+     */
     public void clearCollection() {
         organizationCollection.clear();
     }
 
-
-    public Long generateNextId() {
-        if (organizationCollection.isEmpty()) return 1L;
-        return organizationCollection.getLast().getId() + 1;
-    }
-
-    public void setOrganizationCollection(LinkedList<Organization> organizationCollection) {
-        this.organizationCollection = organizationCollection;
-    }
+    /**
+     * Метод перемешивает элементы коллекции организаций в случайном порядке.
+     */
     public void shuffleCollection(){
         Collections.shuffle(organizationCollection);
     }
+
+    /**
+     * Сортирует коллекцию по умолчанию (по возрастанию id)
+     */
     public void sortCollection(){
         Collections.sort(organizationCollection);
     }
@@ -91,23 +154,33 @@ public class CollectionManager {
                 .collect(Collectors.toList()); // собирает все значения в List
     }
 
-
+    /**
+     * Метод возвращает информацию о коллекции организаций.
+     * @return строка с типом коллекции, датой инициализации и количеством элементов
+     */
     public String getInfo() {
         return "Тип коллекции: " + organizationCollection.getClass()
                 + "\nДата инициализации: " + getCreationDate().format(DateTimeFormatter.ofPattern("dd.MM.y H:mm:ss"))
                 + "\nКоличество элементов: " + organizationCollection.size();
     }
 
-    public ZonedDateTime getCreationDate() {
-        return creationDate;
-    }
-
+    /**
+     * Возвращает все объекты коллекции.
+     * Если коллекция пуста, возвращается строка "Коллекция пуста".
+     * @return все объекты коллекции.
+     */
     public String showCollection() {
         if (organizationCollection.isEmpty()) return "Коллекция пуста";
         return organizationCollection.stream()
-                .map(organization -> organization.toString() + "\n").collect(Collectors.joining());
+                .map(organization -> organization.toString() + "\n")
+                .collect(Collectors.joining());
     }
 
+    /**
+     * Возвращает все объекты коллекции в обратном порядке.
+     * Если коллекция пуста, возвращается строка "Коллекция пуста".
+     * @return все объекты коллекции в обратном порядке.
+     */
     public String printDescending() {
         if (organizationCollection.isEmpty()) return "Коллекция пуста";
         List<Organization> reversedCollection = new ArrayList<>(organizationCollection);

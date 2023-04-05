@@ -2,6 +2,9 @@ package Common.data;
 
 import java.io.Serializable;
 
+/**
+ * Этот класс представляет точку в двумерном пространстве
+ */
 public class Coordinates implements Serializable {
 
     /**

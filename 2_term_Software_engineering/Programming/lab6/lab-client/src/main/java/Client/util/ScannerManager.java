@@ -8,23 +8,60 @@ import java.time.ZonedDateTime;
 import java.util.*;
 
 
+/**
+ * Менеджер ввода информации об организации.
+ */
 public class ScannerManager {
 
+    /**
+     * Константа строки приглашения для ввода в интерактивном режиме.
+     */
     public static final String INPUT_INFO = "> ";
-    public static final String INPUT_COMMAND = "$ ";
-    private Scanner userScanner;
-    private boolean scriptMode;
-    private String numberPattern = "-?\\d+(\\.\\d+)?";
 
+    /**
+     * Константа строки приглашения для ввода команд в интерактивном режиме.
+     */
+    public static final String INPUT_COMMAND = "$ ";
+
+    /**
+     * Сканер для ввода.
+     */
+    private Scanner userScanner;
+
+    /**
+     * Режим скрипта.
+     */
+    private boolean scriptMode;
+
+    /**
+     * Шаблон для проверки числа.
+     */
+    private final String numberPattern = "-?\\d+(\\.\\d+)?";
+
+    /**
+     * Создает менеджер для ввода с помощью заданного сканера.
+     * @param scanner сканер для ввода.
+     */
     public ScannerManager(Scanner scanner) {
         this.userScanner = scanner;
         scriptMode = false;
     }
+
+    /**
+     * Устанавливает сканер для чтения из скрипта.
+     * @param scriptScanner сканер для чтения из скрипта.
+     * @throws IncorrectInputInScriptException если введен неверный ввод в скрипте.
+     */
     public void setScriptScanner(Scanner scriptScanner) throws IncorrectInputInScriptException {
         this.userScanner = scriptScanner;
         scriptMode = true;
     }
 
+    /**
+     * Метод запрашивает у пользователя параметры Organization и возвращает экземпляр организации.
+     * @return экземпляр организации.
+     * @throws IncorrectInputInScriptException если введен неверный ввод в скрипте.
+     */
     public Organization askOrganization() throws IncorrectInputInScriptException {
         return new Organization(
                 null,
@@ -39,6 +76,11 @@ public class ScannerManager {
         );
     }
 
+    /**
+     * Метод запрашивает у пользователя наименование организации.
+     * @return наименование организации.
+     * @throws IncorrectInputInScriptException если введен неверный ввод в скрипте.
+     */
     public String askName() throws IncorrectInputInScriptException {
         String name;
         while (true) {
@@ -68,6 +110,11 @@ public class ScannerManager {
         return name;
     }
 
+    /**
+     * Метод запрашивает у пользователя координату X.
+     * @return x
+     * @throws IncorrectInputInScriptException если введен неверный ввод в скрипте.
+     */
     public float askX() throws IncorrectInputInScriptException {
         String strX;
         float x;
@@ -103,7 +150,11 @@ public class ScannerManager {
         return x;
     }
 
-
+    /**
+     * Метод для ввода значения координаты Y
+     * @return значение координаты Y
+     * @throws IncorrectInputInScriptException если была ошибка ввода значения в скрипте
+     */
     public Float askY() throws IncorrectInputInScriptException {
         String strY;
         Float y;
@@ -132,13 +183,22 @@ public class ScannerManager {
         return y;
     }
 
-
+    /**
+     * Метод для ввода координат
+     * @return объект класса Coordinates с заданными координатами
+     * @throws IncorrectInputInScriptException если была ошибка ввода значения в скрипте
+     */
     public Coordinates askCoordinates() throws IncorrectInputInScriptException {
         float x = askX();
         Float y = askY();
         return new Coordinates(x, y);
     }
 
+    /**
+     * Запрашивает годовой оборот организации.
+     * @return годовой оборот в виде Float
+     * @throws IncorrectInputInScriptException если скрипт содержит неверные данные ввода
+     */
     public Float askAnnualTurnover() throws IncorrectInputInScriptException {
         String strTurn;
         Float annualTurnover;
@@ -171,6 +231,11 @@ public class ScannerManager {
         return annualTurnover;
     }
 
+    /**
+     * Запрашивает полное название организации.
+     * @return полное название организации в виде строки
+     * @throws IncorrectInputInScriptException если скрипт содержит неверные данные ввода
+     */
     public String askFullName() throws IncorrectInputInScriptException {
         String fullName;
         while (true) {
@@ -196,6 +261,11 @@ public class ScannerManager {
         return fullName;
     }
 
+    /**
+     * Метод запрашивает у пользователя количество сотрудников организации.
+     * @return количество сотрудников.
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
+     */
     public long askEmployeesCount() throws IncorrectInputInScriptException {
         String strEmp;
         long employeesCount;
@@ -228,6 +298,11 @@ public class ScannerManager {
         return employeesCount;
     }
 
+    /**
+     * Метод запрашивает у пользователя тип организации.
+     * @return тип организации.
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
+     */
     public OrganizationType askType() throws IncorrectInputInScriptException {
         String strType;
         OrganizationType type;
@@ -259,6 +334,11 @@ public class ScannerManager {
         return type;
     }
 
+    /**
+     * Запрашивает у пользователя название улицы и возвращает его в виде строки.
+     * @return Название улицы, введенное пользователем
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
+     */
     public String askStreet() throws IncorrectInputInScriptException {
         String street;
         while (true) {
@@ -280,6 +360,11 @@ public class ScannerManager {
         return street;
     }
 
+    /**
+     * Запрашивает у пользователя название улицы и создает новый объект Address с этим значением.
+     * @return Новый объект Address с названием улицы, введенным пользователем, или null, если название пусто
+     * @throws IncorrectInputInScriptException если введенные данные некорректны при работе скрипта.
+     */
     public Address askAddress() throws IncorrectInputInScriptException {
         String street = askStreet();
         if(street.equals("")) return null;
