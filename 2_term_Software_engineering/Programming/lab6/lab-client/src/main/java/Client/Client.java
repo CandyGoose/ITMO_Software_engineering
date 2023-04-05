@@ -55,7 +55,6 @@ public final class Client {
     public static void main(String[] args) {
         try {
             if (!reconnectionMode) {
-                System.out.println("Добро пожаловать!");
                 inputPort();
             } else {
                 Thread.sleep(7 * 1000); // 7 секунд на переподключение

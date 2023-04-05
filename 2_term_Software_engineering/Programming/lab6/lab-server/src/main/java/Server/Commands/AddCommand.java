@@ -19,7 +19,7 @@ public class AddCommand extends AbstractCommand {
      * @param collectionManager менеджер коллекции
      */
     public AddCommand(CollectionManager collectionManager) {
-        super("add", " добавить новый элемент в коллекцию", 0);
+        super("add", "добавить новый элемент в коллекцию", 0);
         this.collectionManager = collectionManager;
     }
 

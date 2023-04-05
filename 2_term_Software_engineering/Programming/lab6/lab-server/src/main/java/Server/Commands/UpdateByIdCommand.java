@@ -23,7 +23,7 @@ public class UpdateByIdCommand extends AbstractCommand {
      * @param collectionManager менеджер коллекции
      */
     public UpdateByIdCommand(CollectionManager collectionManager) {
-        super("update", " обновить значение элемента коллекции, id которого равен заданному", 1);
+        super("update", "обновить значение элемента коллекции, id которого равен заданному", 1);
         this.collectionManager = collectionManager;
     }
 
