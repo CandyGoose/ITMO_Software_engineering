@@ -14,7 +14,9 @@ import com.thoughtworks.xstream.security.PrimitiveTypePermission;
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * Класс FileManager, который отвечает за запись коллекции в файл и чтение из файла.
+ */
 public class FileManager {
     /**
      * Название файла
@@ -26,6 +28,12 @@ public class FileManager {
      */
     private final XStream xstream;
 
+    /**
+     * Создает новый экземпляр класса FileManager с указанным именем файла и настройками XStream.
+     * Задает псевдонимы для классов, устанавливает настройки без ссылок и безопасности и
+     * разрешает использование типа List и String.
+     * @param fileName имя файла
+     */
     public FileManager(String fileName) {
         this.fileName = fileName;
         xstream = new XStream();
@@ -47,7 +55,11 @@ public class FileManager {
     }
 
 
-
+    /**
+     * Записывает коллекцию в файл в формате XML.
+     *
+     * @param collection коллекция для записи в файл
+     */
     public void writeCollection(LinkedList<Organization> collection) {
         if (!fileName.equals("")) {
             try {
@@ -64,7 +76,9 @@ public class FileManager {
         } else ServerApp.logger.warning("Файл поврежден или ошибка в названии.");
     }
 
-
+    /**
+     * Метод для чтения коллекции организаций из файла.
+     */
     public void readCollection() {
         if (!fileName.equals("")) {
             try (Scanner collectionFileScanner = new Scanner(new File(path))) {
@@ -88,41 +102,47 @@ public class FileManager {
                 organizationLinkedList.sort(Comparator.comparing(Organization::getName, String.CASE_INSENSITIVE_ORDER));
                 ServerApp.collectionManager.setOrganizationCollection(organizationLinkedList);
             } catch (StreamException exception){
-                ServerApp.logger.warning("EOF error.\nФайл обработан.\n");
+                ServerApp.logger.warning("EOF error. Файл обработан.\n");
             }
             catch (FileNotFoundException exception) {
-                ServerApp.logger.warning("Файл не найден или доступ запрещен.\nРабота сервера завершена.");
+                ServerApp.logger.warning("Файл не найден или доступ запрещен.Работа сервера завершена.");
                 System.exit(1);
             } catch (NoSuchElementException exception) {
-                ServerApp.logger.warning("Файл пуст.\nРабота сервера завершена.");
+                ServerApp.logger.warning("Файл пуст. Работа сервера завершена.");
                 System.exit(1);
-            } catch ( NullPointerException exception) {
-                ServerApp.logger.warning("Неверный формат коллекции в файле.\nРабота сервера завершена.");
+            } catch (NullPointerException exception) {
+                ServerApp.logger.warning("Неверный формат коллекции в файле. Работа сервера завершена.");
                 System.exit(1);
             } catch (IllegalStateException exception) {
-                ServerApp.logger.severe("Непредвиденная ошибка.\nРабота сервера завершена.");
+                ServerApp.logger.severe("Непредвиденная ошибка. Работа сервера завершена.");
                 System.exit(1);
             }
-        } else { ServerApp.logger.warning("Файл поврежден или ошибка в названии.\nРабота сервера завершена.");
+        } else { ServerApp.logger.warning("Файл поврежден или ошибка в названии. Работа сервера завершена.");
             System.exit(1);}
     }
 
+    /**
+     * Переменная, в которой хранится путь к папке с файлами.
+     */
     public static String path;
 
+    /**
+     * Метод для получения имени файла из переменной окружения.
+     * @return имя файла
+     */
     public static String getFileName(){
         try {
             path = System.getenv("lab5"); // lab5 - полный путь до файла, включая его название
             String[] checkPaths = path.split(";");
             if (checkPaths.length > 1) {
-                ServerApp.logger.warning("В этой переменной содержится более одного пути к файлам.\nРабота сервера завершена.");
+                ServerApp.logger.warning("В этой переменной содержится более одного пути к файлам. Работа сервера завершена.");
                 System.exit(1);
             }
         } catch (NullPointerException e) {
-            ServerApp.logger.warning("Некорректная переменная окружения.\nРабота сервера завершена.");
+            ServerApp.logger.warning("Некорректная переменная окружения. Работа сервера завершена.");
             System.exit(1);
         }
         File name = new File(path);
         return name.getName();
     }
-
 }

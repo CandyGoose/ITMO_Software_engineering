@@ -8,8 +8,17 @@ import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Класс для чтения команд из консоли или файла скрипта и создания объекта CommandToSend с информацией о команде.
+ */
 public class CommandListener {
-
+    /**
+     * Считывает команду из консоли или файла скрипта, создает объект CommandToSend с информацией о команде.
+     *
+     * @param sc сканнер для чтения из консоли или файла скрипта
+     * @param scriptMode режим считывания команд, в котором находится приложение
+     * @return объект CommandToSend, содержащий имя команды и ее аргументы
+     */
     public static CommandToSend readCommand(Scanner sc, boolean scriptMode) {
         try {
             if (!scriptMode) System.out.print(ScannerManager.INPUT_COMMAND);

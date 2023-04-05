@@ -10,13 +10,14 @@
     <artifactId>lab-server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>lab-server</name>
-
     <build>
         <plugins>
+            <!-- Плагин для создания документации -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
+            <!-- Плагин для сборки jar с зависимостями -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -44,11 +45,13 @@
         </plugins>
     </build>
     <dependencies>
+        <!-- Зависимость на lab-common, общую для сервера и клиента библиотеку -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>lab-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- Зависимость от библиотеки XStream для сериализации/десериализации данных -->
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>

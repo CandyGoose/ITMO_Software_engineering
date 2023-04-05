@@ -5,7 +5,9 @@ import Common.util.Response;
 import Common.util.TextWriter;
 import Server.util.CollectionManager;
 
-
+/**
+ * Класс SortCommand случайным образом перемешивает элементы коллекции
+ */
 public class SortCommand extends AbstractCommand {
     /**
      Менеджер коллекции.
@@ -13,14 +15,20 @@ public class SortCommand extends AbstractCommand {
     private final CollectionManager collectionManager;
 
     /**
-     * Конструктор класса SortCommand.
-     * @param collectionManager менеджер коллекции.
+     * Создает новый объект команды.
+     * @param collectionManager менеджер коллекции
      */
     public SortCommand(CollectionManager collectionManager) {
         super("sort", "отсортировать коллекцию в естественном порядке", 0);
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Сортирует элементы коллекции
+     *
+     * @param request объект запроса
+     * @return объект ответа
+     */
     @Override
     public Response execute(Request request) {
         if (collectionManager.getCollection().isEmpty())

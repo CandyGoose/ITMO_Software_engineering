@@ -15,14 +15,19 @@ public class PrintFieldDescendingAnnualTurnoverCommand extends AbstractCommand {
     private final CollectionManager collectionManager;
 
     /**
-     * Конструктор класса PrintFieldDescendingAnnualTurnoverCommand.
-     * @param collectionManager менеджер коллекции.
+     * Создает новый объект команды.
+     * @param collectionManager менеджер коллекции
      */
     public PrintFieldDescendingAnnualTurnoverCommand(CollectionManager collectionManager) {
         super("print_field_descending_annual_turnover", "вывести значения поля annualTurnover всех элементов в порядке убывания", 0);
         this.collectionManager = collectionManager;
     }
 
+    /**
+     * Выполняет команду для вывода всех значений годового оборота организаций в системе в порядке убывания.
+     * @param request объект запроса
+     * @return ответ на запрос с выводом всех значений годового оборота организаций в системе в порядке убывания
+     */
     @Override
     public Response execute(Request request) {
         if (collectionManager.getCollection().isEmpty())
