@@ -110,6 +110,7 @@ public class CollectionManager {
      */
     public void addToCollection(Organization organization){
         organizationCollection.add(organization);
+        organizationCollection.sort(Comparator.comparing(Organization::getName, String.CASE_INSENSITIVE_ORDER));
     }
 
     /**

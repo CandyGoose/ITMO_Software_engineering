@@ -6,8 +6,6 @@ import Common.util.Response;
 import Common.util.TextWriter;
 import Server.util.CollectionManager;
 
-import java.util.Comparator;
-
 /**
  * Команда для обновления значения элемента коллекции, id которого равен заданному.
  */
@@ -44,7 +42,6 @@ public class UpdateByIdCommand extends AbstractCommand {
             updatedOrganization.setId(id);
             collectionManager.removeById(id);
             collectionManager.addToCollection(updatedOrganization);
-            collectionManager.getCollection().sort(Comparator.comparing(Organization::getName, String.CASE_INSENSITIVE_ORDER));
             return new Response(TextWriter.getWhiteText("Данные организации были обновлены."));
         }
     }
