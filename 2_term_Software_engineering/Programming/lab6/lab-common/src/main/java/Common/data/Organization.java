@@ -216,7 +216,7 @@ public class Organization implements Comparable<Organization>, Serializable{
     public String toString() {
         String result = String.format("ID: %d\nНазвание: %s\nКоординаты: {x: %.2f, y: %.2f}\nВремя создания: %s\nГодовой оборот: %.2f\nПолное название: %s\nКоличество сотрудников: %d\nТип организации: %s\n",
                 getId(), getName(), getCoordinates().getX(), getCoordinates().getY(), getCreationDate().format(DateTimeFormatter.ofPattern("dd.MM.y H:mm:ss")), getAnnualTurnover(), getFullName(), getEmployeesCount(), getType());
-        if(getPostalAddress() == null) result += "Адрес: null\n";
+        if(getPostalAddress() == null) result += "Адрес: null";
         else result += String.format("Адрес: %s", getPostalAddress().getStreet());
         return result;
     }

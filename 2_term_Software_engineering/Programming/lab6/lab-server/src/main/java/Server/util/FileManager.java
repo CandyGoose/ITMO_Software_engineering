@@ -63,7 +63,7 @@ public class FileManager {
     public void writeCollection(LinkedList<Organization> collection) {
         if (!fileName.equals("")) {
             try {
-                FileOutputStream file = new FileOutputStream(FileManager.path);
+                FileOutputStream file = new FileOutputStream(path);
                 BufferedOutputStream collectionFileWriter = new BufferedOutputStream(file);
                 String xml = xstream.toXML(new ArrayList<>(collection));
                 byte[] buffer = xml.getBytes();
@@ -82,7 +82,6 @@ public class FileManager {
     public void readCollection() {
         if (!fileName.equals("")) {
             try (Scanner collectionFileScanner = new Scanner(new File(path))) {
-
                 xstream.setMode(XStream.NO_REFERENCES);
                 xstream.addPermission(NoTypePermission.NONE);
                 xstream.addPermission(NullPermission.NULL);
@@ -92,9 +91,7 @@ public class FileManager {
                 xstream.ignoreUnknownElements();
                 xstream.allowTypes(new Class[] {ArrayList.class, Organization.class});
                 StringBuilder xml = new StringBuilder();
-                while(collectionFileScanner.hasNext()){
-                    xml.append(collectionFileScanner.nextLine());
-                }
+                while(collectionFileScanner.hasNext()) xml.append(collectionFileScanner.nextLine());
                 List<Organization> list = (List<Organization>) xstream.fromXML(xml.toString());
                 Validator validator = new Validator(list);
                 LinkedList<Organization> organizationLinkedList = new LinkedList<>();
