@@ -18,7 +18,7 @@ public class ShowCommand extends AbstractCommand {
      * @param collectionManager менеджер коллекции
      */
     public ShowCommand(CollectionManager collectionManager) {
-        super("show", " вывести в стандартный поток вывода все элементы коллекции в строковом представлении", 0);
+        super("show", "вывести в стандартный поток вывода все элементы коллекции в строковом представлении", 0);
         this.collectionManager = collectionManager;
     }
 

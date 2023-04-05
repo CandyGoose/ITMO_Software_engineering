@@ -13,7 +13,7 @@ public class ExitCommand extends AbstractCommand {
      * Создает новый объект команды.
      */
     public ExitCommand() {
-        super("exit", " завершить программу", 0);
+        super("exit", "завершить программу", 0);
     }
 
     /**

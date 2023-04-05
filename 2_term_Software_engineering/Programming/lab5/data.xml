@@ -1,5 +1,21 @@
 <list>
   <organization>
+    <id>6</id>
+    <name>Org</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-04-05T00:13:30.0360412+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
+  <organization>
     <id>2</id>
     <name>Org_Up</name>
     <coordinates>
@@ -29,22 +45,6 @@
     <type>OPEN_JOINT_STOCK_COMPANY</type>
     <postalAddress>
       <street>qwe</street>
-    </postalAddress>
-  </organization>
-  <organization>
-    <id>6</id>
-    <name>Org</name>
-    <coordinates>
-      <x>12.0</x>
-      <y>3.0</y>
-    </coordinates>
-    <creationDate>2023-04-05T00:13:30.0360412+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>12.0</annualTurnover>
-    <fullName>name</fullName>
-    <employeesCount>3</employeesCount>
-    <type>TRUST</type>
-    <postalAddress>
-      <street>newstr</street>
     </postalAddress>
   </organization>
 </list>

@@ -82,15 +82,17 @@ public class ClientApp {
                         CommandValidators.validateAmountOfArgs(commandToSend.getCommandArgs(), 1);
                         ScriptReader scriptReader = new ScriptReader(commandToSend);
                         scriptScanner = new Scanner(scriptReader.getPath());
+                        SocketChannel client = (SocketChannel) key.channel();
+                        ClientSocketChannelIO socketChannelIO = new ClientSocketChannelIO(client);
+                        Request request = new Request("execute_script");
+                        socketChannelIO.send(request);
+                        client.register(selector, SelectionKey.OP_READ);
                         startSelectorLoop(selector, channel, scriptScanner, true);
                         scriptReader.stopScriptReading();
                         startSelectorLoop(selector, channel, sc, false);
-                    }
-                    if (commandToSend.getCommandName().equalsIgnoreCase("add") && scriptMode) {
+                    } else if (commandToSend.getCommandName().equalsIgnoreCase("add") && scriptMode) {
                         CommandValidators.validateAmountOfArgs(commandToSend.getCommandArgs(), 0);
-                        if (scriptScanner == null) {
-                            throw new IllegalStateException("Сканер скриптов не установлен.");
-                        }
+                        if (scriptScanner == null) throw new IllegalStateException("Сканер скриптов не установлен.");
                         ScannerManager scannerManager = new ScannerManager(scriptScanner);
                         scannerManager.setScriptScanner(scriptScanner);
                         Request request = new Request("add", scannerManager.askOrganization());
@@ -100,9 +102,7 @@ public class ClientApp {
                         client.register(selector, SelectionKey.OP_READ);
                     } else if (commandToSend.getCommandName().equalsIgnoreCase("update") && scriptMode) {
                         CommandValidators.validateAmountOfArgs(commandToSend.getCommandArgs(), 1);
-                        if (scriptScanner == null) {
-                            throw new IllegalStateException("Сканер скриптов не установлен.");
-                        }
+                        if (scriptScanner == null) throw new IllegalStateException("Сканер скриптов не установлен.");
                         ScannerManager scannerManager = new ScannerManager(scriptScanner);
                         scannerManager.setScriptScanner(scriptScanner);
                         String[] commandsArgs = (commandToSend.getCommandArgs());

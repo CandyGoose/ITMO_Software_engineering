@@ -19,7 +19,7 @@ public class PrintDescendingCommand extends AbstractCommand {
      * @param collectionManager менеджер коллекции
      */
     public PrintDescendingCommand(CollectionManager collectionManager) {
-        super("print_descending", " вывести элементы коллекции в порядке убывания", 0);
+        super("print_descending", "вывести элементы коллекции в порядке убывания", 0);
         this.collectionManager = collectionManager;
     }
 

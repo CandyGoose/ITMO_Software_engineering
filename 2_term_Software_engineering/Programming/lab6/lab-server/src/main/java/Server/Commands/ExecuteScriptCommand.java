@@ -2,6 +2,7 @@ package Server.Commands;
 
 import Common.util.Request;
 import Common.util.Response;
+import Common.util.TextWriter;
 
 /**
  * Класс команды для выполнения скрипта из указанного файла.
@@ -12,7 +13,7 @@ public class ExecuteScriptCommand extends AbstractCommand {
      * Создает новый объект команды.
      */
     public ExecuteScriptCommand() {
-        super("execute_script", "  считать и исполнить скрипт из указанного файла", 1);
+        super("execute_script", "считать и исполнить скрипт из указанного файла", 1);
     }
 
     /**
@@ -22,6 +23,6 @@ public class ExecuteScriptCommand extends AbstractCommand {
      */
     @Override
     public Response execute(Request request) {
-        return null;
+        return new Response(TextWriter.getWhiteText("Исполнение скрипта."));
     }
 }

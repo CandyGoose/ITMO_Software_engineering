@@ -14,7 +14,7 @@ public class HelpCommand extends AbstractCommand {
      * Создает новый объект команды.
      */
     public HelpCommand() {
-        super("help", " вывести справку по доступным командам", 0);
+        super("help", "вывести справку по доступным командам", 0);
 
     }
 

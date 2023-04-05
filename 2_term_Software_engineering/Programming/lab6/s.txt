@@ -1,34 +1,4 @@
-add
-Org
-12
-3
-12
-name
-3
-TRUST
-newstr
-show
-info
-
-help 
-
-update 2
-Org_Up
-12
-3
-12
-name
-3
-TRUST
-newstr
-
-remove_by_id	4 
-	save
-remove_first 
-shuffle 
-show
 sort
 show
 print_descending 
-print_unique_employees_count 
-print_field_descending_annual_turnover 
+info

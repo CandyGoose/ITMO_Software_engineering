@@ -19,7 +19,7 @@ public class ClearCommand extends AbstractCommand {
      * @param collectionManager менеджер коллекции
      */
     public ClearCommand(CollectionManager collectionManager) {
-        super("clear", " очистить коллекцию", 0);
+        super("clear", "очистить коллекцию", 0);
         this.collectionManager = collectionManager;
     }
 
