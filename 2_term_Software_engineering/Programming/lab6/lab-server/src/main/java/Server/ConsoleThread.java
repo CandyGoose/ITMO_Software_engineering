@@ -43,7 +43,7 @@ public class ConsoleThread extends Thread {
             }
         } catch (NoSuchElementException e) {
             TextWriter.printErr("Принудительное завершение работы.");
-            ServerApp.logger.warning("Работа сервера завершена.");
+            ServerApp.logger.severe("Работа сервера завершена.");
             shutdown();
             System.exit(1);
         }

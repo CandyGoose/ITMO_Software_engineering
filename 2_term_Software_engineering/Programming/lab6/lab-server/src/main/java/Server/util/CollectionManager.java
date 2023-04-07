@@ -89,8 +89,8 @@ public class CollectionManager {
     public Organization getById(Long id) {
         try {
             return (Organization) organizationCollection.stream()
-                    .filter(s -> s.getId().equals(id))
-                    .toArray()[0];
+                    .filter(s -> s.getId().equals(id)) // Фильтруются объекты, у которых id равен переданному в метод
+                    .toArray()[0]; // Результат фильтрации преобразуется в массив, из которого выбирается первый элемент и возвращается в качестве результата метода
         } catch (IndexOutOfBoundsException e) {
             return null;
         }
