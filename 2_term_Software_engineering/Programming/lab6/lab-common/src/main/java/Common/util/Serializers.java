@@ -21,7 +21,7 @@ public class Serializers {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
         objectOutputStream.writeObject(request);
         objectOutputStream.flush();
-        ByteBuffer bufToSend = ByteBuffer.wrap(byteArrayOutputStream.toByteArray());
+        ByteBuffer bufToSend = ByteBuffer.wrap(byteArrayOutputStream.toByteArray()); // Создаем байтовый буфер на основе массива байт из байтового массива
         objectOutputStream.close();
         byteArrayOutputStream.close();
         return bufToSend;

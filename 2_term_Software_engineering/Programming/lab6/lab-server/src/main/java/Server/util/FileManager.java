@@ -38,20 +38,20 @@ public class FileManager {
         this.fileName = fileName;
         xstream = new XStream();
 
-        xstream.alias("address", Address.class);
+        xstream.alias("address", Address.class); // используется для установки псевдонимов для классов, которые будут использоваться при преобразовании объекта в поток байтов для сохранения в файл XML
         xstream.alias("coordinates", Coordinates.class);
         xstream.alias("organization", Organization.class);
         xstream.alias("organizationType", OrganizationType.class);
         xstream.alias("organizations", CollectionManager.class);
-        xstream.addImplicitCollection(CollectionManager.class, "organizationCollection");
+        xstream.addImplicitCollection(CollectionManager.class, "organizationCollection"); // используется для определения, какая коллекция будет использоваться для хранения списка организаций в классе CollectionManager
 
-        xstream.setMode(XStream.NO_REFERENCES);
-        xstream.addPermission(NoTypePermission.NONE);
-        xstream.addPermission(NullPermission.NULL);
-        xstream.addPermission(PrimitiveTypePermission.PRIMITIVES);
-        xstream.allowTypeHierarchy(List.class);
-        xstream.allowTypeHierarchy(String.class);
-        xstream.ignoreUnknownElements();
+        xstream.setMode(XStream.NO_REFERENCES); // Устанавливает режим NO_REFERENCES, который гарантирует, что при сериализации не будут использоваться ссылки на другие объекты, т.е. каждый объект будет сериализован в своем собственном контексте
+        xstream.addPermission(NoTypePermission.NONE); // запрещает сериализацию или десериализацию объектов, не имеющих типа
+        xstream.addPermission(NullPermission.NULL); // позволяет сериализовать и десериализовать null значения
+        xstream.addPermission(PrimitiveTypePermission.PRIMITIVES); // разрешены только примитивные типы данных и списки
+        xstream.allowTypeHierarchy(List.class); // разрешает использование иерархии типов для объектов, которые реализуют интерфейс List
+        xstream.allowTypeHierarchy(String.class); // разрешает использование иерархии типов для объектов типа String
+        xstream.ignoreUnknownElements(); // используется для игнорирования неизвестных элементов при десериализации
     }
 
 
@@ -65,10 +65,10 @@ public class FileManager {
             try {
                 FileOutputStream file = new FileOutputStream(path);
                 BufferedOutputStream collectionFileWriter = new BufferedOutputStream(file);
-                String xml = xstream.toXML(new ArrayList<>(collection));
-                byte[] buffer = xml.getBytes();
+                String xml = xstream.toXML(new ArrayList<>(collection)); // сериализуется список элементов коллекции в формат XML и сохраняется в строковую переменную xml
+                byte[] buffer = xml.getBytes(); // создается массив байтов buffer из строки xml
                 collectionFileWriter.write(buffer, 0, buffer.length);
-                collectionFileWriter.flush();
+                collectionFileWriter.flush(); // все накопленные данные записываются в файл
                 ServerApp.logger.info("Коллекция сохранена.");
             } catch (IOException exception) {
                 ServerApp.logger.warning("Файл не может быть открыт или является директорией.");
