@@ -1,5 +1,5 @@
 import re
-with open("test.txt", "r") as f:
+with open("test.txt", "r", encoding="utf-8") as f:
         test_str = f.read()
 test_str = re.sub(r"[^\w\s]", "",test_str)
 print(test_str)

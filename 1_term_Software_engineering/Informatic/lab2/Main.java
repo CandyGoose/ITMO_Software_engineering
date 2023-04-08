@@ -57,11 +57,11 @@ class Message {
     public String getErrorBit() {
         int bitIndex = binToDec(reverse(this.S));
         int log2BitIndex = flooredLog2(bitIndex);
-        if (bitIndex == 0)  // Нет ошибок
+        if (bitIndex == 0)
             return null;
-        else if ((1 << log2BitIndex) == bitIndex)  // Контрольные биты стоят в индексах, это степени 2
+        else if ((1 << log2BitIndex) == bitIndex)
             return "r" + log2BitIndex;
-        else  // В противном случае это информационный бит
+        else
             return "i" + (bitIndex - log2BitIndex - 1);
     }
 

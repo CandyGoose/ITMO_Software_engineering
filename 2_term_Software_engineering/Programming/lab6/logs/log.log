@@ -1,0 +1,15 @@
+апр. 08, 2023 10:04:09 AM Server.util.FileManager readCollection
+WARNING: EOF error. Файл обработан.
+
+апр. 08, 2023 10:04:09 AM Server.ConsoleThread run
+INFO: Консоль запущена.
+апр. 08, 2023 10:04:22 AM Server.ServerApp lambda$startServer$0
+INFO: Подключение клиента.
+апр. 08, 2023 10:04:25 AM Server.ServerApp startIteratorLoop
+INFO: Сервер получил команду [show].
+апр. 08, 2023 10:04:26 AM Server.ServerApp startIteratorLoop
+INFO: Сервер отправил ответ клиенту.
+апр. 08, 2023 10:04:32 AM Server.util.FileManager writeCollection
+INFO: Коллекция сохранена.
+апр. 08, 2023 10:04:34 AM Server.ConsoleThread run
+INFO: Работа сервера завершена.
