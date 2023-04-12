@@ -13,7 +13,6 @@ public class Julius extends AHuman implements IWalkAway {
         setHouseRoom(HouseRooms.FIRST_ROOM);
     }
 
-
     @Override
     public void walkAway(boolean isManagedWalkAway) {
         if (isManagedWalkAway)

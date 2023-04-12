@@ -74,6 +74,6 @@ public class FrekenBock extends Human implements Helping, Instructing, PhoneActi
         observers.notifyObservers(this,
                 loud + HearType.SPEECH.getWhatType() + " " + getName()
                         + " по " + phone.getPhoneType().getWhatPhone() + ":",
-                text);
+                        text);
     }
 }
