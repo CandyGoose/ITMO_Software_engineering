@@ -25,6 +25,4 @@ public class Phone {
                 getPhoneModel().equals(((Phone) o).getPhoneModel()) &&
                 getPhoneType().equals(((Phone) o).getPhoneType());
     }
-
-
 }

@@ -16,7 +16,6 @@ public class Observers {
             listeners.add(value);
             System.out.println(value.getName() + " стал новым слушателем");
         }
-
     }
 
     //Ошибка, если выходит за границы диапазона
