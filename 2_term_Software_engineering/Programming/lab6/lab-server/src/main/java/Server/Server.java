@@ -32,7 +32,6 @@ public final class Server {
             ConsoleThread consoleThread = new ConsoleThread();
             consoleThread.start();
             ServerApp.startServer(args, serverSocket);
-            consoleThread.shutdown();
         } catch (IOException e) {
             ServerApp.logger.severe("Произошла ошибка " + e.getMessage());
         }

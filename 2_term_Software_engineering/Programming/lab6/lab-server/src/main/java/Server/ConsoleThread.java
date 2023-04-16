@@ -35,7 +35,6 @@ public class ConsoleThread extends Thread {
                     ServerApp.fileManager.writeCollection((LinkedList<Organization>) ServerApp.collectionManager.getCollection());
                 } else if ("exit".equalsIgnoreCase(line)) {
                     ServerApp.logger.info("Работа сервера завершена.");
-                    shutdown();
                     System.exit(0);
                 } else {
                     TextWriter.printErr("Такой команды не существует. Напишите 'save' или 'exit'.");
@@ -44,15 +43,7 @@ public class ConsoleThread extends Thread {
         } catch (NoSuchElementException e) {
             TextWriter.printErr("Принудительное завершение работы.");
             ServerApp.logger.severe("Работа сервера завершена.");
-            shutdown();
             System.exit(1);
         }
-    }
-
-    /**
-     * Останавливает выполнение потока консоли.
-     */
-    public void shutdown() {
-        this.running = false;
     }
 }

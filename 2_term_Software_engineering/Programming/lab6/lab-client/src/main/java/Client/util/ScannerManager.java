@@ -41,20 +41,11 @@ public class ScannerManager {
     /**
      * Создает менеджер для ввода с помощью заданного сканера.
      * @param scanner сканер для ввода.
+     * @param scriptMode режим чтение со скрипта
      */
-    public ScannerManager(Scanner scanner) {
+    public ScannerManager(Scanner scanner, boolean scriptMode) {
         this.userScanner = scanner;
-        scriptMode = false;
-    }
-
-    /**
-     * Устанавливает сканер для чтения из скрипта.
-     * @param scriptScanner сканер для чтения из скрипта.
-     * @throws IncorrectInputInScriptException если введен неверный ввод в скрипте.
-     */
-    public void setScriptScanner(Scanner scriptScanner) throws IncorrectInputInScriptException {
-        this.userScanner = scriptScanner;
-        scriptMode = true;
+        this.scriptMode = scriptMode;
     }
 
     /**
@@ -98,7 +89,7 @@ public class ScannerManager {
             } catch (NotNullException exception) {
                 TextWriter.printErr("Значение поля не может быть пустым.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
-                if(!userScanner.hasNext()) {
+                if (!userScanner.hasNext()) {
                     TextWriter.printErr("Работа программы прекращена.");
                     System.exit(1);
                 }
@@ -132,7 +123,7 @@ public class ScannerManager {
             } catch (NoSuchElementException exception) {
                 TextWriter.printErr("Значение поля не может быть использовано.");
                 if (scriptMode) throw new IncorrectInputInScriptException();
-                if(!userScanner.hasNext()) {
+                if (!userScanner.hasNext()) {
                     TextWriter.printErr("Работа программы прекращена.");
                     System.exit(1);
                 }
@@ -367,7 +358,7 @@ public class ScannerManager {
      */
     public Address askAddress() throws IncorrectInputInScriptException {
         String street = askStreet();
-        if(street.equals("")) return null;
+        if (street.equals("")) return null;
         return new Address(street);
     }
 }

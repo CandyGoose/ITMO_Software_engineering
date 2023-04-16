@@ -63,7 +63,9 @@ public class CollectionManager {
      */
     public Long generateNextId() {
         if (organizationCollection.isEmpty()) return 1L;
-        return organizationCollection.getLast().getId() + 1;
+        List<Organization> sortedList = new ArrayList<>(organizationCollection);
+        sortedList.sort(Comparator.comparing(Organization::getId));
+        return sortedList.get(sortedList.size() - 1).getId() + 1;
     }
 
     /**

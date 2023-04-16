@@ -47,6 +47,7 @@ public class ServerApp {
     static {
         try {
             FileHandler fileHandler = new FileHandler("logs/log.log", true);
+            fileHandler.setEncoding("UTF-8");
             fileHandler.setFormatter(new SimpleFormatter());
             ServerApp.logger.addHandler(fileHandler);
         } catch (IOException e) {
@@ -92,6 +93,7 @@ public class ServerApp {
      */
     static void startServer(String[] args, ServerSocket serverSocket) throws IOException {
         try {
+            ServerApp.logger.info("Сервер запущен.");
             ExecutorService executorService = Executors.newCachedThreadPool();
             while (running) {
                 Socket clientSocket = serverSocket.accept();
