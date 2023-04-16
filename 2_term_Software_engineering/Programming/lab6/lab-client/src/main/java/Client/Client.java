@@ -1,7 +1,7 @@
 package Client;
 
 import Common.util.TextWriter;
-
+import Client.util.ScriptReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
@@ -78,9 +78,10 @@ public final class Client {
             reconnectionMode = true;
             if (attempts == 4) {
                 TextWriter.printErr("Переподключение не удалось. Попробуйте подключиться позднее.");
-                System.exit(1);
+                System.exit(0);
             }
             attempts++;
+            ScriptReader.callStack.clear();
             main(args);
         } catch (NoSuchElementException e) {
             TextWriter.printErr("Принудительное завершение работы.");

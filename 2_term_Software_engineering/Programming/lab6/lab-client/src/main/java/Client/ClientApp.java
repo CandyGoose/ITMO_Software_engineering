@@ -5,10 +5,8 @@ import Client.CommandDispatcher.CommandToSend;
 import Client.CommandDispatcher.CommandValidators;
 import Client.util.ClientSocketChannelIO;
 import Client.util.RequestCreator;
-import Client.util.ScannerManager;
 import Client.util.ScriptReader;
 import Common.exception.IllegalSizeOfScriptException;
-import Common.exception.IncorrectInputInScriptException;
 import Common.exception.WrongAmountOfArgumentsException;
 import Common.util.Request;
 import Common.util.Response;
@@ -90,54 +88,28 @@ public class ClientApp {
                         startSelectorLoop(selector, channel, scriptScanner, true);
                         scriptReader.stopScriptReading();
                         startSelectorLoop(selector, channel, sc, false);
-                    } else if (commandToSend.getCommandName().equalsIgnoreCase("add") && scriptMode) {
-                        CommandValidators.validateAmountOfArgs(commandToSend.getCommandArgs(), 0);
-                        if (scriptScanner == null) throw new IllegalStateException("Сканер скриптов не установлен.");
-                        ScannerManager scannerManager = new ScannerManager(scriptScanner);
-                        scannerManager.setScriptScanner(scriptScanner);
-                        Request request = new Request("add", scannerManager.askOrganization());
-                        SocketChannel client = (SocketChannel) key.channel();
-                        ClientSocketChannelIO socketChannelIO = new ClientSocketChannelIO(client);
-                        socketChannelIO.send(request);
-                        client.register(selector, SelectionKey.OP_READ);
-                    } else if (commandToSend.getCommandName().equalsIgnoreCase("update") && scriptMode) {
-                        CommandValidators.validateAmountOfArgs(commandToSend.getCommandArgs(), 1);
-                        if (scriptScanner == null) throw new IllegalStateException("Сканер скриптов не установлен.");
-                        ScannerManager scannerManager = new ScannerManager(scriptScanner);
-                        scannerManager.setScriptScanner(scriptScanner);
-                        String[] commandsArgs = (commandToSend.getCommandArgs());
-                        Long arg = Long.parseLong(commandsArgs [0]);
-                        Request request = new Request("update", arg, scannerManager.askOrganization());
-                        SocketChannel client = (SocketChannel) key.channel();
-                        ClientSocketChannelIO socketChannelIO = new ClientSocketChannelIO(client);
-                        socketChannelIO.send(request);
-                        client.register(selector, SelectionKey.OP_READ);
-                    } else {
-                        Request request = requestCreator.createRequestOfCommand(commandToSend);
-                        SocketChannel client = (SocketChannel) key.channel();
-                        ClientSocketChannelIO socketChannelIO = new ClientSocketChannelIO(client);
-                        if (commandToSend.getCommandName().equalsIgnoreCase("exit")) {
-                            try {
-                                socketChannelIO.send(request);
-                                TextWriter.printInfoMessage("До свидания!");
-                                System.exit(0);
-                            } catch (Exception e) {
-                                TextWriter.printErr("Сервер не доступен. Команда не будет зарегистрирована на сервере.");
-                                TextWriter.printInfoMessage("До свидания!");
-                                System.exit(0);
-                            }
-                        } else {
-                            if (request == null) throw new NullPointerException("");
+                    }
+                    Request request = requestCreator.createRequestOfCommand(commandToSend, sc, scriptMode);
+                    SocketChannel client = (SocketChannel) key.channel();
+                    ClientSocketChannelIO socketChannelIO = new ClientSocketChannelIO(client);
+                    if (commandToSend.getCommandName().equalsIgnoreCase("exit") && commandToSend.getCommandArgs().length == 0) {
+                        try {
                             socketChannelIO.send(request);
-                            client.register(selector, SelectionKey.OP_READ);
+                            TextWriter.printInfoMessage("До свидания!");
+                            System.exit(0);
+                        } catch (Exception e) {
+                            TextWriter.printErr("Сервер не доступен. Команда не будет зарегистрирована на сервере.");
+                            TextWriter.printInfoMessage("До свидания!");
+                            System.exit(0);
                         }
+                    } else {
+                        if (request == null) throw new NullPointerException("");
+                        socketChannelIO.send(request);
+                        client.register(selector, SelectionKey.OP_READ);
                     }
                 } catch (NullPointerException | IllegalArgumentException | WrongAmountOfArgumentsException |
                          IllegalSizeOfScriptException e) {
                     TextWriter.printErr(e.getMessage());
-                } catch (IncorrectInputInScriptException e) {
-                    TextWriter.printErr("Проверьте верность данных в скрипте.");
-                    System.exit(1);
                 }
             }
         }

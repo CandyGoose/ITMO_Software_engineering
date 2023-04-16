@@ -32,16 +32,16 @@
     </postalAddress>
   </organization>
   <organization>
-    <id>2</id>
-    <name>Script_Org</name>
+    <id>9</id>
+    <name>Org</name>
     <coordinates>
       <x>12.0</x>
       <y>3.0</y>
     </coordinates>
-    <creationDate>2023-03-03T22:53:11.3340688+03:00[Europe/Moscow]</creationDate>
+    <creationDate>2023-04-17T00:53:58.1733213+03:00[Europe/Moscow]</creationDate>
     <annualTurnover>12.0</annualTurnover>
     <fullName>name</fullName>
-    <employeesCount>3</employeesCount>
+    <employeesCount>123</employeesCount>
     <type>TRUST</type>
     <postalAddress>
       <street>newstr</street>
@@ -112,6 +112,22 @@
     </postalAddress>
   </organization>
   <organization>
+    <id>8</id>
+    <name>Script_Org</name>
+    <coordinates>
+      <x>12.0</x>
+      <y>3.0</y>
+    </coordinates>
+    <creationDate>2023-04-16T23:48:43.6252892+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>12.0</annualTurnover>
+    <fullName>name</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <street>newstr</street>
+    </postalAddress>
+  </organization>
+  <organization>
     <id>1</id>
     <name>test</name>
     <coordinates>
@@ -125,6 +141,22 @@
     <type>OPEN_JOINT_STOCK_COMPANY</type>
     <postalAddress>
       <street>sd</street>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>10</id>
+    <name>Zoo</name>
+    <coordinates>
+      <x>432.0</x>
+      <y>123.0</y>
+    </coordinates>
+    <creationDate>2023-04-17T02:36:30.6501511+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>432.0</annualTurnover>
+    <fullName>we</fullName>
+    <employeesCount>123</employeesCount>
+    <type>OPEN_JOINT_STOCK_COMPANY</type>
+    <postalAddress>
+      <street>qwe</street>
     </postalAddress>
   </organization>
 </list>

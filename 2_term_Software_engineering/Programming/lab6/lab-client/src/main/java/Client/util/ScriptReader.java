@@ -23,7 +23,7 @@ public class ScriptReader {
     /**
      * Стек для отслеживания рекурсии в скриптах.
      */
-    private static Stack<String> callStack = new Stack<>();
+    public static Stack<String> callStack = new Stack<>();
 
     /**
      * Конструктор для создания объекта ScriptReader.
