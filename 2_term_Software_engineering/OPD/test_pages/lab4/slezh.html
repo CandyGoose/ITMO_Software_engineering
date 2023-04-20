@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Полоска с двигающимся кругом</title>
+    <style>
+      #strip {
+        position: relative;
+        height: 10px;
+        background-color: black;
+      }
+      #circle {
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+        animation: move 2s linear forwards;
+      }
+      @keyframes move {
+        0% {
+          left: 50%;
+        }
+        50% {
+          left: 30%;
+        }
+        100% {
+          left: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="strip"></div>
+    <div id="circle"></div>
+    <script>
+      const circle = document.getElementById("circle");
+      circle.addEventListener("animationend", () => {
+        circle.style.animation = "none";
+      });
+      const direction = Math.random() < 0.5 ? "left" : "right";
+      circle.style.animationDirection = direction;
+    </script>
+  </body>
+</html>

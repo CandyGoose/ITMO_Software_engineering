@@ -189,7 +189,6 @@
 	</div>
 	<div id="end" class="hidden">game over</div>
 	<div id="user-result">Result: <span id="result"></span></div>
-
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>  
@@ -199,6 +198,7 @@
 	var startButton = document.getElementById("start");
 	var buttonPressed = false;
 	var tm
+	var results = [];
 	const minSpeed = 2000; // минимальная скорость вращения
 	const maxSpeed = 5000; // максимальная скорость вращения
 	$("#container > p").html("<br><h4> <span id='timer'>00:00</span></h4>");
@@ -312,28 +312,33 @@ function checkAnswer(){
 	if (unghi < angle + 30 && unghi > 0) {
 		$("#result").text("+" + unghi);
 		inaccuracy -= unghi
+		results.push("+" + unghi);
 		rotatePoint()
 		// Попадание -
 	} else {
 		if (unghi > angle - 30 && unghi < 0) {
 			$("#result").text(unghi);
 			inaccuracy -= unghi
+			results.push(unghi);
 			rotatePoint()
 			// Попадание +
 		} else {
 			if (unghi === 0) {
 				$("#result").text(0);
+				results.push(0);
 				rotatePoint()
 				// Попадание 100%
 			} else if (unghi < 0) {
 			inaccuracy -= unghi
 			// Мимо
 			$("#result").text("Miss");
+			results.push("Miss");
 			rotatePoint()
 			} else {
 				inaccuracy += unghi
 				// Мимо
 				$("#result").text("Miss");
+				results.push("Miss");
 				rotatePoint()
 			}
 			
