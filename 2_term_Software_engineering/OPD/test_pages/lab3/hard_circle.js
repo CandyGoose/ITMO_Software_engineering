@@ -8,6 +8,9 @@ var tm3
 var interval2
 var interval
 var interval3
+var results1 = [];
+var results2 = [];
+var results3 = [];
 
 //-----------------------------------------------------------------
 
@@ -136,29 +139,34 @@ var angle = $("#circle2").rotationDegrees();
 var unghi = $("#circle").rotationDegrees();
 if (unghi < angle + 30 && unghi > 0) {
     $("#result").text("+" + unghi);
+    results1.push("+" + unghi);
     inaccuracy -= unghi
     rotatePoint()
     // Попадание +
 } else {
     if (unghi > angle - 30 && unghi < 0) {
         $("#result").text(unghi);
+        results1.push(unghi);
         inaccuracy -= unghi
         rotatePoint()
         // Попадание -
     } else {
         if (unghi === 0) {
             $("#result").text(0);
+            results1.push(0);
             rotatePoint()
             // Попадание 100%
         } else if (unghi < 0) {
         inaccuracy -= unghi
         // Мимо
         $("#result").text("Miss");
+        results1.push("Miss");
         rotatePoint()
         } else {
             inaccuracy += unghi
             // Мимо
             $("#result").text("Miss");
+            results1.push("Miss");
             rotatePoint()
         }
         
@@ -235,28 +243,33 @@ function checkAnswer2(){
     if (unghi2 < -angle2 + 30 && unghi2 < 0) {
         $("#result2").text("+" + ((Math.abs(unghi2 + 180))));
         inaccuracy2 -= (Math.abs(unghi2 + 180))
+        results2.push("+" + ((Math.abs(unghi2 + 180))));
         rotatePoint2()
         // Попадание -
     } else {
         if (unghi2 > angle2 - 30 && unghi2 > 0) {
             $("#result2").text(unghi2 - 180);
+            results2.push(unghi2 - 180);
             inaccuracy2 -= (unghi2 - 180)
             rotatePoint2()
             // Попадание +
         } else {
             if (unghi2 === 180) {
                 $("#result2").text(0);
+                results2.push(0);
                 rotatePoint2()
                 // Попадание 100%
             } else if (unghi2 < 0) {
                 inaccuracy2 -= (unghi2 + 400)
                 // Мимо
                 $("#result2").text("Miss");
+                results2.push("Miss");
                 rotatePoint2()
             } else {
                 inaccuracy2 += (unghi2 - 180)
                 // Мимо
                 $("#result2").text("Miss");
+                results2.push("Miss");
                 rotatePoint2()
             }
             
@@ -327,28 +340,33 @@ function checkAnswer2(){
         if (unghi3 < angle3 + 30 && unghi3 > 90) {
             $("#result3").text("+" + ((Math.abs(unghi3 - 90))));
             inaccuracy3 += (Math.abs(unghi3) - 90)
+            results3.push("+" + ((Math.abs(unghi3 - 90))));
             rotatePoint3()
             // Попадание +
         } else {
             if (unghi3 > angle3 - 30 && unghi3 < 90) {
                 $("#result3").text(unghi3 - 90);
+                results3.push(unghi3 - 90);
                 inaccuracy3 += (unghi3 - 90)
                 rotatePoint3()
                 // Попадание -
             } else {
                 if (unghi3 === 90) {
                     $("#result3").text(0);
+                    results3.push(0);
                     rotatePoint3()
                     // Попадание 100%
                 } else if ((unghi3 < 90) && (unghi3 > -90)) {
                     inaccuracy3 += (unghi3 - 360)
                     // Мимо
                     $("#result3").text("Miss");
+                    results3.push("Miss");
                     rotatePoint3()
                 } else {
                     inaccuracy3 -= (unghi3 + 500)
                     // Мимо
                     $("#result3").text("Miss");
+                    results3.push("Miss");
                     rotatePoint3()
                 }
                 
