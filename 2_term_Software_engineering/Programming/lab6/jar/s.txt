@@ -1,0 +1,4 @@
+sort
+show
+print_descending 
+info

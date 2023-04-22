@@ -12,7 +12,7 @@ CREATE TABLE miracle (
     id BIGSERIAL PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
     danger BIGINT REFERENCES danger(id) NOT NULL,
-    location BIGINT REFERENCES location(id) ON DELETE CASCADE NOT NULL UNIQUE
+    location BIGINT REFERENCES location(id) NOT NULL
 );
 
 CREATE TABLE destiny (
@@ -50,7 +50,8 @@ INSERT INTO danger (description) VALUES
 INSERT INTO location (name) VALUES
     ('Горы'),
     ('Космос'),
-    ('Вулкан');
+    ('Вулкан'),
+    ('Пещера');
 
 INSERT INTO miracle (name, danger, location) VALUES
     ('Гора Афон', 1, 1),
