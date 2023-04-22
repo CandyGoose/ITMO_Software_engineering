@@ -6,13 +6,23 @@ DECLARE
     location_id INTEGER;
     comrades TEXT[];
 BEGIN
-    SELECT id INTO location_id FROM location WHERE name = location_name;
+    SELECT id INTO location_id FROM location WHERE LOWER(name) = LOWER(location_name);
+
+    IF location_id IS NULL THEN
+        RAISE EXCEPTION 'Локация не найдена';
+    END IF;
+
     SELECT array_agg(comrade.name) INTO comrades FROM comrade
     JOIN miracle_seen ON comrade.id = miracle_seen.comrade
     JOIN miracle ON miracle_seen.miracle = miracle.id
     WHERE miracle.location = location_id;
+
+    IF comrades IS NULL THEN
+        RAISE EXCEPTION 'Не найдено товарищей в локации %', location_name;
+    END IF;
+
     RETURN comrades;
 END;
 $$ LANGUAGE plpgsql;
 
-SELECT miracle_seen_comrades('Космос'); -- Возвращает {"Чарли","Джек","Томас"}
+SELECT miracle_seen_comrades('космос');
