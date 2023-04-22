@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <title>Круг, перемещающийся по полоске</title>
     <style>
+      html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+}
+
+
       #container {
         width: 10cm;
         height: 0.5cm;
@@ -26,97 +36,149 @@
       #circle.returning {
         background-color: green;
       }
+
+      #center-line {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        transform: translateX(-50%);
+      }
+
     </style>
   </head>
   <body>
     <div id="container">
+      <div id="center-line"></div>
       <div id="circle"></div>
     </div>
     <div id="message"></div>
 
     <script>
-      const circle = document.querySelector('#circle');
-      const containerWidth = document.querySelector('#container').offsetWidth;
-      const circleWidth = circle.offsetWidth;
-      let isMoving = false;
-      let isDragging = false;
-      const message = document.querySelector('#message');
-      let returnStartTime;
+const circle = document.querySelector('#circle');
+const containerWidth = document.querySelector('#container').offsetWidth;
+const circleWidth = circle.offsetWidth;
+let isMoving = false;
+let isDragging = false;
+const message = document.querySelector('#message');
+let returnStartTime;
+let timerId;
 
-      function moveCircle() {
-        if (!isMoving && !isDragging) {
-          let leftPosition;
-          let distanceFromCenter;
-          do {
-            const randomPosition = Math.random();
-            leftPosition = randomPosition * (containerWidth - circleWidth);
-            const containerCenter = containerWidth / 2;
-            const circleCenter = leftPosition + circleWidth / 2;
-            distanceFromCenter = Math.abs(containerCenter - circleCenter);
-          } while (distanceFromCenter < 100);
-          circle.style.left = leftPosition + 'px';
-          isMoving = true;
-          returnStartTime = Date.now();
-        }
-      }
+function moveCircle() {
+  if (!isMoving && !isDragging) {
+    let leftPosition;
+    let distanceFromCenter;
+    do {
+      const randomPosition = Math.random();
+      leftPosition = randomPosition * (containerWidth - circleWidth);
+      const containerCenter = containerWidth / 2;
+      const circleCenter = leftPosition + circleWidth / 2;
+      distanceFromCenter = Math.abs(containerCenter - circleCenter);
+    } while (distanceFromCenter < 100);
+    circle.style.left = leftPosition + 'px';
+    isMoving = true;
+    returnStartTime = Date.now();
+    timerId = setTimeout(function() {
+      circle.classList.add('returning');
+      let circlePosition = circle.getBoundingClientRect();
+      const containerCenter = containerWidth / 2;
+      let leftPosition = circlePosition.left + 10 - containerCenter; // 10 это радиус круга
+      const step = 10;
+      const interval = setInterval(() => {
+        if ((Math.abs(leftPosition) < 3*step) && (Math.abs(leftPosition) >= 0)){ // если осталось переместить меньше, чем на 3 шага
+          clearInterval(interval);
+          circle.style.left = containerCenter + 'px'; // перемещение в центр
+          circle.classList.remove('returning');
+          isMoving = false;
+          const returnTime = Date.now() - returnStartTime;
+          message.textContent = `Круг вернулся в центр за ${returnTime} мс`;
+          clearTimeout(timerId);
+        } else {
+          clearInterval(interval);
+          circle.style.left = containerCenter + 'px'; // перемещение в центр
+          circle.classList.remove('returning');
+          isMoving = false;
+          message.textContent = `Круг не доведен до центра.`;
+        } 
+      });
+    }, 5000);
+  }
+}
 
-      function startDragging(event) {
-        if (event.button === 0) {
-          isDragging = true;
-        }
-        isMoving = false;
-      }
+function startDragging(event) {
+  if (event.button === 0) {
+    isDragging = true;
+  }
+  isMoving = false;
+  clearTimeout(timerId);
+}
 
-      function dragCircle(event) {
-        if (isDragging) {
-          const containerCenter = containerWidth / 2;
-          const circleLeft = parseInt(circle.style.left) || 0;
-          const mouseX = event.clientX;
-          const circleX = mouseX - circleWidth / 2;
-          const distanceFromCenter = Math.abs(containerCenter - circleX);
+function dragCircle(event) {
+  if (isDragging) {
+    const containerCenter = containerWidth / 2;
+    const circleLeft = parseInt(circle.style.left) || 0;
+    let mouseX = event.clientX;
+    let circleX = mouseX - circleWidth / 2;
 
-          circle.style.left = circleX + 'px';
-          isMoving = true;
-        }
-      }
+    if (circleX < 0) {
+      circleX = 0;
+      mouseX = circleWidth / 2;
+    } else if (circleX > containerWidth) {
+      circleX = containerWidth;
+      mouseX = containerWidth + circleWidth / 2;
+    }
+
+    circle.style.left = circleX + 'px';
+    isMoving = true;
+    clearTimeout(timerId);
+  }
+}
+
 
       function stopDragging(event) {
-        if (event.button === 0) {
-          isDragging = false;
-          if (isMoving) {
-            circle.classList.add('returning');
-            let circlePosition = circle.getBoundingClientRect();
-            const containerCenter = containerWidth / 2;
-            let leftPosition = circlePosition.left - containerCenter;
-            const step = 10;
-            const interval = setInterval(() => {
-              if (leftPosition > 0) {
-                leftPosition = Math.max(leftPosition - step, 0);
-                circle.style.left = (containerCenter + leftPosition) + 'px';
-              } else if (leftPosition < 0) {
-                leftPosition = Math.min(leftPosition + step, 0);
-                circle.style.left = (containerCenter + leftPosition) + 'px';
-              } else {
-                clearInterval(interval);
-                circle.classList.remove('returning');
-                isMoving = false;
-                const returnTime = Date.now() - returnStartTime;
-                message.textContent = `Круг вернулся в центр за ${returnTime} мс`;
-              }
-            }, 10);
+  if (event.button === 0) {
+    isDragging = false;
+    if (isMoving) {
+      circle.classList.add('returning');
+      let circlePosition = circle.getBoundingClientRect();
+      const containerCenter = containerWidth / 2;
+      let leftPosition = circlePosition.left + 10 - containerCenter; // 10 это радиус круга
+      const step = 10;
+      const interval = setInterval(() => {
+        if ((Math.abs(leftPosition) < 3*step) && (Math.abs(leftPosition) >= 0)){ // если осталось переместить меньше, чем на 3 шага
+          clearInterval(interval);
+          circle.style.left = containerCenter + 'px'; // перемещение в центр
+          circle.classList.remove('returning');
+          isMoving = false;
+          const returnTime = Date.now() - returnStartTime;
+          if (returnTime > 5000) {
+            message.textContent = `Время вышло.`;
+          } else {
+            message.textContent = `Круг вернулся в центр за ${returnTime} мс`;
           }
-        }
-      }
+        } else {
+          clearInterval(interval);
+          circle.style.left = containerCenter + 'px'; // перемещение в центр
+          circle.classList.remove('returning');
+          isMoving = false;
+          message.textContent = `Круг не доведен до центра.`;
+        } 
+      });
+    }
+  }
+}
 
       circle.addEventListener('mousedown', startDragging);
       document.addEventListener('mousemove', dragCircle);
       document.addEventListener('mouseup', stopDragging);
 
-      setInterval(moveCircle, 3000);
-
-
-
-
+      const interval = 3000 + Math.floor(Math.random() * 2000);
+      setTimeout(function() {
+        moveCircle();
+        setTimeout(arguments.callee, interval);
+      }, interval);
     </script>
   </body>
 </html>
