@@ -5,6 +5,8 @@
 
 [6 - Сервер](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Programming/lab6)
 
+[7 - БД](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Programming/lab7)
+
 ## Базы данных
 ### Лабораторные
 [1 - Инфологическая и даталогическая модели, их реализация в PostgreSQL](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Database/lab1)
@@ -47,6 +49,8 @@
 [6 - Сборка](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice6)
 
 [7 - Анимация и рендеринг](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice7)
+
+[8 - Создание чертежей](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice8)
 
 ## Эмоциональный интеллект (факультатив)
 [Лекции и материалы](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/EQ)
