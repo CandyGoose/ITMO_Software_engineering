@@ -178,6 +178,7 @@
         const greenCircle = document.querySelector('.green-circle');
         const distance = Math.abs(redCircle.getBoundingClientRect().left - greenCircle.getBoundingClientRect().left) / 16; // 1 pixel = 0.0625cm
         document.querySelector('#message').innerHTML = `Distance: ${distance.toFixed(2)}cm`;
+        results.push(distance.toFixed(2));
         }, 500);
     }
 
