@@ -1,0 +1,23 @@
+INFO: Сервер запущен.
+мая 03, 2023 2:46:54 AM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 03, 2023 2:47:05 AM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 03, 2023 2:47:08 AM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 2:47:08 AM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 2:47:11 AM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 2:47:11 AM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 2:48:56 AM Server.App startServer
+INFO: Сервер запущен.
+мая 03, 2023 2:48:56 AM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 03, 2023 2:49:08 AM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 03, 2023 2:49:10 AM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 2:49:10 AM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
