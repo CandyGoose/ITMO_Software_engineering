@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на оперативную память</title>
+    <style>
+        /*стили для страницы */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+input[type="text"] {
+    display: none;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button[id="start"] {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[id="continue"] {
+    display: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    display: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p.result {
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.numbers {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Тест на оперативную память</h1>
+    <form>
+        <button type="button" id="start">Начать</button>
+        <button type="button" id="continue">Продолжить</button>
+        <div class="numbers"></div>
+        <label for="answer">Запомните числа</label>
+        <input type="text" id="answer" name="answer" required>
+        <button type="submit">Проверить</button>
+        <p class="result"></p>
+    </form>
+</div>
+<script>
+    const numbersDiv = document.querySelector('.numbers');
+const answerInput = document.querySelector('#answer');
+const resultP = document.querySelector('.result');
+const form = document.querySelector('form');
+const startBtn = document.querySelector('#start');
+const continueBtn = document.querySelector('#continue');
+
+let timerId; // для хранения id таймера
+let startTime; // для хранения времени начала теста
+
+// функция для генерации случайной последовательности чисел
+function generateNumbers() {
+    const numbers = [];
+    for (let i = 0; i < 3; i++) {
+        numbers.push(Math.floor(Math.random() * 100));
+    }
+    return numbers;
+}
+
+// функция для отображения чисел на странице
+function displayNumbers(numbers) {
+    const numbersText = numbers.join(', ');
+    numbersDiv.textContent = numbersText;
+}
+
+
+// функция для начала теста
+function startLearnNumbers() {
+    const numbers = generateNumbers();
+    displayNumbers(numbers);
+
+
+    let label = document.querySelector('label[for="answer"]'); // find the label"answer"
+    label.textContent = "У вас есть 5 секунд на запоминание чисел.";
+    label.style.display = '';
+
+    // скрыть кнопку "Начать"
+    startBtn.style.display = 'none';
+    // turn on button "continue"
+    continueBtn.style.display = 'initial';
+
+    startTime = Date.now(); // сохраняем время начала запоминания цифр
+    timerId = setTimeout(() => {
+        //alert("Время вышло!");
+        startGeneralTest(); // запускаем основной тест
+    }, 5000); // таймер на 10 секунд
+}
+
+function startGeneralTest() {
+    startBtn.style.display = 'none'; // turn off button "start"
+    numbersDiv.style.display = 'none'; // убираем числа, которые необходимо было запомнить
+    continueBtn.style.display = ''; // turn off button "continue"
+
+
+    form.querySelector('button[type="submit"]').style.display = 'initial'; // turn on button submit
+    answerInput.style.display = 'initial'; // turn on place for texting numbers
+
+
+    let label = document.querySelector('label[for="answer"]'); // find the label"answer"
+    label.textContent = "Введите числа в обратном порядке, вам дано 10 секунд.";
+
+    answerInput.value = ''; // очищаем поле ввода ответа
+    answerInput.focus(); // устанавливаем фокус на поле ввода
+
+    clearTimeout(timerId);
+    startTime = Date.now(); // сохраняем время начала теста
+    timerId = setTimeout(() => {
+        resultP.textContent = 'Время вышло!';
+        answerInput.disabled = true;
+    }, 10000); // таймер на 10 секунд
+
+}
+
+
+startBtn.addEventListener('click', () => {
+    startLearnNumbers();
+
+});
+
+continueBtn.addEventListener('click', () => {
+    startGeneralTest();
+
+});
+
+
+// обработчик события отправки формы
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // отменяем стандартное поведение формы
+    form.querySelector('button[type="submit"]').disabled = true; // отключаем кнопку
+    clearTimeout(timerId);
+    const answer = answerInput.value.trim(); // получаем ответ, реверсим его и удаляем пробелы в начале и конце
+    const numbers = (numbersDiv.textContent.split(',').map(n => parseInt(n))).reverse(); // получаем исходную последовательность чисел
+    let correct = true; // флаг правильности ответа
+    let answerNumbers = answer.split(',').map(n => parseInt(n)); // получаем последовательность чисел из ответа
+    if (answerNumbers.length !== numbers.length) {
+        correct = false;
+    } else {
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] !== answerNumbers[i]) {
+                correct = false;
+                break;
+            }
+        }
+    }
+    const time = Date.now() - startTime; // вычисляем время, затраченное на решение теста
+    const seconds = Math.round(time / 1000); // переводим миллисекунды в секунды и округляем до целого числа
+    if (correct) {
+        resultP.textContent = ` Вы решили задание за ${seconds} секунд.Поздравляем !`;
+        resultP.style.color = 'green';
+    } else {
+        resultP.textContent = `Вы допустили ошибку. Вы решили задание за ${seconds} секунд.`;
+        resultP.style.color = 'red';
+    }
+    //console.log(correct);
+});
+
+</script>
+</body>
+</html>

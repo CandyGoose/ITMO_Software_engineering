@@ -21,3 +21,55 @@ INFO: Сервер получил соединение от /127.0.0.1:65435
 INFO: Клиент /127.0.0.1:65435 прислал сообщение.
 мая 03, 2023 2:49:10 AM Server.requestHandlers.ResponseSender accept
 INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:43:16 PM Server.App startServer
+INFO: Сервер запущен.
+мая 03, 2023 11:43:16 PM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 03, 2023 11:43:25 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 03, 2023 11:43:31 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:43:31 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:43:37 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:43:37 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:43:40 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:43:40 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:02 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 03, 2023 11:44:08 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:08 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:14 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:14 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:20 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:20 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:33 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:33 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:33 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:33 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:33 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:33 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:33 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:33 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 03, 2023 11:44:33 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 03, 2023 11:44:51 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.

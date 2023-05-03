@@ -128,7 +128,7 @@ public final class Client {
         } catch (UnresolvedAddressException e) {
             TextWriter.printErr("Сервер с этим хостом не найден. Попробуйте снова.");
             inputAddress();
-        }catch (IOException e) {
+        } catch (IOException e) {
             TextWriter.printErr("Сервер недоступен.");
             inputAddress();
         }
