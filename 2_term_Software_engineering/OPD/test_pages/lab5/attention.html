@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Добавляем свойства для скрытия элемента */
+.hidden {
+    display: none;
+  }
+  
+
+.word {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.word.selected {
+    background-color: #c3e6cb;
+    border-color: #4caf50;
+    color: #4caf50; /* add this line to change the text color to green */
+}
+
+.submit-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+/* Добавляем свойства для скрытия элемента */
+.hidden {
+    display: none;
+  }
+
+.result {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Тест на концентрацию</h2>
+    <p>Выберите все числа, начинающиеся на цифру <span class="num"></span></p>
+    
+    <div class="words hidden"> <!-- Добавляем CSS-класс hidden -->
+    </div>
+    <button type="submit" class="submit-button hidden">Проверить</button>
+    <p></p>
+    <button type="button" class="start-button">Старт</button>
+  </div>
+  <script>
+    let selectedWords = [];
+let timerId;
+let startTime;
+const wordsContainer = document.querySelector('.words');
+wordsContainer.classList.add('hidden'); // Добавляем CSS-класс hidden при загрузке страницы
+const startButton = document.querySelector('.start-button');
+const submitButton = document.querySelector('.submit-button');
+submitButton.classList.add('hidden'); // Добавляем CSS-класс hidden при загрузке страницы
+
+let num
+const wordsElement = document.querySelector('.num');
+
+for (let i = 0; i < 10; i++) {
+  const word = document.createElement('span');
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  word.textContent = randomNumber;
+  word.classList.add('word');
+  wordsContainer.appendChild(word);
+}
+
+wordsContainer.addEventListener('click', (event) => {
+    const word = event.target;
+    if (word.classList.contains('word')) {
+        if (word.classList.contains('selected')) {
+            word.classList.remove('selected');
+            selectedWords = selectedWords.filter((w) => w !== word.textContent);
+        } else {
+            word.classList.add('selected');
+            selectedWords.push(word.textContent);
+        }
+    }
+});
+
+submitButton.addEventListener('click', () => {
+    clearTimeout(timerId); // Clear the timer if the user submits the answer before it expires
+    finishGame();
+});
+
+startButton.addEventListener('click', () => {
+    selectedWords = []; // Clear the selected words
+    startTime = new Date().getTime(); // Start the timer
+    submitButton.classList.remove('hidden');
+    startButton.style.display = 'none'; // Hide the start button
+    num = Math.floor(Math.random() * 9) + 1;
+    wordsElement.innerHTML = num;
+    wordsContainer.classList.remove('hidden');
+    timerId = setTimeout(() => {
+        const resultTime = document.createElement('p');
+        resultTime.classList.add('resultTime');
+        resultTime.textContent = 'Time is out !';
+        document.querySelector('.container').appendChild(resultTime);
+        finishGame();
+    }, 10000); // Finish the game in 10 seconds
+  });
+  
+
+function finishGame() {
+    const correctAnswer = Array.from(wordsContainer.children)
+        .filter((word) => word.textContent.startsWith(num));
+    const currentAnswer = Array.from(wordsContainer.children)
+        .filter((word) => selectedWords.includes(word.textContent));
+    console.log(selectedWords);
+    // console.log(correctAnswer);
+    // console.log(currentAnswer);
+
+    const resultAnswer = correctAnswer.length === currentAnswer.length &&
+        correctAnswer.every((word, index) => word.textContent === currentAnswer[index].textContent);
+
+    console.log(resultAnswer);
+
+    const resultP = document.createElement('result');
+    resultP.classList.add('result');
+    const elapsedTime = new Date().getTime() - startTime; // Calculate the elapsed time
+    if (resultAnswer) {
+      resultP.textContent = `Вы ответили правильно! Затраченное время: ${elapsedTime} мс`;
+    } else {
+      resultP.textContent = `Вы ответили неправильно! Затраченное время: ${elapsedTime} мс`;
+    }
+    document.querySelector('.container').appendChild(resultP);
+    submitButton.style.display = 'none';
+  }
+  
+
+  </script>
+</body>
+</html>

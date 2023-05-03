@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raven Test</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			text-align: center;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+		}
+
+		h1 {
+			text-align: center;
+			margin: 0;
+			padding: 20px 0;
+		}
+
+		fieldset {
+			margin-bottom: 20px;
+			border: none;
+		}
+
+		legend {
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 20px auto;
+			border: 1px solid #ccc;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+
+		label {
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+		button {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		#form.hidden {
+			display: none;
+		}
+
+		#result {
+			text-align: center;
+			margin: 20px auto;
+			padding: 20px;
+			font-size: 18px;
+			font-weight: bold;
+			background-color: #4CAF50;
+			color: #fff;
+		}
+		.hidden {
+			display: none;
+		}
+
+		.start-button {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			background-color: #2196F3;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Raven Test</h1>
+	<form id="form" class="form hidden">
+		<fieldset>
+			<legend>Вопрос №1</legend>
+			<p>Выберите недостающую часть:</p>
+			<img id="raven_img1" alt="Shape1">
+			<label><input type="radio" name="q1" value="a">1</label>
+			<label><input type="radio" name="q1" value="b">2</label>
+			<label><input type="radio" name="q1" value="c">3</label>
+			<label><input type="radio" name="q1" value="d">4</label>
+			<label><input type="radio" name="q1" value="e">5</label>
+			<label><input type="radio" name="q1" value="f">6</label>
+		</fieldset>
+		<fieldset>
+			<legend>Вопрос №2</legend>
+			<p>Выберите недостающую часть:</p>
+			<img id="raven_img2" alt="Shape2">
+			<label><input type="radio" name="q2" value="a">1</label>
+			<label><input type="radio" name="q2" value="b">2</label>
+			<label><input type="radio" name="q2" value="c">3</label>
+			<label><input type="radio" name="q2" value="d">4</label>
+			<label><input type="radio" name="q2" value="e">5</label>
+			<label><input type="radio" name="q2" value="f">6</label>
+		</fieldset>
+		<fieldset>
+			<legend>Вопрос №3</legend>
+			<p>Выберите недостающую часть:</p>
+			<img id="raven_img3" alt="Shape3">
+			<label><input type="radio" name="q3" value="a">1</label>
+			<label><input type="radio" name="q3" value="b">2</label>
+			<label><input type="radio" name="q3" value="c">3</label>
+			<label><input type="radio" name="q3" value="d">4</label>
+			<label><input type="radio" name="q3" value="e">5</label>
+			<label><input type="radio" name="q3" value="f">6</label>
+		</fieldset>
+		<fieldset>
+			<legend>Вопрос №4</legend>
+			<p>Выберите недостающую часть:</p>
+			<img id="raven_img4" alt="Shape4">
+			<label><input type="radio" name="q4" value="a">1</label>
+			<label><input type="radio" name="q4" value="b">2</label>
+			<label><input type="radio" name="q4" value="c">3</label>
+			<label><input type="radio" name="q4" value="d">4</label>
+			<label><input type="radio" name="q4" value="e">5</label>
+			<label><input type="radio" name="q4" value="f">6</label>
+		</fieldset>
+		<fieldset>
+			<legend>Вопрос №5</legend>
+			<p>Выберите недостающую часть:</p>
+			<img id="raven_img5" alt="Shape5">
+			<label><input type="radio" name="q5" value="a">1</label>
+			<label><input type="radio" name="q5" value="b">2</label>
+			<label><input type="radio" name="q5" value="c">3</label>
+			<label><input type="radio" name="q5" value="d">4</label>
+			<label><input type="radio" name="q5" value="e">5</label>
+			<label><input type="radio" name="q5" value="f">6</label>
+		</fieldset>
+		<button type="submit" class="submit hidden">Отправить</button>
+	</form>
+	<div id="result" class="result hidden"></div>
+	<button type="button" class="start-button">Старт</button>
+	<script>
+		// Создаем массив с названиями файлов картинок и ответами
+		const images = [
+				{name: "1.d.png", answer: "d"},
+				{name: "2.e.png", answer: "e"},
+				{name: "3.a.png", answer: "a"},
+				{name: "4.b.png", answer: "b"},
+				{name: "5.f.png", answer: "f"},
+				{name: "6.c.png", answer: "c"},
+				{name: "7.f.png", answer: "f"},
+				{name: "8.b.png", answer: "b"},
+				{name: "9.a.png", answer: "a"},
+				{name: "10.c.png", answer: "c"},
+				{name: "11.d.png", answer: "d"},
+				{name: "12.b.png", answer: "b"},
+				{name: "13.a.png", answer: "a"},
+				{name: "14.f.png", answer: "f"},
+				{name: "15.a.png", answer: "a"},
+				{name: "16.b.png", answer: "b"},
+				{name: "17.a.png", answer: "a"},
+				{name: "18.c.png", answer: "c"},
+				{name: "19.e.png", answer: "e"},
+				{name: "20.f.png", answer: "f"},
+				{name: "21.d.png", answer: "d"},
+				{name: "22.c.png", answer: "c"},
+				{name: "23.d.png", answer: "d"},
+				{name: "24.e.png", answer: "e"}
+			];
+			const submit = document.querySelector('button[type="submit"]');
+			submit.classList.add('hidden'); // Добавляем CSS-класс hidden при загрузке страницы
+
+			let resultDiv = document.querySelector('#result');
+			resultDiv.classList.add('hidden'); // Добавляем CSS-класс hidden при загрузке страницы
+
+			let form = document.querySelector('form');
+			form.classList.add('hidden'); // Добавляем CSS-класс hidden при загрузке страницы
+
+			const startButton = document.querySelector('.start-button');
+
+			
+		// Выбираем случайный элемент из массива и устанавливаем его в качестве источника изображения для тега img
+		const randomIndex1 = Math.floor(Math.random() * images.length);
+		const randomImageName1 = images[randomIndex1].name;
+		const correctAnswer1 = images[randomIndex1].answer;
+
+		const randomIndex2 = Math.floor(Math.random() * images.length);
+		const randomImageName2 = images[randomIndex2].name;
+		const correctAnswer2 = images[randomIndex2].answer;
+
+		const randomIndex3 = Math.floor(Math.random() * images.length);
+		const randomImageName3 = images[randomIndex3].name;
+		const correctAnswer3 = images[randomIndex3].answer;
+
+		const randomIndex4 = Math.floor(Math.random() * images.length);
+		const randomImageName4 = images[randomIndex4].name;
+		const correctAnswer4 = images[randomIndex4].answer;
+
+		const randomIndex5 = Math.floor(Math.random() * images.length);
+		const randomImageName5 = images[randomIndex5].name;
+		const correctAnswer5 = images[randomIndex5].answer;
+		let startTime
+
+		document.getElementById("raven_img1").src = "./raven_pic/" + randomImageName1;
+		document.getElementById("raven_img2").src = "./raven_pic/" + randomImageName2;
+		document.getElementById("raven_img3").src = "./raven_pic/" + randomImageName3;
+		document.getElementById("raven_img4").src = "./raven_pic/" + randomImageName4;
+		document.getElementById("raven_img5").src = "./raven_pic/" + randomImageName5;
+
+		form.addEventListener('submit', function(event) {
+			event.preventDefault(); // Отменяем действие по умолчанию (отправку формы)
+			let score = 0;
+			for (let i = 0; i < images.length; i++) {
+			const question1 = "q1";
+			const answer1 = form.elements[question1].value;
+			if (answer1 === images[i].answer) {
+			score++;
+			}
+			const question2 = "q2";
+			const answer2 = form.elements[question2].value;
+			if (answer2 === images[i].answer) {
+			score++;
+			}
+			const question3 = "q3";
+			const answer3 = form.elements[question3].value;
+			if (answer3 === images[i].answer) {
+			score++;
+			}
+			const question4 = "q4";
+			const answer4 = form.elements[question4].value;
+			if (answer4 === images[i].answer) {
+			score++;
+			}
+			const question5 = "q5";
+			const answer5 = form.elements[question5].value;
+			if (answer5 === images[i].answer) {
+			score++;
+			}
+			}
+			score = Math.round(score/4);
+			if (score > 5) score = 5
+			const elapsedTime = new Date().getTime() - startTime; // Calculate the elapsed time
+			resultDiv.textContent = `Вы набрали ${score} из 5 баллов. Затраченное время: ${elapsedTime} мс`;
+			clearTimeout(timerId)
+		});
+
+
+		startButton.addEventListener('click', () => {
+			selectedWords = []; // Clear the selected words
+			startTime = new Date().getTime(); // Start the timer
+			form.classList.remove('hidden');
+			resultDiv.classList.remove('hidden');
+			submit.classList.remove('hidden');
+
+			startButton.style.display = 'none'; // Hide the start button
+			timerId = setTimeout(() => {
+				resultDiv.textContent = 'Time is out!';
+			}, 20000); // Finish the game in 20 seconds
+		});
+	</script>
+</body>
+</html>
