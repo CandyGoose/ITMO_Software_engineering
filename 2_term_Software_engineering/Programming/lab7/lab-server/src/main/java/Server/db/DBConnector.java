@@ -20,11 +20,9 @@ import java.util.Arrays;
 public class DBConnector implements DBConnectable {
 
     /**
-     * URL-адрес для подключения к базе данных.
+     * Имя базы данных.
      */
-    private final String dbUrl = "jdbc:postgresql://pg:5432/studs";
-
-    // private final String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+    private final String dbName =  System.getenv("SV_DB");
 
     /**
      * Имя пользователя базы данных.
@@ -35,6 +33,11 @@ public class DBConnector implements DBConnectable {
      * Пароль пользователя базы данных.
      */
     private final String pass =  System.getenv("SV_PASS");
+
+    /**
+     * URL-адрес для подключения к базе данных.
+     */
+    private final String dbUrl = "jdbc:postgresql://127.0.0.1:5432/" + dbName;
 
     /**
      * Конструктор класса DBConnector.

@@ -117,3 +117,73 @@ INFO: Сервер запущен.
 INFO: Консоль запущена.
 мая 04, 2023 3:22:01 AM Server.util.ConsoleThread run
 INFO: Работа сервера завершена.
+мая 04, 2023 4:20:15 PM Server.db.DBConnector <init>
+WARNING: Произошла ошибка при инициализации таблиц.
+мая 04, 2023 4:21:10 PM Server.App startServer
+INFO: Сервер запущен.
+мая 04, 2023 4:21:10 PM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 04, 2023 4:21:21 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 04, 2023 4:24:59 PM Server.App startServer
+INFO: Сервер запущен.
+мая 04, 2023 4:24:59 PM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 04, 2023 4:25:01 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 04, 2023 4:25:58 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:25:58 PM Server.requestHandlers.RequestReader get
+INFO: Клиент отключился.
+мая 04, 2023 4:26:03 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 04, 2023 4:26:06 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:26:06 PM Server.requestHandlers.RequestReader get
+INFO: Клиент отключился.
+мая 04, 2023 4:46:08 PM Server.App startServer
+INFO: Сервер запущен.
+мая 04, 2023 4:46:08 PM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 04, 2023 4:46:29 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 04, 2023 4:46:37 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:46:37 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 04, 2023 4:46:42 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:46:42 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 04, 2023 4:46:44 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:46:44 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 04, 2023 4:46:47 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:46:47 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 04, 2023 4:46:47 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:46:47 PM Server.requestHandlers.RequestReader get
+INFO: Клиент отключился.
+мая 04, 2023 4:46:54 PM Server.util.ConsoleThread run
+INFO: Работа сервера завершена.
+мая 04, 2023 4:48:56 PM Server.App startServer
+INFO: Сервер запущен.
+мая 04, 2023 4:48:56 PM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 04, 2023 4:49:04 PM Server.App accept
+INFO: Сервер получил соединение от /127.0.0.1:65435
+мая 04, 2023 4:49:13 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:49:13 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 04, 2023 4:49:16 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:49:16 PM Server.requestHandlers.ResponseSender accept
+INFO: Сервер отправил ответ клиенту.
+мая 04, 2023 4:49:16 PM Server.App startIteratorLoop
+INFO: Клиент /127.0.0.1:65435 прислал сообщение.
+мая 04, 2023 4:49:16 PM Server.requestHandlers.RequestReader get
+INFO: Клиент отключился.
