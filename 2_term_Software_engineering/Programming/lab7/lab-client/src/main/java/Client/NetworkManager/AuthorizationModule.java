@@ -7,6 +7,7 @@ import Common.util.Response;
 import Common.util.TextWriter;
 
 
+import java.io.Console;
 import java.util.List;
 import java.util.Locale;
 import java.util.NoSuchElementException;
@@ -20,6 +21,11 @@ public class AuthorizationModule {
      * Сканер
      */
     private final Scanner scanner;
+
+    /**
+     * Считывание с консоли
+     */
+    Console console = System.console();
 
     /**
      * Режим авторизации
@@ -99,12 +105,19 @@ public class AuthorizationModule {
             }
             TextWriter.printInfoMessage("Введите пароль, который вы будете использовать для работы с приложением (должно содержать не менее 5 символов).");
             while (true) {
-                password = scanner.nextLine().trim();
-                if (password.length() < 5) {
-                    TextWriter.printErr("Пароль слишком короткий, попробуйте еще раз.");
-                    continue;
+                try {
+                    // password = scanner.nextLine().trim();
+                    char[] passwordChars = console.readPassword();
+                    password = new String(passwordChars);
+                    if (password.length() < 5) {
+                        TextWriter.printErr("Пароль слишком короткий, попробуйте еще раз.");
+                        continue;
+                    }
+                    return new Request(login, password, RequestType.REGISTER);
+                } catch (NullPointerException e) {
+                    TextWriter.printErr("Ошибка при работе с консолью.");
+                    System.exit(1);
                 }
-                return new Request(login, password, RequestType.REGISTER);
             }
         }
     }
@@ -130,12 +143,19 @@ public class AuthorizationModule {
             }
             TextWriter.printInfoMessage("Введите пароль, который вы будете использовать для работы с приложением (должно содержать не менее 5 символов).");
             while (true) {
-                password = scanner.nextLine().trim();
-                if (password.length() < 5) {
-                    TextWriter.printErr("Пароль слишком короткий, попробуйте еще раз.");
-                    continue;
+                try {
+                    // password = scanner.nextLine().trim();
+                    char[] passwordChars = console.readPassword();
+                    password = new String(passwordChars);
+                    if (password.length() < 5) {
+                        TextWriter.printErr("Пароль слишком короткий, попробуйте еще раз.");
+                        continue;
+                    }
+                    return new Request(login, password, RequestType.LOGIN);
+                } catch (NullPointerException e) {
+                    TextWriter.printErr("Ошибка при работе с консолью.");
+                    System.exit(1);
                 }
-                return new Request(login, password, RequestType.LOGIN);
             }
         }
     }
