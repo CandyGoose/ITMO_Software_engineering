@@ -7,12 +7,25 @@ import Common.util.TextWriter;
 import Server.db.DBManager;
 import Server.util.CollectionManager;
 
+/**
+ * Класс команды "clear" - очистка коллекции.
+ */
 public class ClearCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
+     */
     public ClearCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("clear", "очистить коллекцию", 0, collectionManager, dbManager);
     }
 
+    /**
+     * Выполнение команды.
+     * @param request объект запроса.
+     * @return объект ответа.
+     */
     @Override
     public Response execute(Request request) {
         try {

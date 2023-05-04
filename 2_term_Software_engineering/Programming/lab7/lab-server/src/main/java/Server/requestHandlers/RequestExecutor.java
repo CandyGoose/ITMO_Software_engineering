@@ -7,8 +7,16 @@ import Server.ServerConfig;
 
 import java.util.function.Function;
 
+/**
+ * Класс-обработчик запросов клиентов, реализующий интерфейс Function Request, Response.
+ */
 public class RequestExecutor implements Function<Request, Response> {
 
+    /**
+     * Обработчик запросов.
+     * @param request запрос клиента.
+     * @return ответ сервера на запрос клиента.
+     */
     @Override
     public Response apply(Request request) {
         if (request != null) {

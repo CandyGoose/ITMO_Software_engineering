@@ -5,14 +5,26 @@ import Common.util.Request;
 import Common.util.Response;
 import Server.db.DBManager;
 import Server.util.CollectionManager;
-
+/**
+ * Класс команды "remove_by_id" - удаление организации по ID.
+ */
 public class RemoveByIdCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
+     */
     public RemoveByIdCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("remove_by_id", "удалить элемент из коллекции по его id", 1,
                 collectionManager, dbManager);
     }
 
+    /**
+     * Выполнение команды.
+     * @param request объект запроса.
+     * @return объект ответа.
+     */
     @Override
     public Response execute(Request request) {
         try {

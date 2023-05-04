@@ -20,18 +20,52 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Класс для установки соединения с сервером.
+ */
 public class App {
+    /**
+     * Сканнер для чтения команд из скрипта.
+     */
     private static Scanner scriptScanner;
 
+    /**
+     * Логин.
+     */
     public static String login;
+
+    /**
+     * Пароль.
+     */
     public static String password;
 
+    /**
+     * Запускает бесконечный цикл селектора.
+     * @param selector объект типа Selector для мониторинга состояний канала
+     * @param channel объект типа SocketChannel - канал для передачи данных по сети
+     * @param sc объект типа Scanner для чтения ввода пользователя с консоли
+     * @param scriptMode флаг режима работы скрипта
+     * @throws IOException если произошла ошибка ввода/вывода при работе с каналами или сокетами
+     * @throws ClassNotFoundException если класс не найден при десериализации
+     * @throws InterruptedException если произошла ошибка в работе потоков
+     */
     static void startSelectorLoop(SocketChannel channel, Scanner sc, boolean scriptMode, Selector selector) throws IOException, ClassNotFoundException, InterruptedException {
         do {
             selector.select();
         } while (startIteratorLoop(channel, sc, scriptMode, selector));
     }
 
+    /**
+     * Запускает итерационный цикл обработки готовых ключей селектора.
+     * @param selector объект типа Selector для мониторинга состояний канала
+     * @param channel объект типа SocketChannel - канал для передачи данных по сети
+     * @param sc объект типа Scanner для чтения ввода пользователя с консоли
+     * @param scriptMode флаг режима работы скрипта
+     * @return true, если нужно продолжать работу цикла, false - если необходимо остановиться
+     * @throws IOException если произошла ошибка ввода/вывода при работе с каналами или сокетами
+     * @throws ClassNotFoundException если класс не найден при десериализации
+     * @throws InterruptedException если произошла ошибка в работе потоков
+     */
     private static boolean startIteratorLoop(SocketChannel channel, Scanner sc, boolean scriptMode, Selector selector) throws IOException, ClassNotFoundException, InterruptedException {
         Set<SelectionKey> readyKeys = selector.selectedKeys();
         Iterator<SelectionKey> iterator = readyKeys.iterator();

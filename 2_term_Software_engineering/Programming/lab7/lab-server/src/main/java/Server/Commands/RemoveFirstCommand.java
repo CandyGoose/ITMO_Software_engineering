@@ -13,9 +13,9 @@ import Server.util.CollectionManager;
 public class RemoveFirstCommand extends AbstractCommand {
 
     /**
-     * Создает новый объект команды.
-     *
-     * @param collectionManager менеджер коллекции
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
      */
     public RemoveFirstCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("remove_first", "удалить первый элемент из коллекции", 0, collectionManager, dbManager);

@@ -8,12 +8,25 @@ import Common.util.Response;
 import Server.db.DBManager;
 import Server.util.CollectionManager;
 
+/**
+ * Класс команды "add" - добавление новой организации.
+ */
 public class AddCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
+     */
     public AddCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("add", "добавить новый элемент в коллекцию", 0, collectionManager, dbManager);
     }
 
+    /**
+     * Выполнение команды.
+     * @param request объект запроса.
+     * @return объект ответа.
+     */
     @Override
     public Response execute(Request request) {
         try {

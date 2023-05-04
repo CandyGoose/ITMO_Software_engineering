@@ -13,8 +13,19 @@ import Common.util.TextWriter;
 
 import java.util.Scanner;
 
+/**
+ * Класс для создания запроса по команде, полученной от пользователя.
+ */
 public class CommandRequestCreator {
 
+    /**
+     * Создает запрос по переданной команде.
+     * @param command команда
+     * @param scanner сканер
+     * @param scriptMode режим скрипта
+     * @return запрос
+     * @throws NullPointerException если команда не найдена
+     */
     public Request createRequestOfCommand(CommandToSend command, Scanner scanner, boolean scriptMode) throws NullPointerException {
         String name = command.getCommandName();
         Request request;
@@ -34,6 +45,11 @@ public class CommandRequestCreator {
         return request;
     }
 
+    /**
+     * Создает запрос без аргументов.
+     * @param command команда
+     * @return запрос
+     */
     private Request createRequestWithoutArgs(CommandToSend command) {
         try {
             CommandValidators.validateAmountOfArgs(command.getCommandArgs(), 0);
@@ -44,6 +60,11 @@ public class CommandRequestCreator {
         }
     }
 
+    /**
+     * Создает запрос с аргументом ID.
+     * @param command команда
+     * @return запрос
+     */
     private Request createRequestWithID(CommandToSend command) {
         try {
             CommandValidators.validateAmountOfArgs(command.getCommandArgs(), 1);
@@ -61,6 +82,13 @@ public class CommandRequestCreator {
         }
     }
 
+    /**
+     * Класс для создания запроса с аргументом типа Organization.
+     * @param command команда
+     * @param sc сканер
+     * @param scriptMode режим скрипта
+     * @return запрос
+     */
     private Request createRequestWithOrganization(CommandToSend command, Scanner sc, boolean scriptMode) {
         try {
             CommandValidators.validateAmountOfArgs(command.getCommandArgs(), 0);
@@ -73,6 +101,13 @@ public class CommandRequestCreator {
         }
     }
 
+    /**
+     * Класс для создания запроса с аргументом типа Organization и ID.
+     * @param command команда
+     * @param sc сканер
+     * @param scriptMode режим скрипта
+     * @return запрос
+     */
     private Request createRequestWithOrganizationID(CommandToSend command, Scanner sc, boolean scriptMode) {
         try {
             CommandValidators.validateAmountOfArgs(command.getCommandArgs(), 1);

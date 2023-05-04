@@ -6,9 +6,18 @@ import Server.ServerConfig;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Класс, представляющий поток консоли сервера.
+ */
 public class ConsoleThread extends Thread {
+    /**
+     * Сканнер, считывающий ввод пользователя.
+     */
     private static final Scanner scanner = ServerConfig.scanner;
 
+    /**
+     * Запускает поток консоли сервера.
+     */
     @Override
     public void run() {
         try {

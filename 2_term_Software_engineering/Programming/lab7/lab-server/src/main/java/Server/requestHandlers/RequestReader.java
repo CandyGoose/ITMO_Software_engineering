@@ -10,14 +10,28 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
 import java.util.function.Supplier;
 
+/**
+ * Класс RequestReader представляет собой поставщика запроса, который десериализует полученный буфер данных в объект типа Request.
+ */
 public class RequestReader implements Supplier<Request> {
 
+    /**
+     * Ключ
+     */
     private final SelectionKey key;
 
+    /**
+     * Создает новый объект типа RequestReader с указанным ключом выборки.
+     * @param key ключ выборки
+     */
     public RequestReader(SelectionKey key) {
         this.key = key;
     }
 
+    /**
+     * Десериализует полученный буфер данных в объект типа Request.
+     * @return объект типа Request
+     */
     @Override
     public Request get() {
         SocketChannel socketChannel = (SocketChannel) key.channel();

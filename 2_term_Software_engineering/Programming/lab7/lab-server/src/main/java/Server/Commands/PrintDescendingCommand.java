@@ -7,13 +7,26 @@ import Common.util.TextWriter;
 import Server.db.DBManager;
 import Server.util.CollectionManager;
 
+/**
+ * Класс команды "print_descending" - вывод всех элементов коллекции в строковом представлении в порядке убывания.
+ */
 public class PrintDescendingCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
+     */
     public PrintDescendingCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("print_descending", "вывести элементы коллекции в порядке убывания",
                 0, collectionManager, dbManager);
     }
 
+    /**
+     * Выполнение команды.
+     * @param request объект запроса.
+     * @return объект ответа.
+     */
     @Override
     public Response execute(Request request) {
         try {
