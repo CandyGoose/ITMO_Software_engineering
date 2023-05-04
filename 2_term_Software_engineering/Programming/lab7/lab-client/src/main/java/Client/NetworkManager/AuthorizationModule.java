@@ -12,14 +12,35 @@ import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Модуль авторизации пользователя в приложении.
+ */
 public class AuthorizationModule {
+    /**
+     * Сканер
+     */
     private final Scanner scanner;
+
+    /**
+     * Режим авторизации
+     */
     private boolean authorizationDone = false;
 
+    /**
+     * Создает новый объект модуля авторизации пользователя с помощью переданного объекта сканера.
+     *
+     * @param scanner объект сканера, используемый для ввода данных пользователя.
+     */
     public AuthorizationModule(Scanner scanner) {
         this.scanner = scanner;
     }
 
+
+    /**
+     * Запрашивает у пользователя информацию о необходимости регистрации в приложении и возвращает соответствующий запрос.
+     *
+     * @return запрос на регистрацию или вход в систему, созданный на основе ответа пользователя.
+     */
     public Request askForRegistration() {
         TextWriter.printInfoMessage("У вас есть аккаунт? [y/n]");
         while (true) {
@@ -39,6 +60,11 @@ public class AuthorizationModule {
         }
     }
 
+    /**
+     * Проверяет результат запроса на регистрацию и выводит соответствующее сообщение.
+     *
+     * @param response объект ответа, содержащий информацию о результате запроса на регистрацию.
+     */
     public void validateRegistration(Response response) {
         List<String> usersInfo = response.getInfo();
         if (usersInfo.size() == 2) {
@@ -51,6 +77,12 @@ public class AuthorizationModule {
         }
     }
 
+    /**
+     * Запрашивает у пользователя данные для регистрации нового аккаунта и создает на их основе запрос на регистрацию.
+     *
+     * @return запрос на регистрацию нового аккаунта.
+     * @throws NoSuchElementException если ввод пользователя был завершен преждевременно.
+     */
     private Request registerUser() throws NoSuchElementException {
         TextWriter.printInfoMessage("Добро пожаловать в регистрации!");
         String login;
@@ -77,6 +109,11 @@ public class AuthorizationModule {
         }
     }
 
+    /**
+     * Метод для авторизации пользователя в приложении.
+     * @return возвращает объект типа Request, содержащий данные пользователя, если авторизация прошла успешно
+     * @throws NoSuchElementException если ввод данных пользователя был прерван
+     */
     private Request loginUser() throws NoSuchElementException {
         TextWriter.printInfoMessage("Добро пожаловать в авторизацию!");
         String login;
@@ -100,14 +137,21 @@ public class AuthorizationModule {
                 }
                 return new Request(login, password, RequestType.LOGIN);
             }
-
         }
-
     }
+
+    /**
+     * Метод, возвращающий информацию о том, выполнена ли авторизация в приложении.
+     * @return true, если авторизация была выполнена успешно, иначе false.
+     */
     public boolean isAuthorizationDone() {
         return authorizationDone;
     }
 
+    /**
+     * Метод, устанавливающий флаг выполнения авторизации в приложении.
+     * @param authorizationDone флаг выполнения авторизации.
+     */
     public void setAuthorizationDone(boolean authorizationDone) {
         this.authorizationDone = authorizationDone;
     }

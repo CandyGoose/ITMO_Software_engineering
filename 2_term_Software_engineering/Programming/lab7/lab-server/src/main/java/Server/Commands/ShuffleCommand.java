@@ -12,8 +12,9 @@ import Server.util.CollectionManager;
 public class ShuffleCommand extends AbstractCommand {
 
     /**
-     * Создает новый объект команды.
-     * @param collectionManager менеджер коллекции
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
      */
     public ShuffleCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("shuffle", "перемешать элементы коллекции в случайном порядке", 0, collectionManager, dbManager);
@@ -21,7 +22,6 @@ public class ShuffleCommand extends AbstractCommand {
 
     /**
      * Перемешивает элементы коллекции
-     *
      * @param request объект запроса
      * @return объект ответа
      */

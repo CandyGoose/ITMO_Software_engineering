@@ -3,11 +3,9 @@ package Server;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
-import Common.data.Organization;
 import Common.exception.DatabaseException;
 import Server.Commands.*;
 import Server.db.DBManager;

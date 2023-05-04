@@ -14,12 +14,31 @@ import java.sql.Statement;
 import java.util.Arrays;
 
 
+/**
+ * Класс для соединения с базой данных.
+ */
 public class DBConnector implements DBConnectable {
 
-    private final String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+    /**
+     * URL-адрес для подключения к базе данных.
+     */
+    private final String dbUrl = "jdbc:postgresql://pg:5432/studs";
+
+    // private final String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+
+    /**
+     * Имя пользователя базы данных.
+     */
     private final String user =  System.getenv("SV_LOGIN");
+
+    /**
+     * Пароль пользователя базы данных.
+     */
     private final String pass =  System.getenv("SV_PASS");
 
+    /**
+     * Конструктор класса DBConnector.
+     */
     public DBConnector() {
         try {
             Class.forName("org.postgresql.Driver");
@@ -33,6 +52,11 @@ public class DBConnector implements DBConnectable {
         }
     }
 
+    /**
+     * Обрабатывает запросы без возвращаемого значения.
+     * @param queryBody тело запроса.
+     * @throws DatabaseException в случае ошибки при работе с базой данных.
+     */
     public void handleQuery(SQLConsumer<Connection> queryBody) throws DatabaseException {
         try (Connection connection = DriverManager.getConnection(dbUrl, user, pass)) {
             queryBody.accept(connection);
@@ -41,6 +65,13 @@ public class DBConnector implements DBConnectable {
         }
     }
 
+    /**
+     * Обрабатывает запросы с возвращаемым значением.
+     * @param queryBody тело запроса.
+     * @param <T> тип возвращаемого значения.
+     * @return результат выполнения запроса.
+     * @throws DatabaseException в случае ошибки при работе с базой данных.
+     */
     public <T> T handleQuery(SQLFunction<Connection, T> queryBody) throws DatabaseException {
         try (Connection connection = DriverManager.getConnection(dbUrl, user, pass)) {
             return queryBody.apply(connection);
@@ -49,7 +80,10 @@ public class DBConnector implements DBConnectable {
         }
     }
 
-
+    /**
+     * Создает таблицы в базе данных, если они не существуют.
+     * @throws SQLException в случае ошибки при создании таблиц.
+     */
     private void initializeDB() throws SQLException {
 
         Connection connection = DriverManager.getConnection(dbUrl, user, pass);

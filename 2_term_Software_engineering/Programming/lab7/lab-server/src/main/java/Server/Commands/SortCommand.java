@@ -12,8 +12,9 @@ import Server.util.CollectionManager;
 public class SortCommand extends AbstractCommand {
 
     /**
-     * Создает новый объект команды.
-     * @param collectionManager менеджер коллекции
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
      */
     public SortCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("sort", "отсортировать коллекцию в естественном порядке", 0, collectionManager, dbManager);
@@ -21,7 +22,6 @@ public class SortCommand extends AbstractCommand {
 
     /**
      * Сортирует элементы коллекции
-     *
      * @param request объект запроса
      * @return объект ответа
      */

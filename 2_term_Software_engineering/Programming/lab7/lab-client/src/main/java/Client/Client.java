@@ -29,24 +29,53 @@ import java.util.*;
  * @author Касьяненко Вера (P3120)
  */
 public final class Client {
-
     private Client() {
         throw new UnsupportedOperationException("Это утилитный класс, экземпляр которого не может быть создан.");
     }
-
+    /**
+     * Порт по умолчанию для соединения.
+     */
     private static int PORT = 65435;
+
+    /**
+     * Адрес хоста для соединения.
+     */
     private static String HOST;
+
+    /**
+     * Максимально допустимый порт для соединения.
+     */
     private static final int maxPort = 65535;
 
+    /**
+     * Сканнер для ввода данных с консоли.
+     */
     private static final Scanner SCANNER = new Scanner(System.in);
+
+    /**
+     * Канал для обмена данными с сервером.
+     */
     private static SocketChannel clientChannel;
 
+    /**
+     * Объект для создания запросов к серверу.
+     */
     static final CommandRequestCreator COMMAND_REQUEST_CREATOR = new CommandRequestCreator();
+
+    /**
+     * Модуль авторизации.
+     */
     static final AuthorizationModule authorizationModule = new AuthorizationModule(SCANNER);
 
+    /**
+     * Режим переподключения.
+     */
     private static boolean reconnectionMode = false;
-    private static int attempts = 0;
 
+    /**
+     * Количество попыток подключения.
+     */
+    private static int attempts = 0;
 
     public static void main(String[] args) {
 

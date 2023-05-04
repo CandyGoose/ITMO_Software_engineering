@@ -5,13 +5,23 @@ import Common.util.Response;
 import Common.util.TextWriter;
 import Server.util.CommandManager;
 
+/**
+ * Класс команды "show" - вывод всех элементов коллекции в строковом представлении.
+ */
 public class HelpCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     */
     public HelpCommand() {
         super("help", "вывести справку по доступным командам", 0);
-
     }
 
+    /**
+     * Выполнение команды.
+     * @param request объект запроса.
+     * @return объект ответа.
+     */
     @Override
     public Response execute(Request request) {
         StringBuilder sb = new StringBuilder();

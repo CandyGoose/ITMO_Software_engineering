@@ -6,14 +6,26 @@ import Common.util.Response;
 import Server.db.DBManager;
 import Server.util.CollectionManager;
 
-
+/**
+ * Команда для обновления значения элемента коллекции, идентификатор которого равен заданному.
+ */
 public class UpdateByIdCommand extends AbstractCommand {
 
+    /**
+     * Конструктор класса.
+     * @param collectionManager менеджер коллекции.
+     * @param dbManager менеджер БД.
+     */
     public UpdateByIdCommand(CollectionManager collectionManager, DBManager dbManager) {
         super("update", "обновить значение элемента коллекции, id которого равен заданному", 1,
                 collectionManager, dbManager);
     }
 
+    /**
+     * Выполнение команды на сервере.
+     * @param request запрос, полученный от клиента.
+     * @return ответ клиенту.
+     */
     @Override
     public Response execute(Request request) {
         try {
