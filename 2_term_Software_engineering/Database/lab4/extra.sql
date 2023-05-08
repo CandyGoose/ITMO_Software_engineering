@@ -11,7 +11,7 @@ CREATE TABLE activity (
 );
 
 INSERT INTO activity (type_num, type_name)
-VALUES (10, 'Лекция'), (20, 'Практика');
+VALUES (10, 'Лекция'), (20, 'Практика'), (30, 'Выходной');
 
 DO $$
 DECLARE
