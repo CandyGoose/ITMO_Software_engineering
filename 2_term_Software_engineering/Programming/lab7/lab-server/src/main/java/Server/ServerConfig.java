@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 import Common.exception.DatabaseException;
-import Server.Commands.*;
+import Server.commands.*;
 import Server.db.DBManager;
 import Server.db.UsersManager;
 import Server.util.CollectionManager;

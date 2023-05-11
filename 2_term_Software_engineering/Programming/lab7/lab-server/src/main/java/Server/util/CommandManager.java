@@ -1,7 +1,7 @@
 package Server.util;
 
 import Common.util.Request;
-import Server.Commands.AbstractCommand;
+import Server.commands.AbstractCommand;
 
 import java.util.HashMap;
 import java.util.Map;

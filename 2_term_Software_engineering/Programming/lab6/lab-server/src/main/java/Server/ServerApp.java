@@ -9,7 +9,7 @@ import java.util.Scanner;
 import Common.exception.DisconnectInitException;
 import Common.util.Request;
 import Common.util.Response;
-import Server.Commands.*;
+import Server.commands.*;
 import Server.util.*;
 
 import java.util.concurrent.ExecutorService;
