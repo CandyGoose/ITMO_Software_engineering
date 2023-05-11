@@ -117,3 +117,9 @@ INFO: Сервер запущен.
 INFO: Консоль запущена.
 мая 04, 2023 3:22:01 AM Server.util.ConsoleThread run
 INFO: Работа сервера завершена.
+мая 11, 2023 11:03:43 PM Server.App startServer
+INFO: Сервер запущен.
+мая 11, 2023 11:03:43 PM Server.util.ConsoleThread run
+INFO: Консоль запущена.
+мая 11, 2023 11:03:47 PM Server.util.ConsoleThread run
+INFO: Работа сервера завершена.

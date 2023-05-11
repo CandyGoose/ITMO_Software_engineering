@@ -2,7 +2,7 @@ package Server.util;
 
 import Common.util.Request;
 import Common.util.Response;
-import Server.Commands.AbstractCommand;
+import Server.commands.AbstractCommand;
 import Server.ServerApp;
 import Common.exception.DisconnectInitException;
 
