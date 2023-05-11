@@ -1,6 +1,5 @@
 package Server.db;
 
-
 import Common.exception.DatabaseException;
 import Server.ServerConfig;
 import Server.interfaces.DBConnectable;
@@ -22,17 +21,17 @@ public class DBConnector implements DBConnectable {
     /**
      * Имя базы данных.
      */
-    private final String dbName =  System.getenv("SV_DB");
+    private final String dbName =  System.getenv("SV_DB"); // studs
 
     /**
      * Имя пользователя базы данных.
      */
-    private final String user =  System.getenv("SV_LOGIN");
+    private final String user =  System.getenv("SV_LOGIN"); // sXXXXXX
 
     /**
      * Пароль пользователя базы данных.
      */
-    private final String pass =  System.getenv("SV_PASS");
+    private final String pass =  System.getenv("SV_PASS"); // пароль из ./pgpass
 
     /**
      * URL-адрес для подключения к базе данных.

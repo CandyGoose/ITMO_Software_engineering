@@ -1,9 +1,9 @@
 package Server;
 
-
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 import Common.exception.DatabaseException;
@@ -53,7 +53,7 @@ public class ServerConfig {
     /**
      * Логгер для записи сообщений о работе сервера.
      */
-    public static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Server.class.getName());
+    public static final Logger logger = Logger.getLogger(Server.class.getName());
     static {
         try {
             FileHandler fileHandler = new FileHandler("logs/log.log", true);
@@ -108,5 +108,4 @@ public class ServerConfig {
     public static void toggleStatus() {
         isRunning = !isRunning;
     }
-
 }
