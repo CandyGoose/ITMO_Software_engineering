@@ -2,7 +2,7 @@
 ### Номер варианта: _9482394_
 
 ## Внимание! У разных вариантов разный текст задания!
-Доработать программу из [лабораторной работы №6](https://github.com/VeraKasianenko/ITMO/tree/main/2_term_Software_engineering/Programming/lab6) следующим образом:
+Доработать программу из [лабораторной работы №6](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab6) следующим образом:
 1. Организовать хранение коллекции в реляционной СУБД (PostgresQL). Убрать хранение коллекции в файле.
 2. Для генерации поля id использовать средства базы данных (sequence).
 3. Обновлять состояние коллекции в памяти только при успешном добавлении объекта в БД
