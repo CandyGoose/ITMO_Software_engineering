@@ -25516,3 +25516,7 @@ INFO: Получено соединение от /127.0.0.1:55398
 INFO: Запрос от /127.0.0.1:55398 для команды "login"
 мая 23, 2023 8:07:53 AM server.ServerInstance$ClientThread stop
 INFO: Клиент /127.0.0.1:55398 отключился.
+мая 23, 2023 10:09:48 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 23, 2023 10:09:53 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
