@@ -1,0 +1,3 @@
+show
+show
+execute_script D:\Pelmeshka\OneDrive - ITMO UNIVERSITY\ITMO\2_term_Software_engineering\Programming\lab8\s2.txt
