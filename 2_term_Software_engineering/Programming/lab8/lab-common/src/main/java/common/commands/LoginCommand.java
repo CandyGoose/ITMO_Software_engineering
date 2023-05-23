@@ -74,7 +74,7 @@ public class LoginCommand extends AbstractCommand {
             return new Response("Неверный логин или пароль.", "incorrectCredentials", new Object[] {});
         }
 
-        return new ResponseWithAuthCredentials(newCredentials, "Успешных вход в систему.");
+        return new ResponseWithAuthCredentials(newCredentials, "Успешный вход в систему.");
     }
 
     /**
