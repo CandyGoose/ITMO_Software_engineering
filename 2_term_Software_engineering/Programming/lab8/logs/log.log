@@ -25520,3 +25520,51 @@ INFO: Клиент /127.0.0.1:55398 отключился.
 INFO: Сервер прослушивает порт 65435
 мая 23, 2023 10:09:53 AM server.ServerInstance run
 INFO: Сервер прослушивает порт 65435
+мая 23, 2023 10:23:57 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 23, 2023 11:01:19 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 23, 2023 11:02:56 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:50744
+мая 23, 2023 11:03:07 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:50744 для команды "login"
+мая 23, 2023 11:03:30 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:50744 для команды "info"
+мая 23, 2023 11:03:40 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:50744 отключился.
+мая 23, 2023 11:09:35 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 23, 2023 11:09:37 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:50814
+мая 23, 2023 11:09:48 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:50814 для команды "login"
+мая 23, 2023 11:10:11 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:50814 отключился.
+мая 23, 2023 6:36:05 PM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 23, 2023 6:36:16 PM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:55154
+мая 23, 2023 6:36:19 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55154 для команды "login"
+мая 23, 2023 6:36:33 PM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:55160
+мая 23, 2023 6:36:33 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55160 для команды "add"
+мая 23, 2023 6:36:33 PM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:55160 отключился.
+мая 23, 2023 6:37:01 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55154 для команды "remove_by_id"
+мая 23, 2023 6:37:49 PM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:58952
+мая 23, 2023 6:37:49 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:58952 для команды "add"
+мая 23, 2023 6:37:49 PM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:58952 отключился.
+мая 23, 2023 6:38:08 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55154 для команды "remove_by_id"
+мая 23, 2023 6:38:11 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55154 для команды "remove_by_id"
+мая 23, 2023 6:38:15 PM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:55154 отключился.
+мая 23, 2023 6:41:53 PM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
