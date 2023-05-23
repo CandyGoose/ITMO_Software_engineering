@@ -11,9 +11,11 @@ import server.util.ObjectSocketWrapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.sql.SQLOutput;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -121,7 +123,8 @@ public class ServerInstance {
     public void run(int port) throws IOException {
         Set<ClientThread> clients = new HashSet<>();
 
-        try (ServerSocket socket = new ServerSocket(port)) {
+        try {
+            ServerSocket socket = new ServerSocket(port);
             socket.setSoTimeout(SOCKET_TIMEOUT);
 
             LOGGER.info("Сервер прослушивает порт " + port);
@@ -147,6 +150,9 @@ public class ServerInstance {
                     }
                 } catch (SocketTimeoutException ignore) {}
             }
+        } catch (BindException e) {
+            System.out.println("Этот порт уже занят. Попробуйте позже.");
+            System.exit(0);
         }
     }
 

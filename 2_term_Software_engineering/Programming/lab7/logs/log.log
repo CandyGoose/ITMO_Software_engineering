@@ -235,3 +235,7 @@ INFO: Клиент /127.0.0.1:65435 прислал сообщение.
 INFO: Клиент отключился.
 мая 11, 2023 11:03:51 PM Server.util.ConsoleThread run
 INFO: Работа сервера завершена.
+мая 23, 2023 10:14:11 AM Server.App startServer
+INFO: Сервер запущен.
+мая 23, 2023 10:14:11 AM Server.util.ConsoleThread run
+INFO: Консоль запущена.
