@@ -132,7 +132,7 @@ public class GraphicClient extends Application {
     /**
      * Конструктор класса GraphicClient.
      */
-    public GraphicClient() throws InvalidFieldException {
+    public GraphicClient() throws IOException {
     }
 
     /**

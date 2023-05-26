@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="connectionLayout" alignment="CENTER" maxHeight="30" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="addressLabel" text="Address" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="portLabel" text="Port" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="addressField" text="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextField fx:id="portField" text="Enter port" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button fx:id="connectButton" text="Connect" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+    </children>
+</GridPane>

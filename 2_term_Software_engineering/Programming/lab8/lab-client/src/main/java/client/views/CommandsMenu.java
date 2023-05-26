@@ -9,6 +9,7 @@ import java.text.MessageFormat;
 import client.ConsoleClient;
 import client.GraphicClient;
 import client.LocaleManager;
+import client.util.LocalizationUtil;
 import common.data.Organization;
 import common.network.Request;
 import common.network.RequestBody;
@@ -51,28 +52,28 @@ public class CommandsMenu extends Menu {
         this.client = client;
 
         MenuItem add = new MenuItem();
-        add.textProperty().bind(LocaleManager.getObservableStringByKey("addCommand"));
-        add.setOnAction(e -> displayAddOrganizationWindow());
         MenuItem info = new MenuItem();
-        info.textProperty().bind(LocaleManager.getObservableStringByKey("infoCommand"));
-        info.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("info")));
         MenuItem printUniqueEmployeesCount = new MenuItem();
-        printUniqueEmployeesCount.textProperty().bind(LocaleManager.getObservableStringByKey("uniqueEmployeesCountCommand"));
-        printUniqueEmployeesCount.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_unique_employees_count")));
         MenuItem descendingAnnualTurnover = new MenuItem();
-        descendingAnnualTurnover.textProperty().bind(LocaleManager.getObservableStringByKey("descendingAnnualTurnover"));
-        descendingAnnualTurnover.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_field_descending_annual_turnover ")));
         MenuItem executeScript = new MenuItem();
         MenuItem clear = new MenuItem();
-        clear.textProperty().bind(LocaleManager.getObservableStringByKey("clearCommand"));
-        clear.setOnAction(e -> executeCommandWithEmptyBody("clear"));
         MenuItem removeFirst = new MenuItem();
-        removeFirst.textProperty().bind(LocaleManager.getObservableStringByKey("removeFirstCommand"));
-        removeFirst.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("remove_first")));
-        executeScript.textProperty().bind(LocaleManager.getObservableStringByKey("executeScriptCommand"));
-        executeScript.setOnAction(e -> chooseScriptAndExecute());
-
         getItems().addAll(add, info, printUniqueEmployeesCount, descendingAnnualTurnover, clear, removeFirst, executeScript);
+
+        LocalizationUtil.bindTextToLocale(add.textProperty(), "addCommand");
+        add.setOnAction(e -> displayAddOrganizationWindow());
+        LocalizationUtil.bindTextToLocale(info.textProperty(), "infoCommand");
+        info.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("info")));
+        LocalizationUtil.bindTextToLocale(printUniqueEmployeesCount.textProperty(), "uniqueEmployeesCountCommand");
+        printUniqueEmployeesCount.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_unique_employees_count")));
+        LocalizationUtil.bindTextToLocale(descendingAnnualTurnover.textProperty(), "descendingAnnualTurnoverCommand");
+        descendingAnnualTurnover.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_field_descending_annual_turnover ")));
+        LocalizationUtil.bindTextToLocale(clear.textProperty(), "clearCommand");
+        clear.setOnAction(e -> executeCommandWithEmptyBody("clear"));
+        LocalizationUtil.bindTextToLocale(removeFirst.textProperty(), "removeFirstCommand");
+        removeFirst.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("remove_first")));
+        LocalizationUtil.bindTextToLocale(executeScript.textProperty(),"executeScriptCommand");
+        executeScript.setOnAction(e -> chooseScriptAndExecute());
     }
 
     /**
