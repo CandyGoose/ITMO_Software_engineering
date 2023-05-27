@@ -153,14 +153,14 @@ public class OrganizationsTableView {
             x -> NumberFormat.getIntegerInstance().format(x));
         TableColumn<Organization, Float> yCol = createColumn("yLabel", data -> new SimpleObjectProperty<>(data.getValue().getCoordinates().getY()),
             x -> NumberFormat.getNumberInstance().format(x));
-        TableColumn<Organization, String> streetCol = createColumn("streetLabel", data -> new SimpleStringProperty(data.getValue().getAddress().getStreet()),
-            x -> x);
         TableColumn<Organization, String> typeCol = createColumn("typeLabel", data -> new SimpleStringProperty(data.getValue().getType().name()),
+                x -> x);
+        TableColumn<Organization, String> streetCol = createColumn("streetLabel", data -> new SimpleStringProperty(data.getValue().getAddress().getStreet()),
             x -> x);
         TableColumn<Organization, String> ownerCol = createColumn("ownerLabel", new PropertyValueFactory<>("owner"),
             x -> x);
         TableView<Organization> table = new TableView<>(orderedOrganizationList);
-        table.getColumns().addAll(idCol, nameCol, creationDateCol, annualTurnoverCol, fullNameCol, employeesCountCol, xCol, yCol, streetCol, typeCol, ownerCol);
+        table.getColumns().addAll(idCol, nameCol, creationDateCol, annualTurnoverCol, fullNameCol, employeesCountCol, xCol, yCol, typeCol, streetCol, ownerCol);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         return table;
     }

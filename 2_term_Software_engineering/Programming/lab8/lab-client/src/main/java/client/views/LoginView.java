@@ -5,7 +5,6 @@ import java.text.MessageFormat;
 
 import client.GraphicClient;
 import client.LocaleManager;
-import client.util.LocalizationUtil;
 import common.network.Request;
 import common.network.RequestBody;
 import common.network.Response;
@@ -17,13 +16,11 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 public class LoginView {
     private final Parent view;
@@ -121,15 +118,15 @@ public class LoginView {
 
     @FXML
     private void initialize() {
-        LocalizationUtil.bindTextToLocale(headerLabel.textProperty(), "loginHeader");
-        LocalizationUtil.bindTextToLocale(subheaderLabel.textProperty(), "loginSubHeader");
-        LocalizationUtil.bindTextToLocale(loginButton.textProperty(), "loginButton");
-        LocalizationUtil.bindTextToLocale(registerButton.textProperty(), "registerButton");
-        LocalizationUtil.bindTextToLocale(disconnectButton.textProperty(), "disconnectButton");
-        LocalizationUtil.bindTextToLocale(loginLabel.textProperty(), "loginLabel");
-        LocalizationUtil.bindTextToLocale(loginField.promptTextProperty(), "loginPrompt");
-        LocalizationUtil.bindTextToLocale(passwordLabel.textProperty(), "passwordLabel");
-        LocalizationUtil.bindTextToLocale(passwordField.promptTextProperty(), "passwordPrompt");
+        headerLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginHeader"));
+        subheaderLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginSubHeader"));
+        loginButton.textProperty().bind(LocaleManager.getObservableStringByKey("loginButton"));
+        registerButton.textProperty().bind(LocaleManager.getObservableStringByKey("registerButton"));
+        disconnectButton.textProperty().bind(LocaleManager.getObservableStringByKey("disconnectButton"));
+        loginLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginLabel"));
+        loginField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("loginPrompt"));
+        passwordLabel.textProperty().bind(LocaleManager.getObservableStringByKey("passwordLabel"));
+        passwordField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("passwordPrompt"));
         disconnectButton.setOnMouseClicked(e -> client.getNetwork().disconnect());
         prompt.textProperty().bind(promptMsg);
     }
