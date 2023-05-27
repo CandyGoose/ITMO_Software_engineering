@@ -42,7 +42,7 @@ public class OrganizationsGraphicView {
     private static final double MAX_RADIUS = 40;
     private static final double GRAPH_FONT_SIZE = 15;
     private static final double GRAPH_TEXT_OUTLINE_STROKE = 5;
-    private static final double TRANSITION_MILLIS = 700;
+    private static final double TRANSITION_MILLIS = 1000;
     private final Image backgroundImage = new Image("/map.png");
     private final ObjectProperty<Organization> selectedOrganizationProperty = new SimpleObjectProperty<>(null);
     private final ObjectProperty<Organization> hoveredOrganizationProperty = new SimpleObjectProperty<>(null);

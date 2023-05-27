@@ -5,7 +5,7 @@ import java.net.InetSocketAddress;
 
 import client.GraphicClient;
 
-import client.util.LocalizationUtil;
+import client.LocaleManager;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,12 +44,11 @@ public class ConnectionView {
 
     @FXML
     private void initialize() {
-
-        LocalizationUtil.bindTextToLocale(connectButton.textProperty(), "connectButton");
-        LocalizationUtil.bindTextToLocale(addressLabel.textProperty(), "addressLabel");
-        LocalizationUtil.bindTextToLocale(addressField.promptTextProperty(), "addressPrompt");
-        LocalizationUtil.bindTextToLocale(portLabel.textProperty(), "portLabel");
-        LocalizationUtil.bindTextToLocale(portField.promptTextProperty(), "portPrompt");
+        connectButton.textProperty().bind(LocaleManager.getObservableStringByKey("connectButton"));
+        addressLabel.textProperty().bind(LocaleManager.getObservableStringByKey("addressLabel"));
+        addressField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("addressPrompt"));
+        portLabel.textProperty().bind(LocaleManager.getObservableStringByKey("portLabel"));
+        portField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("portPrompt"));
 
         addressField.setText("localhost");
         portField.setText("65435");

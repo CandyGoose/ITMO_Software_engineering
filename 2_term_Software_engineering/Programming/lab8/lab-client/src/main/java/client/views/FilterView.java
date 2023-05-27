@@ -113,14 +113,14 @@ public class FilterView {
         configurators.add(new ComparableFilterConfigurator<Long>("idLabel", x -> x.getId(), new NumberStringConverter<>(Long::parseLong)));
         configurators.add(new StringFilterConfigurator("nameLabel", x -> x.getName()));
         configurators.add(new ComparableFilterConfigurator<Float>("annualTurnoverLabel", x -> x.getAnnualTurnover(), new NumberStringConverter<>(Float::parseFloat)));
-        configurators.add(new StringFilterConfigurator("nameLabel", x -> x.getFullName()));
+        configurators.add(new StringFilterConfigurator("fullNameLabel", x -> x.getFullName()));
         configurators.add(new ComparableFilterConfigurator<Long>("employeesCountLabel", x -> x.getEmployeesCount(), new NumberStringConverter<>(Long::parseLong)));
 
         configurators.add(new DateFilterConfigurator("creationDateLabel"));
         configurators.add(new ComparableFilterConfigurator<Float>("xLabel", x -> x.getCoordinates().getX(), new NumberStringConverter<>(Float::parseFloat)));
         configurators.add(new ComparableFilterConfigurator<Float>("yLabel", x -> x.getCoordinates().getY(), new NumberStringConverter<>(Float::parseFloat)));
-        configurators.add(new StringFilterConfigurator("streetLabel", x -> x.getAddress().getStreet()));
         configurators.add(new StringFilterConfigurator("typeLabel", x -> x.getType().name()));
+        configurators.add(new StringFilterConfigurator("streetLabel", x -> x.getAddress().getStreet()));
         configurators.add(new StringFilterConfigurator("ownerLabel", x -> x.getOwner()));
         ChoiceBox<FilterConfigurator> filterFieldChoice = new ChoiceBox<>();
         filterFieldChoice.getItems().addAll(configurators);

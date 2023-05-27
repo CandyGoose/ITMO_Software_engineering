@@ -32,9 +32,8 @@ public final class AddressMaker {
      *
      * @param io объект для ввода-вывода пользовательских данных
      * @return улица
-     * @throws InvalidFieldException если введенные данные некорректны
      */
-    public static String parseStreet(BasicUserIO io) throws InvalidFieldException {
+    public static String parseStreet(BasicUserIO io) {
         String street = BasicParsers.parseString(io, "Enter Address street: ");
         return street;
     }

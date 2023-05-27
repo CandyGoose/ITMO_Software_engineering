@@ -22,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -39,7 +40,6 @@ public class OrganizationInspectorView {
     private ObjectProperty<Organization> organizationToInspectProperty;
     private ReadOnlyBooleanWrapper organizationReadyProperty = new ReadOnlyBooleanWrapper(false);
     private BooleanProperty organizationIsEditableProperty = new SimpleBooleanProperty(false);
-    private BooleanProperty typeFieldEditableProperty = new SimpleBooleanProperty(false);
 
     private Parent view;
     private ValidationField<String> nameField;
@@ -48,7 +48,7 @@ public class OrganizationInspectorView {
     private ValidationField<Long> employeesCountField;
     private ValidationField<Float> xField;
     private ValidationField<Float> yField;
-    private ChoiceBox<OrganizationType> typeField;
+    private ValidationChoiceBox<OrganizationType> typeField;
     private ValidationField<String> streetField;
 
     /**
@@ -63,22 +63,17 @@ public class OrganizationInspectorView {
         organizationToInspectProperty.addListener((o, oldV, newV) -> fillFields(newV));
         organizationIsEditableProperty.bind(Bindings.createBooleanBinding(OrganizationInspectorView.this::organizationIsEditable, client.authProperty(), organizationToInspectProperty));
         createAllFields();
-        Label typeLabel = new Label();
-        typeField = new ChoiceBox<>(FXCollections.observableArrayList(OrganizationType.values()));
-        typeField.disableProperty().bind(typeFieldEditableProperty.not());
-        typeLabel.textProperty().bind(LocaleManager.getObservableStringByKey("typeLabel"));
-        Pane choiceBoxContainer = new Pane(typeField);
-        typeField.prefWidthProperty().bind(choiceBoxContainer.widthProperty());
+
 
         organizationReadyProperty.bind(Bindings.and(nameField.valueReadyProperty,
-                                        Bindings.and(annualTurnoverField.valueReadyProperty,
-                                        Bindings.and(fullNameField.valueReadyProperty,
-                                        Bindings.and(employeesCountField.valueReadyProperty,
-                                        Bindings.and(xField.valueReadyProperty,
-                                        Bindings.and(yField.valueReadyProperty,
-                                        Bindings.and(streetField.valueReadyProperty,
-                                        Bindings.and(typeField.getSelectionModel().selectedItemProperty().isNotNull(),
-                                        organizationIsEditableProperty)))))))));
+                Bindings.and(annualTurnoverField.valueReadyProperty,
+                Bindings.and(fullNameField.valueReadyProperty,
+                Bindings.and(employeesCountField.valueReadyProperty,
+                Bindings.and(xField.valueReadyProperty,
+                Bindings.and(yField.valueReadyProperty,
+                Bindings.and(typeField.valueReadyProperty,
+                Bindings.and(streetField.valueReadyProperty, organizationIsEditableProperty)))))))));
+
 
         VBox box = new VBox(GAP);
         box.setPadding(new Insets(GAP, HORIZONTAL_PADDING, GAP, HORIZONTAL_PADDING));
@@ -89,8 +84,8 @@ public class OrganizationInspectorView {
                 employeesCountField.getComponent(),
                 xField.getComponent(),
                 yField.getComponent(),
-                streetField.getComponent(),
-                typeLabel, choiceBoxContainer
+                typeField.getComponent(),
+                streetField.getComponent()
         );
         this.view = box;
     }
@@ -123,20 +118,20 @@ public class OrganizationInspectorView {
     public Organization getOrganization() {
         try {
             Organization newOrganization = new Organization(
-                organizationToInspectProperty.get().getId(),
-                nameField.getValue(),
-                LocalDateTime.now(),
-                new Coordinates(
-                    xField.getValue(),
-                    yField.getValue()
-                ),
-                annualTurnoverField.getValue(),
-                fullNameField.getValue(),
-                employeesCountField.getValue(),
-                typeField.getValue(),
-                new Address(
-                    streetField.getValue()
-                )
+                    organizationToInspectProperty.get().getId(),
+                    nameField.getValue(),
+                    LocalDateTime.now(),
+                    new Coordinates(
+                            xField.getValue(),
+                            yField.getValue()
+                    ),
+                    annualTurnoverField.getValue(),
+                    fullNameField.getValue(),
+                    employeesCountField.getValue(),
+                    typeField.getValue(),
+                    new Address(
+                            streetField.getValue()
+                    )
             );
             newOrganization.setOwner(organizationToInspectProperty.get().getOwner());
             return newOrganization;
@@ -155,9 +150,9 @@ public class OrganizationInspectorView {
         employeesCountField = new ValidationField<>("employeesCountLabel", new NumberStringConverter<>(Long::parseLong), Organization.VALIDATOR::validateEmployeesCount);
         xField = new ValidationField<>("xLabel", new NumberStringConverter<>(Float::parseFloat), Coordinates.VALIDATOR::validateX);
         yField = new ValidationField<>("yLabel", new NumberStringConverter<>(Float::parseFloat), Coordinates.VALIDATOR::validateY);
+        typeField = new ValidationChoiceBox<>("typeLabel", x -> (x.isEmpty() ? null : OrganizationType.valueOf(x)), Organization.VALIDATOR::validateType);
+        typeField.setEnumValues(OrganizationType.class);
         streetField = new ValidationField<>("streetLabel", x -> (x.isEmpty() ? null : x), Address.VALIDATOR::validateStreet);
-        typeField = new ChoiceBox<>(FXCollections.observableArrayList(OrganizationType.values()));
-        typeFieldEditableProperty.bind(organizationIsEditableProperty);
     }
 
     /**
@@ -173,8 +168,8 @@ public class OrganizationInspectorView {
             employeesCountField.emptyValue();
             xField.emptyValue();
             yField.emptyValue();
+            typeField.emptyValue();
             streetField.emptyValue();
-            typeField.getSelectionModel().clearSelection();
             return;
         }
 
@@ -184,9 +179,8 @@ public class OrganizationInspectorView {
         employeesCountField.setValue(organization.getEmployeesCount());
         xField.setValue(organization.getCoordinates().getX());
         yField.setValue(organization.getCoordinates().getY());
-        streetField.setValue(organization.getAddress().getStreet());
         typeField.setValue(organization.getType());
-        typeField.disableProperty().bind(typeFieldEditableProperty.not());
+        streetField.setValue(organization.getAddress().getStreet());
     }
 
 
@@ -291,6 +285,112 @@ public class OrganizationInspectorView {
          */
         T getValue() {
             return converter.convert(valueField.getText());
+        }
+
+        /**
+         * Возвращает компонент поля.
+         *
+         * @return компонент поля
+         */
+        Node getComponent() {
+            return component;
+        }
+    }
+
+    /**
+     * Класс, представляющий поле валидации для ChoiceBox.
+     *
+     * @param <T> тип значения поля
+     */
+    private class ValidationChoiceBox<T> {
+        private StringConverter<T> converter;
+        private AbstractValidator<T> validator;
+        private Node component;
+        private ChoiceBox<T> valueChoiceBox;
+        private Label promptLabel = new Label();
+        private BooleanProperty valueReadyProperty = new SimpleBooleanProperty(false);
+
+        /**
+         * Создает поле валидации для ChoiceBox.
+         *
+         * @param localeKey ключ локализации
+         * @param converter конвертер значения
+         * @param validator валидатор значения
+         */
+        ValidationChoiceBox(String localeKey, StringConverter<T> converter, AbstractValidator<T> validator) {
+            this.converter = converter;
+            this.validator = validator;
+            Label fieldLabel = new Label();
+            fieldLabel.textProperty().bind(LocaleManager.getObservableStringByKey(localeKey));
+            promptLabel.setTextFill(Color.RED);
+            valueChoiceBox = new ChoiceBox<>();
+            valueChoiceBox.disableProperty().bind(organizationIsEditableProperty.not());
+            VBox mainBox = new VBox(GAP);
+            valueChoiceBox.setMaxWidth(Double.MAX_VALUE);
+            mainBox.getChildren().addAll(fieldLabel, valueChoiceBox, promptLabel);
+            component = mainBox;
+            valueChoiceBox.valueProperty().addListener((observable, oldValue, newValue) -> validateAndUpdate(newValue));
+        }
+
+        /**
+         * Проверяет и обновляет значение поля.
+         *
+         * @param newValue новое значение
+         */
+        void validateAndUpdate(T newValue) {
+            promptLabel.textProperty().unbind();
+            promptLabel.setText("");
+            valueReadyProperty.set(false);
+
+            if (organizationToInspectProperty.get() == null) {
+                return;
+            }
+
+            if (newValue == null) {
+                promptLabel.textProperty().bind(LocaleManager.getObservableStringByKey("organizationTypeNotEmpty"));
+                return;
+            }
+
+            try {
+                validator.validate(newValue);
+            } catch (InvalidFieldException e) {
+                promptLabel.textProperty().bind(LocaleManager.getObservableStringByKey(e.getLocaleKey()));
+                return;
+            }
+
+            valueReadyProperty.set(true);
+        }
+
+        /**
+         * Очищает значение поля.
+         */
+        void emptyValue() {
+            valueChoiceBox.getSelectionModel().clearSelection();
+        }
+
+        /**
+         * Устанавливает значение поля.
+         *
+         * @param value значение
+         */
+        void setValue(T value) {
+            valueChoiceBox.setValue(value);
+            validateAndUpdate(value);
+        }
+
+        public void setEnumValues(Class<T> enumClass) {
+            T[] values = enumClass.getEnumConstants();
+            valueChoiceBox.setItems(FXCollections.observableArrayList(values));
+        }
+
+
+        /**
+         * Возвращает значение поля.
+         *
+         * @return значение поля
+         */
+        T getValue() {
+            return valueChoiceBox.getValue();
         }
 
         /**

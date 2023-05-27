@@ -9,7 +9,6 @@ import java.text.MessageFormat;
 import client.ConsoleClient;
 import client.GraphicClient;
 import client.LocaleManager;
-import client.util.LocalizationUtil;
 import common.data.Organization;
 import common.network.Request;
 import common.network.RequestBody;
@@ -60,19 +59,19 @@ public class CommandsMenu extends Menu {
         MenuItem removeFirst = new MenuItem();
         getItems().addAll(add, info, printUniqueEmployeesCount, descendingAnnualTurnover, clear, removeFirst, executeScript);
 
-        LocalizationUtil.bindTextToLocale(add.textProperty(), "addCommand");
+        add.textProperty().bind(LocaleManager.getObservableStringByKey("addCommand"));
         add.setOnAction(e -> displayAddOrganizationWindow());
-        LocalizationUtil.bindTextToLocale(info.textProperty(), "infoCommand");
+        info.textProperty().bind(LocaleManager.getObservableStringByKey("infoCommand"));
         info.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("info")));
-        LocalizationUtil.bindTextToLocale(printUniqueEmployeesCount.textProperty(), "uniqueEmployeesCountCommand");
+        printUniqueEmployeesCount.textProperty().bind(LocaleManager.getObservableStringByKey("uniqueEmployeesCountCommand"));
         printUniqueEmployeesCount.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_unique_employees_count")));
-        LocalizationUtil.bindTextToLocale(descendingAnnualTurnover.textProperty(), "descendingAnnualTurnoverCommand");
+        descendingAnnualTurnover.textProperty().bind(LocaleManager.getObservableStringByKey("descendingAnnualTurnoverCommand"));
         descendingAnnualTurnover.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_field_descending_annual_turnover ")));
-        LocalizationUtil.bindTextToLocale(clear.textProperty(), "clearCommand");
+        clear.textProperty().bind(LocaleManager.getObservableStringByKey("clearCommand"));
         clear.setOnAction(e -> executeCommandWithEmptyBody("clear"));
-        LocalizationUtil.bindTextToLocale(removeFirst.textProperty(), "removeFirstCommand");
+        removeFirst.textProperty().bind(LocaleManager.getObservableStringByKey("removeFirstCommand"));
         removeFirst.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("remove_first")));
-        LocalizationUtil.bindTextToLocale(executeScript.textProperty(),"executeScriptCommand");
+        executeScript.textProperty().bind(LocaleManager.getObservableStringByKey("executeScriptCommand"));
         executeScript.setOnAction(e -> chooseScriptAndExecute());
     }
 
@@ -92,7 +91,7 @@ public class CommandsMenu extends Menu {
         stageBox.getChildren().addAll(inspector.getView(), addButton);
         stageBox.setAlignment(Pos.TOP_CENTER);
         stageBox.setPadding(new Insets(GAP));
-        stageBox.setSpacing(4*GAP);
+        stageBox.setSpacing(GAP);
         Stage organizationStage = new Stage();
         organizationStage.initOwner(client.getMainWindow());
         organizationStage.initModality(Modality.WINDOW_MODAL);
