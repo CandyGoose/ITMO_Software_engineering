@@ -5,7 +5,7 @@ import java.net.InetSocketAddress;
 
 import client.GraphicClient;
 
-import client.LocaleManager;
+import client.util.LocaleManager;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

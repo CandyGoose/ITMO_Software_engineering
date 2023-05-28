@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
-import client.LocaleManager;
+import client.util.LocaleManager;
 import common.data.Coordinates;
 import common.data.Organization;
 

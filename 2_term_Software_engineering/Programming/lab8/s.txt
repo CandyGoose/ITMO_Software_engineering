@@ -1,11 +1,4 @@
-add
-Script_Org
-12
-3
-12
-name
-3
-TRUST
-newstr
-
+sort
 show
+print_descending 
+info

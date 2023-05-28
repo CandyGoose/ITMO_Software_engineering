@@ -377,6 +377,7 @@ public class SqlCollectionManager implements CollectionManager {
             return collection.stream()
                     .filter(x -> x.getAnnualTurnover() != null)
                     .map(x -> x.getAnnualTurnover())
+                    .sorted(Comparator.reverseOrder())
                     .collect(Collectors.toList());
         } finally {
             lock.unlock();

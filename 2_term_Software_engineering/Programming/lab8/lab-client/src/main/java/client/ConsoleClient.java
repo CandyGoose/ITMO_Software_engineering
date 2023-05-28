@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.SocketAddress;
 import java.nio.channels.SocketChannel;
 
+import client.util.ObjectSocketChannelWrapper;
 import common.util.CommandHandler;
 import common.exceptions.CommandArgumentException;
 import common.exceptions.CommandNotFoundException;
@@ -64,9 +65,8 @@ public class ConsoleClient {
      * Конструктор класса ConsoleClient.
      *
      * @param addr адрес сервера
-     * @throws IOException если произошла ошибка ввода-вывода
      */
-    public ConsoleClient(SocketAddress addr) throws IOException {
+    public ConsoleClient(SocketAddress addr) {
         this.io = new BasicUserIO();
         this.ch = CommandHandler.standardCommandHandler(null, null);
         this.addr = addr;
@@ -107,7 +107,7 @@ public class ConsoleClient {
         }
 
         io.writeln("Напишите "
-                + TerminalColors.colorString("help [command name]", TerminalColors.GREEN)
+                + TerminalColors.colorString("help", TerminalColors.GREEN)
                 + " чтобы получить больше информации об использовании команд"
         );
     }
@@ -126,7 +126,7 @@ public class ConsoleClient {
             if (remote.checkForMessage()) {
                 Object received = remote.getPayload();
 
-                if (received != null && received instanceof Response) {
+                if (received instanceof Response) {
                     return (Response) received;
                 } else {
                     io.writeln("Получен ошибочный ответ от сервера.");
@@ -140,7 +140,7 @@ public class ConsoleClient {
             }
         }
 
-        io.writeln("Время ожидания истечет после " + TIMEOUT + " секунд.");
+        io.writeln("Время ожидания истечет через " + TIMEOUT + " сек.");
         return null;
     }
 
@@ -161,7 +161,7 @@ public class ConsoleClient {
         } else if (response instanceof ResponseWithAuthCredentials) {
             ResponseWithAuthCredentials rwa = (ResponseWithAuthCredentials) response;
             auth = rwa.getAuthCredentials();
-            inputPrefix = auth.getLogin() + " > ";
+            inputPrefix = auth.getLogin() + " $ ";
         } else if (response instanceof ResponseWithException) {
             ResponseWithException rwe = (ResponseWithException) response;
 

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import client.LocaleManager;
+import client.util.LocaleManager;
 import client.util.NumberStringConverter;
 import client.util.StringConverter;
 import common.data.Organization;

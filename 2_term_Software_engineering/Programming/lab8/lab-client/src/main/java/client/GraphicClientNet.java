@@ -7,6 +7,8 @@ import java.nio.channels.UnresolvedAddressException;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import client.util.LocaleManager;
+import client.util.ObjectSocketChannelWrapper;
 import common.exceptions.InvalidRequestException;
 import common.network.Response;
 import common.network.ResponseWithException;

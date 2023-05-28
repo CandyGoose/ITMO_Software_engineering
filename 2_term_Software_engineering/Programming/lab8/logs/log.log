@@ -328,3 +328,257 @@ INFO: Запрос от /127.0.0.1:51649 для команды "update"
 INFO: Запрос от /127.0.0.1:51649 для команды "update"
 мая 28, 2023 12:20:37 AM server.ServerInstance$ClientThread stop
 INFO: Клиент /127.0.0.1:51649 отключился.
+мая 28, 2023 1:28:33 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 28, 2023 1:28:35 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52458
+мая 28, 2023 1:28:37 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52458 для команды "login"
+мая 28, 2023 1:28:43 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52458 отключился.
+мая 28, 2023 1:38:48 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52582
+мая 28, 2023 1:38:51 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "login"
+мая 28, 2023 1:38:58 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "info"
+мая 28, 2023 1:39:05 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "info"
+мая 28, 2023 1:39:09 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "info"
+мая 28, 2023 1:39:13 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "print_unique_employees_count"
+мая 28, 2023 1:39:17 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "print_field_descending_annual_turnover "
+мая 28, 2023 1:39:22 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52582 для команды "print_field_descending_annual_turnover "
+мая 28, 2023 1:39:54 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52582 отключился.
+мая 28, 2023 1:45:23 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 28, 2023 1:45:30 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52635
+мая 28, 2023 1:45:32 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "login"
+мая 28, 2023 1:45:36 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "print_field_descending_annual_turnover "
+мая 28, 2023 1:45:43 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "info"
+мая 28, 2023 1:45:46 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "print_unique_employees_count"
+мая 28, 2023 1:45:51 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "print_field_descending_annual_turnover "
+мая 28, 2023 1:45:55 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "clear"
+мая 28, 2023 1:46:16 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "add"
+мая 28, 2023 1:46:29 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "add"
+мая 28, 2023 1:47:02 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "update"
+мая 28, 2023 1:47:38 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "info"
+мая 28, 2023 1:47:42 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52635 для команды "print_field_descending_annual_turnover "
+мая 28, 2023 1:48:04 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 28, 2023 1:48:05 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52644
+мая 28, 2023 1:48:06 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52644 для команды "login"
+мая 28, 2023 1:48:19 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52644 отключился.
+мая 28, 2023 1:49:01 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52651
+мая 28, 2023 1:49:04 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52651 для команды "login"
+мая 28, 2023 1:49:09 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52651 отключился.
+мая 28, 2023 1:49:40 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52658
+мая 28, 2023 1:49:42 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52658 для команды "login"
+мая 28, 2023 1:49:44 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52658 отключился.
+мая 28, 2023 1:57:31 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52708
+мая 28, 2023 1:57:32 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52708 для команды "login"
+мая 28, 2023 1:57:56 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52708 для команды "update"
+мая 28, 2023 1:58:04 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52708 для команды "update"
+мая 28, 2023 1:58:07 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52708 отключился.
+мая 28, 2023 1:59:36 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52726
+мая 28, 2023 1:59:38 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52726 для команды "login"
+мая 28, 2023 1:59:41 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52726 отключился.
+мая 28, 2023 2:05:13 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52775
+мая 28, 2023 2:05:14 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52775 для команды "login"
+мая 28, 2023 2:05:37 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52781
+мая 28, 2023 2:05:37 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52781 для команды "add"
+мая 28, 2023 2:05:37 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52781 отключился.
+мая 28, 2023 2:06:25 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52775 для команды "remove_by_id"
+мая 28, 2023 2:06:44 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52775 для команды "update"
+мая 28, 2023 2:06:46 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52775 отключился.
+мая 28, 2023 2:10:28 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52804
+мая 28, 2023 2:10:30 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52804 для команды "login"
+мая 28, 2023 2:10:56 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52815
+мая 28, 2023 2:10:56 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52815 для команды "add"
+мая 28, 2023 2:10:56 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52815 отключился.
+мая 28, 2023 2:13:31 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52804 отключился.
+мая 28, 2023 2:13:35 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52829
+мая 28, 2023 2:13:38 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52829 для команды "login"
+мая 28, 2023 2:13:55 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52835
+мая 28, 2023 2:13:55 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52835 для команды "add"
+мая 28, 2023 2:13:55 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52835 отключился.
+мая 28, 2023 2:14:56 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52837
+мая 28, 2023 2:15:48 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52829 отключился.
+мая 28, 2023 2:15:48 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52837 отключился.
+мая 28, 2023 2:17:57 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52847
+мая 28, 2023 2:17:59 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52847 для команды "login"
+мая 28, 2023 2:18:11 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52853
+мая 28, 2023 2:19:02 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52853 отключился.
+мая 28, 2023 2:19:02 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52847 отключился.
+мая 28, 2023 2:19:57 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52888
+мая 28, 2023 2:19:59 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52888 для команды "login"
+мая 28, 2023 2:20:12 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52892
+мая 28, 2023 2:21:07 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52888 отключился.
+мая 28, 2023 2:21:07 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52892 отключился.
+мая 28, 2023 2:29:29 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52975
+мая 28, 2023 2:29:31 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52975 для команды "login"
+мая 28, 2023 2:29:44 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52982
+мая 28, 2023 2:30:00 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52975 отключился.
+мая 28, 2023 2:30:00 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52982 отключился.
+мая 28, 2023 2:30:37 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:52992
+мая 28, 2023 2:30:38 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:52992 для команды "login"
+мая 28, 2023 2:30:58 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53002
+мая 28, 2023 2:31:14 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:52992 отключился.
+мая 28, 2023 2:31:14 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53002 отключился.
+мая 28, 2023 2:32:42 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53012
+мая 28, 2023 2:32:44 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53012 для команды "login"
+мая 28, 2023 2:32:56 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53015
+мая 28, 2023 2:33:22 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53015 отключился.
+мая 28, 2023 2:33:32 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53012 отключился.
+мая 28, 2023 2:34:51 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53026
+мая 28, 2023 2:34:53 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53026 для команды "login"
+мая 28, 2023 2:35:02 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53032
+мая 28, 2023 2:35:49 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53026 отключился.
+мая 28, 2023 2:35:49 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53032 отключился.
+мая 28, 2023 2:46:12 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53082
+мая 28, 2023 2:46:14 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53082 для команды "login"
+мая 28, 2023 2:46:27 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53090
+мая 28, 2023 2:46:47 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53082 отключился.
+мая 28, 2023 2:46:47 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53090 отключился.
+мая 28, 2023 2:49:12 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53104
+мая 28, 2023 2:49:14 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53104 для команды "login"
+мая 28, 2023 2:49:30 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53106
+мая 28, 2023 2:49:30 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53106 для команды "add"
+мая 28, 2023 2:49:30 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53106 отключился.
+мая 28, 2023 2:49:39 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53104 для команды "remove_by_id"
+мая 28, 2023 2:49:41 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53104 для команды "remove_by_id"
+мая 28, 2023 2:49:43 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53104 для команды "remove_by_id"
+мая 28, 2023 2:49:58 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53109
+мая 28, 2023 2:50:50 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53104 отключился.
+мая 28, 2023 2:50:50 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53109 отключился.
+мая 28, 2023 2:54:52 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53132
+мая 28, 2023 2:54:54 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53132 для команды "login"
+мая 28, 2023 2:55:02 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53138
+мая 28, 2023 2:55:56 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53132 отключился.
+мая 28, 2023 2:55:56 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53138 отключился.
+мая 28, 2023 3:01:30 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53248
+мая 28, 2023 3:01:32 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53248 для команды "login"
+мая 28, 2023 3:01:44 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53250
+мая 28, 2023 3:01:44 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53250 отключился.
+мая 28, 2023 3:02:01 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:53252
+мая 28, 2023 3:02:01 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53252 для команды "sort"
+мая 28, 2023 3:02:01 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53252 для команды "print_descending"
+мая 28, 2023 3:02:01 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:53252 для команды "info"
+мая 28, 2023 3:02:01 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53252 отключился.
+мая 28, 2023 3:02:46 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:53248 отключился.

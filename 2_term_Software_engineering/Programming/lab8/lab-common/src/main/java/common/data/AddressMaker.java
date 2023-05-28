@@ -34,7 +34,7 @@ public final class AddressMaker {
      * @return улица
      */
     public static String parseStreet(BasicUserIO io) {
-        String street = BasicParsers.parseString(io, "Enter Address street: ");
+        String street = BasicParsers.parseString(io, "Street: ");
         return street;
     }
 }

@@ -1,4 +1,4 @@
-package client;
+package client.util;
 
 import java.util.HashMap;
 import java.util.Locale;

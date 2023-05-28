@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import client.util.LocaleManager;
 import client.views.CommandsMenu;
 import client.views.ConnectionView;
 import client.views.LoginView;
 import client.views.MainView;
-import common.exceptions.InvalidFieldException;
 import common.data.Organization;
 import common.network.Request;
 import common.network.RequestBody;
@@ -187,14 +187,6 @@ public class GraphicClient extends Application {
         double screenHeight = Screen.getPrimary().getBounds().getHeight() * 0.8;
         primaryStage.setWidth(screenWidth);
         primaryStage.setHeight(screenHeight);
-
-//        primaryStage.setWidth(WINDOW_SIZE);
-//        primaryStage.setHeight(WINDOW_SIZE);
-
-//        double screenWidth = Screen.getPrimary().getBounds().getWidth()*0.8;
-//        double screenHeight = Screen.getPrimary().getBounds().getHeight()*0.8;
-//        primaryStage.setWidth(screenWidth);
-//        primaryStage.setHeight(screenHeight);
 
         sceneRoot.setTop(menuBar);
         sceneRoot.setCenter(connectionView.getView());
