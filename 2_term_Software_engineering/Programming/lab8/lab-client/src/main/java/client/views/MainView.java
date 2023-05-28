@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import client.GraphicClient;
-import client.LocaleManager;
+import client.util.LocaleManager;
 import common.data.Organization;
 import common.network.Request;
 import common.network.RequestBody;

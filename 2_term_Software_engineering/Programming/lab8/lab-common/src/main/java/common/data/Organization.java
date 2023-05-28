@@ -1,6 +1,7 @@
 package common.data;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 import common.exceptions.InvalidFieldException;
@@ -227,7 +228,7 @@ public class Organization implements Comparable<Organization>, Serializable {
         sb.append(name);
         sb.append(",\n\tcreationDate=");
         sb.append(creationDate);
-        sb.append(",\n\tcoordinates=");
+        sb.append(",\n\t");
         sb.append(coordinates.toString().replaceAll("\\n", "\n\t"));
         sb.append(",\n\tannualTurnover=");
         sb.append(annualTurnover);
@@ -235,7 +236,7 @@ public class Organization implements Comparable<Organization>, Serializable {
         sb.append(fullName);
         sb.append(",\n\temployeesCount=");
         sb.append(employeesCount);
-        sb.append(",\n\taddress=");
+        sb.append(",\n\t");
         sb.append(address.toString().replaceAll("\\n", "\n\t"));
         sb.append(",\n\ttype=");
         sb.append(type.toString().replaceAll("\\n", "\n\t"));
@@ -378,7 +379,13 @@ public class Organization implements Comparable<Organization>, Serializable {
          * @throws InvalidFieldException если тип недопустим
          */
         public void validateType(OrganizationType type) throws InvalidFieldException {
-            AbstractValidator.ensureNotNull(type, "тип организаций не может быть пустым", "organizationTypeNotEmpty");
+            if (type == null) {
+                throw new InvalidFieldException("тип организаций не может быть пустым", "organizationTypeNotEmpty");
+            }
+
+            if (!Arrays.asList(OrganizationType.values()).contains(type)) {
+                throw new InvalidFieldException("недопустимое значение типа организации", "invalidValue");
+            }
         }
 
 

@@ -34,7 +34,7 @@ public final class OrganizationMaker {
                 io_ -> {
                     return parseCoordinates(
                         io_,
-                        "Создание координат",
+                        "Coordinates",
                             Organization.VALIDATOR::validateCoordinates
                     );
                 },
@@ -49,7 +49,7 @@ public final class OrganizationMaker {
                 io_ -> {
                     return parseAddress(
                             io_,
-                            "Создание адреса"
+                            "Address"
                     );
                 },
                 io
@@ -65,7 +65,7 @@ public final class OrganizationMaker {
      * @throws InvalidFieldException если название недопустимо
      */
     public static String parseName(BasicUserIO io) throws InvalidFieldException {
-        String res = BasicParsers.parseString(io, "Введите имя организации: ");
+        String res = BasicParsers.parseString(io, "Name: ");
         Organization.VALIDATOR.validateName(res);
         return res;
     }
@@ -78,7 +78,7 @@ public final class OrganizationMaker {
      * @throws InvalidFieldException если годовой оборот недопустим
      */
     public static Float parseAnnualTurnover(BasicUserIO io) throws InvalidFieldException {
-        Float res = BasicParsers.parseFloat(io, "Введите годовой оборот: ", "Годовой оборот должен быть больше нуля.");
+        Float res = BasicParsers.parseFloat(io, "Annual turnover: ", "Годовой оборот должен быть больше нуля.");
         Organization.VALIDATOR.validateAnnualTurnover(res);
         return res;
     }
@@ -91,7 +91,7 @@ public final class OrganizationMaker {
      * @throws InvalidFieldException если полное название недопустимо
      */
     public static String parseFullName(BasicUserIO io) throws InvalidFieldException {
-        String res = BasicParsers.parseString(io, "Введите полное имя организации: ");
+        String res = BasicParsers.parseString(io, "Full name: ");
         Organization.VALIDATOR.validateFullName(res);
         return res;
     }
@@ -104,7 +104,7 @@ public final class OrganizationMaker {
      * @throws InvalidFieldException если количество сотрудников недопустимо
      */
     public static Long parseEmployeesCount(BasicUserIO io) throws InvalidFieldException {
-        Long res = BasicParsers.parseLong(io, "Введите количество сотрудников: ", "Количество сотрудников должно быть больше 0.");
+        Long res = BasicParsers.parseLong(io, "Employees count: ", "Количество сотрудников должно быть больше 0.");
         Organization.VALIDATOR.validateEmployeesCount(res);
         return res;
     }
@@ -137,7 +137,7 @@ public final class OrganizationMaker {
      * @throws InvalidFieldException если тип недопустим
      */
     public static String parseType(BasicUserIO io) throws InvalidFieldException {
-        String res = BasicParsers.parseString(io, "Введите тип: ");
+        String res = BasicParsers.parseString(io, "Type: ");
         Organization.VALIDATOR.validateType(OrganizationType.valueOf(res));
         return res;
     }

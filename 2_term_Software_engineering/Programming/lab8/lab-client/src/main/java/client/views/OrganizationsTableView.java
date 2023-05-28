@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import client.LocaleManager;
+import client.util.LocaleManager;
 import common.data.Organization;
 
 import javafx.beans.binding.Bindings;

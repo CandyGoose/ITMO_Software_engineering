@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.text.MessageFormat;
 
 import client.GraphicClient;
-import client.LocaleManager;
+import client.util.LocaleManager;
 import common.network.Request;
 import common.network.RequestBody;
 import common.network.Response;

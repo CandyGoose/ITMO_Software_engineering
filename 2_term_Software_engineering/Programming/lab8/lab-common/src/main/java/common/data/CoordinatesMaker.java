@@ -37,8 +37,8 @@ public final class CoordinatesMaker {
     public static Float parseX(BasicUserIO io) throws InvalidFieldException {
         Float x = BasicParsers.parseFloat(
             io,
-            "Введите координату X: ",
-            "Ошибка при вводе."
+            "X: ",
+            "Error."
         );
         Coordinates.VALIDATOR.validateX(x);
         return x;
@@ -55,8 +55,8 @@ public final class CoordinatesMaker {
     public static Float parseY(BasicUserIO io) throws InvalidFieldException {
         Float y = BasicParsers.parseFloat(
             io,
-            "Введите координату Y: ",
-            "Ошибка при вводе."
+            "Y: ",
+            "Error."
         );
         Coordinates.VALIDATOR.validateY(y);
         return y;
