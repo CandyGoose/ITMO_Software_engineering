@@ -95,14 +95,13 @@ public final class BasicParsers {
          * @param <T> тип значения
          * @return корректное значение
          */
-        public static <T> T doUntilGet(Parser<T> parser, BasicUserIO io) {
-            do {
-                try {
-                    return parser.parse(io);
-                } catch (InvalidFieldException e) {
-                    io.writeln("Please try again.");
-                }
-            } while (true);
+        public static <T> T doGet(Parser<T> parser, BasicUserIO io) {
+            try {
+                return parser.parse(io);
+            } catch (InvalidFieldException e) {
+                io.writeln("Error input.");
+                return null;
+            }
         }
     }
 

@@ -8,6 +8,7 @@ import common.network.Response;
 import common.network.ResponseWithAuthCredentials;
 import common.network.BasicUserIO;
 import common.util.AuthCredentials;
+import common.util.TerminalColors;
 import common.util.UserManager;
 
 /**
@@ -84,6 +85,7 @@ public class LoginCommand extends AbstractCommand {
      */
     @Override
     public String getUsage() {
-        return "запуск входа в систему";
+        return TerminalColors.colorString("login", TerminalColors.GREEN)
+                + " - запуск входа в систему";
     }
 }

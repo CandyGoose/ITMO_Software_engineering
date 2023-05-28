@@ -22,8 +22,8 @@ public final class CoordinatesMaker {
      */
     public static Coordinates parseCoordinates(BasicUserIO io) throws InvalidFieldException {
         return new Coordinates(
-            BasicParsers.Repeater.doUntilGet(CoordinatesMaker::parseX, io),
-            BasicParsers.Repeater.doUntilGet(CoordinatesMaker::parseY, io)
+            BasicParsers.Repeater.doGet(CoordinatesMaker::parseX, io),
+            BasicParsers.Repeater.doGet(CoordinatesMaker::parseY, io)
         );
     }
 

@@ -28,32 +28,27 @@ public final class OrganizationMaker {
 
         return new Organization(
             id,
-            BasicParsers.Repeater.doUntilGet(OrganizationMaker::parseName, io),
+            BasicParsers.Repeater.doGet(OrganizationMaker::parseName, io),
             LocalDateTime.now(),
-            BasicParsers.Repeater.doUntilGet(
-                io_ -> {
-                    return parseCoordinates(
-                        io_,
-                        "Coordinates",
-                            Organization.VALIDATOR::validateCoordinates
-                    );
-                },
+            BasicParsers.Repeater.doGet(
+                io_ -> parseCoordinates(
+                    io_,
+                    "Coordinates",
+                        Organization.VALIDATOR::validateCoordinates
+                ),
                 io
             ),
-            BasicParsers.Repeater.doUntilGet(OrganizationMaker::parseAnnualTurnover, io),
-            BasicParsers.Repeater.doUntilGet(OrganizationMaker::parseFullName, io),
-            BasicParsers.Repeater.doUntilGet(OrganizationMaker::parseEmployeesCount, io),
-            OrganizationType.valueOf(BasicParsers.Repeater.doUntilGet(OrganizationMaker::parseType, io)),
+            BasicParsers.Repeater.doGet(OrganizationMaker::parseAnnualTurnover, io),
+            BasicParsers.Repeater.doGet(OrganizationMaker::parseFullName, io),
+            BasicParsers.Repeater.doGet(OrganizationMaker::parseEmployeesCount, io),
+            OrganizationType.valueOf(BasicParsers.Repeater.doGet(OrganizationMaker::parseType, io)),
 
-                BasicParsers.Repeater.doUntilGet(
-                io_ -> {
-                    return parseAddress(
-                            io_,
-                            "Address"
-                    );
-                },
-                io
-            )
+            BasicParsers.Repeater.doGet(
+            io_ -> parseAddress(
+                    io_,
+                    "Address"
+            ),
+            io)
         );
     }
 

@@ -36,7 +36,7 @@ public class HelpCommand extends AbstractCommand {
      */
     public String getUsage() {
         return TerminalColors.colorString("help", TerminalColors.GREEN)
-             + " - вывести справку по доступным командам\n";
+             + " - вывести справку по доступным командам";
     }
 
     /**

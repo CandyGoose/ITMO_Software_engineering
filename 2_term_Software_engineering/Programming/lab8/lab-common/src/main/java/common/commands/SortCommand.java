@@ -5,6 +5,7 @@ import common.data.Organization;
 import common.network.Request;
 import common.network.Response;
 import common.network.ResponseWithOrganizations;
+import common.util.TerminalColors;
 
 /**
  * Команда сортировки
@@ -31,7 +32,8 @@ public class SortCommand extends AbstractCommand {
      * @return строка использования команды
      */
     public String getUsage() {
-        return "отсортировать коллекцию в естественном порядке";
+        return TerminalColors.colorString("sort", TerminalColors.GREEN)
+                + " - отсортировать коллекцию в естественном порядке";
     }
 
     /**
