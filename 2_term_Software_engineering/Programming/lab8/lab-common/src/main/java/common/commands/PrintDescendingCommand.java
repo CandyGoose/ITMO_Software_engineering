@@ -5,6 +5,7 @@ import common.data.Organization;
 import common.network.Request;
 import common.network.Response;
 import common.network.ResponseWithOrganizations;
+import common.util.TerminalColors;
 
 /**
  * Команда вывода организации в обратном порядке
@@ -31,7 +32,8 @@ public class PrintDescendingCommand extends AbstractCommand {
      * @return строка использования команды
      */
     public String getUsage() {
-        return "вывести элементы коллекции в порядке убывания";
+        return TerminalColors.colorString("print_descending", TerminalColors.GREEN)
+                + " - вывести элементы коллекции в порядке убывания";
     }
 
     /**

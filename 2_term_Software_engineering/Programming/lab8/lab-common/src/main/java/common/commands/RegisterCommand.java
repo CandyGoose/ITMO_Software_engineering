@@ -8,6 +8,7 @@ import common.network.Response;
 import common.network.ResponseWithAuthCredentials;
 import common.network.BasicUserIO;
 import common.util.AuthCredentials;
+import common.util.TerminalColors;
 import common.util.UserManager;
 
 /**
@@ -84,6 +85,7 @@ public class RegisterCommand extends AbstractCommand {
      */
     @Override
     public String getUsage() {
-        return "Запуск регистрации пользователя";
+        return TerminalColors.colorString("register", TerminalColors.GREEN)
+                + " - запуск регистрации пользователя";
     }
 }

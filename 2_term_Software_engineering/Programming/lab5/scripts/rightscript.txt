@@ -9,4 +9,3 @@ TRUST
 newstr
 
 show
-save

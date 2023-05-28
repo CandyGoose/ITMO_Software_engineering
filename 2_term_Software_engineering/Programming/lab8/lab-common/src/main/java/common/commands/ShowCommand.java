@@ -5,6 +5,7 @@ import common.data.Organization;
 import common.network.Request;
 import common.network.Response;
 import common.network.ResponseWithOrganizations;
+import common.util.TerminalColors;
 
 /**
  * Команда вывода коллекции
@@ -31,7 +32,8 @@ public class ShowCommand extends AbstractCommand {
      * @return строка использования команды
      */
     public String getUsage() {
-        return "вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
+        return TerminalColors.colorString("show", TerminalColors.GREEN)
+                + " - вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
     }
 
     /**

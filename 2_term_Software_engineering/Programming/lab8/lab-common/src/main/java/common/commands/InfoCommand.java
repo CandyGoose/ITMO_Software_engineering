@@ -4,6 +4,7 @@ import common.util.CollectionManager;
 import common.exceptions.InvalidRequestException;
 import common.network.Request;
 import common.network.Response;
+import common.util.TerminalColors;
 
 /**
  * Команда вывода информации
@@ -31,7 +32,8 @@ public class InfoCommand extends AbstractCommand {
      * @return строка использования команды
      */
     public String getUsage() {
-        return " - вывести в стандартный поток вывода информацию о коллекции";
+        return TerminalColors.colorString("info", TerminalColors.GREEN)
+                + " - вывести в стандартный поток вывода информацию о коллекции";
     }
 
     /**
@@ -44,8 +46,8 @@ public class InfoCommand extends AbstractCommand {
     @Override
     public Response execute(Request request) throws InvalidRequestException {
         StringBuilder sb = new StringBuilder();
-        sb.append("Тип коллекции: " + col.getCollection().getClass().getSimpleName() + '\n');
-        sb.append("Количество элементов: " + col.getCollection().size() + '\n');
+        sb.append("Type: " + col.getCollection().getClass().getSimpleName() + '\n');
+        sb.append("Size: " + col.getCollection().size() + '\n');
         return new Response(sb.toString(), "infoResponse", new Object[] {col.getCollection().getClass().getSimpleName(), col.getCollection().size()});
     }
 }

@@ -15,7 +15,7 @@ public class ResponseWithException extends Response {
      * @param e исключение.
      */
     public ResponseWithException(Exception e) {
-        super("Сервер ответил ошибкой.");
+        super("The server responded with an error.");
         this.e = e;
     }
 

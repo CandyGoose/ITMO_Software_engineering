@@ -23,7 +23,7 @@ public final class AddressMaker {
      */
     public static Address parseAddress(BasicUserIO io) throws InvalidFieldException {
         return new Address(
-            BasicParsers.Repeater.doUntilGet(AddressMaker::parseStreet, io)
+            BasicParsers.Repeater.doGet(AddressMaker::parseStreet, io)
         );
     }
 
