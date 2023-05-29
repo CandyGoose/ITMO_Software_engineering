@@ -948,3 +948,21 @@ INFO: Запрос от /127.0.0.1:58943 для команды "print_unique_emp
 INFO: Клиент /127.0.0.1:58943 отключился.
 мая 28, 2023 4:28:55 PM server.ServerInstance$ClientThread stop
 INFO: Клиент /127.0.0.1:58935 отключился.
+мая 28, 2023 4:38:46 PM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+мая 28, 2023 4:39:09 PM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:59232
+мая 28, 2023 4:39:10 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:59232 для команды "login"
+мая 28, 2023 4:39:31 PM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:59236
+мая 28, 2023 4:39:31 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:59236 для команды "sort"
+мая 28, 2023 4:39:31 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:59236 для команды "print_descending"
+мая 28, 2023 4:39:31 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:59236 для команды "print_unique_employees_count"
+мая 28, 2023 4:39:32 PM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:59232 отключился.
+мая 28, 2023 4:39:32 PM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:59236 отключился.
