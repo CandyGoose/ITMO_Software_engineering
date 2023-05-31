@@ -15,6 +15,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 
+/**
+ * Класс, представляющий представление подключения.
+ */
 public class ConnectionView {
     private static final int MAX_PORT = 65565;
     private final Parent view;
@@ -30,6 +33,12 @@ public class ConnectionView {
     private Button connectButton;
     private final GraphicClient client;
 
+    /**
+     * Конструктор класса ConnectionView.
+     *
+     * @param client клиентская графическая программа
+     * @throws IOException если возникает ошибка ввода-вывода при загрузке представления
+     */
     public ConnectionView(GraphicClient client) throws IOException {
         this.client = client;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ConnectionView.fxml"));
@@ -38,6 +47,11 @@ public class ConnectionView {
         initialize();
     }
 
+    /**
+     * Получение представления.
+     *
+     * @return представление
+     */
     public Parent getView() {
         return view;
     }
