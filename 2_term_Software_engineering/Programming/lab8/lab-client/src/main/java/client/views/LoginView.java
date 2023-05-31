@@ -22,6 +22,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ * Класс, представляющий представление входа в систему.
+ */
 public class LoginView {
     private final Parent view;
     private GraphicClient client;
@@ -47,6 +50,12 @@ public class LoginView {
     private Label passwordLabel;
     private StringProperty promptMsg = new SimpleStringProperty("");
 
+    /**
+     * Конструктор класса LoginView.
+     *
+     * @param client клиентская графическая программа
+     * @throws IOException если возникает ошибка ввода-вывода при загрузке представления
+     */
     public LoginView(GraphicClient client) throws IOException {
         this.client = client;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/LoginView.fxml"));
@@ -55,6 +64,11 @@ public class LoginView {
         initialize();
     }
 
+    /**
+     * Получение представления.
+     *
+     * @return представление
+     */
     public Parent getView() {
         return view;
     }
