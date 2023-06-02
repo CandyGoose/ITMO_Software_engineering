@@ -1,3 +1,4 @@
+-- Создать таблицу на год, используя for, с месяцами, номерами недель и днями в неделе, а также с типом занятия, где 1-3 день - лекции, 4-6 - практики, 7 - выходной
 CREATE TABLE schedule (
     month INT,
     week INT,
@@ -44,3 +45,15 @@ BEGIN
         EXIT WHEN curr_date > max_date;
     END LOOP;
 END $$;
+
+-- Создать представление, которое будет находить таблицу с наибольшим количество атрибутов и выводить их
+CREATE VIEW max_attributes_table_view AS
+SELECT table_name, COUNT(column_name) AS attribute_count, STRING_AGG(column_name, ', ') AS attribute_names
+FROM information_schema.columns
+WHERE table_schema = 'pg_catalog'
+GROUP BY table_name
+ORDER BY attribute_count DESC
+LIMIT 1;
+
+SELECT * FROM max_attributes_table_view;
+
