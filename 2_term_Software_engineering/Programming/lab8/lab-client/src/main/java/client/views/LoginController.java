@@ -25,7 +25,7 @@ import javafx.scene.control.TextField;
 /**
  * Класс, представляющий представление входа в систему.
  */
-public class LoginView {
+public class LoginController {
     private final Parent view;
     private GraphicClient client;
     @FXML
@@ -56,7 +56,7 @@ public class LoginView {
      * @param client клиентская графическая программа
      * @throws IOException если возникает ошибка ввода-вывода при загрузке представления
      */
-    public LoginView(GraphicClient client) throws IOException {
+    public LoginController(GraphicClient client) throws IOException {
         this.client = client;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/LoginView.fxml"));
         fxmlLoader.setController(this);
@@ -128,7 +128,6 @@ public class LoginView {
         }
         enableButtons();
     }
-
 
     @FXML
     private void initialize() {

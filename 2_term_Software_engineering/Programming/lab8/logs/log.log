@@ -966,3 +966,29 @@ INFO: Запрос от /127.0.0.1:59236 для команды "print_unique_emp
 INFO: Клиент /127.0.0.1:59232 отключился.
 мая 28, 2023 4:39:32 PM server.ServerInstance$ClientThread stop
 INFO: Клиент /127.0.0.1:59236 отключился.
+июн. 03, 2023 1:25:47 AM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+июн. 03, 2023 1:25:49 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:56098
+июн. 03, 2023 1:25:53 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:56098 для команды "login"
+июн. 03, 2023 1:26:00 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:56098 отключился.
+июн. 03, 2023 1:42:56 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:55927
+июн. 03, 2023 1:43:00 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55927 для команды "login"
+июн. 03, 2023 1:43:09 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:55927 отключился.
+июн. 03, 2023 1:47:44 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:55962
+июн. 03, 2023 1:47:46 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55962 для команды "login"
+июн. 03, 2023 1:47:51 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:55962 отключился.
+июн. 03, 2023 1:49:36 AM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:55988
+июн. 03, 2023 1:49:39 AM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:55988 для команды "login"
+июн. 03, 2023 1:49:40 AM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:55988 отключился.

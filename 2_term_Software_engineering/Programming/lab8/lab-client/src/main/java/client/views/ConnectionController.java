@@ -18,7 +18,7 @@ import javafx.scene.control.TextFormatter;
 /**
  * Класс, представляющий представление подключения.
  */
-public class ConnectionView {
+public class ConnectionController {
     private static final int MAX_PORT = 65565;
     private final Parent view;
     @FXML
@@ -39,7 +39,7 @@ public class ConnectionView {
      * @param client клиентская графическая программа
      * @throws IOException если возникает ошибка ввода-вывода при загрузке представления
      */
-    public ConnectionView(GraphicClient client) throws IOException {
+    public ConnectionController(GraphicClient client) throws IOException {
         this.client = client;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ConnectionView.fxml"));
         fxmlLoader.setController(this);
