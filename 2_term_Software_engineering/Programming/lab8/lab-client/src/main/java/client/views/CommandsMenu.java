@@ -19,6 +19,7 @@ import common.network.BasicUserIO;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -40,6 +41,23 @@ import javafx.stage.Stage;
 public class CommandsMenu extends Menu {
     private static final int GAP = 8;
     private final GraphicClient client;
+    @FXML
+    private Menu commandsMenu;
+    @FXML
+    private MenuItem add;
+    @FXML
+    private MenuItem info;
+    @FXML
+    private MenuItem printUniqueEmployeesCount;
+    @FXML
+    private MenuItem descendingAnnualTurnover;
+    @FXML
+    private MenuItem executeScript;
+    @FXML
+    private MenuItem clear;
+    @FXML
+    private MenuItem removeFirst;
+
 
     /**
      * Конструктор класса CommandsMenu.
@@ -49,23 +67,17 @@ public class CommandsMenu extends Menu {
         super("Commands");
         textProperty().bind(LocaleManager.getObservableStringByKey("commandsMenuName"));
         this.client = client;
+    }
 
-        MenuItem add = new MenuItem();
-        MenuItem info = new MenuItem();
-        MenuItem printUniqueEmployeesCount = new MenuItem();
-        MenuItem descendingAnnualTurnover = new MenuItem();
-        MenuItem executeScript = new MenuItem();
-        MenuItem clear = new MenuItem();
-        MenuItem removeFirst = new MenuItem();
-        getItems().addAll(add, info, printUniqueEmployeesCount, descendingAnnualTurnover, clear, removeFirst, executeScript);
-
+    @FXML
+    private void initialize() {
         add.textProperty().bind(LocaleManager.getObservableStringByKey("addCommand"));
         add.setOnAction(e -> displayAddOrganizationWindow());
         info.textProperty().bind(LocaleManager.getObservableStringByKey("infoCommand"));
         info.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("info")));
         printUniqueEmployeesCount.textProperty().bind(LocaleManager.getObservableStringByKey("uniqueEmployeesCountCommand"));
         printUniqueEmployeesCount.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_unique_employees_count")));
-        descendingAnnualTurnover.textProperty().bind(LocaleManager.getObservableStringByKey("descendingAnnualTurnoverCommand"));
+        descendingAnnualTurnover.textProperty().bind(LocaleManager.getObservableStringByKey("descendingAnnualTurnover"));
         descendingAnnualTurnover.setOnAction(e -> showCommandResultAsAlert(executeCommandWithEmptyBody("print_field_descending_annual_turnover ")));
         clear.textProperty().bind(LocaleManager.getObservableStringByKey("clearCommand"));
         clear.setOnAction(e -> executeCommandWithEmptyBody("clear"));
@@ -91,7 +103,7 @@ public class CommandsMenu extends Menu {
         stageBox.getChildren().addAll(inspector.getView(), addButton);
         stageBox.setAlignment(Pos.TOP_CENTER);
         stageBox.setPadding(new Insets(GAP));
-        stageBox.setSpacing(GAP);
+        stageBox.setSpacing(4*GAP);
         Stage organizationStage = new Stage();
         organizationStage.initOwner(client.getMainWindow());
         organizationStage.initModality(Modality.WINDOW_MODAL);

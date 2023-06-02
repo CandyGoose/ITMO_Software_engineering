@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+
+<Menu fx:id="commandsMenu" text="commandsMenuName" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="client.views.CommandsMenu">
+    <MenuItem fx:id="add" text="add"/>
+    <MenuItem fx:id="info" text="info"/>
+    <MenuItem fx:id="printUniqueEmployeesCount" text="uniqueEmployeesCount"/>
+    <MenuItem fx:id="descendingAnnualTurnover" text="printDescendingAnnualTurnover"/>
+    <MenuItem fx:id="clear" text="clear"/>
+    <MenuItem fx:id="removeFirst" text="removeFirst"/>
+    <MenuItem fx:id="executeScript" text="executeScript"/>
+</Menu>

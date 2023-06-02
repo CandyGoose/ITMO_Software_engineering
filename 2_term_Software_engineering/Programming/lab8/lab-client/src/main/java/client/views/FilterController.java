@@ -12,7 +12,7 @@ import common.data.Organization;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
-import javafx.geometry.Insets;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
@@ -21,50 +21,42 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.util.Callback;
 
 /**
  * Представление фильтра для организаций.
  */
-public class FilterView {
+public class FilterController {
+    @FXML
+    public VBox filterBox;
+    @FXML
+    private Label headerLabel;
+    @FXML
+    private ChoiceBox<FilterConfigurator> filterFieldChoice;
+
     private static final int GAP = 10;
-    private static final int HEADER_SIZE = 20;
-    private static final int MIN_WIDTH = 100;
     private final List<FilterConfigurator> configurators = new LinkedList<>();
     private final ObjectProperty<Predicate<Organization>> filterProperty = new SimpleObjectProperty<>();
     private final ChangeListener<Predicate<Organization>> filterChangeListener = (o, oldVal, newVal) -> filterProperty.set(newVal);
-    private final Parent view;
+    private Parent view;
 
-    /**
-     * Создает экземпляр FilterView.
-     */
-    public FilterView() {
-        Label headerLabel = new Label();
-        headerLabel.setFont(new Font(HEADER_SIZE));
+    @FXML
+    public void initialize() {
         headerLabel.textProperty().bind(LocaleManager.getObservableStringByKey("filterLabel"));
-
-        ChoiceBox<FilterConfigurator> filterFieldChoice = createChoiceBox();
-
-        VBox box = new VBox(GAP);
-        box.getChildren().addAll(headerLabel, filterFieldChoice);
-        box.setPadding(new Insets(GAP));
-        box.setMinWidth(MIN_WIDTH);
 
         filterFieldChoice.getSelectionModel().selectedItemProperty().addListener((o, oldValue, newValue) -> {
             if (oldValue != null) {
-                box.getChildren().remove(oldValue.getView());
+                filterBox.getChildren().remove(oldValue.getView());
                 oldValue.filterProperty().removeListener(filterChangeListener);
             }
             if (newValue != null) {
-                box.getChildren().add(newValue.getView());
+                filterBox.getChildren().add(newValue.getView());
                 filterProperty.set(newValue.filterProperty.get());
                 newValue.filterProperty().addListener(filterChangeListener);
             }
         });
         filterFieldChoice.getSelectionModel().select(0);
-
-        this.view = box;
+        this.view = filterBox;
     }
 
     /**
@@ -122,7 +114,6 @@ public class FilterView {
         configurators.add(new StringFilterConfigurator("typeLabel", x -> x.getType().name()));
         configurators.add(new StringFilterConfigurator("streetLabel", x -> x.getAddress().getStreet()));
         configurators.add(new StringFilterConfigurator("ownerLabel", x -> x.getOwner()));
-        ChoiceBox<FilterConfigurator> filterFieldChoice = new ChoiceBox<>();
         filterFieldChoice.getItems().addAll(configurators);
 
         LocaleManager.localeProperty().addListener((o, oldV, newV) -> {
