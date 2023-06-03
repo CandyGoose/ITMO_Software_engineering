@@ -7,6 +7,8 @@
 
 [7 - БД](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab7)
 
+[8 - GUI](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab8)
+
 ## Базы данных
 ### Лабораторные
 [1 - Инфологическая и даталогическая модели, их реализация в PostgreSQL](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab1)
@@ -15,12 +17,17 @@
 
 [3 - Функциональные зависимости и NF](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab3)
 
-## ОПД (основы профессиональной деятельности)
+[4 - Планы выполнения запросов](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab4)
+
+## ОПД (Основы профессиональной деятельности)
 [Лабораторные](https://github.com/VeraKasianenko/OPD_web)
 
 [Курс на OpenEdu](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/OPD/course)
 
 ---
+
+## Математика
+[РГР и прочее](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Mathematics)
 
 ## Английский
 [Тексты для Moodle](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/English)

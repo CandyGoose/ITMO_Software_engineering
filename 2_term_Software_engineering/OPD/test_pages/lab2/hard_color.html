@@ -45,21 +45,21 @@
         let buttonPressed = false;
         let colorShowed = false;
         let timer;
-        
+
         function getRandomColor() {
             const colors = ["blue", "yellow", "red"];
             return colors[Math.floor(Math.random() * colors.length)];
         }
 
         function showColor(color) {
-    colorBox.style.opacity = 0; 
-    colorBox.style.backgroundColor = color;
-    setTimeout(() => {
+        colorBox.style.opacity = 0; 
+        colorBox.style.backgroundColor = color;
+        setTimeout(() => {
         colorBox.style.opacity = 1; 
         startTime = new Date().getTime();
-    }, 200);     
-    colorShowed = true;
-    timer = setTimeout(() => {
+        }, 200);     
+        colorShowed = true;
+        timer = setTimeout(() => {
         if (remainingTries > 1) {
                 remainingTries--;
                 result.textContent = `Ваше время реакции: NaN мс.`;
@@ -71,6 +71,7 @@
                 } else {
                     result.textContent = `Ваше время реакции: NaN мс.`;
                     tries.textContent = "0. Игра окончена."
+                    save(resultTimes, test_id, correct)
                     buttonPressed = false;
                     startButton.disabled = false;
                     wButton.disabled = true;
@@ -98,7 +99,7 @@
                     if (remainingTries === 1) {
                         tries.textContent = "0. Игра окончена.";
                         result.textContent = `Верно! Время реакции: ${responseTime} мс.`;
-                        colorBox.style.backgroundColor = "white"
+                        colorBox.style.backgroundColor = "#FFFFFF"
                         buttonPressed = false;
                         startButton.disabled = false;
                         aButton.disabled = true;
@@ -106,7 +107,7 @@
                         wButton.disabled = true;
                     } else {
                         tries.textContent = "0. Игра окончена.";
-                        colorBox.style.backgroundColor = "white"
+                        colorBox.style.backgroundColor = "#FFFFFF"
                         buttonPressed = false;
                         startButton.disabled = false;
                         aButton.disabled = true;
@@ -117,6 +118,7 @@
             } else {
                 if (remainingTries > 1) {
                     result.textContent = `Неверно! Время реакции: ${responseTime} мс.`;
+
                     remainingTries--;
                     tries.textContent = remainingTries;
                     startTime = null;
@@ -126,7 +128,8 @@
                     if (remainingTries === 1) {
                         tries.textContent = "0. Игра окончена.";
                         result.textContent = `Неверно! Время реакции: ${responseTime} мс.`;
-                        colorBox.style.backgroundColor = "white"
+                        colorBox.style.backgroundColor = "#FFFFFF"
+                        
                         buttonPressed = false;
                         startButton.disabled = false;
                         aButton.disabled = true;
@@ -134,7 +137,7 @@
                         wButton.disabled = true;
                     } else {
                         tries.textContent = "0. Игра окончена.";
-                        colorBox.style.backgroundColor = "white"
+                        colorBox.style.backgroundColor = "#FFFFFF"
                         buttonPressed = false;
                         startButton.disabled = false;
                         aButton.disabled = true;
@@ -144,7 +147,7 @@
                 }
             }
         }
-    
+
 
         startButton.addEventListener("click", () => {
             startButton.disabled = true;
@@ -160,6 +163,7 @@
             if (event.code === "KeyS") {
                 buttonPressed = true;
                 startButton.click();
+                resultTimes = [];
             } else if ((event.code === "KeyA" || event.code === "KeyD" || event.code === "KeyW") && buttonPressed) {
                 checkAnswer();
             }
