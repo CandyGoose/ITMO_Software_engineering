@@ -1,5 +1,9 @@
 # Работы 2 семестра Программной инженерии
 ## Программирование
+
+### Лекции
+[Презентации](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lectures)
+
 ### Лабораторные
 [5 - Консольное приложение](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab5)
 
@@ -10,6 +14,10 @@
 [8 - GUI](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab8)
 
 ## Базы данных
+
+### Лекции
+[Презентации](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lectures)
+
 ### Лабораторные
 [1 - Инфологическая и даталогическая модели, их реализация в PostgreSQL](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab1)
 
@@ -20,6 +28,9 @@
 [4 - Планы выполнения запросов](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab4)
 
 ## ОПД (Основы профессиональной деятельности)
+
+[Лекции](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/OPD/lectures)
+
 [Лабораторные](https://github.com/VeraKasianenko/OPD_web)
 
 [Курс на OpenEdu](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/OPD/course)
@@ -28,6 +39,9 @@
 
 ## Математика
 [РГР и прочее](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Mathematics)
+
+## Дискретная математика
+[Лекции](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Discrete_math)
 
 ## Английский
 [Тексты для Moodle](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/English)

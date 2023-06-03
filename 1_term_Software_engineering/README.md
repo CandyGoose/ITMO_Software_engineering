@@ -32,4 +32,4 @@
 [Тексты для Moodle](https://github.com/VeraKasianenko/ITMO_ICT/tree/main/1_term_ICT/English)
 
 ## История
-[Работы](https://github.com/VeraKasianenko/ITMO_ICT/tree/main/1_term_ICT/History)
+[Работы и задания](https://github.com/VeraKasianenko/ITMO_ICT/tree/main/1_term_ICT/History)
