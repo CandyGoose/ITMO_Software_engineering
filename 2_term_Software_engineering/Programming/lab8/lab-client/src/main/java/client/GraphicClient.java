@@ -5,8 +5,8 @@ import java.util.*;
 
 import client.util.LocaleManager;
 import client.views.CommandsMenu;
-import client.views.ConnectionController;
-import client.views.LoginController;
+import client.views.ConnectionView;
+import client.views.LoginView;
 import client.views.MainView;
 import common.data.Organization;
 import common.network.Request;
@@ -21,7 +21,6 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableSet;
-import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -95,27 +94,24 @@ public class GraphicClient extends Application {
     /**
      * Визуальные представления различных экранов приложения.
      */
-    private final ConnectionController connectionController = new ConnectionController(this);
-    private final LoginController loginController = new LoginController(this);
+    private final ConnectionView connectionView = new ConnectionView(this);
+    private final LoginView loginView = new LoginView(this);
     private final MainView mainView = new MainView(this);
 
     /**
      * Меню приложения для выбора языка и доступных команд.
      */
-    @FXML
     private final Menu languageMenu = new Menu("Language");
     private final Menu commandsMenu = new CommandsMenu(this);
 
     /**
      * Панель меню приложения.
      */
-    @FXML
     private final MenuBar menuBar = new MenuBar(languageMenu);
 
     /**
      * Корневой контейнер сцены.
      */
-    @FXML
     private final BorderPane sceneRoot = new BorderPane();
 
     /**
@@ -127,14 +123,6 @@ public class GraphicClient extends Application {
      * Основное окно приложения.
      */
     private Stage mainWindow;
-    @FXML
-    private RadioMenuItem englishMenuItem;
-    @FXML
-    private RadioMenuItem russianMenuItem;
-    @FXML
-    private RadioMenuItem romanianMenuItem;
-    @FXML
-    private RadioMenuItem hungarianMenuItem;
 
     public GraphicClient() throws IOException {
     }
@@ -146,14 +134,17 @@ public class GraphicClient extends Application {
      * Группирует элементы меню в одну группу переключателей и устанавливает выбранный элемент по умолчанию.
      * Добавляет элементы меню в языковое меню.
      */
-    @FXML
-    public void initialize() {
-
+    @Override
+    public void init() {
         languageMenu.textProperty().bind(LocaleManager.getObservableStringByKey("languageMenuName"));
+        RadioMenuItem englishMenuItem = new RadioMenuItem("English India");
         englishMenuItem.setOnAction(e -> LocaleManager.setLocale(Locale.forLanguageTag("en-IN")));
+        RadioMenuItem russianMenuItem = new RadioMenuItem("Русский");
         russianMenuItem.setOnAction(e -> LocaleManager.setLocale(Locale.forLanguageTag("ru")));
+        RadioMenuItem romanianMenuItem = new RadioMenuItem("Limba Română");
         romanianMenuItem.setOnAction(e -> LocaleManager.setLocale(Locale.forLanguageTag("ro")));
-        hungarianMenuItem.setOnAction(e -> LocaleManager.setLocale(new Locale("hu")));
+        RadioMenuItem hungarianMenuItem  = new RadioMenuItem("Magyar Nyelv");
+        hungarianMenuItem .setOnAction(e -> LocaleManager.setLocale(new Locale("hu")));
         ToggleGroup group = new ToggleGroup();
         englishMenuItem.setToggleGroup(group);
         russianMenuItem.setToggleGroup(group);
@@ -190,7 +181,7 @@ public class GraphicClient extends Application {
         primaryStage.setHeight(screenHeight);
 
         sceneRoot.setTop(menuBar);
-        sceneRoot.setCenter(connectionController.getView());
+        sceneRoot.setCenter(connectionView.getView());
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(false);
         primaryStage.setMaximized(true);
@@ -200,9 +191,9 @@ public class GraphicClient extends Application {
         network.channelProperty().addListener((o, oldVal, newVal) -> {
             if (newVal == null) {
                 setAuth(null);
-                sceneRoot.setCenter(connectionController.getView());
+                sceneRoot.setCenter(connectionView.getView());
             } else {
-                sceneRoot.setCenter(loginController.getView());
+                sceneRoot.setCenter(loginView.getView());
             }
         });
     }
@@ -265,7 +256,7 @@ public class GraphicClient extends Application {
     public void setAuth(AuthCredentials auth) {
         if (auth == null) {
             doOrganizationFetch = false;
-            sceneRoot.setCenter(loginController.getView());
+            sceneRoot.setCenter(loginView.getView());
             menuBar.getMenus().remove(commandsMenu);
         } else {
             doOrganizationFetch = true;

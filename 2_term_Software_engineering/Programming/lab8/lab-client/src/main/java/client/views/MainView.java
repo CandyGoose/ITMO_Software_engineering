@@ -16,7 +16,6 @@ import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableSet;
-import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -42,13 +41,13 @@ public class MainView {
     private GraphicClient client;
     private OrganizationsTableView tableTab;
     private OrganizationsGraphicView graphicTab;
-    private FilterController filterController;
+    private FilterView filterView;
     private OrganizationInspectorView inspector;
     private ObservableSet<Organization> filteredOrganizations = FXCollections.observableSet();
     private final InvalidationListener listener = new InvalidationListener() {
         @Override
         public void invalidated(Observable observable) {
-            Set<Organization> newFilteredOrganizations = client.getOrganizations().stream().filter(filterController.getFilter()).collect(Collectors.toSet());
+            Set<Organization> newFilteredOrganizations = client.getOrganizations().stream().filter(filterView.getFilter()).collect(Collectors.toSet());
             filteredOrganizations.retainAll(newFilteredOrganizations);
             filteredOrganizations.addAll(newFilteredOrganizations);
         }
@@ -61,12 +60,12 @@ public class MainView {
      */
     public MainView(GraphicClient client) {
         this.client = client;
-        filterController = new FilterController();
-        filterController.filterProperty().addListener(listener);
+        filterView = new FilterView();
+        filterView.filterProperty().addListener(listener);
         client.organizationsProperty().addListener(listener);
 
         BorderPane root = new BorderPane();
-        root.setLeft(filterController.getView());
+        root.setLeft(filterView.getView());
         tableTab = new OrganizationsTableView(filteredOrganizations);
         graphicTab = new OrganizationsGraphicView(filteredOrganizations);
         tableTab.selectedOrganizationProperty().bindBidirectional(graphicTab.selectedOrganizationProperty());
