@@ -992,3 +992,19 @@ INFO: Получено соединение от /127.0.0.1:55988
 INFO: Запрос от /127.0.0.1:55988 для команды "login"
 июн. 03, 2023 1:49:40 AM server.ServerInstance$ClientThread stop
 INFO: Клиент /127.0.0.1:55988 отключился.
+июн. 03, 2023 3:37:58 PM server.ServerInstance run
+INFO: Сервер прослушивает порт 65435
+июн. 03, 2023 3:39:59 PM server.ServerInstance run
+INFO: Получено соединение от /127.0.0.1:61863
+июн. 03, 2023 3:40:00 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:61863 для команды "login"
+июн. 03, 2023 3:40:04 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:61863 для команды "info"
+июн. 03, 2023 3:40:07 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:61863 для команды "print_field_descending_annual_turnover "
+июн. 03, 2023 3:40:09 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:61863 для команды "print_unique_employees_count"
+июн. 03, 2023 3:40:24 PM server.ServerInstance$ClientThread handleRequests
+INFO: Запрос от /127.0.0.1:61863 для команды "remove_first"
+июн. 03, 2023 3:40:27 PM server.ServerInstance$ClientThread stop
+INFO: Клиент /127.0.0.1:61863 отключился.

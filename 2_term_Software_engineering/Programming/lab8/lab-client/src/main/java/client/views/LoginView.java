@@ -16,83 +16,79 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 /**
  * Класс, представляющий представление входа в систему.
  */
-public class LoginController {
-    private final Parent view;
+public class LoginView {
+    private static final double GAP = 10;
+    private static final double HEADER_FONT_SIZE = 50;
+    private Node view;
     private GraphicClient client;
-    @FXML
     private TextField loginField;
-    @FXML
     private PasswordField passwordField;
-    @FXML
     private Button loginButton;
-    @FXML
     private Button registerButton;
-    @FXML
     private Button disconnectButton;
-    @FXML
-    private Label headerLabel;
-    @FXML
-    private Label subheaderLabel;
-    @FXML
-    private Label prompt;
-    @FXML
-    private Label loginLabel;
-    @FXML
-    private Label passwordLabel;
     private StringProperty promptMsg = new SimpleStringProperty("");
 
     /**
      * Конструктор класса LoginView.
      *
-     * @param client клиентская графическая программа
-     * @throws IOException если возникает ошибка ввода-вывода при загрузке представления
+     * @param client экземпляр GraphicClient
      */
-    public LoginController(GraphicClient client) throws IOException {
+    public LoginView(GraphicClient client) {
         this.client = client;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/LoginView.fxml"));
-        fxmlLoader.setController(this);
-        view = fxmlLoader.load();
-        initialize();
+        view = createLayout();
     }
 
     /**
-     * Получение представления.
+     * Возвращает узел представления.
      *
-     * @return представление
+     * @return узел представления
      */
-    public Parent getView() {
+    public Node getView() {
         return view;
     }
 
+    /**
+     * Деактивировать кнопки
+     */
     private void disableButtons() {
         loginButton.setDisable(true);
         registerButton.setDisable(true);
         disconnectButton.setDisable(true);
     }
 
+    /**
+     * Активировать кнопки
+     */
     private void enableButtons() {
         loginButton.setDisable(false);
         registerButton.setDisable(false);
         disconnectButton.setDisable(false);
     }
 
-    @FXML
-    private void sendLoginRequest(ActionEvent event) {
+    private void sendLoginRequest(MouseEvent event) {
         event.consume();
         sendRequest("login");
     }
 
-    @FXML
-    private void sendRegisterRequest(ActionEvent event) {
+    private void sendRegisterRequest(MouseEvent event) {
         event.consume();
         sendRequest("register");
     }
@@ -110,7 +106,7 @@ public class LoginController {
             return;
         }
 
-        Response resp = client.getNetwork().sendMessage(new Request(requestType, new RequestBody(new String[]{login, password}),null));
+        Response resp = client.getNetwork().sendMessage(new Request(requestType, new RequestBody(new String[]{login, password}), null));
 
         if (resp != null) {
             if (resp instanceof ResponseWithAuthCredentials) {
@@ -129,18 +125,66 @@ public class LoginController {
         enableButtons();
     }
 
-    @FXML
-    private void initialize() {
+    /**
+     * Создает макет экрана входа в систему.
+     *
+     * @return узел, содержащий макет экрана входа в систему
+     */
+    private Node createLayout() {
+        final Label headerLabel = new Label();
         headerLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginHeader"));
+        headerLabel.setFont(Font.font("Montserrat", FontWeight.BOLD, HEADER_FONT_SIZE));
+        final Label subheaderLabel = new Label();
         subheaderLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginSubHeader"));
+
+        loginButton = new Button();
         loginButton.textProperty().bind(LocaleManager.getObservableStringByKey("loginButton"));
+        loginButton.setOnMouseClicked(this::sendLoginRequest);
+        registerButton = new Button();
         registerButton.textProperty().bind(LocaleManager.getObservableStringByKey("registerButton"));
+        registerButton.setOnMouseClicked(this::sendRegisterRequest);
+        disconnectButton = new Button();
         disconnectButton.textProperty().bind(LocaleManager.getObservableStringByKey("disconnectButton"));
-        loginLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginLabel"));
-        loginField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("loginPrompt"));
-        passwordLabel.textProperty().bind(LocaleManager.getObservableStringByKey("passwordLabel"));
-        passwordField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("passwordPrompt"));
         disconnectButton.setOnMouseClicked(e -> client.getNetwork().disconnect());
+        HBox buttonGroup = new HBox(GAP);
+        buttonGroup.getChildren().addAll(loginButton, registerButton, disconnectButton);
+        buttonGroup.setAlignment(Pos.CENTER);
+
+        Label prompt = new Label();
         prompt.textProperty().bind(promptMsg);
+        prompt.setTextFill(Color.RED);
+
+        VBox box = new VBox(GAP);
+        box.getChildren().addAll(headerLabel, subheaderLabel, createLoginPassGrid(), prompt, buttonGroup);
+        box.setAlignment(Pos.CENTER);
+
+        return box;
+    }
+
+    /**
+     * Создает сетку для ввода логина и пароля.
+     *
+     * @return узел, содержащий сетку для ввода логина и пароля
+     */
+    private Node createLoginPassGrid() {
+        final Label loginLabel = new Label();
+        loginLabel.textProperty().bind(LocaleManager.getObservableStringByKey("loginLabel"));
+        loginField = new TextField();
+        loginField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("loginPrompt"));
+        final Label passwordLabel = new Label();
+        passwordLabel.textProperty().bind(LocaleManager.getObservableStringByKey("passwordLabel"));
+        passwordField = new PasswordField();
+        passwordField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("passwordPrompt"));
+
+        GridPane loginPassGrid = new GridPane();
+        loginPassGrid.add(loginLabel, 0, 0);
+        loginPassGrid.add(passwordLabel, 0, 1);
+        loginPassGrid.add(loginField, 1, 0);
+        loginPassGrid.add(passwordField, 1, 1);
+        loginPassGrid.setHgap(GAP);
+        loginPassGrid.setVgap(GAP);
+        loginPassGrid.setAlignment(Pos.CENTER);
+
+        return loginPassGrid;
     }
 }

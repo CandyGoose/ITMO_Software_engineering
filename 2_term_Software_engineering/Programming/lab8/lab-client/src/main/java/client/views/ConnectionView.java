@@ -1,69 +1,60 @@
 package client.views;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 
 import client.GraphicClient;
-
 import client.util.LocaleManager;
+
 import javafx.beans.binding.Bindings;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.GridPane;
 
 /**
- * Класс, представляющий представление подключения.
+ * Класс представления подключения к серверу.
  */
-public class ConnectionController {
+public class ConnectionView {
     private static final int MAX_PORT = 65565;
+    private static final double GAP = 10;
     private final Parent view;
-    @FXML
-    private Label addressLabel;
-    @FXML
-    private TextField addressField;
-    @FXML
-    private Label portLabel;
-    @FXML
-    private TextField portField;
-    @FXML
-    private Button connectButton;
+    private final TextField addressField = new TextField();
+    private final TextField portField = new TextField();
+    private final Button connectButton = new Button("Connect");
     private final GraphicClient client;
 
     /**
      * Конструктор класса ConnectionView.
-     *
-     * @param client клиентская графическая программа
-     * @throws IOException если возникает ошибка ввода-вывода при загрузке представления
+     * @param client клиентская часть графического клиента
      */
-    public ConnectionController(GraphicClient client) throws IOException {
+    public ConnectionView(GraphicClient client) {
         this.client = client;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ConnectionView.fxml"));
-        fxmlLoader.setController(this);
-        view = fxmlLoader.load();
-        initialize();
+        view = createLayout();
     }
 
     /**
-     * Получение представления.
-     *
-     * @return представление
+     * Возвращает представление подключения к серверу.
+     * @return представление подключения
      */
     public Parent getView() {
         return view;
     }
 
-    @FXML
-    private void initialize() {
+    /**
+     * Создает макет представления подключения к серверу.
+     * @return макет представления
+     */
+    private Parent createLayout() {
         connectButton.textProperty().bind(LocaleManager.getObservableStringByKey("connectButton"));
+        final Label addressLabel = new Label();
         addressLabel.textProperty().bind(LocaleManager.getObservableStringByKey("addressLabel"));
         addressField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("addressPrompt"));
+        final Label portLabel = new Label();
         portLabel.textProperty().bind(LocaleManager.getObservableStringByKey("portLabel"));
         portField.promptTextProperty().bind(LocaleManager.getObservableStringByKey("portPrompt"));
-
         addressField.setText("localhost");
         portField.setText("65435");
         portField.setTextFormatter(new TextFormatter<>(change -> {
@@ -82,6 +73,20 @@ public class ConnectionController {
             return change;
         }));
         connectButton.disableProperty().bind(Bindings.or(addressField.textProperty().isEmpty(), portField.textProperty().isEmpty()));
-        connectButton.setOnAction(e -> client.getNetwork().connect(new InetSocketAddress(addressField.getText(), Integer.parseInt(portField.getText()))));
+        connectButton.setOnMouseClicked(e -> client.getNetwork().connect(new InetSocketAddress(addressField.getText(), Integer.parseInt(portField.getText()))));
+
+        GridPane connectionLayout = new GridPane();
+
+        connectionLayout.add(addressLabel, 0, 0);
+        connectionLayout.add(portLabel, 0, 1);
+        connectionLayout.add(addressField, 1, 0);
+        connectionLayout.add(portField, 1, 1);
+        connectionLayout.setHgap(GAP);
+        connectionLayout.setVgap(GAP);
+        connectionLayout.setAlignment(Pos.CENTER);
+        connectionLayout.add(connectButton, 0, 2, 2, 1);
+        connectButton.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+
+        return connectionLayout;
     }
 }
