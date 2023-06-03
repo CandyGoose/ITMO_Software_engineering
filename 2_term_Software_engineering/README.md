@@ -41,7 +41,6 @@
 ---
 
 ## Инженерный дизайн - CAD (факультатив)
-[Лекции](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD\lectures)
 
 [1 - Плоские модели с зависимостями](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD\practice1)
 

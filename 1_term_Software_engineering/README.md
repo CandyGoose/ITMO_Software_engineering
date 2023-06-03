@@ -1,6 +1,6 @@
 # Работы 1 семестра Программной инженерии
 
-### :warning: _Из-за перевода с другой программы присутствуют не все лабораторные, а лишь необходимые для закрытия академ разницы_
+### :warning: _Из-за перевода с другой программы по программированию и ОПД присутствуют не все лабораторные, а лишь необходимые для закрытия академ разницы_
 
 ## Программирование
 ### Лабораторные
@@ -25,3 +25,11 @@
 ## ОПД
 ### Лабораторные
 [2 - БЭВМ](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/1_term_Software_engineering/OPD/lab2)
+
+---
+
+## Английский
+[Тексты для Moodle](https://github.com/VeraKasianenko/ITMO_ICT/tree/main/1_term_ICT/English)
+
+## История
+[Работы](https://github.com/VeraKasianenko/ITMO_ICT/tree/main/1_term_ICT/History)
