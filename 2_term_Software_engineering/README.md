@@ -2,38 +2,38 @@
 ## Программирование
 
 ### Лекции
-[Презентации](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lectures)
+[Презентации](https://github.com/Goose/Programming_2_term_SE/tree/main/lectures)
 
 ### Лабораторные
-[5 - Консольное приложение](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab5)
+[5 - Консольное приложение](https://github.com/Goose/Programming_2_term_SE/tree/main/lab5)
 
-[6 - Сервер](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab6)
+[6 - Сервер](https://github.com/Goose/Programming_2_term_SE/tree/main/lab6)
 
-[7 - БД](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab7)
+[7 - БД](https://github.com/Goose/Programming_2_term_SE/tree/main/lab7)
 
-[8 - GUI](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Programming/lab8)
+[8 - GUI](https://github.com/Goose/Programming_2_term_SE/tree/main/lab8)
 
 ## Базы данных
 
 ### Лекции
-[Презентации](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lectures)
+[Презентации](https://github.com/Goose/Database_SE/tree/main/lectures)
 
 ### Лабораторные
-[1 - Инфологическая и даталогическая модели, их реализация в PostgreSQL](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab1)
+[1 - Инфологическая и даталогическая модели, их реализация в PostgreSQL](https://github.com/Goose/Database_SE/tree/main/lab1)
 
-[2 - Запросы к базе данных "Учебный процесс"](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab2)
+[2 - Запросы к базе данных "Учебный процесс"](https://github.com/Goose/Database_SE/tree/main/lab2)
 
-[3 - Функциональные зависимости и NF](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab3)
+[3 - Функциональные зависимости и NF](https://github.com/Goose/Database_SE/tree/main/lab3)
 
-[4 - Планы выполнения запросов](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Database/lab4)
+[4 - Планы выполнения запросов](https://github.com/Goose/Database_SE/tree/main/lab4)
 
 ## ОПД (Основы профессиональной деятельности)
 
 [Лекции](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/OPD/lectures)
 
-[Лабораторные](https://github.com/Goose/OPD_web)
+[Лабораторные (проект)](https://github.com/Goose/OPD_web)
 
-[Курс на OpenEdu](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/OPD/course)
+[Курс на OpenEdu](https://github.com/Goose/Courses/tree/main/ITMO_courses/Openedu_Web_programming)
 
 ---
 
@@ -56,21 +56,21 @@
 
 ## Инженерный дизайн - CAD (факультатив)
 
-[1 - Плоские модели с зависимостями](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD\practice1)
+[1 - Плоские модели с зависимостями](https://github.com/Goose/CAD_elective/tree/main/practice1)
 
-[2 - Простые 3D модели](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice2)
+[2 - Простые 3D модели](https://github.com/Goose/CAD_elective/tree/main/practice2)
 
-[3 - Модели с полостями](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice3)
+[3 - Модели с полостями](https://github.com/Goose/CAD_elective/tree/main/practice3)
 
-[4 - Валы для редуктора](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice4)
+[4 - Валы для редуктора](https://github.com/Goose/CAD_elective/tree/main/practice4)
 
-[5 - Крышка корпуса редуктора](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice5)
+[5 - Крышка корпуса редуктора](https://github.com/Goose/CAD_elective/tree/main/practice5)
 
-[6 - Сборка](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice6)
+[6 - Сборка](https://github.com/Goose/CAD_elective/tree/main/practice6)
 
-[7 - Анимация и рендеринг](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice7)
+[7 - Анимация и рендеринг](https://github.com/Goose/CAD_elective/tree/main/practice7)
 
-[8 - Создание чертежей](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Engineering_Design_CAD/practice8)
+[8 - Создание чертежей](https://github.com/Goose/CAD_elective/tree/main/practice8)
 
 ## Эмоциональный интеллект (факультатив)
 [Лекции и материалы](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/EQ)

@@ -1,3 +1,0 @@
-show
-show
-execute_script recursivescript2.txt
