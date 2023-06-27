@@ -29,7 +29,7 @@
 
 ## ОПД (Основы профессиональной деятельности)
 
-[Лекции](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/OPD/lectures)
+[Лекции](https://github.com/VeraKasianenko/OPD_web/tree/main/lectures)
 
 [Лабораторные (проект)](https://github.com/VeraKasianenko/OPD_web)
 
