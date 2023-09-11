@@ -2,10 +2,10 @@
 ## Веб-программирование
 
 ### Лекции
-[Презентации]()
+[Презентации](https://github.com/VeraKasianenko/Web_programming/tree/main/lectures)
 
 ### Лабораторные
-[1 - PHP]()
+[1 - PHP](https://github.com/VeraKasianenko/Web_programming/tree/main/lab1)
 
 
 ## Языки программирования
@@ -23,7 +23,7 @@
 [РГР и прочее](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Mathematics)
 
 ## Физика
-[Лабораторные](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Phusics)
+[Лабораторные](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics)
 
 ## Теория вероятностей
 [ДЗ](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Probability_theory)
@@ -33,26 +33,3 @@
 
 ## Бизнес-модели основных секторов инновационной экономики
 [Лекции и практики](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Business_models)
-
----
-
-## Инженерный дизайн - CAD (факультатив)
-
-[1 - Плоские модели с зависимостями](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice1)
-
-[2 - Простые 3D модели](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice2)
-
-[3 - Модели с полостями](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice3)
-
-[4 - Валы для редуктора](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice4)
-
-[5 - Крышка корпуса редуктора](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice5)
-
-[6 - Сборка](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice6)
-
-[7 - Анимация и рендеринг](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice7)
-
-[8 - Создание чертежей](https://github.com/VeraKasianenko/CAD_elective/tree/main/practice8)
-
-## Эмоциональный интеллект (факультатив)
-[Лекции и материалы](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/2_term_Software_engineering/EQ)
