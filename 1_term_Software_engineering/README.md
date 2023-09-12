@@ -24,14 +24,14 @@
 
 [6 - Latex](https://github.com/Goose/Informatic_SE/tree/main/lab6)
 
-## ОПД
+## Основы профессиональной деятельности
 ### Лабораторные
 [2 - БЭВМ](https://github.com/Goose/ITMO_Software_engineering/tree/main/1_term_Software_engineering/OPD/lab2)
 
 ---
 
-## Английский
+## Иностранный язык (английский)
 [Тексты для Moodle](https://github.com/Goose/ITMO_ICT/tree/main/1_term_ICT/English)
 
-## История
+## История (Реформы и реформаторы в истории России)
 [Работы и задания](https://github.com/Goose/ITMO_ICT/tree/main/1_term_ICT/History)

@@ -27,7 +27,7 @@
 
 [4 - Планы выполнения запросов](https://github.com/Goose/Database_SE/tree/main/lab4)
 
-## ОПД (Основы профессиональной деятельности)
+## Основы профессиональной деятельности
 
 [Лекции](https://github.com/Goose/OPD_web/tree/main/lectures)
 
@@ -37,13 +37,13 @@
 
 ---
 
-## Математика
+## Математика (базовый уровень)
 [РГР и прочее](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Mathematics)
 
-## Дискретная математика
+## Дискретная математика (базовый уровень)
 [Лекции](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/Discrete_math)
 
-## Английский
+## Иностранный язык (английский)
 [Тексты для Moodle](https://github.com/Goose/ITMO_Software_engineering/tree/main/2_term_Software_engineering/English)
 
 ## БЖД
