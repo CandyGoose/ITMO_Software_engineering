@@ -2,11 +2,6 @@
 ## Веб-программирование
 
 ### Лекции
-[Презентации](https://github.com/VeraKasianenko/Web_programming/tree/main/lectures)
-
-### Лабораторные
-[1 - PHP](https://github.com/VeraKasianenko/Web_programming/tree/main/lab1)
-
 [Презентации](https://github.com/VeraKasianenko/Web_programming_SE/tree/main/lectures)
 
 ### Лабораторные
@@ -23,7 +18,7 @@
 
 ---
 
-## Математика
+## Математика (базовый уровень)
 [РГР и прочее](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Mathematics)
 
 ## Физика
@@ -32,7 +27,7 @@
 ## Теория вероятностей
 [ДЗ](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Probability_theory)
 
-## Английский
+## Иностранный язык (английский)
 [Тексты для Moodle](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/English)
 
 ## Бизнес-модели основных секторов инновационной экономики
