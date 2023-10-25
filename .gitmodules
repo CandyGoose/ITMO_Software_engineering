@@ -1,0 +1,30 @@
+[submodule "1_term_Software_engineering/Programming"]
+	path = 1_term_Software_engineering/Programming
+	url = https://github.com/VeraKasianenko/Programming_1_term_SE
+[submodule "1_term_Software_engineering/Informatic"]
+	path = 1_term_Software_engineering/Informatic
+	url = https://github.com/VeraKasianenko/Informatic_SE
+[submodule "2_term_Software_engineering/Programming"]
+	path = 2_term_Software_engineering/Programming
+	url = https://github.com/VeraKasianenko/Programming_2_term_SE
+[submodule "2_term_Software_engineering/Database"]
+	path = 2_term_Software_engineering/Database
+	url = https://github.com/VeraKasianenko/Database_SE
+[submodule "2_term_Software_engineering/OPD"]
+	path = 2_term_Software_engineering/OPD
+	url = https://github.com/VeraKasianenko/OPD_web
+[submodule "2_term_Software_engineering/CAD"]
+	path = 2_term_Software_engineering/CAD
+	url = https://github.com/VeraKasianenko/CAD_elective
+[submodule "3_term_Software_engineering/Programming_languages"]
+	path = 3_term_Software_engineering/Programming_languages
+	url = https://github.com/VeraKasianenko/Programming_languages
+[submodule "3_term_Software_engineering/Web_programming"]
+	path = 3_term_Software_engineering/Web_programming
+	url = https://github.com/VeraKasianenko/Web_programming_SE
+[submodule "3_term_Software_engineering/UE4_and_Blueprints"]
+	path = 3_term_Software_engineering/UE4_and_Blueprints
+	url = https://github.com/VeraKasianenko/UE4_and_Blueprints_elective
+[submodule "3_term_Software_engineering/NLP"]
+	path = 3_term_Software_engineering/NLP
+	url = https://github.com/VeraKasianenko/NLP_elective
