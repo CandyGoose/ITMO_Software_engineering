@@ -51,5 +51,19 @@ Sincerely,
 
 Vera Kasianenko 
 
+## 2. Writing an article
+
+The Evolution of Communication in Russia: Progress or not?
+
+Over the past three decades, Russia has experienced a remarkable transformation in many aspects of life, and communication is no exception. As the world hurtles into the digital age, it's crucial to examine how these changes have impacted the country. Are these changes in communication methods due to technology useful or are they associated with their share of disadvantages?
+
+Not long ago, communication in Russia was marked by limited access to telephones, especially in rural areas. People relied heavily on letters and face-to-face conversations to connect with loved ones or conduct business. Previously, postal services played a key role, and sending letters was the norm. The older generation fondly remembers the tactile joy of receiving letters, postcards and photos from distant relatives.
+
+The advent of the internet and mobile technology has revolutionized communication in Russia. Today, almost everyone has a smartphone and internet access, enabling instant connectivity with anyone and anywhere. Social media platforms and messaging apps have become primary means of communication, reducing the need for traditional letters. However, concerns about online privacy and data security have arisen, leaving many wary of the potential negative consequences.
+
+In conclusion, it should be noted that the evolution of communications in Russia has undoubtedly led to numerous positive changes. However, it is important to ensure that the nation does not lose its appreciation for the traditional forms of communication with loved ones, which I personally appreciate. I used to often send handwritten letters and postcards to keep in touch with my close friends and family, but now it's enough for me to send a message over the Internet. The key is to use technology while continuing to appreciate the timeless beauty of these personal and soulful forms of communication.
 
 
+## 3. Presentation about the film
+
+[Green Book](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/English/Green_Book.pdf)
