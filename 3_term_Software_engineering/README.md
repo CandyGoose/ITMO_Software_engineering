@@ -25,7 +25,9 @@
 ---
 
 ## Математика (базовый уровень)
-[РГР и прочее](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Mathematics)
+[РГР1](https://github.com/VeraKasianenko/ITMO_Software_engineering/blob/main/3_term_Software_engineering/Mathematics/ргр1.pdf)
+
+[РГР2](https://github.com/VeraKasianenko/ITMO_Software_engineering/blob/main/3_term_Software_engineering/Mathematics/ргр2.pdf)
 
 ## Физика
 ### Лекции
@@ -33,6 +35,10 @@
 
 ### Лабораторные
 [Лабораторная 1.01](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics/lab1)
+
+[Лабораторная 1.02](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics/lab2)
+
+[Лабораторная 1.03](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics/lab3)
 
 [Лабораторная 1.04](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics/lab4)
 
@@ -63,6 +69,8 @@
 [2 - Blueprints](https://github.com/VeraKasianenko/UE4_and_Blueprints_elective/tree/main/lab2)
 
 [3 - Blender](https://github.com/VeraKasianenko/UE4_and_Blueprints_elective/tree/main/lab3)
+
+[Итоговый проект: Арканоид](https://github.com/VeraKasianenko/Monster_house_arkanoid)
 
 ## Анализ естественного языка методами искусственного интеллекта (факультатив)
 ### Домашние задания
