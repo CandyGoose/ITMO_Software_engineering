@@ -66,4 +66,4 @@ In conclusion, it should be noted that the evolution of communications in Russia
 
 ## 3. Presentation about the film
 
-[Green Book](https://github.com/VeraKasianenko/ITMO_Software_engineering/tree/main/3_term_Software_engineering/English/Green_Book.pdf)
+[Green Book](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/3_term_Software_engineering/English/Green_Book.pdf)
