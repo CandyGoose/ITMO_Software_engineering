@@ -65,3 +65,6 @@ Vera
 
 ---
 
+## Module test
+
+I had an appointment with the dentist yesterday. I came to the dental clinic with a feeling of nervousness. The waiting room was quiet, with soft music playing in the background. After a short wait, the dental assistant called my name and I followed her into the treatment room. The dentist greeted me warmly, asked about my medical history and disturbing symptoms, and then explained the procedure in detail. Of course, the sound of dental instruments alarmed me a little, but a calm examination of my teeth by a dentist calmed me down. Throughout the visit, the dentist provided me with comfort and did not cause pain. In the end, he prescribed further treatment for me and I left the clinic with a sense of relief, grateful for the professionalism and care.

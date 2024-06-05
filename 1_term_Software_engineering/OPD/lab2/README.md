@@ -4,4 +4,4 @@
 
 __Ход работы, содержание отчета и контрольные вопросы описаны в методических указаниях__
 
-<img src="https://user-images.githubusercontent.com/112972833/228192703-75a210d1-d63e-4d8b-9d9f-5f317866c6eb.png" alt="image" width="300"/>
+<img src="img.png" alt="image" width="300"/>
