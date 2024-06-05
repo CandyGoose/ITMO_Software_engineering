@@ -29,6 +29,10 @@
 
 [РГР2](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/3_term_Software_engineering/Mathematics/ргр2.pdf)
 
+[РГР3](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/3_term_Software_engineering/Mathematics/ргр3.pdf)
+
+[РГР4](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/3_term_Software_engineering/Mathematics/ргр4.pdf)
+
 ## Физика
 ### Лекции
 [Презентации](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics/lectures)
@@ -73,5 +77,10 @@
 [Итоговый проект: Арканоид](https://github.com/CandyGoose/Monster_house_arkanoid)
 
 ## Анализ естественного языка методами искусственного интеллекта (факультатив)
+### Лекции
+[Материалы](https://github.com/CandyGoose/NLP_elective/tree/main/lectures)
+
 ### Домашние задания
 [1 - Определитель спама](https://github.com/CandyGoose/NLP_elective/tree/main/hw1)
+
+[2 - Дообучение модели](https://github.com/CandyGoose/NLP_elective/tree/main/hw2)
