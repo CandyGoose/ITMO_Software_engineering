@@ -68,3 +68,6 @@
 	path = 5_term_Software_engineering/Multimedia_technologies/Audio_visualization
 	url = https://github.com/CandyGoose/Audio_visualization
 
+[submodule "5_term_Software_engineering/Physics_in_GameDev"]
+	path = 5_term_Software_engineering/Physics_in_GameDev
+	url = https://github.com/CandyGoose/Alice_game
