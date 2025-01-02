@@ -43,3 +43,28 @@
 [submodule "4_term_Software_engineering/Computational_math"]
 	path = 4_term_Software_engineering/Computational_math
 	url = https://github.com/CandyGoose/Computational_math
+[submodule "4_term_Software_engineering/Physics/project"]
+	path = 4_term_Software_engineering/Physics/project
+	url = https://github.com/CandyGoose/Circuits_constructor
+[submodule "5_term_Software_engineering/Introduction_to_GameDev_The_Basics_of_Gaming_AI"]
+	path = 5_term_Software_engineering/Introduction_to_GameDev_The_Basics_of_Gaming_AI
+	url = https://github.com/CandyGoose/The_Basics_of_Gaming_AI_elective
+[submodule "5_term_Software_engineering/Artificial_intelligence_systems"]
+	path = 5_term_Software_engineering/Artificial_intelligence_systems
+	url = https://github.com/CandyGoose/Artificial_intelligence_systems
+[submodule "5_term_Software_engineering/Operating_systems"]
+	path = 5_term_Software_engineering/Operating_systems
+	url = https://github.com/CandyGoose/Operating_systems
+[submodule "5_term_Software_engineering/Polygonal_modeling"]
+	path = 5_term_Software_engineering/Polygonal_modeling
+	url = https://github.com/CandyGoose/Polygonal_modeling
+[submodule "5_term_Software_engineering/Biometrics_and_neurotechnology"]
+	path = 5_term_Software_engineering/Biometrics_and_neurotechnology
+	url = https://github.com/CandyGoose/Biometrics_and_neurotechnology
+[submodule "5_term_Software_engineering/Web_Application_Development"]
+	path = 5_term_Software_engineering/Web_Application_Development
+	url = https://github.com/CandyGoose/itmo.board
+[submodule "5_term_Software_engineering/Multimedia_technologies/Audio_visualization"]
+	path = 5_term_Software_engineering/Multimedia_technologies/Audio_visualization
+	url = https://github.com/CandyGoose/Audio_visualization
+

@@ -52,6 +52,9 @@
 
 [Лабораторная 3.11](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/3_term_Software_engineering/Physics/lab_3.11)
 
+### Проект
+[Проект](https://github.com/CandyGoose/Circuits_constructor)
+
 ## Вычислительная математика
 ### Лабораторные
 [1 - Approximation and interpolation](https://github.com/CandyGoose/Computational_math/tree/main/lab1)
