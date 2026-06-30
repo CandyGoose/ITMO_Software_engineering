@@ -71,3 +71,54 @@
 [submodule "5_term_Software_engineering/Physics_in_GameDev"]
 	path = 5_term_Software_engineering/Physics_in_GameDev
 	url = https://github.com/CandyGoose/Physics_in_GameDev
+[submodule "6_term_Software_engineering/Multimedia_application_development"]
+	path = 6_term_Software_engineering/Multimedia_application_development
+	url = https://github.com/CandyGoose/Multimedia_application_development
+[submodule "6_term_Software_engineering/Mobile_application_development"]
+	path = 6_term_Software_engineering/Mobile_application_development
+	url = https://github.com/CandyGoose/Mobile_application_development
+[submodule "6_term_Software_engineering/Theory_of_systems"]
+	path = 6_term_Software_engineering/Theory_of_systems
+	url = https://github.com/CandyGoose/Theory_of_systems
+[submodule "6_term_Software_engineering/Neurotechnology_and_afficient_computing"]
+	path = 6_term_Software_engineering/Neurotechnology_and_afficient_computing
+	url = https://github.com/CandyGoose/Neurotechnology_and_afficient_computing
+[submodule "6_term_Software_engineering/Computer_networks"]
+	path = 6_term_Software_engineering/Computer_networks
+	url = https://github.com/CandyGoose/Computer_networks
+[submodule "6_term_Software_engineering/Introduction_to_working_with_game_engines"]
+	path = 6_term_Software_engineering/Introduction_to_working_with_game_engines
+	url = https://github.com/CandyGoose/Introduction_to_working_with_game_engines
+[submodule "7_term_Software_engineering/Intelligent_processing_of_experimental_data"]
+	path = 7_term_Software_engineering/Intelligent_processing_of_experimental_data
+	url = https://github.com/CandyGoose/Intelligent_processing_of_experimental_data
+[submodule "7_term_Software_engineering/Working_with_neural_interfaces"]
+	path = 7_term_Software_engineering/Working_with_neural_interfaces
+	url = https://github.com/CandyGoose/Working_with_neural_interfaces
+[submodule "7_term_Software_engineering/Data_visualization"]
+	path = 7_term_Software_engineering/Data_visualization
+	url = https://github.com/CandyGoose/Data_visualization
+[submodule "6_term_Software_engineering/Data_Art_how_is_it_made"]
+	path = 6_term_Software_engineering/Data_Art_how_is_it_made
+	url = https://github.com/CandyGoose/Data_Art_how_is_it_made
+[submodule "7_term_Software_engineering/Modeling"]
+	path = 7_term_Software_engineering/Modeling
+	url = https://github.com/CandyGoose/Modeling
+[submodule "7_term_Software_engineering/Economics_of_Software_Engineering"]
+	path = 7_term_Software_engineering/Economics_of_Software_Engineering
+	url = https://github.com/CandyGoose/Economics_of_Software_Engineering
+[submodule "7_term_Software_engineering/Neurotechnologies_based_on_electroencephalography"]
+	path = 7_term_Software_engineering/Neurotechnologies_based_on_electroencephalography
+	url = https://github.com/CandyGoose/Neurotechnologies_based_on_electroencephalography
+[submodule "7_term_Software_engineering/ML-OR_making_optimal_decisions_based_on_machine_learning"]
+	path = 7_term_Software_engineering/ML-OR_making_optimal_decisions_based_on_machine_learning
+	url = https://github.com/CandyGoose/ML-OR_making_optimal_decisions_based_on_machine_learning
+[submodule "8_term_Software_engineering/Fundamentals_of_DevOps_methodology"]
+	path = 8_term_Software_engineering/Fundamentals_of_DevOps_methodology
+	url = https://github.com/CandyGoose/Fundamentals_of_DevOps_methodology
+[submodule "7_term_Software_engineering/Virtual_reality_application_development"]
+	path = 7_term_Software_engineering/Virtual_reality_application_development
+	url = https://github.com/CandyGoose/Virtual_reality_application_development
+[submodule "6_term_Software_engineering/Social_media_analysis_in_Python"]
+	path = 6_term_Software_engineering/Social_media_analysis_in_Python
+	url = https://github.com/CandyGoose/Social_media_analysis_in_Python

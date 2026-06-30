@@ -89,6 +89,7 @@
 ---
 
 ## Физика в GameDev (факультатив)
+### Проект (Alice game)
 [Проект](https://github.com/CandyGoose/Physics_in_GameDev)
 
 ## Введение в GameDev: основы игрового ИИ (факультатив)
