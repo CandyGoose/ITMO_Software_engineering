@@ -32,7 +32,7 @@
 
 ## Разработка веб-приложений
 ### Курсовая работа
-[itmo.board](https://github.com/CandyGoose/itmo.board)
+[Проект itmo.board](https://github.com/CandyGoose/Web_application_development)
 
 ## Биометрия и нейротехнологии
 ### Лабораторные
@@ -89,7 +89,7 @@
 ---
 
 ## Физика в GameDev (факультатив)
-[Проект](https://github.com/CandyGoose/Alice_game)
+[Проект](https://github.com/CandyGoose/Physics_in_GameDev)
 
 ## Введение в GameDev: основы игрового ИИ (факультатив)
 ### Лекции
