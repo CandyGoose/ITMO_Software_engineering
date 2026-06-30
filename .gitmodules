@@ -61,13 +61,13 @@
 [submodule "5_term_Software_engineering/Biometrics_and_neurotechnology"]
 	path = 5_term_Software_engineering/Biometrics_and_neurotechnology
 	url = https://github.com/CandyGoose/Biometrics_and_neurotechnology
-[submodule "5_term_Software_engineering/Web_Application_Development"]
-	path = 5_term_Software_engineering/Web_Application_Development
-	url = https://github.com/CandyGoose/itmo.board
 [submodule "5_term_Software_engineering/Multimedia_technologies/Audio_visualization"]
 	path = 5_term_Software_engineering/Multimedia_technologies/Audio_visualization
 	url = https://github.com/CandyGoose/Audio_visualization
 
+[submodule "5_term_Software_engineering/Web_Application_Development"]
+	path = 5_term_Software_engineering/Web_Application_Development
+	url = https://github.com/CandyGoose/Web_application_development
 [submodule "5_term_Software_engineering/Physics_in_GameDev"]
 	path = 5_term_Software_engineering/Physics_in_GameDev
-	url = https://github.com/CandyGoose/Alice_game
+	url = https://github.com/CandyGoose/Physics_in_GameDev
