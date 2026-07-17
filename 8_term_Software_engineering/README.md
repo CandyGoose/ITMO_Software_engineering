@@ -1,6 +1,6 @@
 # Работы 8 семестра Программной инженерии
-## Подготовка к защите и защита ВКР
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Final_qualifying_work)
+## Защита и действия человека в условиях ЧС
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Human_protection_and_actions_in_emergency_situations)
 
 ## Производственная, технологическая (проектно-технологическая)
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Production_technological_design_and_technological_practice)
@@ -11,11 +11,8 @@
 ## Учебная, ознакомительная
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Educational_introductory_practice)
 
-## Основы практического инвестирования
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Fundamentals_of_practical_investment)
-
-## Защита и действия человека в условиях ЧС
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Human_protection_and_actions_in_emergency_situations)
+## Подготовка к защите и защита ВКР
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Final_qualifying_work)
 
 ---
 
@@ -30,3 +27,6 @@
 [4 - CI](https://github.com/CandyGoose/Fundamentals_of_DevOps_methodology/tree/main/lab4)
 
 [5 - Мониторинг](https://github.com/CandyGoose/Fundamentals_of_DevOps_methodology/tree/main/lab5)
+
+## Основы практического инвестирования (факультатив)
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Fundamentals_of_practical_investment)

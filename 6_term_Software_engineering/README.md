@@ -11,8 +11,8 @@
 
 [5 - VTuber](https://github.com/CandyGoose/Multimedia_application_development/blob/main/video-presentation.mp4)
 
-## Разработка мобильных приложений (Gulaii)
-[Проект](https://github.com/CandyGoose/Mobile_application_development)
+## Разработка мобильных приложений
+[Проект (Gulaii)](https://github.com/CandyGoose/Mobile_application_development)
 
 ## Теория систем
 ### Лекции
@@ -73,17 +73,27 @@
 
 [2 - Проект "Выход из комнаты"](https://github.com/CandyGoose/Introduction_to_working_with_game_engines/tree/main/lab2)
 
-## Испанский язык 1 ступень
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Spanish_language)
-
-## Китайский язык A1
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Chinese_language)
-
-## Основы поиска по истории семьи
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Basics_of_family_history_search)
-
 ## Основы проектирования информационных систем
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design)
+### Лабораторные работы
+[1 - Таблица ролей, Автор блога, Соавтор, Читатель](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab1)
+
+[2 - UML Варианты использования](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab2)
+
+[3 - UML Классы анализа](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab3)
+
+[4 - UML Кооперации](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab4)
+
+[5 - UML Классов проектирования](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab5)
+
+[6 - UML Последовательности](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab6)
+
+[7 - UML Развертывания + Компонентов](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/lab7)
+
+### Рубежная работа
+[Рубежная работа](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design/rubej)
+
+## Иностранный язык (китайский)
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Chinese_language)
 
 ## Философия
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Philosophy)
@@ -110,3 +120,9 @@
 ## Data Art: как это сделано? Веб-технологии и инструменты для художников и исследователей (факультатив)
 ### Проект
 [Главная страница проекта](https://github.com/CandyGoose/Data_Art_how_is_it_made/blob/main/index.html)
+
+## Испанский язык 1 ступень (факультатив)
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Spanish_language)
+
+## Основы поиска по истории семьи (факультатив)
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Basics_of_family_history_search)

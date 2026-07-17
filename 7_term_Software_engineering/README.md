@@ -111,16 +111,58 @@
 [Курсовая работа](https://github.com/CandyGoose/Neurotechnologies_based_on_electroencephalography/tree/main/kursach)
 
 ## Когнитивная психология
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/7_term_Software_engineering/Cognitive_psychology)
+### Лекции
+[Презентации](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/7_term_Software_engineering/Cognitive_psychology/lectures)
 
-## Коммерциализация и трансфер биомедицинских технологий
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/7_term_Software_engineering/Commercialization_and_transfer_of_biomedical_technologies)
+### Домашние задания
+[Чувства и эмоции](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_1.pdf)
+
+[Интеллект-карта](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82-%D0%BA%D0%B0%D1%80%D1%82%D0%B0.pdf)
+
+[Анализ информационных ресурсов](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%98%D0%BD%D1%84_%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B.docx)
+
+[Тесты](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%A2%D0%B5%D1%81%D1%82%D1%8B.docx)
+
+[Когнитивные стили](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_6.docx)
+
+[Ментальная репрезентация](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_7.docx)
+
+[Эссе](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Cognitive_psychology/hw/%D0%AD%D1%81%D1%81%D0%B5.docx)
 
 ## Информационная безопасность
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/7_term_Software_engineering/Information_security)
+### Лабораторные работы
+[1 - Дополнительные потоки данных в файлах NTFS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Information_security/lab1.pdf)
+
+[2 - Разрешения NTFS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Information_security/lab2.pdf)
+
+[3 - Диспетчер задач](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Information_security/lab3.pdf)
+
+[4 - Ознакомление с утилитами](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Information_security/lab4.pdf)
 
 ## Реинжиниринг программных систем
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/7_term_Software_engineering/Software_systems_reengineering)
+### Лабораторные работы
+[1 - ГОСТ 19 AS_IS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_as_is_gost.pdf)
+
+[2 - EPC AS_IS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_as_is_epc.pdf)
+
+[3 - BPMN AS_IS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_as_is_bpmn.pdf)
+
+[4 - Модель БД Чена AS_IS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_as_is_chen.pdf)
+
+[5 - Модель БД Мартина AS_IS](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_as_is_martin.pdf)
+
+[6 - ГОСТ 19 Should_BE](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_should_be_gost19.pdf)
+
+[7 - EPC Should_BE](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_should_be_epc.pdf)
+
+[8 - BPMN Should_BE](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_should_be_bpmn.pdf)
+
+[9 - Модель БД Чена Should_BE](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_should_be_chen.pdf)
+
+[10 - Модель БД Мартина Should_BE](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D0%9F%D0%A1_should_be_martin.pdf)
+
+### Рубежная работа
+[Рубежная работа](https://github.com/CandyGoose/ITMO_Software_engineering/blob/main/7_term_Software_engineering/Software_systems_reengineering/%D0%A0%D1%83%D0%B1%D0%B5%D0%B6.pdf)
 
 ---
 
@@ -130,3 +172,6 @@
 
 ### Домашние задания
 [Результаты](https://github.com/CandyGoose/ML-OR_making_optimal_decisions_based_on_machine_learning/tree/main/hw)
+
+## Коммерциализация и трансфер биомедицинских технологий (факультатив)
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/7_term_Software_engineering/Commercialization_and_transfer_of_biomedical_technologies)
