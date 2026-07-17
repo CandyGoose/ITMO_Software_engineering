@@ -2,14 +2,14 @@
 ## Защита и действия человека в условиях ЧС
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Human_protection_and_actions_in_emergency_situations)
 
+## Учебная, ознакомительная
+[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Educational_introductory_practice)
+
 ## Производственная, технологическая (проектно-технологическая)
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Production_technological_design_and_technological_practice)
 
 ## Производственная, преддипломная
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Industrial_pre-graduate_practice)
-
-## Учебная, ознакомительная
-[Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Educational_introductory_practice)
 
 ## Подготовка к защите и защита ВКР
 [Материалы](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/8_term_Software_engineering/Final_qualifying_work)
