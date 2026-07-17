@@ -1,28 +1,6 @@
 # Программы и задания ИТМО
 ## Программная инженерия 
 
-Скачать всё
-```
-git clone https://github.com/CandyGoose/ITMO_Software_engineering.git
-```
-
-Скачать только этот репозиторий без субмодулей
-```
-git clone --depth 1 https://github.com/CandyGoose/ITMO_Software_engineering.git
-```
-
-Скачать с конкретным субмодулем
-```
-cd ITMO_Software_engineering
-git submodule update --init --depth 1 3_term_Software_engineering/Web_programming
-```
-
-Или с несколькими
-```
-cd ITMO_Software_engineering
-git submodule update --init --depth 1 path/to/submodule1 path/to/submodule2
-```
-
 | Семестр | Предмет | Языки программирования, инструменты и программы |
 | --- | --- | --- |
 | 1 | [Основы профессиональной деятельности](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/1_term_Software_engineering/OPD) |  |
@@ -79,7 +57,7 @@ git submodule update --init --depth 1 path/to/submodule1 path/to/submodule2
 | 6 | [Основы проектирования информационных систем](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Fundamentals_of_information_system_design) | <a href="https://www.uml.org/" target="_blank" rel="noreferrer"> <img src="img/uml.png" alt="uml" width="30" /> </a> |
 | 6 | [Философия](https://github.com/CandyGoose/ITMO_Software_engineering/tree/main/6_term_Software_engineering/Philosophy) |  |
 |  |  |  |
-| 7 | [Моделирование](https://github.com/CandyGoose/Modeling) | <a href="https://www.anylogic.com/" target="_blank" rel="noreferrer"> <img src="img/anylogic.png" alt="anylogic" width="30" height="30"/> </a> <a href="https://www.python.org/" target="_blank" rel="noreferrer"> <img src="img/py.svg" alt="python" width="30" height="30"/> </a> <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="img/jupiter.svg" alt="jupiter" width="30" height="30"/> </a> <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer"> <img src="img/tensorflow.svg" alt="tensorflow" width="30" height="30"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="img/pytorch.svg" alt="pytorch" width="30" height="30"/> </a> |
+| 7 | [Моделирование](https://github.com/CandyGoose/Modeling) | <a href="https://www.anylogic.com/" target="_blank" rel="noreferrer"> <img src="img/anylogic.svg" alt="anylogic" width="30" height="30"/> </a> <a href="https://www.python.org/" target="_blank" rel="noreferrer"> <img src="img/py.svg" alt="python" width="30" height="30"/> </a> <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="img/jupiter.svg" alt="jupiter" width="30" height="30"/> </a> <a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer"> <img src="img/tensorflow.svg" alt="tensorflow" width="30" height="30"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="img/pytorch.svg" alt="pytorch" width="30" height="30"/> </a> |
 | 7 | [Экономика программной инженерии](https://github.com/CandyGoose/Economics_of_Software_Engineering) | <a href="https://www.jetbrains.com/youtrack/" target="_blank" rel="noreferrer"> <img src="img/youtrack.svg" alt="youtrack" width="30" height="30"/> </a> <a href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noreferrer"> <img src="img/html.svg" alt="html" width="30" height="30"/> </a> <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank" rel="noreferrer"> <img src="img/js.svg" alt="js" width="30" height="30"/> </a> |
 | 7 | [Интеллектуальная обработка экспериментальных данных](https://github.com/CandyGoose/Intelligent_processing_of_experimental_data) | <a href="https://www.python.org/" target="_blank" rel="noreferrer"> <img src="img/py.svg" alt="python" width="30" height="30"/> </a> <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="img/jupiter.svg" alt="jupiter" width="30" height="30"/> </a> |
 | 7 | [Работа с нейроинтерфейсами](https://github.com/CandyGoose/Working_with_neural_interfaces) | <a href="https://www.python.org/" target="_blank" rel="noreferrer"> <img src="img/py.svg" alt="python" width="30" height="30"/> </a> <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> <img src="img/jupiter.svg" alt="jupiter" width="30" height="30"/> </a> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="img/arduino.svg" alt="arduino" width="30" height="30"/> </a> |
